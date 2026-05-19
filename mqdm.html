@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -918,32 +920,32 @@
 
 
 <h1 id="1">1. <span style="color: #365f91">مقدمة</span></h1>
-<p>ملف PDF لهذا المستند متاح |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQD9pdaT3qguSqq5qW2WdVFlAYLgzQLCzWzTZZI9Hv5Wp4c?e=rQkvyr">هنا</a>|.</p>
+<p>ملف <bdi dir="ltr" class="odt-ltr-term">PDF</bdi> لهذا المستند متاح |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQD9pdaT3qguSqq5qW2WdVFlAYLgzQLCzWzTZZI9Hv5Wp4c?e=rQkvyr">هنا</a>|.</p>
 <p>الأمثلة الواردة في هذا المستند متاحة |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQDEvAMQ2NjvSIlUJsy7aMBUAaJHjDvQoCb6qVamHCfegM4?e=ptTyEe">هنا</a>|.</p>
-<p>يهدف هذا المستند إلى تقديم أساسيات برمجة الويب بنمط MVC في لغة Java باستخدام السيرفلتات وصفحات JSP. بعد قراءة هذا المستند وتجربة الأمثلة، من المفترض أن يكون القارئ قد أتقن المفاهيم الأساسية لبرمجة الويب في لغة Java.</p>
+<p>يهدف هذا المستند إلى تقديم أساسيات برمجة الويب بنمط <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> في لغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> باستخدام السيرفلتات وصفحات <bdi dir="ltr" class="odt-ltr-term">JSP.</bdi> بعد قراءة هذا المستند وتجربة الأمثلة، من المفترض أن يكون القارئ قد أتقن المفاهيم الأساسية لبرمجة الويب في لغة <bdi dir="ltr" class="odt-ltr-term">Java.</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>لفهم التمارين المقدمة بشكل كامل، قد يكون المستند [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">مقدمة إلى برمجة الويب بلغة Java باستخدام السيرفلتات وصفحات JSP (2002)</span></u></a>] مفيدًا. تشير توصيات القراءة المقدمة في بداية بعض الأقسام إلى هذه المقالة. سيُشار إلى هذا المستند فيما بعد بـ [ref1].</p>
+<p>لفهم التمارين المقدمة بشكل كامل، قد يكون المستند [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">مقدمة إلى برمجة الويب بلغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> باستخدام السيرفلتات وصفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> (2002)</span></u></a>] مفيدًا. تشير توصيات القراءة المقدمة في بداية بعض الأقسام إلى هذه المقالة. سيُشار إلى هذا المستند فيما بعد بـ [<bdi dir="ltr" class="odt-ltr-term">ref1</bdi>].</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يمكن استخدام هذا المستند بطرق مختلفة:</p>
 <ol>
-<li>قم بتثبيت الأدوات، وتنزيل الكود من موقع الويب الخاص بهذا المستند، وتشغيل الاختبارات المقترحة. لن يستفيد المبتدئ شيئًا من هذه الطريقة. ومع ذلك، قد يقوم المطور المتمرس بذلك إذا كان مهتمًا فقط باختبار بيئة تطوير Eclipse/WTP.</li>
+<li>قم بتثبيت الأدوات، وتنزيل الكود من موقع الويب الخاص بهذا المستند، وتشغيل الاختبارات المقترحة. لن يستفيد المبتدئ شيئًا من هذه الطريقة. ومع ذلك، قد يقوم المطور المتمرس بذلك إذا كان مهتمًا فقط باختبار بيئة تطوير <bdi dir="ltr" class="odt-ltr-term">Eclipse/WTP.</bdi></li>
 </ol>
 <ol start="2">
-  <li>قم بتثبيت الأدوات، واتبع الوثيقة، وقم بإجراء الاختبارات المقترحة عن طريق النسخ واللصق من هذه الوثيقة. لا تقرأ الوثيقة [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]. من خلال المضي قدماً بهذه الطريقة، ستبدأ في اكتساب أساسيات تطوير الويب، لكن بعض النقاط ستظل غير واضحة أو غامضة. هذه طريقة قابلة للتطبيق إذا كنت ترغب في المضي قدماً بسرعة بنية التعمق أكثر لاحقاً فقط، عند كتابة تطبيق شخصي وربما استخدام وثيقة مرجعية أخرى غير [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/">ref1</a>].
+  <li>قم بتثبيت الأدوات، واتبع الوثيقة، وقم بإجراء الاختبارات المقترحة عن طريق النسخ واللصق من هذه الوثيقة. لا تقرأ الوثيقة [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]. من خلال المضي قدماً بهذه الطريقة، ستبدأ في اكتساب أساسيات تطوير الويب، لكن بعض النقاط ستظل غير واضحة أو غامضة. هذه طريقة قابلة للتطبيق إذا كنت ترغب في المضي قدماً بسرعة بنية التعمق أكثر لاحقاً فقط، عند كتابة تطبيق شخصي وربما استخدام وثيقة مرجعية أخرى غير [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></a>].
   </li>
-  <li>افعل نفس ما في 2، ولكن اقرأ [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>] عندما يُنصح بذلك. ستزيل هذه الطريقة الأبطأ بعض الجوانب غير الواضحة والغامضة في الطريقة 2، ولكنها لا تُعدك جيدًا للعمل المستقل لأن الكود الذي تم الحصول عليه عن طريق النسخ واللصق لن يُفهم بالضرورة بشكل كامل.
+  <li>افعل نفس ما في 2، ولكن اقرأ [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>] عندما يُنصح بذلك. ستزيل هذه الطريقة الأبطأ بعض الجوانب غير الواضحة والغامضة في الطريقة 2، ولكنها لا تُعدك جيدًا للعمل المستقل لأن الكود الذي تم الحصول عليه عن طريق النسخ واللصق لن يُفهم بالضرورة بشكل كامل.
   </li>
-  <li>نقوم بنفس الشيء كما في 3، لكننا نكتب كل الكود بأنفسنا. من الواضح أن هذه الطريقة أطول وأكثر مملة، لكنها فعالة جدًا. لكتابة الكود، عليك قراءته، الأمر الذي يتطلب الانتباه إلى الكود، وبالتالي يبدأ في تعزيز الفهم. نادرًا ما تكون إعادة الكتابة اليدوية هذه خالية من الأخطاء. هذه الأخطاء، التي سيتم الإبلاغ عنها بواسطة أدوات Eclipse المختلفة، ستدفع القارئ إلى التشكيك في الكود الذي كتبه وبالتالي فهمه بشكل أفضل.
+  <li>نقوم بنفس الشيء كما في 3، لكننا نكتب كل الكود بأنفسنا. من الواضح أن هذه الطريقة أطول وأكثر مملة، لكنها فعالة جدًا. لكتابة الكود، عليك قراءته، الأمر الذي يتطلب الانتباه إلى الكود، وبالتالي يبدأ في تعزيز الفهم. نادرًا ما تكون إعادة الكتابة اليدوية هذه خالية من الأخطاء. هذه الأخطاء، التي سيتم الإبلاغ عنها بواسطة أدوات <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> المختلفة، ستدفع القارئ إلى التشكيك في الكود الذي كتبه وبالتالي فهمه بشكل أفضل.
   </li>
 </ol>
 
-<p>يتضمن هذا المستند جزءًا كبيرًا من مقال نُشر في يناير 2005 بعنوان &quot;تطوير الويب بلغة Java باستخدام Eclipse وTomcat&quot; ومتاح على الرابط [<a href="http://tahe.developpez.com/java/eclipse/"><u><span style="color: #0563c1">http://tahe.developpez.com/java/eclipse/</span></u></a>]. فيما يلي مساهمات هذا المستند:</p>
+<p>يتضمن هذا المستند جزءًا كبيرًا من مقال نُشر في يناير 2005 بعنوان &quot;تطوير الويب بلغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> باستخدام <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> و<bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi>&quot; ومتاح على الرابط [<a href="http://tahe.developpez.com/java/eclipse/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">http://tahe.developpez.com/java/eclipse/</bdi></span></u></a>]. فيما يلي مساهمات هذا المستند:</p>
 <ul>
-  <li>استخدام المكون الإضافي Eclipse WTP لتطوير تطبيقات الويب،
+  <li>استخدام المكون الإضافي <bdi dir="ltr" class="odt-ltr-term">Eclipse WTP</bdi> لتطوير تطبيقات الويب،
   </li>
-  <li>إعادة تنظيم الوثيقة للتركيز على بنية MVC ثلاثية الطبقات، والتي لم يتم التطرق إليها إلا قليلاً في الوثيقة الأصلية،
+  <li>إعادة تنظيم الوثيقة للتركيز على بنية <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> ثلاثية الطبقات، والتي لم يتم التطرق إليها إلا قليلاً في الوثيقة الأصلية،
   </li>
-  <li>مثال على تطبيق ويب MVC ثلاثي المستويات يستخدم بيانات من نظام إدارة قواعد البيانات (DBMS).
+  <li>مثال على تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> ثلاثي المستويات يستخدم بيانات من نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>).
   </li>
 </ul>
 
@@ -951,7 +953,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007870000015A6AA8AA07.png" width="680" height="122" style="display:inline-block; margin:4px;width:17.997cm;height:3.231cm;" class="odt-zoomable" data-zoom-src="images/10000000000007870000015A6AA8AA07.png" /></td></tr></table>
 
 <ul>
-  <li>تتولى طبقة [<b>DAO</b>] معالجة الوصول إلى البيانات، وغالبًا ما تكون هذه البيانات بيانات ثابتة داخل نظام إدارة قواعد البيانات (DBMS). ولكن يمكن أن تكون هذه البيانات أيضًا بيانات قادمة من أجهزة الاستشعار أو الشبكة، إلخ.
+  <li>تتولى طبقة [<b><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></b>] معالجة الوصول إلى البيانات، وغالبًا ما تكون هذه البيانات بيانات ثابتة داخل نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). ولكن يمكن أن تكون هذه البيانات أيضًا بيانات قادمة من أجهزة الاستشعار أو الشبكة، إلخ.
   </li>
   <li>تقوم طبقة [<b>منطق الأعمال</b>] بتنفيذ خوارزميات &quot;منطق الأعمال&quot; الخاصة بالتطبيق. هذه الطبقة مستقلة عن أي شكل من أشكال واجهة المستخدم. وبالتالي، يجب أن تكون قابلة للاستخدام مع واجهة وحدة التحكم، أو واجهة الويب، أو واجهة العميل الغنية. ولذلك، يجب أن تكون قابلة للاختبار خارج واجهة الويب، لا سيما مع واجهة وحدة التحكم. وتعد هذه الطبقة عمومًا الأكثر استقرارًا في البنية. ولا تتغير هذه الطبقة في حالة تغيير واجهة المستخدم أو طريقة الوصول إلى البيانات اللازمة لتشغيل التطبيق. 
   </li>
@@ -959,7 +961,7 @@
   </li>
 </ul>
 
-<p>يقدم المقال [https://tahe.developpez.com/java/eclipse/] أمثلة فقط لتطبيقات الويب التي تقتصر على طبقة [الويب] وحدها. هنا، نقدم مثالاً يستخدم الطبقات الثلاث جميعها.</p>
+<p>يقدم المقال [<bdi dir="ltr" class="odt-ltr-term">http</bdi><bdi dir="ltr" class="odt-ltr-term">s</bdi>://<bdi dir="ltr" class="odt-ltr-term">tahe.developpez.com/java/eclipse/</bdi>] أمثلة فقط لتطبيقات الويب التي تقتصر على طبقة [الويب] وحدها. هنا، نقدم مثالاً يستخدم الطبقات الثلاث جميعها.</p>
 
 
 

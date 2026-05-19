@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1048,20 +1050,20 @@
 
 
 
-<h1 id="11-mvc-person-6">11. <span style="color: #365f91">تطبيق الويب MVC [person] – الإصدار 6</span></h1>
+<h1 id="11-mvc-person-6">11. <span style="color: #365f91">تطبيق الويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] – الإصدار 6</span></h1>
 <p><a id="personne3-introduction11"></a></p>
 <h2 id="111">11.1. <span style="color: #4f81bd">مقدمة</span></h2>
 <p>في هذا الإصدار، نقوم بإجراء التغيير التالي:</p>
 <p>لم يستخدم الإصدار السابق جلسات العمل لتخزين البيانات بين عمليات التبادل بين العميل والخادم. بل استخدم ملفات تعريف الارتباط، مما يعني أن البيانات المراد تخزينها يتم إرسالها إلى العميل من قبل الخادم حتى يتمكن العميل من إعادتها خلال عملية التبادل التالية. في هذا الإصدار الجديد، نستخدم تقنية مشابهة: الحقول المخفية في النماذج. هناك اختلافات بين هاتين التقنيتين:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>ملفات تعريف الارتباط</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الحقول المخفية</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يضع الخادم العناصر المراد تخزينها في دفق HTTP الذي يسبق مستند HTML.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يضع الخادم العناصر المراد تخزينها داخل مستند HTML.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تتطلب هذه التقنية أن يقبل المتصفح ملفات تعريف الارتباط حتى يتمكن من إرسالها مرة أخرى إلى الخادم أثناء طلبات GET أو POST.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تتطلب هذه التقنية أن تكون جميع طلبات العميل إلى الخادم طلبات POST حتى يتم إرسال الحقول المخفية إلى الخادم.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يمكن للمستخدم الوصول إلى العناصر المخزنة من خلال عرض ملفات تعريف الارتباط التي يتلقاها متصفحه. توفر معظم المتصفحات هذا الخيار.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يمكن للمستخدم الوصول إلى البيانات المخزنة من خلال عرض الكود المصدري لمستند HTML المستلم.</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>ملفات تعريف الارتباط</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الحقول المخفية</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يضع الخادم العناصر المراد تخزينها في دفق <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الذي يسبق مستند <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يضع الخادم العناصر المراد تخزينها داخل مستند <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تتطلب هذه التقنية أن يقبل المتصفح ملفات تعريف الارتباط حتى يتمكن من إرسالها مرة أخرى إلى الخادم أثناء طلبات <bdi dir="ltr" class="odt-ltr-term">GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST.</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تتطلب هذه التقنية أن تكون جميع طلبات العميل إلى الخادم طلبات <bdi dir="ltr" class="odt-ltr-term">POST</bdi> حتى يتم إرسال الحقول المخفية إلى الخادم.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يمكن للمستخدم الوصول إلى العناصر المخزنة من خلال عرض ملفات تعريف الارتباط التي يتلقاها متصفحه. توفر معظم المتصفحات هذا الخيار.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- يمكن للمستخدم الوصول إلى البيانات المخزنة من خلال عرض الكود المصدري لمستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المستلم.</div></td></tr></table>
 
-<p>يمكن استخدام تقنية الحقول المخفية هنا لأن جميع طلبات العميل هي طلبات POST.</p>
-<h2 id="112-eclipse">11.2. <span style="color: #4f81bd">مشروع Eclipse</span></h2>
-<p>لإنشاء مشروع Eclipse [mvc-personne-06] لتطبيق الويب [/personne6]، قم بنسخ المشروع [mvc-personne-05] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
+<p>يمكن استخدام تقنية الحقول المخفية هنا لأن جميع طلبات العميل هي طلبات <bdi dir="ltr" class="odt-ltr-term">POST.</bdi></p>
+<h2 id="112-eclipse">11.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h2>
+<p>لإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-06</bdi>] لتطبيق الويب [/<bdi dir="ltr" class="odt-ltr-term">personne6</bdi>]، قم بنسخ المشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-05</bdi>] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E70000019B16610662.png" width="162" height="288" style="display:inline-block; margin:4px;width:4.279cm;height:7.613cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E70000019B16610662.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012E0000005B2FF2C91C.png" width="211" height="64" style="display:inline-block; margin:4px;width:5.59cm;height:1.685cm;" class="odt-zoomable" data-zoom-src="images/100000000000012E0000005B2FF2C91C.png" /></td></tr></table>
 
-<h2 id="113-personne6">11.3. <span style="color: #4f81bd">تكوين تطبيق الويب [personne6]</span></h2>
-<p>فيما يلي ملف <strong>web.xml</strong> الخاص بتطبيق <strong>/personne6</strong>:</p>
+<h2 id="113-personne6">11.3. <span style="color: #4f81bd">تكوين تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">personne6</bdi>]</span></h2>
+<p>فيما يلي ملف <strong><bdi dir="ltr" class="odt-ltr-term">web.xml</bdi></strong> الخاص بتطبيق <strong>/<bdi dir="ltr" class="odt-ltr-term">personne6</bdi></strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?<span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span>?&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -1074,11 +1076,11 @@
 
 <p>هذا الملف مطابق للملف الموجود في الإصدار السابق باستثناء بعض التفاصيل:</p>
 <ul>
-  <li>السطر 6: تغير اسم العرض لتطبيق الويب إلى [mvc-personne-06]
+  <li>السطر 6: تغير اسم العرض لتطبيق الويب إلى [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-06</bdi>]
   </li>
 </ul>
 
-<p>الصفحة الرئيسية [index.jsp] مطابقة لتلك الموجودة في تطبيق [/personne5]:</p>
+<p>الصفحة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>] مطابقة لتلك الموجودة في تطبيق [/<bdi dir="ltr" class="odt-ltr-term">personne5</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;%@ <span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1088,8 +1090,8 @@
 </code></pre></div>
 
 <h2 id="114">11.4. <span style="color: #4f81bd">كود العرض</span></h2>
-<p>لم تتغير سوى طرق العرض [response, errors]. وهي تتضمن الآن حقولًا مخفية في النماذج الخاصة بها، في حين أن هذه النماذج في الإصدار السابق لم تكن ترسل أي معلمات.</p>
-<p>[response.jsp]:</p>
+<p>لم تتغير سوى طرق العرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>, <bdi dir="ltr" class="odt-ltr-term">errors</bdi>]. وهي تتضمن الآن حقولًا مخفية في النماذج الخاصة بها، في حين أن هذه النماذج في الإصدار السابق لم تكن ترسل أي معلمات.</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">response.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
@@ -1112,13 +1114,13 @@
 <ul>
   <li>الأسطر 6–9: النموذج الذي سيتم إرساله إلى الخادم عند النقر على الرابط الموجود في الأسطر 10–12
   </li>
-  <li>السطر 6: سيكون هدف POST هو [/do/retourFormulaire]
+  <li>السطر 6: سيكون هدف <bdi dir="ltr" class="odt-ltr-term">POST</bdi> هو [/<bdi dir="ltr" class="odt-ltr-term">do/retourFormulaire</bdi>]
   </li>
-  <li>السطران 7 و8: سيتم إرسال الحقول المخفية [name] و[age]. وسيتم تعيين قيمتيهما ${name} و${age} بواسطة وحدة التحكم التي تعرض [response.jsp]. وستكون هذه هي القيم التي تم إدخالها في النموذج.
+  <li>السطران 7 و8: سيتم إرسال الحقول المخفية [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">age</bdi>]. وسيتم تعيين قيمتيهما ${<bdi dir="ltr" class="odt-ltr-term">name</bdi>} و${<bdi dir="ltr" class="odt-ltr-term">age</bdi>} بواسطة وحدة التحكم التي تعرض [<bdi dir="ltr" class="odt-ltr-term">response.jsp</bdi>]. وستكون هذه هي القيم التي تم إدخالها في النموذج.
   </li>
 </ul>
 
-<p>[errors.jsp]:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">errors.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
@@ -1136,12 +1138,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>التغييرات والتفسيرات هي نفسها كما في عرض [response.jsp]. لاحظ أن قالب العرض [errors] قد تم توسيعه بعنصرين جديدين [name, age]، اللذين تمت إضافتهما إلى العنصرين الموجودين: [errors, returnToFormLink].</p>
+<p>التغييرات والتفسيرات هي نفسها كما في عرض [<bdi dir="ltr" class="odt-ltr-term">response.jsp</bdi>]. لاحظ أن قالب العرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>] قد تم توسيعه بعنصرين جديدين [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>]، اللذين تمت إضافتهما إلى العنصرين الموجودين: [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>, <bdi dir="ltr" class="odt-ltr-term">returnToFormLink</bdi>].</p>
 <p>ندعو القراء إلى اختبار هذه العروض الجديدة باتباع النهج المستخدم في الإصدارات السابقة.</p>
-<h2 id="115-servletpersonne">11.5. <span style="color: #4f81bd">وحدة التحكم [ServletPersonne]</span></h2>
-<p>تتشابه وحدة التحكم [ServletPersonne] لتطبيق الويب [/personne6] إلى حد كبير مع تلك الموجودة في الإصدار السابق. تنبع التغييرات من حقيقة أن نموذج عرض [errors] قد تغير. يجب إضافة عنصرين إضافيين: [name, age]. لا تتأثر سوى الطرق التي تعرض هذا العرض. وهذه هي الطرق [doGet] و [doValidateForm]. </p>
-<h3 id="1151-doget">11.5.1. <span style="color: #4f81bd">طريقة [doGet]</span></h3>
-<p>فيما يلي كود [doGet]:</p>
+<h2 id="115-servletpersonne">11.5. <span style="color: #4f81bd">وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>]</span></h2>
+<p>تتشابه وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] لتطبيق الويب [/<bdi dir="ltr" class="odt-ltr-term">personne6</bdi>] إلى حد كبير مع تلك الموجودة في الإصدار السابق. تنبع التغييرات من حقيقة أن نموذج عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>] قد تغير. يجب إضافة عنصرين إضافيين: [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>]. لا تتأثر سوى الطرق التي تعرض هذا العرض. وهذه هي الطرق [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">doValidateForm</bdi>]. </p>
+<h3 id="1151-doget">11.5.1. <span style="color: #4f81bd">طريقة [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>]</span></h3>
+<p>فيما يلي كود [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1174,8 +1176,8 @@
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="p">...</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>في الواقع، يظل هذا الكود كما هو دون تغيير. في الإصدار السابق، لم تكن العناصر [name, age] مدرجة في قالب عرض [errors]. وإذا استمرينا في استبعادها، فسيتم استبدال المتغيرين ${name} و${age} في [errors.jsp] بسلسلة فارغة. وهذا يناسبنا، لأن رابط [العودة إلى النموذج] لا يظهر للمستخدم في هذه الحالة بالذات. في الواقع، نحن لا ندرج أيضًا عنصر [formBackLink] في القالب. سيتم استبدال المتغير ${lienRetourFormulaire} في [erreurs.jsp] بسلسلة فارغة. لذلك، لن يكون هناك رابط، وبالتالي لن تكون هناك طريقة لإرسال الحقول المخفية [name، age] من النموذج في [erreurs.jsp]. وبالتالي، يمكن أن تكون قيمة هذه الحقول هي السلسلة الفارغة.</p>
-<h3 id="1152-dovalidationformulaire">11.5.2. <span style="color: #4f81bd">طريقة [doValidationFormulaire]</span></h3>
+<p>في الواقع، يظل هذا الكود كما هو دون تغيير. في الإصدار السابق، لم تكن العناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] مدرجة في قالب عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>]. وإذا استمرينا في استبعادها، فسيتم استبدال المتغيرين ${<bdi dir="ltr" class="odt-ltr-term">name</bdi>} و${<bdi dir="ltr" class="odt-ltr-term">age</bdi>} في [<bdi dir="ltr" class="odt-ltr-term">errors.jsp</bdi>] بسلسلة فارغة. وهذا يناسبنا، لأن رابط [العودة إلى النموذج] لا يظهر للمستخدم في هذه الحالة بالذات. في الواقع، نحن لا ندرج أيضًا عنصر [<bdi dir="ltr" class="odt-ltr-term">formBackLink</bdi>] في القالب. سيتم استبدال المتغير ${<bdi dir="ltr" class="odt-ltr-term">lienRetourFormulaire</bdi>} في [<bdi dir="ltr" class="odt-ltr-term">erreurs.jsp</bdi>] بسلسلة فارغة. لذلك، لن يكون هناك رابط، وبالتالي لن تكون هناك طريقة لإرسال الحقول المخفية [<bdi dir="ltr" class="odt-ltr-term">name</bdi>، <bdi dir="ltr" class="odt-ltr-term">age</bdi>] من النموذج في [<bdi dir="ltr" class="odt-ltr-term">erreurs.jsp</bdi>]. وبالتالي، يمكن أن تكون قيمة هذه الحقول هي السلسلة الفارغة.</p>
+<h3 id="1152-dovalidationformulaire">11.5.2. <span style="color: #4f81bd">طريقة [<bdi dir="ltr" class="odt-ltr-term">doValidationFormulaire</bdi>]</span></h3>
 <p>فيما يلي كودها:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1201,9 +1203,9 @@
 <a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="c1">// parameter verification</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">...</span>
 </code></pre></div></td></tr></table></div>
-<p>الأسطر 8–10: نمرر العناصر [name, age, formReturnLink] إلى النموذج. ونعلم أن الطريقة تعرض إحدى طرق العرض [response] أو [errors]. وبالتالي، ستحتوي الأخيرة على العناصر [name, age] في نموذجها.</p>
+<p>الأسطر 8–10: نمرر العناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>, <bdi dir="ltr" class="odt-ltr-term">formReturnLink</bdi>] إلى النموذج. ونعلم أن الطريقة تعرض إحدى طرق العرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>]. وبالتالي، ستحتوي الأخيرة على العناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] في نموذجها.</p>
 <h2 id="116">11.6. <span style="color: #4f81bd">الاختبارات</span></h2>
-<p>ابدأ أو أعد تشغيل Tomcat بعد دمج مشروع Eclipse [person-mvc-06] فيه، ثم اطلب عنوان URL [http://localhost:8080/personne6].</p>
+<p>ابدأ أو أعد تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> بعد دمج مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">person-mvc-06</bdi>] فيه، ثم اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne6</bdi>].</p>
 
 
 

@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1103,11 +1105,11 @@
 
 
 
-<h1 id="14-mvc-1">14. <span style="color: #365f91">تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 1</span></h1>
+<h1 id="14-mvc-1">14. <span style="color: #365f91">تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> في بنية ثلاثية الطبقات – المثال 1</span></h1>
 <h2 id="141">14.1. <span style="color: #4f81bd">مقدمة</span></h2>
 <p>حتى هذه المرحلة، اقتصرنا على أمثلة مخصصة للأغراض التعليمية. ولهذا السبب، كان لا بد أن تكون بسيطة. نقدم الآن تطبيقًا أساسيًا، ولكنه مع ذلك أكثر ثراءً بالميزات من أي من التطبيقات التي تم عرضها حتى الآن. وسيكون فريدًا من نوعه من حيث أنه يستخدم الطبقات الثلاث لهندسة ثلاثية الطبقات:</p>
 <p><img src="images/10000000000004550000015F52A96F1B.png" width="555" height="176" style="width:14.672cm;height:4.644cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004550000015F52A96F1B.png" /></p>
-<p>ننصح القراء بمراجعة مبادئ تطبيق الويب MVC في بنية ثلاثية الطبقات في القسم<a href="#mvc-3tier"><u><span style="color: #0563c1"> 4</span></u></a> إذا كانوا قد نسوها.</p>
+<p>ننصح القراء بمراجعة مبادئ تطبيق الويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> في بنية ثلاثية الطبقات في القسم<a href="#mvc-3tier"><u><span style="color: #0563c1"> 4</span></u></a> إذا كانوا قد نسوها.</p>
 <p>سيسمح لنا تطبيق الويب الذي سنقوم بكتابته بإدارة مجموعة من الأشخاص باستخدام أربع عمليات:</p>
 <ul>
   <li>قائمة الأشخاص في المجموعة
@@ -1122,7 +1124,7 @@
 
 <p>هذه هي العمليات الأساسية الأربع على جدول قاعدة البيانات. سنكتب نسختين من هذا التطبيق:</p>
 <ul>
-  <li>في الإصدار 1، لن تستخدم طبقة [DAO] قاعدة بيانات. سيتم تخزين أعضاء المجموعة في كائن [ArrayList] بسيط تديره طبقة [DAO] داخليًا. سيسمح هذا للقارئ باختبار التطبيق دون قيود قاعدة البيانات.
+  <li>في الإصدار 1، لن تستخدم طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] قاعدة بيانات. سيتم تخزين أعضاء المجموعة في كائن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>] بسيط تديره طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] داخليًا. سيسمح هذا للقارئ باختبار التطبيق دون قيود قاعدة البيانات.
   </li>
   <li>في الإصدار 2، سنضع مجموعة الأشخاص في جدول قاعدة بيانات. سنوضح أنه يمكن القيام بذلك دون التأثير على طبقة الويب في الإصدار 1، والتي ستبقى دون تغيير.
   </li>
@@ -1136,30 +1138,30 @@
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000029F0000010773AF7839.png" width="403" height="158" style="display:inline-block; margin:4px;width:10.65cm;height:4.173cm;" class="odt-zoomable" data-zoom-src="images/100000000000029F0000010773AF7839.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<h2 id="142-eclipse">14.2. <span style="color: #4f81bd">مشروع Eclipse</span></h2>
-<p>اسم مشروع التطبيق هو [people-01]:</p>
+<h2 id="142-eclipse">14.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h2>
+<p>اسم مشروع التطبيق هو [<bdi dir="ltr" class="odt-ltr-term">people-01</bdi>]:</p>
 <p><img src="images/10000000000000F7000001BD480CBF8B.png" width="173" height="311" style="width:4.57cm;height:8.234cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000F7000001BD480CBF8B.png" /></p>
 <p>يغطي هذا المشروع الطبقات الثلاث لهيكل التطبيق ثلاثي الطبقات:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004650000016ABB6F1D91.png" width="563" height="181" style="display:inline-block; margin:4px;width:14.884cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/10000000000004650000016ABB6F1D91.png" /></td></tr></table>
 
 <ul>
-  <li>توجد طبقة [dao] في الحزمة [istia.st.mvc.personnes.dao]
+  <li>توجد طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.dao</bdi>]
   </li>
-  <li>توجد طبقة [business] أو [service] في الحزمة [istia.st.mvc.personnes.service]
+  <li>توجد طبقة [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.service</bdi>]
   </li>
-  <li>توجد طبقة [web] أو [ui] في الحزمة [istia.st.mvc.personnes.web]
+  <li>توجد طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.web</bdi>]
   </li>
-  <li>تحتوي الحزمة [istia.st.mvc.personnes.entities] على كائنات مشتركة بين الطبقات المختلفة 
+  <li>تحتوي الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.entities</bdi>] على كائنات مشتركة بين الطبقات المختلفة 
   </li>
-  <li>تحتوي الحزمة [istia.st.mvc.people.tests] على اختبارات JUnit لطبقات [DAO] و[service]
+  <li>تحتوي الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.people.tests</bdi>] على اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقات [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
 </ul>
 
-<p>سنستكشف الطبقات الثلاث [dao] و [service] و [web] بالترتيب. ونظرًا لأن الكتابة قد تستغرق وقتًا طويلاً وقد تكون القراءة مملة، فقد ننتقل أحيانًا عبر التفسيرات بسرعة، إلا إذا كان الموضوع المقدم جديدًا.</p>
+<p>سنستكشف الطبقات الثلاث [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] بالترتيب. ونظرًا لأن الكتابة قد تستغرق وقتًا طويلاً وقد تكون القراءة مملة، فقد ننتقل أحيانًا عبر التفسيرات بسرعة، إلا إذا كان الموضوع المقدم جديدًا.</p>
 <h2 id="143">14.3. <span style="color: #4f81bd"><strong>تمثيل الشخص</strong></span></h2>
-<p>يدير التطبيق مجموعة من الأشخاص. أظهرت لقطات الشاشة في القسم<a href="#spring-mvc-37-ecrans"><u><span style="color: #0563c1"> 14.1</span></u></a> بعض خصائص الشخص. رسميًا، يتم تمثيل هذه الخصائص بواسطة فئة [Person]:</p>
+<p>يدير التطبيق مجموعة من الأشخاص. أظهرت لقطات الشاشة في القسم<a href="#spring-mvc-37-ecrans"><u><span style="color: #0563c1"> 14.1</span></u></a> بعض خصائص الشخص. رسميًا، يتم تمثيل هذه الخصائص بواسطة فئة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]:</p>
 <p><img src="images/10000000000000C5000000221F51BC39.png" width="138" height="24" style="width:3.649cm;height:0.63cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C5000000221F51BC39.png" /></p>
-<p>فئة [Person] هي كما يلي:</p>
+<p>فئة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1283,49 +1285,49 @@
 <ul>
   <li>يتم تحديد هوية الشخص من خلال المعلومات التالية:
     <ul>
-      <li><b>id</b>: معرف فريد للشخص
+      <li><b><bdi dir="ltr" class="odt-ltr-term">id</bdi></b>: معرف فريد للشخص
       </li>
-      <li><b>last_name</b>: لقب الشخص
+      <li><b><bdi dir="ltr" class="odt-ltr-term">last_name</bdi></b>: لقب الشخص
       </li>
-      <li><b>firstName</b>: الاسم الأول
+      <li><b><bdi dir="ltr" class="odt-ltr-term">firstName</bdi></b>: الاسم الأول
       </li>
-      <li><b>dateOfBirth</b>: تاريخ ميلاده
+      <li><b><bdi dir="ltr" class="odt-ltr-term">dateOfBirth</bdi></b>: تاريخ ميلاده
       </li>
-      <li><b>maritalStatus</b>: ما إذا كان متزوجًا أم لا
+      <li><b><bdi dir="ltr" class="odt-ltr-term">maritalStatus</bdi></b>: ما إذا كان متزوجًا أم لا
       </li>
-      <li><b>nbChildren</b>: عدد الأطفال
+      <li><b><bdi dir="ltr" class="odt-ltr-term">nbChildren</bdi></b>: عدد الأطفال
       </li>
     </ul>
   </li>
-  <li>السمة [<b>version</b>] هي سمة تمت إضافتها بشكل مصطنع لأغراض التطبيق. من منظور موجه للكائنات، كان من الأفضل على الأرجح إضافة هذه السمة إلى فئة مشتقة من [Person]. وتصبح ضرورتها واضحة عند النظر في حالات استخدام تطبيق الويب. وإحدى حالات الاستخدام هذه هي كما يلي:
+  <li>السمة [<b><bdi dir="ltr" class="odt-ltr-term">version</bdi></b>] هي سمة تمت إضافتها بشكل مصطنع لأغراض التطبيق. من منظور موجه للكائنات، كان من الأفضل على الأرجح إضافة هذه السمة إلى فئة مشتقة من [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. وتصبح ضرورتها واضحة عند النظر في حالات استخدام تطبيق الويب. وإحدى حالات الاستخدام هذه هي كما يلي:
   </li>
 </ul>
 
-<p>في الوقت T1، يبدأ المستخدم U1 في تعديل شخص P. في هذه المرحلة، يكون عدد الأطفال 0. يغير U1 هذا الرقم إلى 1، ولكن قبل التحقق من صحة التغيير، يبدأ المستخدم U2 في تعديل نفس الشخص P. نظرًا لأن U1 لم يتحقق بعد من صحة التغيير، يرى U2 أن عدد الأطفال هو 0. يغير U2 اسم الشخص P إلى أحرف كبيرة. ثم يحفظ U1 و U2 تغييراتهما بهذا الترتيب. سيكون لتغيير U2 الأسبقية: سيكون الاسم بأحرف كبيرة وسيظل عدد الأطفال صفرًا، على الرغم من أن U1 يعتقد أنه غيره إلى 1.</p>
+<p>في الوقت <bdi dir="ltr" class="odt-ltr-term">T1</bdi>، يبدأ المستخدم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> في تعديل شخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> في هذه المرحلة، يكون عدد الأطفال 0. يغير <bdi dir="ltr" class="odt-ltr-term">U1</bdi> هذا الرقم إلى 1، ولكن قبل التحقق من صحة التغيير، يبدأ المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> في تعديل نفس الشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> نظرًا لأن <bdi dir="ltr" class="odt-ltr-term">U1</bdi> لم يتحقق بعد من صحة التغيير، يرى <bdi dir="ltr" class="odt-ltr-term">U2</bdi> أن عدد الأطفال هو 0. يغير <bdi dir="ltr" class="odt-ltr-term">U2</bdi> اسم الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> إلى أحرف كبيرة. ثم يحفظ <bdi dir="ltr" class="odt-ltr-term">U1</bdi> و <bdi dir="ltr" class="odt-ltr-term">U2</bdi> تغييراتهما بهذا الترتيب. سيكون لتغيير <bdi dir="ltr" class="odt-ltr-term">U2</bdi> الأسبقية: سيكون الاسم بأحرف كبيرة وسيظل عدد الأطفال صفرًا، على الرغم من أن <bdi dir="ltr" class="odt-ltr-term">U1</bdi> يعتقد أنه غيره إلى 1.</p>
 <p>يساعدنا مفهوم إصدار الشخص في حل هذه المشكلة. دعونا نعيد النظر في نفس حالة الاستخدام:</p>
-<p>في الوقت T1، يبدأ المستخدم U1 في تعديل الشخص P. في هذه اللحظة، يكون عدد الأبناء 0 والإصدار هو V1. يقوم بتغيير عدد الأبناء إلى 1، ولكن قبل أن يلتزم بتعديله، يدخل المستخدم U2 في وضع التعديل لنفس الشخص P. نظرًا لأن U1 لم يلتزم بتعديله بعد، يرى U2 أن عدد الأبناء هو 0 والإصدار هو V1. يغير U2 اسم الشخص P إلى أحرف كبيرة. ثم يقوم U1 و U2 بتثبيت تعديلاتهما بهذا الترتيب. قبل تثبيت التغيير، نتحقق من أن المستخدم الذي يعدل الشخص P لديه نفس الإصدار مثل الإصدار المحفوظ حاليًا للشخص P. سيكون هذا هو الحال بالنسبة للمستخدم U1. وبالتالي يتم قبول تغييره، ثم نقوم بتغيير إصدار الشخص المعدل من V1 إلى V2 للإشارة إلى أن الشخص قد خضع لتغيير. عند التحقق من صحة تعديل U2، سنلاحظ أن لديه الإصدار V1 للشخص P، في حين أن الإصدار الحالي هو V2. يمكننا بعد ذلك إبلاغ المستخدم U2 بأن شخصًا آخر قد سبقه وأنه يجب عليه البدء بالإصدار الجديد للشخص P. وسيقوم بذلك، ويسترد الإصدار V2 للشخص P الذي أصبح لديه الآن طفل، ويكتب الاسم بأحرف كبيرة، ويقوم بالتحقق من صحة التعديل. سيتم قبول تعديله إذا كان الشخص P المسجل لا يزال يحمل الإصدار V2. في النهاية، سيتم أخذ التعديلات التي أجراها U1 و U2 في الاعتبار، بينما في حالة الاستخدام بدون إصدارات، فقد تم فقدان أحد التعديلات.</p>
+<p>في الوقت <bdi dir="ltr" class="odt-ltr-term">T1</bdi>، يبدأ المستخدم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> في تعديل الشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> في هذه اللحظة، يكون عدد الأبناء 0 والإصدار هو <bdi dir="ltr" class="odt-ltr-term">V1.</bdi> يقوم بتغيير عدد الأبناء إلى 1، ولكن قبل أن يلتزم بتعديله، يدخل المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> في وضع التعديل لنفس الشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> نظرًا لأن <bdi dir="ltr" class="odt-ltr-term">U1</bdi> لم يلتزم بتعديله بعد، يرى <bdi dir="ltr" class="odt-ltr-term">U2</bdi> أن عدد الأبناء هو 0 والإصدار هو <bdi dir="ltr" class="odt-ltr-term">V1.</bdi> يغير <bdi dir="ltr" class="odt-ltr-term">U2</bdi> اسم الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> إلى أحرف كبيرة. ثم يقوم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> و <bdi dir="ltr" class="odt-ltr-term">U2</bdi> بتثبيت تعديلاتهما بهذا الترتيب. قبل تثبيت التغيير، نتحقق من أن المستخدم الذي يعدل الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> لديه نفس الإصدار مثل الإصدار المحفوظ حاليًا للشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> سيكون هذا هو الحال بالنسبة للمستخدم <bdi dir="ltr" class="odt-ltr-term">U1.</bdi> وبالتالي يتم قبول تغييره، ثم نقوم بتغيير إصدار الشخص المعدل من <bdi dir="ltr" class="odt-ltr-term">V1</bdi> إلى <bdi dir="ltr" class="odt-ltr-term">V2</bdi> للإشارة إلى أن الشخص قد خضع لتغيير. عند التحقق من صحة تعديل <bdi dir="ltr" class="odt-ltr-term">U2</bdi>، سنلاحظ أن لديه الإصدار <bdi dir="ltr" class="odt-ltr-term">V1</bdi> للشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi>، في حين أن الإصدار الحالي هو <bdi dir="ltr" class="odt-ltr-term">V2.</bdi> يمكننا بعد ذلك إبلاغ المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> بأن شخصًا آخر قد سبقه وأنه يجب عليه البدء بالإصدار الجديد للشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> وسيقوم بذلك، ويسترد الإصدار <bdi dir="ltr" class="odt-ltr-term">V2</bdi> للشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> الذي أصبح لديه الآن طفل، ويكتب الاسم بأحرف كبيرة، ويقوم بالتحقق من صحة التعديل. سيتم قبول تعديله إذا كان الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> المسجل لا يزال يحمل الإصدار <bdi dir="ltr" class="odt-ltr-term">V2.</bdi> في النهاية، سيتم أخذ التعديلات التي أجراها <bdi dir="ltr" class="odt-ltr-term">U1</bdi> و <bdi dir="ltr" class="odt-ltr-term">U2</bdi> في الاعتبار، بينما في حالة الاستخدام بدون إصدارات، فقد تم فقدان أحد التعديلات.</p>
 <ul>
-  <li>الأسطر 32–40: منشئ قادر على تهيئة حقول الشخص. تم حذف حقل [version].
+  <li>الأسطر 32–40: منشئ قادر على تهيئة حقول الشخص. تم حذف حقل [<bdi dir="ltr" class="odt-ltr-term">version</bdi>].
   </li>
   <li>الأسطر 43-51: منشئ يقوم بإنشاء نسخة من الشخص الذي تم تمريره إليه كمعلمة. لدينا الآن كائنان بمحتوى متطابق ولكن يشار إليهما بواسطة مؤشرين مختلفين.
   </li>
-  <li>السطر 55: يتم إعادة تعريف طريقة [toString] لتُرجع سلسلة تمثل حالة الشخص
+  <li>السطر 55: يتم إعادة تعريف طريقة [<bdi dir="ltr" class="odt-ltr-term">toString</bdi>] لتُرجع سلسلة تمثل حالة الشخص
   </li>
 </ul>
 
-<h2 id="144-dao">14.4. <span style="color: #4f81bd">طبقة [DAO]</span></h2>
-<p>تتكون طبقة [DAO] من الفئات والواجهات التالية:</p>
+<h2 id="144-dao">14.4. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
+<p>تتكون طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] من الفئات والواجهات التالية:</p>
 <p><img src="images/10000000000000C300000042CC4C4778.png" width="136" height="46" style="width:3.611cm;height:1.222cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C300000042CC4C4778.png" /></p>
 <ul>
-  <li>[IDao] هي الواجهة التي تقدمها طبقة [dao]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] هي الواجهة التي تقدمها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
   </li>
-  <li>[DaoImpl] هي تطبيق لهذه الواجهة حيث يتم تغليف مجموعة الأشخاص في كائن [ArrayList]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] هي تطبيق لهذه الواجهة حيث يتم تغليف مجموعة الأشخاص في كائن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>]
   </li>
-  <li>[DaoException] هو نوع من الاستثناءات غير المحددة التي تطلقها طبقة [dao]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] هو نوع من الاستثناءات غير المحددة التي تطلقها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
   </li>
 </ul>
 
-<p>واجهة [<a id="spring-mvc-37-idao"></a> IDao] هي كما يلي:</p>
+<p>واجهة [<a id="spring-mvc-37-idao"></a> <bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1361,19 +1363,19 @@
 <ul>
   <li>تحتوي الواجهة على أربع طرق للعمليات الأربع التي نريد تنفيذها على مجموعة الأشخاص:
     <ul>
-      <li><b>getAll</b>: لاسترداد مجموعة من الأشخاص
+      <li><b><bdi dir="ltr" class="odt-ltr-term">getAll</bdi></b>: لاسترداد مجموعة من الأشخاص
       </li>
-      <li><b>getOne</b>: لاسترداد شخص <i>بمعرف</i> محدد
+      <li><b><bdi dir="ltr" class="odt-ltr-term">getOne</bdi></b>: لاسترداد شخص <i>بمعرف</i> محدد
       </li>
-      <li><b>saveOne</b>: لإضافة شخص (id=-1) أو تعديل شخص موجود (<i>id</i> ≠ -1)
+      <li><b><bdi dir="ltr" class="odt-ltr-term">saveOne</bdi></b>: لإضافة شخص (<bdi dir="ltr" class="odt-ltr-term">id</bdi>=-1) أو تعديل شخص موجود (<i><bdi dir="ltr" class="odt-ltr-term">id</bdi></i> ≠ -1)
       </li>
-      <li><b>deleteOne</b>: لحذف شخص برقم <i>تعريف</i> محدد
+      <li><b><bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi></b>: لحذف شخص برقم <i>تعريف</i> محدد
       </li>
     </ul>
   </li>
 </ul>
 
-<p>قد تطلق طبقة [DAO] استثناءات. وستكون هذه من النوع [<a id="spring-mvc-37-daoexception"></a> DaoException]:</p>
+<p>قد تطلق طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] استثناءات. وستكون هذه من النوع [<a id="spring-mvc-37-daoexception"></a> <bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1409,19 +1411,19 @@
 <a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 3: فئة [DaoException]، التي تنحدر من [RuntimeException]، هي نوع استثناء غير معالج: لا يطلب منا المُجمِّع:
+  <li>السطر 3: فئة [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>]، التي تنحدر من [<bdi dir="ltr" class="odt-ltr-term">RuntimeException</bdi>]، هي نوع استثناء غير معالج: لا يطلب منا المُجمِّع:
     <ul>
-      <li>معالجة هذا النوع من الاستثناءات باستخدام كتلة try/catch عند استدعاء دالة قد ترمي هذا الاستثناء
+      <li>معالجة هذا النوع من الاستثناءات باستخدام كتلة <bdi dir="ltr" class="odt-ltr-term">try/catch</bdi> عند استدعاء دالة قد ترمي هذا الاستثناء
       </li>
-      <li>تضمين الكلمة الرئيسية &quot;throws DaoException&quot; في توقيع الأسلوب الذي قد يرمي الاستثناء
+      <li>تضمين الكلمة الرئيسية &quot;<bdi dir="ltr" class="odt-ltr-term">throws DaoException</bdi>&quot; في توقيع الأسلوب الذي قد يرمي الاستثناء
       </li>
     </ul>
   </li>
 </ul>
 
-<p>تمنعنا هذه التقنية من الاضطرار إلى توقيع طرق واجهة [IDao] باستثناءات من نوع معين. وبالتالي، سيكون أي تنفيذ يرمي استثناءات غير محددة مقبولاً، مما يضفي مرونة على البنية.</p>
+<p>تمنعنا هذه التقنية من الاضطرار إلى توقيع طرق واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] باستثناءات من نوع معين. وبالتالي، سيكون أي تنفيذ يرمي استثناءات غير محددة مقبولاً، مما يضفي مرونة على البنية.</p>
 <ul>
-  <li>السطر 6: رمز خطأ. ستقوم طبقة [dao] بإلقاء استثناءات متنوعة يتم تحديدها برموز أخطاء مختلفة. سيسمح هذا للطبقة المسؤولة عن معالجة الاستثناء بتحديد المصدر الدقيق للخطأ واتخاذ الإجراء المناسب. هناك طرق أخرى لتحقيق نفس النتيجة. إحدى هذه الطرق هي إنشاء نوع استثناء لكل نوع خطأ محتمل، على سبيل المثال MissingLastNameException، MissingFirstNameException، IncorrectAgeException، ...
+  <li>السطر 6: رمز خطأ. ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بإلقاء استثناءات متنوعة يتم تحديدها برموز أخطاء مختلفة. سيسمح هذا للطبقة المسؤولة عن معالجة الاستثناء بتحديد المصدر الدقيق للخطأ واتخاذ الإجراء المناسب. هناك طرق أخرى لتحقيق نفس النتيجة. إحدى هذه الطرق هي إنشاء نوع استثناء لكل نوع خطأ محتمل، على سبيل المثال <bdi dir="ltr" class="odt-ltr-term">MissingLastNameException</bdi>، <bdi dir="ltr" class="odt-ltr-term">MissingFirstNameException</bdi>، <bdi dir="ltr" class="odt-ltr-term">IncorrectAgeException</bdi>، ...
   </li>
 </ul>
 
@@ -1435,7 +1437,7 @@
   </li>
 </ul>
 
-<p>تنفذ الفئة [<a id="spring-mvc-37-daoimpl"></a> DaoImpl] واجهة [IDao]:</p>
+<p>تنفذ الفئة [<a id="spring-mvc-37-daoimpl"></a> <bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">  3</a></span>
@@ -1774,69 +1776,69 @@
 </code></pre></div></td></tr></table></div>
 <p>سنكتفي بشرح هذا الكود بشكل عام. ومع ذلك، سنخصص بعض الوقت للأجزاء الأكثر تعقيدًا.</p>
 <ul>
-  <li>السطر 13: كائن [ArrayList] الذي سيحتوي على مجموعة الأشخاص
+  <li>السطر 13: كائن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>] الذي سيحتوي على مجموعة الأشخاص
   </li>
   <li>السطر 16: معرف آخر شخص تمت إضافته. في كل مرة يتم فيها إضافة شخص جديد، سيتم زيادة هذا المعرف بمقدار 1.
   </li>
 </ul>
 
-<p>سيتم إنشاء مثيل لفئة [DaoImpl] كمثيل واحد. وهذا ما يُعرف باسم singleton. يقدم تطبيق الويب خدماته لمستخدميه في وقت واحد. في أي وقت معين، هناك عدة خيوط تعمل على خادم الويب. تتشارك هذه الخيوط في singletons: </p>
+<p>سيتم إنشاء مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] كمثيل واحد. وهذا ما يُعرف باسم <bdi dir="ltr" class="odt-ltr-term">singleton.</bdi> يقدم تطبيق الويب خدماته لمستخدميه في وقت واحد. في أي وقت معين، هناك عدة خيوط تعمل على خادم الويب. تتشارك هذه الخيوط في <bdi dir="ltr" class="odt-ltr-term">singletons:</bdi> </p>
 <ul>
-  <li>الخيط من طبقة [dao]
+  <li>الخيط من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
   </li>
-  <li>الخيط الموجود في طبقة [service]
+  <li>الخيط الموجود في طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
   <li>تلك الخاصة بمختلف وحدات التحكم ومدققي البيانات وما إلى ذلك، في طبقة الويب
   </li>
 </ul>
 
-<p>إذا كان للسينجلتون حقول خاصة، فيجب أن تسأل نفسك على الفور عن سبب وجودها. هل هناك ما يبرر وجودها؟ في الواقع، سيتم مشاركتها بين خيوط مختلفة. إذا كانت للقراءة فقط، فلن يكون ذلك مشكلة إذا كان من الممكن تهيئتها في وقت تكون فيه متأكدًا من وجود خيط نشط واحد فقط. نحن نعرف عمومًا كيفية تحديد هذه اللحظة. وهي عندما يبدأ تشغيل تطبيق الويب ولكنه لم يبدأ بعد في خدمة العملاء. إذا كانت هذه الحقول للقراءة/الكتابة، فيجب تنفيذ مزامنة الوصول إلى الحقول؛ وإلا، فإن الكارثة حتمية. سنوضح هذه المشكلة عندما نختبر طبقة [dao].</p>
+<p>إذا كان للسينجلتون حقول خاصة، فيجب أن تسأل نفسك على الفور عن سبب وجودها. هل هناك ما يبرر وجودها؟ في الواقع، سيتم مشاركتها بين خيوط مختلفة. إذا كانت للقراءة فقط، فلن يكون ذلك مشكلة إذا كان من الممكن تهيئتها في وقت تكون فيه متأكدًا من وجود خيط نشط واحد فقط. نحن نعرف عمومًا كيفية تحديد هذه اللحظة. وهي عندما يبدأ تشغيل تطبيق الويب ولكنه لم يبدأ بعد في خدمة العملاء. إذا كانت هذه الحقول للقراءة/الكتابة، فيجب تنفيذ مزامنة الوصول إلى الحقول؛ وإلا، فإن الكارثة حتمية. سنوضح هذه المشكلة عندما نختبر طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].</p>
 <ul>
-  <li>لا تحتوي فئة [DaoImpl] على منشئ. لذلك، سيتم استخدام منشئها الافتراضي.
+  <li>لا تحتوي فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] على منشئ. لذلك، سيتم استخدام منشئها الافتراضي.
   </li>
-  <li>الأسطر 19-38: سيتم استدعاء طريقة [init] عند إنشاء مثيل للطبقة [dao] الفردية. وهي تنشئ قائمة تضم ثلاثة أشخاص.
+  <li>الأسطر 19-38: سيتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] عند إنشاء مثيل للطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] الفردية. وهي تنشئ قائمة تضم ثلاثة أشخاص.
   </li>
-  <li>الأسطر 41-43: تنفذ طريقة [getAll] لواجهة [IDao]. وهي تُرجع مرجعًا إلى قائمة الأشخاص.
+  <li>الأسطر 41-43: تنفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getAll</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]. وهي تُرجع مرجعًا إلى قائمة الأشخاص.
   </li>
-  <li>الأسطر 46–55: تنفذ طريقة [getOne] لواجهة [IDao]. معلمتها هي معرف الشخص الذي يتم البحث عنه.
+  <li>الأسطر 46–55: تنفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getOne</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]. معلمتها هي معرف الشخص الذي يتم البحث عنه.
   </li>
 </ul>
 
-<p>لاسترداده، نستدعي طريقة خاصة [getPosition] في الأسطر 113–126. تُرجع هذه الطريقة الموضع في قائمة الشخص الذي يتم البحث عنه، أو -1 إذا لم يتم العثور على الشخص.</p>
-<p>إذا تم العثور على الشخص، فإن طريقة [getOne] ترجع مرجعًا (السطر 51) إلى <strong>نسخة</strong> من ذلك الشخص، وليس إلى الشخص نفسه. في الواقع، عندما يرغب المستخدم في تعديل شخص ما، يتم طلب المعلومات المتعلقة بهذا الشخص من طبقة [dao] وتمريرها إلى طبقة [web] للتعديل، في شكل مرجع إلى كائن [Person]. يعمل هذا المرجع كحاوية إدخال في نموذج التعديل. عندما يرسل المستخدم تغييراته في طبقة الويب، سيتم تعديل محتويات حاوية الإدخال. إذا كان الحاوية عبارة عن مرجع إلى الشخص الفعلي في [ArrayList] في طبقة [dao]، فسيتم تعديل ذلك الشخص حتى لو لم يتم تقديم التغييرات إلى طبقتي [service] و [dao]. هذه الأخيرة هي الطبقة الوحيدة المصرح لها بإدارة قائمة الأشخاص. لذلك، يجب أن تعمل طبقة الويب على نسخة من الشخص المراد تعديله. هنا، توفر طبقة [dao] هذه النسخة.</p>
-<p>إذا لم يتم العثور على الشخص الذي يتم البحث عنه، يتم إلقاء [DaoException] مع رمز الخطأ 2 (السطر 53).</p>
+<p>لاسترداده، نستدعي طريقة خاصة [<bdi dir="ltr" class="odt-ltr-term">getPosition</bdi>] في الأسطر 113–126. تُرجع هذه الطريقة الموضع في قائمة الشخص الذي يتم البحث عنه، أو -1 إذا لم يتم العثور على الشخص.</p>
+<p>إذا تم العثور على الشخص، فإن طريقة [<bdi dir="ltr" class="odt-ltr-term">getOne</bdi>] ترجع مرجعًا (السطر 51) إلى <strong>نسخة</strong> من ذلك الشخص، وليس إلى الشخص نفسه. في الواقع، عندما يرغب المستخدم في تعديل شخص ما، يتم طلب المعلومات المتعلقة بهذا الشخص من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] وتمريرها إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] للتعديل، في شكل مرجع إلى كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. يعمل هذا المرجع كحاوية إدخال في نموذج التعديل. عندما يرسل المستخدم تغييراته في طبقة الويب، سيتم تعديل محتويات حاوية الإدخال. إذا كان الحاوية عبارة عن مرجع إلى الشخص الفعلي في [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>] في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]، فسيتم تعديل ذلك الشخص حتى لو لم يتم تقديم التغييرات إلى طبقتي [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. هذه الأخيرة هي الطبقة الوحيدة المصرح لها بإدارة قائمة الأشخاص. لذلك، يجب أن تعمل طبقة الويب على نسخة من الشخص المراد تعديله. هنا، توفر طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هذه النسخة.</p>
+<p>إذا لم يتم العثور على الشخص الذي يتم البحث عنه، يتم إلقاء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] مع رمز الخطأ 2 (السطر 53).</p>
 <ul>
-  <li>الأسطر 94–104: تنفذ طريقة [deleteOne] لواجهة [IDao]. معلمتها هي معرف الشخص المراد حذفه. إذا كان الشخص المراد حذفه غير موجود، يتم إلقاء استثناء [DaoException] برمز الخطأ 2.
+  <li>الأسطر 94–104: تنفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]. معلمتها هي معرف الشخص المراد حذفه. إذا كان الشخص المراد حذفه غير موجود، يتم إلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] برمز الخطأ 2.
   </li>
 </ul>
 
 <ul>
-  <li>الأسطر 58–91: تنفذ طريقة [saveOne] الخاصة بواجهة [IDao]. معلمتها هي كائن [Person]. إذا كان معرف هذا الكائن هو -1، فهذا يعني أنه شخص جديد يتم إضافته. وإلا، فإنها تعدل الشخص الموجود في القائمة الذي يحمل هذا المعرف باستخدام القيم الموجودة في المعلمة.
+  <li>الأسطر 58–91: تنفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]. معلمتها هي كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. إذا كان معرف هذا الكائن هو -1، فهذا يعني أنه شخص جديد يتم إضافته. وإلا، فإنها تعدل الشخص الموجود في القائمة الذي يحمل هذا المعرف باستخدام القيم الموجودة في المعلمة.
   </li>
 </ul>
 
 <ol>
     <ul>
-      <li>السطر 60: يتم التحقق من صحة المعلمة [Person] بواسطة طريقة خاصة [check] محددة في الأسطر 129–155. تقوم هذه الطريقة بإجراء فحوصات أساسية على قيم الحقول المختلفة لـ [Person]. عندما يتم اكتشاف أي شذوذ، يتم إلقاء استثناء [DaoException] مع رمز خطأ محدد. نظرًا لأن طريقة [saveOne] لا تتعامل مع هذا الاستثناء، فسيتم تمريره إلى الطريقة المستدعية.
+      <li>السطر 60: يتم التحقق من صحة المعلمة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] بواسطة طريقة خاصة [<bdi dir="ltr" class="odt-ltr-term">check</bdi>] محددة في الأسطر 129–155. تقوم هذه الطريقة بإجراء فحوصات أساسية على قيم الحقول المختلفة لـ [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. عندما يتم اكتشاف أي شذوذ، يتم إلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] مع رمز خطأ محدد. نظرًا لأن طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] لا تتعامل مع هذا الاستثناء، فسيتم تمريره إلى الطريقة المستدعية.
       </li>
-      <li>السطر 62: إذا كان المعلمة [Person] تحتوي على معرف يساوي -1، فهذا يعني أنها عملية إضافة. تتم إضافة كائن [Person] إلى القائمة الداخلية للأشخاص (السطر 66)، مع أول معرف متاح (السطر 64)، ورقم إصدار يساوي 1 (السطر 65).
+      <li>السطر 62: إذا كان المعلمة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] تحتوي على معرف يساوي -1، فهذا يعني أنها عملية إضافة. تتم إضافة كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] إلى القائمة الداخلية للأشخاص (السطر 66)، مع أول معرف متاح (السطر 64)، ورقم إصدار يساوي 1 (السطر 65).
       </li>
-      <li>إذا كان للمعلمة [Person] معرف [id] غير -1، فإن هذا ينطوي على تعديل الشخص الموجود في القائمة الداخلية بهذا [id]. أولاً، نتحقق (الأسطر 70–75) من وجود الشخص المراد تعديله. إذا لم يكن الأمر كذلك، فإننا نطلق استثناء [DaoException] برمز الخطأ 2.
+      <li>إذا كان للمعلمة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] معرف [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] غير -1، فإن هذا ينطوي على تعديل الشخص الموجود في القائمة الداخلية بهذا [<bdi dir="ltr" class="odt-ltr-term">id</bdi>]. أولاً، نتحقق (الأسطر 70–75) من وجود الشخص المراد تعديله. إذا لم يكن الأمر كذلك، فإننا نطلق استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] برمز الخطأ 2.
       </li>
-      <li>إذا كان الشخص موجودًا بالفعل، فإننا نتحقق من أن إصداره الحالي يطابق إصدار المعلمة [Person]، التي تحتوي على التغييرات المطلوب تطبيقها على الأصل. إذا لم يكن الأمر كذلك، فهذا يعني أن المستخدم الذي يحاول تعديل الشخص لا يمتلك أحدث إصدار. نبلغه بذلك عن طريق إلقاء استثناء [DaoException] برمز الخطأ 3 (السطور 79–80).
+      <li>إذا كان الشخص موجودًا بالفعل، فإننا نتحقق من أن إصداره الحالي يطابق إصدار المعلمة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]، التي تحتوي على التغييرات المطلوب تطبيقها على الأصل. إذا لم يكن الأمر كذلك، فهذا يعني أن المستخدم الذي يحاول تعديل الشخص لا يمتلك أحدث إصدار. نبلغه بذلك عن طريق إلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] برمز الخطأ 3 (السطور 79–80).
       </li>
       <li>إذا سارت الأمور على ما يرام، يتم إجراء التغييرات على سجل الشخص الأصلي (الأسطر 85–90)
       </li>
     </ul>
 </ol>
 
-<p>من الواضح أن هذه الطريقة يجب أن تكون متزامنة. على سبيل المثال، بين اللحظة التي نتحقق فيها من أن الشخص المراد تعديله موجود بالفعل واللحظة التي يتم فيها إجراء التعديل، قد يكون شخص آخر قد أزال هذا الشخص من القائمة. لذلك يجب إعلان الطريقة على أنها [synchronized] لضمان أن يقوم مؤشر ترابط واحد فقط بتنفيذها في كل مرة. وينطبق الأمر نفسه على الطرق الأخرى لواجهة [IDao]. نحن لا نفعل ذلك، ونفضل نقل هذه المزامنة إلى طبقة [service]. لتسليط الضوء على مشكلات المزامنة، أثناء اختبار طبقة [dao]، سنوقف تنفيذ [saveOne] لمدة 10 مللي ثانية (السطر 83) بين اللحظة التي نعلم فيها أنه يمكننا إجراء التعديل واللحظة التي نقوم فيها بإجرائه فعليًا. سيفقد الخيط الذي ينفذ [saveOne] بعد ذلك وحدة المعالجة المركزية (CPU) لصالح خيط آخر. وهذا يزيد من فرص ظهور تعارضات في الوصول إلى قائمة الأشخاص.</p>
-<h2 id="145-dao">14.5. <span style="color: #4f81bd">اختبارات طبقة [DAO]</span></h2>
-<p>يتم كتابة اختبار JUnit لطبقة [dao]:</p>
+<p>من الواضح أن هذه الطريقة يجب أن تكون متزامنة. على سبيل المثال، بين اللحظة التي نتحقق فيها من أن الشخص المراد تعديله موجود بالفعل واللحظة التي يتم فيها إجراء التعديل، قد يكون شخص آخر قد أزال هذا الشخص من القائمة. لذلك يجب إعلان الطريقة على أنها [<bdi dir="ltr" class="odt-ltr-term">synchronized</bdi>] لضمان أن يقوم مؤشر ترابط واحد فقط بتنفيذها في كل مرة. وينطبق الأمر نفسه على الطرق الأخرى لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]. نحن لا نفعل ذلك، ونفضل نقل هذه المزامنة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. لتسليط الضوء على مشكلات المزامنة، أثناء اختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]، سنوقف تنفيذ [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] لمدة 10 مللي ثانية (السطر 83) بين اللحظة التي نعلم فيها أنه يمكننا إجراء التعديل واللحظة التي نقوم فيها بإجرائه فعليًا. سيفقد الخيط الذي ينفذ [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] بعد ذلك وحدة المعالجة المركزية (<bdi dir="ltr" class="odt-ltr-term">CPU</bdi>) لصالح خيط آخر. وهذا يزيد من فرص ظهور تعارضات في الوصول إلى قائمة الأشخاص.</p>
+<h2 id="145-dao">14.5. <span style="color: #4f81bd">اختبارات طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
+<p>يتم كتابة اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DE0000005224F7D433.png" width="155" height="57" style="display:inline-block; margin:4px;width:4.11cm;height:1.519cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE0000005224F7D433.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B3000000A02F7C2187.png" width="125" height="112" style="display:inline-block; margin:4px;width:3.311cm;height:2.96cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B3000000A02F7C2187.png" /></td></tr></table>
 
-<p>[TestDao] هو اختبار JUnit. لتسليط الضوء على مشكلات الوصول المتزامن إلى قائمة الأشخاص، يتم إنشاء مؤشرات ترابط من النوع [ThreadDaoMajEnfants]. وهي مسؤولة عن زيادة عدد أطفال شخص معين بمقدار 1.</p>
-<p>يحتوي [TestDao] على خمسة اختبارات، من [test1] إلى [test5]. نقدم هنا اثنين منها فقط؛ وندعو القراء لاستكشاف الاختبارات الأخرى في شفرة المصدر المرتبطة بهذا المقال.</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">TestDao</bdi>] هو اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi> لتسليط الضوء على مشكلات الوصول المتزامن إلى قائمة الأشخاص، يتم إنشاء مؤشرات ترابط من النوع [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>]. وهي مسؤولة عن زيادة عدد أطفال شخص معين بمقدار 1.</p>
+<p>يحتوي [<bdi dir="ltr" class="odt-ltr-term">TestDao</bdi>] على خمسة اختبارات، من [<bdi dir="ltr" class="odt-ltr-term">test1</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">test5</bdi>]. نقدم هنا اثنين منها فقط؛ وندعو القراء لاستكشاف الاختبارات الأخرى في شفرة المصدر المرتبطة بهذا المقال.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -1934,13 +1936,13 @@
 <a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 9: إشارة إلى تنفيذ طبقة [dao] قيد الاختبار
+  <li>السطر 9: إشارة إلى تنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] قيد الاختبار
   </li>
-  <li>الأسطر 12–15: منشئ اختبار JUnit. يقوم بإنشاء مثيل من النوع [DaoImpl] من طبقة [dao] المراد اختبارها وتهيئته.
+  <li>الأسطر 12–15: منشئ اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi> يقوم بإنشاء مثيل من النوع [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] المراد اختبارها وتهيئته.
   </li>
 </ul>
 
-<p>تختبر الطريقة [test1] الطرق الأربع لواجهة [IDao] على النحو التالي:</p>
+<p>تختبر الطريقة [<bdi dir="ltr" class="odt-ltr-term">test1</bdi>] الطرق الأربع لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] على النحو التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -2028,27 +2030,27 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[2,1,Mélanie,Humbort,12/01/1985,false,1]
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>[3,1,Charles,Lemarchand,01/01/1986,false,0]
 </code></pre></div>
-<p>ثم يقوم الاختبار بإضافة شخص، وتعديله، وحذفه. وبالتالي، يتم استخدام الطرق الأربع لواجهة [IDao].</p>
+<p>ثم يقوم الاختبار بإضافة شخص، وتعديله، وحذفه. وبالتالي، يتم استخدام الطرق الأربع لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>].</p>
 <ul>
-  <li>الأسطر 8–10: تتم إضافة شخص جديد (id=-1).
+  <li>الأسطر 8–10: تتم إضافة شخص جديد (<bdi dir="ltr" class="odt-ltr-term">id</bdi>=-1).
   </li>
   <li>السطر 11: نسترد معرّف الشخص المضاف لأن عملية الإضافة خصصت له معرّفًا. قبل ذلك، لم يكن لديه معرّف.
   </li>
-  <li>الأسطر 13-14: نطلب من طبقة [dao] نسخة من الشخص الذي تمت إضافته للتو. ضع في اعتبارك أنه إذا لم يتم العثور على الشخص المطلوب، فإن طبقة [dao] ترمي استثناءً. سيؤدي هذا إلى تعطل في السطر 13. كان بإمكاننا التعامل مع هذه الحالة بشكل أنظف. في السطر 14، نتحقق من اسم الشخص الذي تم استرداده.
+  <li>الأسطر 13-14: نطلب من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] نسخة من الشخص الذي تمت إضافته للتو. ضع في اعتبارك أنه إذا لم يتم العثور على الشخص المطلوب، فإن طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] ترمي استثناءً. سيؤدي هذا إلى تعطل في السطر 13. كان بإمكاننا التعامل مع هذه الحالة بشكل أنظف. في السطر 14، نتحقق من اسم الشخص الذي تم استرداده.
   </li>
-  <li>السطران 16-17: نقوم بتعديل هذا الاسم ونطلب من طبقة [DAO] حفظ التغييرات.
+  <li>السطران 16-17: نقوم بتعديل هذا الاسم ونطلب من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] حفظ التغييرات.
   </li>
-  <li>السطران 19-20: نطلب من طبقة [DAO] نسخة من الشخص الذي تمت إضافته للتو ونتحقق من اسمه الجديد.
+  <li>السطران 19-20: نطلب من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] نسخة من الشخص الذي تمت إضافته للتو ونتحقق من اسمه الجديد.
   </li>
   <li>السطر 22: حذف الشخص الذي تمت إضافته في بداية الاختبار.
   </li>
-  <li>الأسطر 23-34: نطلب نسخة من الشخص الذي تم حذفه للتو من طبقة [dao]. يجب أن تتلقى [DaoException] برمز 2.
+  <li>الأسطر 23-34: نطلب نسخة من الشخص الذي تم حذفه للتو من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. يجب أن تتلقى [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] برمز 2.
   </li>
   <li>السطران 36-37: يتم طلب قائمة الأشخاص مرة أخرى. يجب أن نحصل على نفس القائمة الموجودة في بداية الاختبار.
   </li>
 </ul>
 
-<p>تهدف طريقة [test4] إلى تسليط الضوء على المشكلات المتعلقة بالوصول المتزامن إلى طرق طبقة [dao]. تذكر أن هذه الطرق لم تتم مزامنتها. فيما يلي كود الاختبار:</p>
+<p>تهدف طريقة [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] إلى تسليط الضوء على المشكلات المتعلقة بالوصول المتزامن إلى طرق طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. تذكر أن هذه الطرق لم تتم مزامنتها. فيما يلي كود الاختبار:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -2122,29 +2124,29 @@
 <a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>الأسطر 3–6: نضيف شخصًا P بدون أطفال إلى القائمة. نسجل [id] الخاص به (السطر 6).
+  <li>الأسطر 3–6: نضيف شخصًا <bdi dir="ltr" class="odt-ltr-term">P</bdi> بدون أطفال إلى القائمة. نسجل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] الخاص به (السطر 6).
   </li>
-  <li>الأسطر 7–13: نطلق N خيوط. سيقوم كل منها بزيادة عدد أطفال الشخص P بمقدار 1. في النهاية، يجب أن يكون لدى الشخص P N أطفال.
+  <li>الأسطر 7–13: نطلق <bdi dir="ltr" class="odt-ltr-term">N</bdi> خيوط. سيقوم كل منها بزيادة عدد أطفال الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> بمقدار 1. في النهاية، يجب أن يكون لدى الشخص <bdi dir="ltr" class="odt-ltr-term">P N</bdi> أطفال.
   </li>
-  <li>الأسطر 15–17: تنتظر طريقة [test4] التي أطلقت الخيوط N حتى تنتهي من عملها قبل التحقق من العدد الجديد لأطفال الشخص P.
+  <li>الأسطر 15–17: تنتظر طريقة [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] التي أطلقت الخيوط <bdi dir="ltr" class="odt-ltr-term">N</bdi> حتى تنتهي من عملها قبل التحقق من العدد الجديد لأطفال الشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi>
   </li>
-  <li>الأسطر 18–21: نسترجع الشخص P ونتحقق من أن عدد أطفاله هو N.
+  <li>الأسطر 18–21: نسترجع الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> ونتحقق من أن عدد أطفاله هو <bdi dir="ltr" class="odt-ltr-term">N.</bdi>
   </li>
-  <li>الأسطر 22–35: يتم إزالة الشخص P، ونتحقق من أنه لم يعد موجودًا في القائمة.
+  <li>الأسطر 22–35: يتم إزالة الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi>، ونتحقق من أنه لم يعد موجودًا في القائمة.
   </li>
 </ul>
 
-<p>في السطر 11، نرى أن الخيوط من النوع [ThreadDaoMajEnfants]. يحتوي منشئ هذا النوع على ثلاثة معلمات:</p>
+<p>في السطر 11، نرى أن الخيوط من النوع [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>]. يحتوي منشئ هذا النوع على ثلاثة معلمات:</p>
 <ol>
   <li>الاسم الممنوح للخيط، ويُستخدم لتتبعه عبر السجلات
   </li>
-  <li>إشارة إلى طبقة [dao] حتى يتمكن الخيط من الوصول إليها
+  <li>إشارة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] حتى يتمكن الخيط من الوصول إليها
   </li>
   <li>معرف الشخص الذي من المفترض أن يعمل عليه الخيط
   </li>
 </ol>
 
-<p>نوع [ThreadDaoMajEnfants] هو كما يلي:</p>
+<p>نوع [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>] هو كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -2310,38 +2312,38 @@
 <a id="__codelineno-8-82" name="__codelineno-8-82"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 9: [ThreadDaoMajEnfants] هو بالفعل مؤشر ترابط
+  <li>السطر 9: [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>] هو بالفعل مؤشر ترابط
   </li>
   <li>الأسطر 18–22: المنشئ الذي يقوم بتهيئة الخيط بثلاث معلومات 
     <ol>
-      <li>الاسم [name] الممنوح للخيط
+      <li>الاسم [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] الممنوح للخيط
       </li>
-      <li>مرجع [dao] إلى طبقة [dao]. لاحظ مرة أخرى أننا نعمل مع نوع الواجهة [IDao] وليس نوع التنفيذ [DaoImpl].
+      <li>مرجع [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. لاحظ مرة أخرى أننا نعمل مع نوع الواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] وليس نوع التنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>].
       </li>
-      <li>المعرف [id] للشخص الذي سيعمل عليه الخيط
+      <li>المعرف [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] للشخص الذي سيعمل عليه الخيط
       </li>
     </ol>
   </li>
 </ul>
 
-<p>عندما يقوم [test4] بتشغيل مؤشر ترابط [ThreadDaoMajEnfants] (السطر 12 من test4)، يتم تنفيذ طريقة [run] الخاصة به (السطر 25):</p>
+<p>عندما يقوم [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] بتشغيل مؤشر ترابط [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>] (السطر 12 من <bdi dir="ltr" class="odt-ltr-term">test4</bdi>)، يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] الخاصة به (السطر 25):</p>
 <ul>
-  <li>الأسطر 78-81: تسمح الطريقة الخاصة [suivi] بتسجيل الشاشة. تستخدمها طريقة [run] لتتبع تنفيذ الخيط.
+  <li>الأسطر 78-81: تسمح الطريقة الخاصة [<bdi dir="ltr" class="odt-ltr-term">suivi</bdi>] بتسجيل الشاشة. تستخدمها طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] لتتبع تنفيذ الخيط.
   </li>
-  <li>يحاول الخيط زيادة عدد أطفال الشخص P ذي المعرف [id] بمقدار 1. قد يتطلب هذا التحديث عدة محاولات. لنفكر في خيطين [TH1] و [TH2]. يطلب [TH1] نسخة من الشخص P من طبقة [dao]. يحصل عليها ويلاحظ أن إصدارها هو V1. يتم مقاطعة [TH1]. يقوم [TH2]، الذي كان يتبعه، بنفس الشيء ويحصل على نفس الإصدار V1 للشخص P. يتم مقاطعة [TH2]. يستأنف [TH2] التحكم، ويزيد عدد الأبناء لـ P، ويحفظ تغييراته. نعلم أن هذه التغييرات محفوظة الآن وأن إصدار P سيتغير إلى V2. انتهى [TH1] من عمله. يستأنف [TH2] التحكم ويفعل الشيء نفسه. سيتم رفض تحديثه لـ P لأنه يحتفظ بنسخة من P في الإصدار V1، في حين أن P الأصلي أصبح الآن في الإصدار V2. يجب على [TH2] بعد ذلك تكرار الدورة بأكملها [قراءة -&gt; تحديث -&gt; حفظ]. هذا هو سبب وجود الحلقة في الأسطر 32–72. في هذه الحلقة، يقوم الخيط بما يلي:
+  <li>يحاول الخيط زيادة عدد أطفال الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> ذي المعرف [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] بمقدار 1. قد يتطلب هذا التحديث عدة محاولات. لنفكر في خيطين [<bdi dir="ltr" class="odt-ltr-term">TH1</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">TH2</bdi>]. يطلب [<bdi dir="ltr" class="odt-ltr-term">TH1</bdi>] نسخة من الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. يحصل عليها ويلاحظ أن إصدارها هو <bdi dir="ltr" class="odt-ltr-term">V1.</bdi> يتم مقاطعة [<bdi dir="ltr" class="odt-ltr-term">TH1</bdi>]. يقوم [<bdi dir="ltr" class="odt-ltr-term">TH2</bdi>]، الذي كان يتبعه، بنفس الشيء ويحصل على نفس الإصدار <bdi dir="ltr" class="odt-ltr-term">V1</bdi> للشخص <bdi dir="ltr" class="odt-ltr-term">P.</bdi> يتم مقاطعة [<bdi dir="ltr" class="odt-ltr-term">TH2</bdi>]. يستأنف [<bdi dir="ltr" class="odt-ltr-term">TH2</bdi>] التحكم، ويزيد عدد الأبناء لـ <bdi dir="ltr" class="odt-ltr-term">P</bdi>، ويحفظ تغييراته. نعلم أن هذه التغييرات محفوظة الآن وأن إصدار <bdi dir="ltr" class="odt-ltr-term">P</bdi> سيتغير إلى <bdi dir="ltr" class="odt-ltr-term">V2.</bdi> انتهى [<bdi dir="ltr" class="odt-ltr-term">TH1</bdi>] من عمله. يستأنف [<bdi dir="ltr" class="odt-ltr-term">TH2</bdi>] التحكم ويفعل الشيء نفسه. سيتم رفض تحديثه لـ <bdi dir="ltr" class="odt-ltr-term">P</bdi> لأنه يحتفظ بنسخة من <bdi dir="ltr" class="odt-ltr-term">P</bdi> في الإصدار <bdi dir="ltr" class="odt-ltr-term">V1</bdi>، في حين أن <bdi dir="ltr" class="odt-ltr-term">P</bdi> الأصلي أصبح الآن في الإصدار <bdi dir="ltr" class="odt-ltr-term">V2.</bdi> يجب على [<bdi dir="ltr" class="odt-ltr-term">TH2</bdi>] بعد ذلك تكرار الدورة بأكملها [قراءة -&gt; تحديث -&gt; حفظ]. هذا هو سبب وجود الحلقة في الأسطر 32–72. في هذه الحلقة، يقوم الخيط بما يلي:
   </li>
-  <li>يطلب نسخة من الشخص P لتعديلها (السطر 34)
+  <li>يطلب نسخة من الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> لتعديلها (السطر 34)
   </li>
-  <li>ينتظر 10 مللي ثانية (السطر 43). هذا أمر مصطنع ويهدف إلى مقاطعة الخيط بين قراءة الشخص P وتحديثه فعليًا في قائمة الأشخاص من أجل زيادة احتمالية حدوث تعارضات.
+  <li>ينتظر 10 مللي ثانية (السطر 43). هذا أمر مصطنع ويهدف إلى مقاطعة الخيط بين قراءة الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> وتحديثه فعليًا في قائمة الأشخاص من أجل زيادة احتمالية حدوث تعارضات.
   </li>
-  <li>يزيد عدد أبناء P (السطر 54) ويحفظ P (السطر 56). إذا لم يكن لدى الخيط الإصدار الصحيح من P، فسيتم إلقاء استثناء بواسطة طبقة [dao]. ثم نسترد رمز الاستثناء (السطر 61) للتحقق من أنه هو بالفعل الرمز 3 (إصدار غير صحيح من P). إذا لم يكن الأمر كذلك، يتم إعادة إلقاء الاستثناء إلى الطريقة المستدعية، وهي في النهاية طريقة الاختبار [test4]. إذا كان لدينا استثناء الرمز 3، فإننا نعيد تشغيل الدورة [قراءة -&gt; تحديث -&gt; حفظ]. إذا لم يكن هناك استثناء، فإن التحديث قد اكتمل وانتهى عمل الخيط.
+  <li>يزيد عدد أبناء <bdi dir="ltr" class="odt-ltr-term">P</bdi> (السطر 54) ويحفظ <bdi dir="ltr" class="odt-ltr-term">P</bdi> (السطر 56). إذا لم يكن لدى الخيط الإصدار الصحيح من <bdi dir="ltr" class="odt-ltr-term">P</bdi>، فسيتم إلقاء استثناء بواسطة طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. ثم نسترد رمز الاستثناء (السطر 61) للتحقق من أنه هو بالفعل الرمز 3 (إصدار غير صحيح من <bdi dir="ltr" class="odt-ltr-term">P</bdi>). إذا لم يكن الأمر كذلك، يتم إعادة إلقاء الاستثناء إلى الطريقة المستدعية، وهي في النهاية طريقة الاختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>]. إذا كان لدينا استثناء الرمز 3، فإننا نعيد تشغيل الدورة [قراءة -&gt; تحديث -&gt; حفظ]. إذا لم يكن هناك استثناء، فإن التحديث قد اكتمل وانتهى عمل الخيط.
   </li>
 </ul>
 
 <p>ماذا تظهر الاختبارات؟</p>
 <p>في التكوين الأول الذي تم اختباره:</p>
 <ul>
-  <li>نقوم بتعليق عبارة الانتظار في طريقة [saveOne] في [DaoImpl] (السطر 83، القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>).
+  <li>نقوم بتعليق عبارة الانتظار في طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] (السطر 83، القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>).
   </li>
 </ul>
 
@@ -2349,7 +2351,7 @@
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        //wait(10);
 </code></pre></div>
 <ul>
-  <li>تقوم طريقة [test4] بإنشاء 100 مؤشر ترابط (السطر 8، القسم<a href="#dao-test4"><u><span style="color: #0563c1"> 14.5</span></u></a>).
+  <li>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] بإنشاء 100 مؤشر ترابط (السطر 8، القسم<a href="#dao-test4"><u><span style="color: #0563c1"> 14.5</span></u></a>).
   </li>
 </ul>
 
@@ -2361,7 +2363,7 @@
 <p>نجحت جميع الاختبارات الخمسة.</p>
 <p>في التكوين الثاني الذي تم اختباره:</p>
 <ul>
-  <li>تم إلغاء تعليق الأمر &quot;wait&quot; في طريقة [saveOne] في [DaoImpl] (السطر 83، القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>).
+  <li>تم إلغاء تعليق الأمر &quot;<bdi dir="ltr" class="odt-ltr-term">wait</bdi>&quot; في طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] (السطر 83، القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>).
   </li>
 </ul>
 
@@ -2369,7 +2371,7 @@
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>        wait(10);
 </code></pre></div>
 <ul>
-  <li>تقوم طريقة [test4] بإنشاء مؤشرين (السطر 8، القسم<a href="#dao-test4"><u><span style="color: #0563c1"> 14.5</span></u></a>).
+  <li>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] بإنشاء مؤشرين (السطر 8، القسم<a href="#dao-test4"><u><span style="color: #0563c1"> 14.5</span></u></a>).
   </li>
 </ul>
 
@@ -2379,8 +2381,8 @@
 <p>تم الحصول على النتائج التالية:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001F9000000EBCCF3A2BD.png" width="353" height="164" style="display:inline-block; margin:4px;width:9.35cm;height:4.352cm;" class="odt-zoomable" data-zoom-src="images/10000000000001F9000000EBCCF3A2BD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018300000085ABB4CDD0.png" width="271" height="93" style="display:inline-block; margin:4px;width:7.17cm;height:2.464cm;" class="odt-zoomable" data-zoom-src="images/100000000000018300000085ABB4CDD0.png" /></td></tr></table>
 
-<p>فشل اختبار [test4]. أنشأنا خيطين، كل منهما مكلف بزيادة عدد أبناء الشخص P، الذي كان لديه في البداية 0، بمقدار 1. لذلك توقعنا أن يكون هناك طفلان بعد تشغيل الخيطين، لكن لدينا طفل واحد فقط.</p>
-<p>دعونا نفحص سجلات الشاشة من [test4] لفهم ما حدث:</p>
+<p>فشل اختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>]. أنشأنا خيطين، كل منهما مكلف بزيادة عدد أبناء الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi>، الذي كان لديه في البداية 0، بمقدار 1. لذلك توقعنا أن يكون هناك طفلان بعد تشغيل الخيطين، لكن لدينا طفل واحد فقط.</p>
+<p>دعونا نفحص سجلات الشاشة من [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] لفهم ما حدث:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
@@ -2404,15 +2406,15 @@
 <ul>
   <li>السطر 1: يبدأ الخيط رقم 0 عمله
   </li>
-  <li>السطر 2: استرد نسخة من الشخص P ووجد أن عدد الأبناء هو 0
+  <li>السطر 2: استرد نسخة من الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> ووجد أن عدد الأبناء هو 0
   </li>
-  <li>السطر 3: يصادف [Thread.sleep(10)] في طريقة [run] الخاصة به، وبالتالي يتوقف مؤقتًا عند الوقت [1145536368171] (مللي ثانية)
+  <li>السطر 3: يصادف [<bdi dir="ltr" class="odt-ltr-term">Thread.sleep</bdi>(10)] في طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] الخاصة به، وبالتالي يتوقف مؤقتًا عند الوقت [1145536368171] (مللي ثانية)
   </li>
   <li>السطر 4: ثم يستحوذ الخيط رقم 1 على المعالج ويبدأ عمله
   </li>
-  <li>السطر 5: استرد نسخة من الشخص P ووجد أن عدد الأطفال هو 0
+  <li>السطر 5: استرد نسخة من الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> ووجد أن عدد الأطفال هو 0
   </li>
-  <li>السطر 6: يصادف [Thread.sleep(10)] في طريقة [run] الخاصة به، وبالتالي يتوقف مؤقتًا
+  <li>السطر 6: يصادف [<bdi dir="ltr" class="odt-ltr-term">Thread.sleep</bdi>(10)] في طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] الخاصة به، وبالتالي يتوقف مؤقتًا
   </li>
   <li>السطر 7: يستعيد الخيط 0 وحدة المعالجة المركزية في الوقت [1145536368187] (مللي ثانية)، أي بعد 16 مللي ثانية من فقدانها.
   </li>
@@ -2424,8 +2426,8 @@
   </li>
 </ul>
 
-<p>السؤال هو: لماذا تمكن الخيط رقم 1 من إجراء التحديث في حين أنه، في العادة، لم يعد يمتلك النسخة الصحيحة من الشخص P، التي تم تحديثها للتو بواسطة الخيط رقم 0؟</p>
-<p>أولاً، يمكننا ملاحظة وجود شذوذ بين السطرين 7 و 8: يبدو أن الخيط رقم 0 فقد وحدة المعالجة المركزية (CPU) بين هذين السطرين لصالح الخيط رقم 1. ماذا كان يفعل في تلك اللحظة؟ كان ينفذ طريقة [saveOne] الخاصة بطبقة [dao]. تحتوي هذه الطريقة على الهيكل التالي (انظر القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>):</p>
+<p>السؤال هو: لماذا تمكن الخيط رقم 1 من إجراء التحديث في حين أنه، في العادة، لم يعد يمتلك النسخة الصحيحة من الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi>، التي تم تحديثها للتو بواسطة الخيط رقم 0؟</p>
+<p>أولاً، يمكننا ملاحظة وجود شذوذ بين السطرين 7 و 8: يبدو أن الخيط رقم 0 فقد وحدة المعالجة المركزية (<bdi dir="ltr" class="odt-ltr-term">CPU</bdi>) بين هذين السطرين لصالح الخيط رقم 1. ماذا كان يفعل في تلك اللحظة؟ كان ينفذ طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] الخاصة بطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. تحتوي هذه الطريقة على الهيكل التالي (انظر القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
@@ -2449,48 +2451,48 @@
 <a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>نفذ الخيط #0 [saveOne] وانتقل إلى السطر 8، حيث اضطر إلى التخلي عن وحدة المعالجة المركزية. في غضون ذلك، قرأ نسخة الشخص P، التي كانت 1 لأن الشخص P لم يتم تحديثه بعد.
+  <li>نفذ الخيط #0 [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] وانتقل إلى السطر 8، حيث اضطر إلى التخلي عن وحدة المعالجة المركزية. في غضون ذلك، قرأ نسخة الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi>، التي كانت 1 لأن الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> لم يتم تحديثه بعد.
   </li>
-  <li>وبما أن وحدة المعالجة المركزية (CPU) أصبحت متاحة، تولى الخيط رقم 1 زمام الأمور. وقام بدوره بتنفيذ [saveOne] ووصل إلى السطر 8، حيث اضطر إلى تحرير وحدة المعالجة المركزية. وفي غضون ذلك، قرأ إصدار الشخص P، الذي كان 1 لأن الشخص P لم يتم تحديثه بعد.
+  <li>وبما أن وحدة المعالجة المركزية (<bdi dir="ltr" class="odt-ltr-term">CPU</bdi>) أصبحت متاحة، تولى الخيط رقم 1 زمام الأمور. وقام بدوره بتنفيذ [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] ووصل إلى السطر 8، حيث اضطر إلى تحرير وحدة المعالجة المركزية. وفي غضون ذلك، قرأ إصدار الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi>، الذي كان 1 لأن الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> لم يتم تحديثه بعد.
   </li>
-  <li>نظرًا لأن المعالج أصبح متاحًا، استحوذ عليه الخيط رقم 0. بدءًا من السطر 9، قام بإجراء التحديث الخاص به وقام بتعيين عدد الأبناء إلى 1. ثم انتهت طريقة [run] للخيط رقم 0، وعرض الخيط السجل الذي يفيد بأنه قام بتعيين عدد الأبناء إلى 1 (السطر 9).
+  <li>نظرًا لأن المعالج أصبح متاحًا، استحوذ عليه الخيط رقم 0. بدءًا من السطر 9، قام بإجراء التحديث الخاص به وقام بتعيين عدد الأبناء إلى 1. ثم انتهت طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] للخيط رقم 0، وعرض الخيط السجل الذي يفيد بأنه قام بتعيين عدد الأبناء إلى 1 (السطر 9).
   </li>
-  <li>بما أن المعالج أصبح متاحًا، فقد ورثه الخيط رقم 1. بدءًا من السطر 9، قام بإجراء التحديث الخاص به وقام بتعيين عدد الأبناء إلى 1. لماذا 1؟ لأنه يحتفظ بنسخة من P مع تعيين عدد الأبناء إلى 0. وهذا ما يشير إليه السجل (السطر 5). ثم انتهت طريقة [run] للخيط رقم 1، وعرض الخيط السجل الذي يفيد بأنه قام بتعيين عدد الأبناء إلى 1 (السطر 10).
+  <li>بما أن المعالج أصبح متاحًا، فقد ورثه الخيط رقم 1. بدءًا من السطر 9، قام بإجراء التحديث الخاص به وقام بتعيين عدد الأبناء إلى 1. لماذا 1؟ لأنه يحتفظ بنسخة من <bdi dir="ltr" class="odt-ltr-term">P</bdi> مع تعيين عدد الأبناء إلى 0. وهذا ما يشير إليه السجل (السطر 5). ثم انتهت طريقة [<bdi dir="ltr" class="odt-ltr-term">run</bdi>] للخيط رقم 1، وعرض الخيط السجل الذي يفيد بأنه قام بتعيين عدد الأبناء إلى 1 (السطر 10).
   </li>
 </ul>
 
-<p>من أين تأتي المشكلة؟ تنبع من حقيقة أن الخيط رقم 0 لم يكن لديه الوقت لتثبيت تغييره وبالتالي تحديث إصدار الشخص P قبل أن يحاول الخيط رقم 1 قراءة ذلك الإصدار للتحقق مما إذا كان الشخص P قد تغير. هذا السيناريو غير محتمل ولكنه ليس مستحيلاً. اضطررنا إلى إجبار الخيط رقم 0 على فقدان وحدة المعالجة المركزية (CPU) لجعله يظهر مع خيطين فقط. بدون هذا الحل البديل، فشلت التهيئة السابقة في إعادة إنتاج هذا السيناريو نفسه مع 100 خيط. كان اختبار [test4] ناجحًا.</p>
-<p>ما هو الحل؟ لا شك أن هناك عدة حلول. أحدها، وهو سهل التنفيذ، هو مزامنة طريقة [saveOne]:</p>
+<p>من أين تأتي المشكلة؟ تنبع من حقيقة أن الخيط رقم 0 لم يكن لديه الوقت لتثبيت تغييره وبالتالي تحديث إصدار الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> قبل أن يحاول الخيط رقم 1 قراءة ذلك الإصدار للتحقق مما إذا كان الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> قد تغير. هذا السيناريو غير محتمل ولكنه ليس مستحيلاً. اضطررنا إلى إجبار الخيط رقم 0 على فقدان وحدة المعالجة المركزية (<bdi dir="ltr" class="odt-ltr-term">CPU</bdi>) لجعله يظهر مع خيطين فقط. بدون هذا الحل البديل، فشلت التهيئة السابقة في إعادة إنتاج هذا السيناريو نفسه مع 100 خيط. كان اختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] ناجحًا.</p>
+<p>ما هو الحل؟ لا شك أن هناك عدة حلول. أحدها، وهو سهل التنفيذ، هو مزامنة طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    public <span style="font-weight:bold">synchronized</span> void saveOne(Personne personne)</span></span>
 </code></pre></div>
 
-<p>تضمن الكلمة الرئيسية [synchronized] أن يتم تنفيذ الطريقة بواسطة مؤشر ترابط واحد فقط في كل مرة. وبالتالي، لن يُسمح للمؤشر الترابط رقم 1 بتنفيذ [saveOne] إلا بعد خروج المؤشر الترابط رقم 0 منها. يمكننا عندئذ التأكد من أن نسخة الشخص P ستكون قد تغيرت بحلول الوقت الذي يدخل فيه المؤشر الترابط رقم 1 إلى [saveOne]. سيتم عندئذ رفض تحديثه لأنه لن يكون لديه النسخة الصحيحة من P.</p>
-<p>هذه هي الطرق الأربع لطبقة [dao] التي تحتاج إلى التزامن. ومع ذلك، قررنا الإبقاء على هذه الطبقة كما هي ونقل التزامن إلى طبقة [service]. وهناك عدة أسباب لذلك:</p>
+<p>تضمن الكلمة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">synchronized</bdi>] أن يتم تنفيذ الطريقة بواسطة مؤشر ترابط واحد فقط في كل مرة. وبالتالي، لن يُسمح للمؤشر الترابط رقم 1 بتنفيذ [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] إلا بعد خروج المؤشر الترابط رقم 0 منها. يمكننا عندئذ التأكد من أن نسخة الشخص <bdi dir="ltr" class="odt-ltr-term">P</bdi> ستكون قد تغيرت بحلول الوقت الذي يدخل فيه المؤشر الترابط رقم 1 إلى [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>]. سيتم عندئذ رفض تحديثه لأنه لن يكون لديه النسخة الصحيحة من <bdi dir="ltr" class="odt-ltr-term">P.</bdi></p>
+<p>هذه هي الطرق الأربع لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] التي تحتاج إلى التزامن. ومع ذلك، قررنا الإبقاء على هذه الطبقة كما هي ونقل التزامن إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وهناك عدة أسباب لذلك:</p>
 <ul>
-  <li>نفترض أن الوصول إلى طبقة [dao] يحدث دائمًا من خلال طبقة [service]. وهذا هو الحال في تطبيق الويب الخاص بنا.
+  <li>نفترض أن الوصول إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] يحدث دائمًا من خلال طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وهذا هو الحال في تطبيق الويب الخاص بنا.
   </li>
-  <li>قد يكون من الضروري أيضًا مزامنة الوصول إلى طرق طبقة [service] لأسباب أخرى غير تلك التي تدفعنا إلى مزامنة طرق طبقة [dao]. في هذه الحالة، لا توجد حاجة لمزامنة طرق طبقة [dao]. إذا كنا متأكدين من أن:
+  <li>قد يكون من الضروري أيضًا مزامنة الوصول إلى طرق طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لأسباب أخرى غير تلك التي تدفعنا إلى مزامنة طرق طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. في هذه الحالة، لا توجد حاجة لمزامنة طرق طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. إذا كنا متأكدين من أن:
   </li>
-  <li>أن كل الوصول إلى طبقة [DAO] يمر عبر طبقة [service]
+  <li>أن كل الوصول إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] يمر عبر طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
   <li>يستخدم خيط واحد فقط في كل مرة طبقة [الخدمة]
   </li>
 </ul>
 
-<p>فإننا يمكننا أن نكون على يقين من أن أساليب طبقة [DAO] لن يتم تنفيذها بواسطة خيطين في نفس الوقت.</p>
-<p>سنستكشف الآن طبقة [service].</p>
-<h2 id="146-service">14.6. <span style="color: #4f81bd">طبقة [service]</span></h2>
-<p>تتكون طبقة [service] من الفئات والواجهات التالية:</p>
+<p>فإننا يمكننا أن نكون على يقين من أن أساليب طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] لن يتم تنفيذها بواسطة خيطين في نفس الوقت.</p>
+<p>سنستكشف الآن طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>].</p>
+<h2 id="146-service">14.6. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p>تتكون طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] من الفئات والواجهات التالية:</p>
 <p><img src="images/10000000000000D100000033807A7F99.png" width="146" height="36" style="width:3.87cm;height:0.944cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D100000033807A7F99.png" /></p>
 <ul>
-  <li>[IService] هي الواجهة التي تعرضها طبقة [dao]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">IService</bdi>] هي الواجهة التي تعرضها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
   </li>
-  <li>[ServiceImpl] هي تنفيذ لهذه الواجهة
+  <li>[<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] هي تنفيذ لهذه الواجهة
   </li>
 </ul>
 
-<p>واجهة [IService] هي كما يلي:</p>
+<p>واجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>] هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
@@ -2523,8 +2525,8 @@
 <a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">deleteOne</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
 <a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>وهي مطابقة لواجهة [IDao].</p>
-<p>فيما يلي تنفيذ [ServiceImpl] لواجهة [IService]:</p>
+<p>وهي مطابقة لواجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>].</p>
+<p>فيما يلي تنفيذ [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
@@ -2606,25 +2608,25 @@
 <a id="__codelineno-16-40" name="__codelineno-16-40"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>الأسطر 10–19: السمة [IDao dao] هي مرجع إلى طبقة [dao]. سيتم تهيئتها بواسطة Spring IoC.
+  <li>الأسطر 10–19: السمة [<bdi dir="ltr" class="odt-ltr-term">IDao dao</bdi>] هي مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. سيتم تهيئتها بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring IoC.</bdi>
   </li>
-  <li>الأسطر 22–24: تنفيذ طريقة [getAll] لواجهة [IService]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [dao].
+  <li>الأسطر 22–24: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getAll</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
   </li>
-  <li>الأسطر 27–29: تنفيذ طريقة [getOne] لواجهة [IService]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [dao].
+  <li>الأسطر 27–29: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">getOne</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
   </li>
-  <li>الأسطر 32–34: تنفيذ طريقة [saveOne] لواجهة [IService]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [dao].
+  <li>الأسطر 32–34: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
   </li>
-  <li>الأسطر 37-39: تنفيذ طريقة [deleteOne] لواجهة [IService]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [dao].
+  <li>الأسطر 37-39: تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi>] لواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. تقوم الطريقة ببساطة بتفويض الطلب إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
   </li>
-  <li>يتم مزامنة جميع الطرق (باستخدام الكلمة الرئيسية `synchronized`)، مما يضمن أن خيطًا واحدًا فقط في كل مرة يمكنه استخدام طبقة [service] وبالتالي طبقة [dao].
+  <li>يتم مزامنة جميع الطرق (باستخدام الكلمة الرئيسية `<bdi dir="ltr" class="odt-ltr-term">synchronized</bdi>`)، مما يضمن أن خيطًا واحدًا فقط في كل مرة يمكنه استخدام طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] وبالتالي طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].
   </li>
 </ul>
 
-<h2 id="147-service">14.7. <span style="color: #4f81bd">اختبارات لطبقة [service]</span></h2>
-<p>يتم كتابة اختبار JUnit لطبقة [service]:</p>
+<h2 id="147-service">14.7. <span style="color: #4f81bd">اختبارات لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p>يتم كتابة اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DE0000005224F7D433.png" width="155" height="57" style="display:inline-block; margin:4px;width:4.11cm;height:1.519cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE0000005224F7D433.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B0000000A1201CC621.png" width="123" height="113" style="display:inline-block; margin:4px;width:3.26cm;height:2.983cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B0000000A1201CC621.png" /></td></tr></table>
 
-<p>[TestService] هو اختبار JUnit. الاختبارات التي يتم إجراؤها هي نفسها تمامًا تلك التي يتم إجراؤها لطبقة [dao]. هيكل [TestService] هو كما يلي:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">TestService</bdi>] هو اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit.</bdi> الاختبارات التي يتم إجراؤها هي نفسها تمامًا تلك التي يتم إجراؤها لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. هيكل [<bdi dir="ltr" class="odt-ltr-term">TestService</bdi>] هو كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
@@ -2770,22 +2772,22 @@
 <a id="__codelineno-17-72" name="__codelineno-17-72"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 9: طبقة [service] التي يتم اختبارها هي من النوع [ServiceImpl].
+  <li>السطر 9: طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] التي يتم اختبارها هي من النوع [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>].
   </li>
-  <li>الأسطر 11–15: يقوم منشئ اختبار JUnit بإنشاء مثيل لطبقة [service] المراد اختبارها (السطر 12)، وإنشاء مثيل لطبقة [dao] (السطر 13)، وإصدار تعليمات لطبقة [service] باستخدام طبقة [dao] هذه (السطر 14).
+  <li>الأسطر 11–15: يقوم منشئ اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> بإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] المراد اختبارها (السطر 12)، وإنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] (السطر 13)، وإصدار تعليمات لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] باستخدام طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هذه (السطر 14).
   </li>
 </ul>
 
-<p>تختبر طريقة [test1] الطرق الأربع لواجهة [IService] بنفس طريقة طريقة الاختبار في طبقة [dao] التي تحمل الاسم نفسه. والفرق الوحيد هو أنها تصل إلى طبقة [service] (الأسطر 25 و32 و35) بدلاً من طبقة [dao].</p>
-<p>تهدف طريقة [test4] إلى تسليط الضوء على المشكلات المتعلقة بالوصول المتزامن إلى طرق طبقة [service]. وهي، مرة أخرى، مطابقة لطريقة الاختبار [test4] لطبقة [dao]. ومع ذلك، هناك بعض التفاصيل التي تختلف:</p>
+<p>تختبر طريقة [<bdi dir="ltr" class="odt-ltr-term">test1</bdi>] الطرق الأربع لواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>] بنفس طريقة طريقة الاختبار في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] التي تحمل الاسم نفسه. والفرق الوحيد هو أنها تصل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] (الأسطر 25 و32 و35) بدلاً من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].</p>
+<p>تهدف طريقة [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] إلى تسليط الضوء على المشكلات المتعلقة بالوصول المتزامن إلى طرق طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وهي، مرة أخرى، مطابقة لطريقة الاختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. ومع ذلك، هناك بعض التفاصيل التي تختلف:</p>
 <ul>
-  <li>نحن نتعامل مع طبقة [service] بدلاً من طبقة [dao] (السطر 55)
+  <li>نحن نتعامل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بدلاً من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] (السطر 55)
   </li>
-  <li>نمرر مرجعًا إلى طبقة [service] إلى الخيوط بدلاً من طبقة [dao] (السطر 61)
+  <li>نمرر مرجعًا إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] إلى الخيوط بدلاً من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] (السطر 61)
   </li>
 </ul>
 
-<p>كما أن نوع [ThreadServiceMajEnfants] مطابق تقريبًا لنوع [ThreadDaoMajEnfants]، باستثناء أنه يعمل مع طبقة [service] بدلاً من طبقة [dao]:</p>
+<p>كما أن نوع [<bdi dir="ltr" class="odt-ltr-term">ThreadServiceMajEnfants</bdi>] مطابق تقريبًا لنوع [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>]، باستثناء أنه يعمل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بدلاً من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
@@ -2849,13 +2851,13 @@
 <a id="__codelineno-18-31" name="__codelineno-18-31"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 12: يعمل الخيط مع طبقة [service]
+  <li>السطر 12: يعمل الخيط مع طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
 </ul>
 
-<p>نقوم بتشغيل الاختبارات باستخدام التكوين الذي تسبب في حدوث مشكلات في طبقة [dao]:</p>
+<p>نقوم بتشغيل الاختبارات باستخدام التكوين الذي تسبب في حدوث مشكلات في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]:</p>
 <ul>
-  <li>نقوم بإلغاء تعليق عبارة الانتظار في طريقة [saveOne] في [DaoImpl] (السطر 83، القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>).
+  <li>نقوم بإلغاء تعليق عبارة الانتظار في طريقة [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] (السطر 83، القسم<a href="#dao-saveone"><u><span style="color: #0563c1"> 14.4</span></u></a>).
   </li>
 </ul>
 
@@ -2863,7 +2865,7 @@
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>        wait(10);
 </code></pre></div>
 <ul>
-  <li>تقوم طريقة [test4] بإنشاء 100 مؤشر ترابط (السطر 65، القسم<a href="#service-test4"><u><span style="color: #0563c1"> 14.7</span></u></a>).
+  <li>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] بإنشاء 100 مؤشر ترابط (السطر 65، القسم<a href="#service-test4"><u><span style="color: #0563c1"> 14.7</span></u></a>).
   </li>
 </ul>
 
@@ -2873,7 +2875,7 @@
 <p>النتائج التي تم الحصول عليها هي كما يلي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056700000186957D4549.png" width="680" height="192" style="display:inline-block; margin:4px;width:17.997cm;height:5.075cm;" class="odt-zoomable" data-zoom-src="images/100000000000056700000186957D4549.png" /></td></tr></table>
 
-<p>كان تزامن الأساليب في طبقة [service] هو ما مكن من نجاح اختبار [test4].</p>
+<p>كان تزامن الأساليب في طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] هو ما مكن من نجاح اختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>].</p>
 <h2 id="148">14.8. <span style="color: #4f81bd">طبقة [الويب]</span></h2>
 <p>دعونا نستعرض بنية التطبيق المكونة من 3 طبقات:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048B0000016AB3878F0F.png" width="582" height="181" style="display:inline-block; margin:4px;width:15.386cm;height:4.789cm;" class="odt-zoomable" data-zoom-src="images/100000000000048B0000016AB3878F0F.png" /></td></tr></table>
@@ -2890,7 +2892,7 @@
   </li>
 </ul>
 
-<p>للقيام بذلك، سيعتمد على طبقة [service]، والتي بدورها ستستدعي طبقة [DAO]. لقد قدمنا بالفعل الشاشات التي تديرها طبقة [web] (القسم<a href="#spring-mvc-37-ecrans"><u><span style="color: #0563c1"> 14.1</span></u></a>). لوصف طبقة الويب، سنقدم ما يلي بالترتيب:</p>
+<p>للقيام بذلك، سيعتمد على طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]، والتي بدورها ستستدعي طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. لقد قدمنا بالفعل الشاشات التي تديرها طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] (القسم<a href="#spring-mvc-37-ecrans"><u><span style="color: #0563c1"> 14.1</span></u></a>). لوصف طبقة الويب، سنقدم ما يلي بالترتيب:</p>
 <ul>
   <li>تكوينها
   </li>
@@ -2903,21 +2905,21 @@
 </ul>
 
 <h3 id="1481">14.8.1. <span style="color: #4f81bd">تكوين تطبيق الويب</span></h3>
-<p>مشروع Eclipse للتطبيق هو كما يلي:</p>
+<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> للتطبيق هو كما يلي:</p>
 <p><img src="images/10000000000000ED0000026877094DC7.png" width="166" height="431" style="width:4.39cm;height:11.411cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000ED0000026877094DC7.png" /></p>
 <ul>
-  <li>في الحزمة [istia.st.mvc.personnes.web]، ستجد وحدة التحكم [Application].
+  <li>في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.web</bdi>]، ستجد وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>].
   </li>
-  <li>توجد صفحات JSP/JSTL في [WEB-INF/views].
+  <li>توجد صفحات <bdi dir="ltr" class="odt-ltr-term">JSP/JSTL</bdi> في [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/views</bdi>].
   </li>
-  <li>يحتوي المجلد [lib] على المكتبات الخارجية التي يتطلبها التطبيق. وهي مرئية في المجلد [Web App Libraries].
+  <li>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] على المكتبات الخارجية التي يتطلبها التطبيق. وهي مرئية في المجلد [<bdi dir="ltr" class="odt-ltr-term">Web App Libraries</bdi>].
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>[web.xml]</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>ملف [web.xml] هو الملف الذي يستخدمه خادم الويب لتحميل التطبيق. ومحتواه كما يلي:</p>
+<p>ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] هو الملف الذي يستخدمه خادم الويب لتحميل التطبيق. ومحتواه كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -2962,19 +2964,19 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 27-30: سيتم معالجة عناوين URL [/do/*] بواسطة سيرفلت [people]
+  <li>الأسطر 27-30: سيتم معالجة عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/</bdi>*] بواسطة سيرفلت [<bdi dir="ltr" class="odt-ltr-term">people</bdi>]
   </li>
-  <li>الأسطر 9-12: خدمة [personnes] هي مثيل لفئة [Application<span style="color: #000000">]، وهي فئة سنقوم بإنشائها.</span>
+  <li>الأسطر 9-12: خدمة [<bdi dir="ltr" class="odt-ltr-term">personnes</bdi>] هي مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">Application</bdi><span style="color: #000000">]، وهي فئة سنقوم بإنشائها.</span>
   </li>
-  <li><span style="color: #000000">الأسطر 13-24: تعريف ثلاثة معلمات [urlList، urlEdit، urlErrors] تحدد عناوين URL لصفحات JSP الخاصة بعروض [list، edit، errors].</span>
+  <li><span style="color: #000000">الأسطر 13-24: تعريف ثلاثة معلمات [<bdi dir="ltr" class="odt-ltr-term">urlList</bdi>، <bdi dir="ltr" class="odt-ltr-term">urlEdit</bdi>، <bdi dir="ltr" class="odt-ltr-term">urlErrors</bdi>] تحدد عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لصفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> الخاصة بعروض [<bdi dir="ltr" class="odt-ltr-term">list</bdi>، <bdi dir="ltr" class="odt-ltr-term">edit</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>].</span>
   </li>
-  <li><span style="color: #000000">الأسطر 32–34: يحتوي التطبيق على صفحة دخول افتراضية [index.jsp] موجودة في جذر مجلد تطبيق الويب.</span>
+  <li><span style="color: #000000">الأسطر 32–34: يحتوي التطبيق على صفحة دخول افتراضية [<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>] موجودة في جذر مجلد تطبيق الويب.</span>
   </li>
   <li><span style="color: #000000">الأسطر 36–39: يحتوي التطبيق على صفحة خطأ افتراضية يتم عرضها عندما يواجه خادم الويب استثناءً لا يعالجه التطبيق.</span>
     <ul>
-      <li><span style="color: #000000">السطر 37: تحدد العلامة &lt;exception-type&gt; نوع الاستثناء الذي تعالجه توجيهات &lt;error-page&gt;؛ وهنا، يكون النوع هو [java.lang.Exception] وأنواعه الفرعية، مما يعني جميع الاستثناءات.</span>
+      <li><span style="color: #000000">السطر 37: تحدد العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">exception-type</bdi>&gt; نوع الاستثناء الذي تعالجه توجيهات &lt;<bdi dir="ltr" class="odt-ltr-term">error-page</bdi>&gt;؛ وهنا، يكون النوع هو [<bdi dir="ltr" class="odt-ltr-term">java.lang.Exception</bdi>] وأنواعه الفرعية، مما يعني جميع الاستثناءات.</span>
       </li>
-      <li><span style="color: #000000">السطر 38: تحدد العلامة &lt;location&gt; صفحة JSP التي سيتم عرضها عند حدوث استثناء من النوع المحدد بواسطة &lt;exception-type&gt;. يتوفر الاستثناء </span><b>الذي </b><span style="color: #000000">حدث في هذه الصفحة في كائن باسم exception إذا كانت الصفحة تحتوي على التوجيه:</span>
+      <li><span style="color: #000000">السطر 38: تحدد العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">location</bdi>&gt; صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> التي سيتم عرضها عند حدوث استثناء من النوع المحدد بواسطة &lt;<bdi dir="ltr" class="odt-ltr-term">exception-type</bdi>&gt;. يتوفر الاستثناء </span><b>الذي </b><span style="color: #000000">حدث في هذه الصفحة في كائن باسم <bdi dir="ltr" class="odt-ltr-term">exception</bdi> إذا كانت الصفحة تحتوي على التوجيه:</span>
       </li>
     </ul>
   </li>
@@ -2987,16 +2989,16 @@
 <ul>
   <li><span style="color: #000000">(تابع)</span>
     <ul>
-      <li><span style="color: #000000">إذا حددت &lt;exception-type&gt; نوعًا T1 وتم نشر استثناء من النوع T2 (غير مشتق من T1) إلى خادم الويب، فإن الخادم يرسل إلى العميل صفحة استثناء خاصة، والتي عادةً ما تكون غير سهلة الاستخدام. ومن هنا تأتي أهمية علامة &lt;error-page&gt; في ملف [web.xml].</span>
+      <li><span style="color: #000000">إذا حددت &lt;<bdi dir="ltr" class="odt-ltr-term">exception-type</bdi>&gt; نوعًا <bdi dir="ltr" class="odt-ltr-term">T1</bdi> وتم نشر استثناء من النوع <bdi dir="ltr" class="odt-ltr-term">T2</bdi> (غير مشتق من <bdi dir="ltr" class="odt-ltr-term">T1</bdi>) إلى خادم الويب، فإن الخادم يرسل إلى العميل صفحة استثناء خاصة، والتي عادةً ما تكون غير سهلة الاستخدام. ومن هنا تأتي أهمية علامة &lt;<bdi dir="ltr" class="odt-ltr-term">error-page</bdi>&gt; في ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>].</span>
       </li>
     </ul>
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>[index.jsp]</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يتم عرض هذه الصفحة إذا طلب المستخدم سياق التطبيق مباشرةً دون تحديد عنوان URL، أي هنا [/personnes-01]. ومحتواها كما يلي:</p>
+<p>يتم عرض هذه الصفحة إذا طلب المستخدم سياق التطبيق مباشرةً دون تحديد عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>، أي هنا [/<bdi dir="ltr" class="odt-ltr-term">personnes-01</bdi>]. ومحتواها كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html;charset=ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -3004,10 +3006,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">c:redirect </span><span style="color:#7f007f">url</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/do/list&quot;</span><span style="color:#008080">/&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">[index.jsp] يعيد توجيه العميل إلى عنوان URL </span>[/do/list]. يعرض عنوان URL هذا قائمة بالأشخاص الموجودين في المجموعة.</p>
-<h3 id="1482-jspjstl">14.8.2. <span style="color: #4f81bd">صفحات JSP/JSTL الخاصة بالتطبيق</span></h3>
+<p><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>] يعيد توجيه العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> </span>[/<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>]. يعرض عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا قائمة بالأشخاص الموجودين في المجموعة.</p>
+<h3 id="1482-jspjstl">14.8.2. <span style="color: #4f81bd">صفحات <bdi dir="ltr" class="odt-ltr-term">JSP/JSTL</bdi> الخاصة بالتطبيق</span></h3>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>عرض [<a id="spring-mvc-37-list-jsp"></a> list.jsp]</p>
+<p>عرض [<a id="spring-mvc-37-list-jsp"></a> <bdi dir="ltr" class="odt-ltr-term">list.jsp</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يُستخدم لعرض قائمة الأشخاص:</p>
 <p><img src="images/100000000000029A000000CE3F38E7BD.png" width="466" height="144" style="width:12.33cm;height:3.814cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029A000000CE3F38E7BD.png" /></p>
@@ -3058,35 +3060,35 @@
 <ul>
   <li>تستقبل هذه الطريقة عنصرًا في قالبها:
   </li>
-  <li>عنصر<b> </b>[<b>people] </b>المرتبط بـ [ArrayList] من كائنات [Person]
+  <li>عنصر<b> </b>[<b><bdi dir="ltr" class="odt-ltr-term">people</bdi>] </b>المرتبط بـ [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>] من كائنات [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]
   </li>
 </ul>
 
 <ul>
-  <li>الأسطر 22–34: نقوم بالتكرار عبر قائمة ${people} لعرض جدول HTML يحتوي على الأشخاص في المجموعة.
+  <li>الأسطر 22–34: نقوم بالتكرار عبر قائمة ${<bdi dir="ltr" class="odt-ltr-term">people</bdi>} لعرض جدول <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> يحتوي على الأشخاص في المجموعة.
   </li>
-  <li>السطر 31: يتم تعيين عنوان URL الذي يشير إليه رابط [Edit] باستخدام حقل [id] للشخص الحالي بحيث يعرف وحدة التحكم المرتبطة بعنوان URL [/do/edit] الشخص الذي يجب تعديله.
+  <li>السطر 31: يتم تعيين عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يشير إليه رابط [<bdi dir="ltr" class="odt-ltr-term">Edit</bdi>] باستخدام حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] للشخص الحالي بحيث يعرف وحدة التحكم المرتبطة بعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>] الشخص الذي يجب تعديله.
   </li>
-  <li>السطر 32: يتم إجراء الأمر نفسه بالنسبة لرابط [Delete].
+  <li>السطر 32: يتم إجراء الأمر نفسه بالنسبة لرابط [<bdi dir="ltr" class="odt-ltr-term">Delete</bdi>].
   </li>
-  <li>السطر 28: لعرض تاريخ ميلاد الشخص بتنسيق DD/MM/YYYY، نستخدم العلامة &lt;dt&gt; من مكتبة علامات [DateTime] التابعة لمشروع Apache [Jakarta Taglibs]:
+  <li>السطر 28: لعرض تاريخ ميلاد الشخص بتنسيق <bdi dir="ltr" class="odt-ltr-term">DD/MM/YYYY</bdi>، نستخدم العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">dt</bdi>&gt; من مكتبة علامات [<bdi dir="ltr" class="odt-ltr-term">DateTime</bdi>] التابعة لمشروع <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> [<bdi dir="ltr" class="odt-ltr-term">Jakarta Taglibs</bdi>]:
   </li>
 </ul>
 
 <p><img src="images/10000000000002610000018F782D6BE3.png" width="365" height="239" style="width:9.67cm;height:6.336cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002610000018F782D6BE3.png" /></p>
 <p>يتم تعريف ملف الوصف لمكتبة العلامات هذه في السطر 3.</p>
 <ul>
-  <li>السطر 37: يستهدف رابط [Add] لإضافة شخص جديد عنوان URL [/do/edit]، تمامًا مثل رابط [Edit] في السطر 31. تشير القيمة -1 للمعلمة [id] إلى أن هذه عملية إضافة وليست عملية تعديل.
+  <li>السطر 37: يستهدف رابط [<bdi dir="ltr" class="odt-ltr-term">Add</bdi>] لإضافة شخص جديد عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>]، تمامًا مثل رابط [<bdi dir="ltr" class="odt-ltr-term">Edit</bdi>] في السطر 31. تشير القيمة -1 للمعلمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] إلى أن هذه عملية إضافة وليست عملية تعديل.
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>عرض [<a id="spring-mvc-37-edit-jsp"></a><a id="personnes-01-edit-jsp"></a> edit.jsp]</p>
+<p>عرض [<a id="spring-mvc-37-edit-jsp"></a><a id="personnes-01-edit-jsp"></a> <bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يُستخدم لعرض النموذج الخاص بإضافة شخص جديد أو تعديل شخص موجود:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055F000001C73D42F95F.png" width="680" height="225" style="display:inline-block; margin:4px;width:17.997cm;height:5.955cm;" class="odt-zoomable" data-zoom-src="images/100000000000055F000001C73D42F95F.png" /></td></tr></table>
 
-<p>فيما يلي كود عرض [edit.jsp]:</p>
+<p>فيما يلي كود عرض [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html;charset=ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -3167,13 +3169,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تعرض هذه الصفحة نموذجًا لإضافة شخص جديد أو تحديث شخص موجود. من الآن فصاعدًا، لتبسيط النص، سنستخدم مصطلحًا واحدًا هو [تحديث]. يؤدي زر [Submit] (السطر 73) إلى إرسال طلب POST إلى عنوان URL [/do/validate] (السطر 16). إذا فشل طلب POST، يتم إعادة عرض طريقة العرض [edit.jsp] مع الأخطاء التي حدثت؛ وإلا، يتم عرض طريقة العرض [list.jsp].</p>
+<p>تعرض هذه الصفحة نموذجًا لإضافة شخص جديد أو تحديث شخص موجود. من الآن فصاعدًا، لتبسيط النص، سنستخدم مصطلحًا واحدًا هو [تحديث]. يؤدي زر [<bdi dir="ltr" class="odt-ltr-term">Submit</bdi>] (السطر 73) إلى إرسال طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/validate</bdi>] (السطر 16). إذا فشل طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>، يتم إعادة عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>] مع الأخطاء التي حدثت؛ وإلا، يتم عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">list.jsp</bdi>].</p>
 <ul>
-  <li>تستقبل طريقة العرض [edit.jsp]، التي يتم عرضها في كل من طلب GET وطلب POST الفاشل، العناصر التالية في نموذجها:
+  <li>تستقبل طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>]، التي يتم عرضها في كل من طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> وطلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> الفاشل، العناصر التالية في نموذجها:
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>السمة</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>GET</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>POST</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>السمة</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">GET</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">POST</bdi></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>id
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">معرف الشخص الذي يتم تحديثه</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">نفس</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -3197,7 +3199,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عدد الأطفال</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">تم إدخال عدد الأطفال</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>خطأ تحرير
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فارغ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رسالة خطأ تشير إلى فشل الإضافة أو التعديل أثناء عملية POST التي تم تشغيلها بواسطة زر [إرسال]. فارغ في حالة عدم وجود خطأ.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فارغ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رسالة خطأ تشير إلى فشل الإضافة أو التعديل أثناء عملية <bdi dir="ltr" class="odt-ltr-term">POST</bdi> التي تم تشغيلها بواسطة زر [إرسال]. فارغ في حالة عدم وجود خطأ.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>errorFirstName
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فارغ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يشير إلى اسم أول غير صحيح – فارغ في الحالات الأخرى</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -3212,19 +3214,19 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">فارغ</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يشير إلى عدد غير صحيح للأطفال – فارغ في الحالات الأخرى</div></td></tr></table>
 
 <ul>
-  <li>الأسطر 11-15: إذا فشل إرسال النموذج (POST)، فسيتم إرجاع [errorEdit!=&#x27;&#x27;] وسيتم عرض رسالة خطأ.
+  <li>الأسطر 11-15: إذا فشل إرسال النموذج (<bdi dir="ltr" class="odt-ltr-term">POST</bdi>)، فسيتم إرجاع [<bdi dir="ltr" class="odt-ltr-term">errorEdit</bdi>!=&#x27;&#x27;] وسيتم عرض رسالة خطأ.
   </li>
-  <li>السطر 16: سيتم إرسال النموذج إلى عنوان URL [/do/validate]
+  <li>السطر 16: سيتم إرسال النموذج إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/validate</bdi>]
   </li>
-  <li>السطر 20: يتم عرض عنصر [id] في القالب
+  <li>السطر 20: يتم عرض عنصر [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] في القالب
   </li>
-  <li>السطر 24: يتم عرض عنصر [version] من القالب
+  <li>السطر 24: يتم عرض عنصر [<bdi dir="ltr" class="odt-ltr-term">version</bdi>] من القالب
   </li>
   <li>الأسطر 26-32: إدخال الاسم الأول للشخص:
     <ul>
-      <li>عند عرض النموذج لأول مرة (GET)، يعرض ${firstName} القيمة الحالية لحقل [firstName] في كائن [Person] المحدث، ويكون ${firstNameError} فارغًا.
+      <li>عند عرض النموذج لأول مرة (<bdi dir="ltr" class="odt-ltr-term">GET</bdi>)، يعرض ${<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>} القيمة الحالية لحقل [<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>] في كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] المحدث، ويكون ${<bdi dir="ltr" class="odt-ltr-term">firstNameError</bdi>} فارغًا.
       </li>
-      <li>في حالة حدوث خطأ بعد POST، يتم عرض القيمة المدخلة ${firstName} مرة أخرى، إلى جانب أي رسالة خطأ ${firstNameError}
+      <li>في حالة حدوث خطأ بعد <bdi dir="ltr" class="odt-ltr-term">POST</bdi>، يتم عرض القيمة المدخلة ${<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>} مرة أخرى، إلى جانب أي رسالة خطأ ${<bdi dir="ltr" class="odt-ltr-term">firstNameError</bdi>}
       </li>
     </ul>
   </li>
@@ -3232,28 +3234,28 @@
   </li>
   <li>الأسطر 40–46: إدخال تاريخ ميلاد الشخص
   </li>
-  <li>الأسطر 47–61: إدخال الحالة الاجتماعية للشخص باستخدام زر اختيار. نستخدم قيمة حقل [married] الخاص بكائن [Person] لتحديد أي من زري الاختيار يجب تحديده.
+  <li>الأسطر 47–61: إدخال الحالة الاجتماعية للشخص باستخدام زر اختيار. نستخدم قيمة حقل [<bdi dir="ltr" class="odt-ltr-term">married</bdi>] الخاص بكائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] لتحديد أي من زري الاختيار يجب تحديده.
   </li>
   <li>الأسطر 62-68: إدخال عدد أطفال الشخص
   </li>
-  <li>السطر 71: حقل HTML مخفي باسم [id] بقيمة تساوي حقل [id] للشخص الذي يتم تحديثه، -1 للإضافة، أو قيمة أخرى للتعديل.
+  <li>السطر 71: حقل <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> مخفي باسم [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] بقيمة تساوي حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] للشخص الذي يتم تحديثه، -1 للإضافة، أو قيمة أخرى للتعديل.
   </li>
-  <li>السطر 72: حقل HTML مخفي باسم [version] بقيمة تساوي حقل [id] للشخص الذي يتم تحديثه.
+  <li>السطر 72: حقل <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> مخفي باسم [<bdi dir="ltr" class="odt-ltr-term">version</bdi>] بقيمة تساوي حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] للشخص الذي يتم تحديثه.
   </li>
   <li>السطر 73: زر [إرسال] الخاص بالنموذج
   </li>
-  <li>السطر 74: رابط للعودة إلى قائمة الأشخاص. يحمل اسم [Cancel] لأنه يسمح للمستخدم بالخروج من النموذج دون إرساله.
+  <li>السطر 74: رابط للعودة إلى قائمة الأشخاص. يحمل اسم [<bdi dir="ltr" class="odt-ltr-term">Cancel</bdi>] لأنه يسمح للمستخدم بالخروج من النموذج دون إرساله.
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>عرض [<a id="spring-mvc-37-exception-jsp"></a> exception.jsp]</p>
+<p>عرض [<a id="spring-mvc-37-exception-jsp"></a> <bdi dir="ltr" class="odt-ltr-term">exception.jsp</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يُستخدم لعرض صفحة تشير إلى حدوث استثناء لم يتم التعامل معه من قبل التطبيق وتم تمريره إلى خادم الويب.</p>
 <p>على سبيل المثال، دعونا نحذف شخصًا غير موجود في المجموعة:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005550000016E13B719A0.png" width="680" height="182" style="display:inline-block; margin:4px;width:17.997cm;height:4.826cm;" class="odt-zoomable" data-zoom-src="images/10000000000005550000016E13B719A0.png" /></td></tr></table>
 
-<p>فيما يلي كود عرض [exception.jsp]:</p>
+<p>فيما يلي كود عرض [<bdi dir="ltr" class="odt-ltr-term">exception.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html;charset=ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -3279,12 +3281,12 @@
 </code></pre></div>
 
 <ul>
-  <li>تتلقى هذه العرضة مفتاحًا في قالبها، وهو عنصر [<b>exception]</b>، الذي يمثل الاستثناء الذي اعترضه خادم الويب. لكي يقوم خادم الويب بتضمين هذا العنصر في قالب صفحة JSP، يجب أن تكون الصفحة قد عرّفت العلامة في السطر 3.
+  <li>تتلقى هذه العرضة مفتاحًا في قالبها، وهو عنصر [<b><bdi dir="ltr" class="odt-ltr-term">exception</bdi>]</b>، الذي يمثل الاستثناء الذي اعترضه خادم الويب. لكي يقوم خادم الويب بتضمين هذا العنصر في قالب صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>، يجب أن تكون الصفحة قد عرّفت العلامة في السطر 3.
   </li>
 </ul>
 
 <ul>
-  <li>السطر 6: نضبط رمز حالة HTTP للاستجابة على 200. هذا هو رأس HTTP الأول للاستجابة. يشير رمز الحالة 200 إلى العميل بأن طلبه قد نجح. عادةً ما يتم تضمين مستند HTML في استجابة الخادم. وهذا هو الحال هنا. إذا لم يتم ضبط رمز حالة HTTP للاستجابة على 200، فسيكون له القيمة 500، مما يعني حدوث خطأ. في الواقع، عندما يعترض خادم الويب استثناءً لم يتم التعامل معه، فإنه يعتبر هذه الحالة غير طبيعية ويشير إليها برمز 500. يختلف الرد على رمز HTTP 500 باختلاف المتصفح: يعرض Firefox مستند HTML الذي قد يصاحب هذا الرد، بينما يتجاهل IE هذا المستند ويعرض صفحته الخاصة. لهذا السبب استبدلنا الرمز 500 بالرمز 200.
+  <li>السطر 6: نضبط رمز حالة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للاستجابة على 200. هذا هو رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الأول للاستجابة. يشير رمز الحالة 200 إلى العميل بأن طلبه قد نجح. عادةً ما يتم تضمين مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> في استجابة الخادم. وهذا هو الحال هنا. إذا لم يتم ضبط رمز حالة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للاستجابة على 200، فسيكون له القيمة 500، مما يعني حدوث خطأ. في الواقع، عندما يعترض خادم الويب استثناءً لم يتم التعامل معه، فإنه يعتبر هذه الحالة غير طبيعية ويشير إليها برمز 500. يختلف الرد على رمز <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> 500 باختلاف المتصفح: يعرض <bdi dir="ltr" class="odt-ltr-term">Firefox</bdi> مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الذي قد يصاحب هذا الرد، بينما يتجاهل <bdi dir="ltr" class="odt-ltr-term">IE</bdi> هذا المستند ويعرض صفحته الخاصة. لهذا السبب استبدلنا الرمز 500 بالرمز 200.
   </li>
   <li>السطر 16: يتم عرض نص الاستثناء
   </li>
@@ -3293,11 +3295,11 @@
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>عرض [<a id="personnes-01-erreurs-jsp"></a> -errors<a id="spring-mvc-37-exception-jsp1"></a> .jsp]</p>
+<p>عرض [<a id="personnes-01-erreurs-jsp"></a> -<bdi dir="ltr" class="odt-ltr-term">errors</bdi><a id="spring-mvc-37-exception-jsp1"></a> .<bdi dir="ltr" class="odt-ltr-term">jsp</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يُستخدم لعرض صفحة تُبلغ عن أخطاء تهيئة التطبيق، أي الأخطاء التي يتم اكتشافها أثناء تنفيذ طريقة [init] في سيرفلت وحدة التحكم. وقد يكون ذلك، على سبيل المثال، عدم وجود معلمة في ملف [web.xml]، كما هو موضح في المثال التالي:</p>
+<p>يُستخدم لعرض صفحة تُبلغ عن أخطاء تهيئة التطبيق، أي الأخطاء التي يتم اكتشافها أثناء تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] في سيرفلت وحدة التحكم. وقد يكون ذلك، على سبيل المثال، عدم وجود معلمة في ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]، كما هو موضح في المثال التالي:</p>
 <p><img src="images/100000000000019B0000009D2C1DFC37.png" width="288" height="110" style="width:7.609cm;height:2.907cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019B0000009D2C1DFC37.png" /></p>
-<p>فيما يلي كود صفحة [errors.jsp]:</p>
+<p>فيما يلي كود صفحة [<bdi dir="ltr" class="odt-ltr-term">errors.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -3319,14 +3321,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تستقبل الصفحة عنصر [errors] في قالبها، وهو عبارة عن [ArrayList] من كائنات [String]؛ وهذه هي رسائل الخطأ. يتم عرضها بواسطة الحلقة في الأسطر 13–15.</p>
+<p>تستقبل الصفحة عنصر [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>] في قالبها، وهو عبارة عن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>] من كائنات [<bdi dir="ltr" class="odt-ltr-term">String</bdi>]؛ وهذه هي رسائل الخطأ. يتم عرضها بواسطة الحلقة في الأسطر 13–15.</p>
 <h3 id="1483">14.8.3. <span style="color: #4f81bd">وحدة التحكم في التطبيق</span></h3>
-<p>يتم تعريف وحدة التحكم [Application] في الحزمة [istia.st.mvc.personnes.web]:</p>
+<p>يتم تعريف وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] في الحزمة [<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.web</bdi>]:</p>
 <p><img src="images/10000000000000B80000002238D77738.png" width="129" height="24" style="width:3.41cm;height:0.63cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000B80000002238D77738.png" /></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><a id="personnes-01-init"></a> هيكل وحدة التحكم وتهيئتها</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>هيكل وحدة التحكم [Application] هو كما يلي:</p>
+<p>هيكل وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] هو كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
@@ -3512,42 +3514,42 @@
 <a id="__codelineno-33-92" name="__codelineno-33-92"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>الأسطر 20–36: استرداد المعلمات المحددة في ملف [web.xml].
+  <li>الأسطر 20–36: استرداد المعلمات المحددة في ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>].
   </li>
-  <li>الأسطر 39–41: يجب أن تكون المعلمة [urlErrors] موجودة لأنها تحدد عنوان URL لعرض [errors]، الذي يعرض أي أخطاء في التهيئة. إذا لم تكن موجودة، يتم إنهاء التطبيق عن طريق إلقاء استثناء [ServletException] (السطر 40). سيتم نشر هذا الاستثناء إلى خادم الويب ومعالجته بواسطة العلامة &lt;error-page&gt; في ملف [web.xml]. وبالتالي يتم عرض عرض [exception.jsp]:
+  <li>الأسطر 39–41: يجب أن تكون المعلمة [<bdi dir="ltr" class="odt-ltr-term">urlErrors</bdi>] موجودة لأنها تحدد عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لعرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>]، الذي يعرض أي أخطاء في التهيئة. إذا لم تكن موجودة، يتم إنهاء التطبيق عن طريق إلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">ServletException</bdi>] (السطر 40). سيتم نشر هذا الاستثناء إلى خادم الويب ومعالجته بواسطة العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">error-page</bdi>&gt; في ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]. وبالتالي يتم عرض عرض [<bdi dir="ltr" class="odt-ltr-term">exception.jsp</bdi>]:
   </li>
 </ul>
 
 <p><img src="images/1000000000000201000000BECBB96664.png" width="359" height="133" style="width:9.5cm;height:3.519cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000201000000BECBB96664.png" /></p>
-<p>الرابط [Back to list] أعلاه غير نشط. يؤدي النقر عليه إلى إرجاع نفس الاستجابة طالما لم يتم تعديل التطبيق وإعادة تحميله. وهو مفيد لأنواع أخرى من الاستثناءات، كما رأينا سابقًا.</p>
+<p>الرابط [<bdi dir="ltr" class="odt-ltr-term">Back to list</bdi>] أعلاه غير نشط. يؤدي النقر عليه إلى إرجاع نفس الاستجابة طالما لم يتم تعديل التطبيق وإعادة تحميله. وهو مفيد لأنواع أخرى من الاستثناءات، كما رأينا سابقًا.</p>
 <ul>
-  <li>السطر 43: ينشئ مثيل [DaoImpl] الذي ينفذ طبقة [dao]
+  <li>السطر 43: ينشئ مثيل [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] الذي ينفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
   </li>
   <li>السطر 44: تهيئة هذه المثيل (إنشاء قائمة أولية تضم ثلاثة أشخاص)
   </li>
-  <li>السطر 46: ينشئ مثيلًا لـ [ServiceImpl] ينفذ طبقة [service]
+  <li>السطر 46: ينشئ مثيلًا لـ [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] ينفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
-  <li>السطر 47: تهيئة طبقة [service] من خلال تزويدها بإشارة إلى طبقة [dao]
+  <li>السطر 47: تهيئة طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] من خلال تزويدها بإشارة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
   </li>
 </ul>
 
-<p>بعد تهيئة وحدة التحكم، تحتوي طرقها على مرجع [service] إلى طبقة [service] (السطر 15) الذي ستستخدمه لتنفيذ الإجراءات التي يطلبها المستخدم. سيتم اعتراض هذه الإجراءات بواسطة الطريقة [doGet]، والتي ستقوم بمعالجتها بواسطة طريقة محددة في وحدة التحكم:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Url</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>طريقة HTTP</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>طريقة وحدة التحكم</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<p>بعد تهيئة وحدة التحكم، تحتوي طرقها على مرجع [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] (السطر 15) الذي ستستخدمه لتنفيذ الإجراءات التي يطلبها المستخدم. سيتم اعتراض هذه الإجراءات بواسطة الطريقة [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>]، والتي ستقوم بمعالجتها بواسطة طريقة محددة في وحدة التحكم:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><bdi dir="ltr" class="odt-ltr-term">Url</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>طريقة وحدة التحكم</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>/do/list
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">GET</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">doListPeople</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">GET</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">doListPeople</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>/do/edit
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">GET</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">doEditPerson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">GET</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">doEditPerson</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>/do/validate
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">POST</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">doValidatePerson</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">POST</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">doValidatePerson</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="err">/do/delete</span>
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">GET</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">doDeletePerson</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">GET</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">doDeletePerson</bdi></div></td></tr></table>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طريقة [doGet<span style="color: #000000">]</span></p>
+<p>طريقة [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi><span style="color: #000000">]</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p><span style="color: #000000">الغرض من هذه الطريقة هو توجيه معالجة الإجراءات التي يطلبها المستخدم إلى الطريقة الصحيحة. وفيما يلي كودها:</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1"> 1</a></span>
@@ -3641,28 +3643,28 @@
 <a id="__codelineno-38-45" name="__codelineno-38-45"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>الأسطر 7–13: نتحقق من أن قائمة أخطاء التهيئة فارغة. إذا لم تكن كذلك، نعرض طريقة العرض [errors(errors)]، والتي ستبلغ عن الخطأ (الأخطاء).
+  <li>الأسطر 7–13: نتحقق من أن قائمة أخطاء التهيئة فارغة. إذا لم تكن كذلك، نعرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>(<bdi dir="ltr" class="odt-ltr-term">errors</bdi>)]، والتي ستبلغ عن الخطأ (الأخطاء).
   </li>
-  <li>السطر 15: نسترد طريقة [get] أو [post] التي استخدمها العميل لإجراء الطلب.
+  <li>السطر 15: نسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">get</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">post</bdi>] التي استخدمها العميل لإجراء الطلب.
   </li>
-  <li>السطر 17: نسترد قيمة المعلمة [action] من الطلب.
+  <li>السطر 17: نسترد قيمة المعلمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] من الطلب.
   </li>
-  <li>الأسطر 23–27: معالجة طلب [GET /do/list]، الذي يطلب قائمة الأشخاص.
+  <li>الأسطر 23–27: معالجة طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>]، الذي يطلب قائمة الأشخاص.
   </li>
-  <li>الأسطر 28–32: معالجة طلب [GET /do/delete]، الذي يطلب حذف شخص.
+  <li>الأسطر 28–32: معالجة طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/delete</bdi>]، الذي يطلب حذف شخص.
   </li>
-  <li>الأسطر 33-37: معالجة طلب [GET /do/edit]، الذي يطلب النموذج لتحديث شخص.
+  <li>الأسطر 33-37: معالجة طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>]، الذي يطلب النموذج لتحديث شخص.
   </li>
-  <li>الأسطر 38–42: معالجة طلب [POST /do/validate]، الذي يطلب التحقق من صحة الشخص الذي تم تحديثه.
+  <li>الأسطر 38–42: معالجة طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/validate</bdi>]، الذي يطلب التحقق من صحة الشخص الذي تم تحديثه.
   </li>
-  <li>السطر 44: إذا لم يكن الإجراء المطلوب أحد الإجراءات الخمسة السابقة، فإننا نتعامل معه كما لو كان [GET /do/list].
+  <li>السطر 44: إذا لم يكن الإجراء المطلوب أحد الإجراءات الخمسة السابقة، فإننا نتعامل معه كما لو كان [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>].
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طريقة [doListPersonnes<span style="color: #000000">]</span></p>
+<p>طريقة [<bdi dir="ltr" class="odt-ltr-term">doListPersonnes</bdi><span style="color: #000000">]</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [GET /do/list]، الذي يطلب قائمة الأشخاص:</span></p>
+<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>]، الذي يطلب قائمة الأشخاص:</span></p>
 <p><img src="images/1000000000000297000000C42C17D6EF.png" width="462" height="137" style="width:12.22cm;height:3.612cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000297000000C42C17D6EF.png" /></p>
 <p>وإليك كودها:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1">1</a></span>
@@ -3684,16 +3686,16 @@
 <a id="__codelineno-39-9" name="__codelineno-39-9"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li><span style="color: #000000">السطر 5: نطلب قائمة الأشخاص في المجموعة من طبقة [service] ونخزنها في النموذج تحت المفتاح &quot;people&quot;.</span>
+  <li><span style="color: #000000">السطر 5: نطلب قائمة الأشخاص في المجموعة من طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] ونخزنها في النموذج تحت المفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">people</bdi>&quot;.</span>
   </li>
-  <li><span style="color: #000000">السطر 7: يتم عرض طريقة العرض [list.jsp] الموضحة </span>في القسم<a href="#spring-mvc-37-list-jsp"><u><span style="color: #0563c1"> 14.8.2</span></u></a><span style="color: #000000">.</span>
+  <li><span style="color: #000000">السطر 7: يتم عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">list.jsp</bdi>] الموضحة </span>في القسم<a href="#spring-mvc-37-list-jsp"><u><span style="color: #0563c1"> 14.8.2</span></u></a><span style="color: #000000">.</span>
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طريقة [doDeletePerson<span style="color: #000000">]</span></p>
+<p>طريقة [<bdi dir="ltr" class="odt-ltr-term">doDeletePerson</bdi><span style="color: #000000">]</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [GET /do/delete?id=XX]، الذي يطلب حذف الشخص ذي المعرف id=XX. </span>عنوان URL <span style="color: #000000"> [/do/delete?id=XX] </span>هو عنوان روابط [Delete] في عرض [list.jsp]:</p>
+<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/delete</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>]، الذي يطلب حذف الشخص ذي المعرف <bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX.</bdi> </span>عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <span style="color: #000000"> [/<bdi dir="ltr" class="odt-ltr-term">do/delete</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>] </span>هو عنوان روابط [<bdi dir="ltr" class="odt-ltr-term">Delete</bdi>] في عرض [<bdi dir="ltr" class="odt-ltr-term">list.jsp</bdi>]:</p>
 <p><img src="images/1000000000000297000000C42C17D6EF.png" width="462" height="137" style="width:12.22cm;height:3.612cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000297000000C42C17D6EF.png" /></p>
 <p>والذي يكون كوده كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1"> 1</a></span>
@@ -3734,7 +3736,7 @@
 <a id="__codelineno-40-18" name="__codelineno-40-18"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-40-19" name="__codelineno-40-19"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>يُظهر السطر 12 عنوان URL [/do/delete?id=XX] للرابط [حذف]. يجب أن تقوم الطريقة [doDeletePerson]، التي تتعامل مع عنوان URL هذا، بحذف الشخص الذي يحمل المعرف id=XX ثم عرض القائمة المحدثة للأشخاص في المجموعة. وفيما يلي كودها:</p>
+<p>يُظهر السطر 12 عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/delete</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>] للرابط [حذف]. يجب أن تقوم الطريقة [<bdi dir="ltr" class="odt-ltr-term">doDeletePerson</bdi>]، التي تتعامل مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا، بحذف الشخص الذي يحمل المعرف <bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi> ثم عرض القائمة المحدثة للأشخاص في المجموعة. وفيما يلي كودها:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-41-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-41-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-41-3"> 3</a></span>
@@ -3756,22 +3758,22 @@
 <a id="__codelineno-41-10" name="__codelineno-41-10"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li><span style="color: #000000">السطر 5: عنوان URL الذي تتم معالجته هو [/do/delete?id=XX]. نسترد القيمة [XX] من المعلمة [id].</span>
+  <li><span style="color: #000000">السطر 5: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي تتم معالجته هو [/<bdi dir="ltr" class="odt-ltr-term">do/delete</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>]. نسترد القيمة [<bdi dir="ltr" class="odt-ltr-term">XX</bdi>] من المعلمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>].</span>
   </li>
-  <li><span style="color: #000000">السطر 7: نطلب من طبقة [service] حذف الشخص الذي يحمل المعرف الذي تم الحصول عليه. لا نقوم بأي عملية تحقق من الصحة. إذا كان الشخص الذي نحاول حذفه غير موجود، فإن طبقة [dao] ترمي استثناءً ينتقل إلى طبقة [service]. ولا نتعامل معه هنا في وحدة التحكم أيضًا. وبالتالي سينتقل إلى خادم الويب، والذي، حسب التكوين، سيعرض صفحة [exception.jsp]، الموصوفة </span>في القسم<a href="#spring-mvc-37-exception-jsp"><u><span style="color: #0563c1"> 14.8.2</span></u></a><span style="color: #000000">:</span>
+  <li><span style="color: #000000">السطر 7: نطلب من طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] حذف الشخص الذي يحمل المعرف الذي تم الحصول عليه. لا نقوم بأي عملية تحقق من الصحة. إذا كان الشخص الذي نحاول حذفه غير موجود، فإن طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] ترمي استثناءً ينتقل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. ولا نتعامل معه هنا في وحدة التحكم أيضًا. وبالتالي سينتقل إلى خادم الويب، والذي، حسب التكوين، سيعرض صفحة [<bdi dir="ltr" class="odt-ltr-term">exception.jsp</bdi>]، الموصوفة </span>في القسم<a href="#spring-mvc-37-exception-jsp"><u><span style="color: #0563c1"> 14.8.2</span></u></a><span style="color: #000000">:</span>
   </li>
 </ul>
 
 <p><img src="images/1000000000000187000000B940128F24.png" width="274" height="129" style="width:7.241cm;height:3.425cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000187000000B940128F24.png" /></p>
 <ul>
-  <li><span style="color: #000000">السطر 9: إذا نجح الحذف (لم تحدث استثناءات)، يتم إعادة توجيه العميل إلى عنوان URL النسبي [list]. وبما أن عنوان URL الذي تمت معالجته للتو كان [/do/delete]، فإن عنوان URL لإعادة التوجيه سيكون [/do/list]. وبالتالي، سيقوم المتصفح بتنفيذ طلب [GET /do/list]، والذي سيعرض قائمة الأشخاص.</span>
+  <li><span style="color: #000000">السطر 9: إذا نجح الحذف (لم تحدث استثناءات)، يتم إعادة توجيه العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> النسبي [<bdi dir="ltr" class="odt-ltr-term">list</bdi>]. وبما أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي تمت معالجته للتو كان [/<bdi dir="ltr" class="odt-ltr-term">do/delete</bdi>]، فإن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه سيكون [/<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>]. وبالتالي، سيقوم المتصفح بتنفيذ طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>]، والذي سيعرض قائمة الأشخاص.</span>
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طريقة [doEditPerson<span style="color: #000000">]</span></p>
+<p>طريقة [<bdi dir="ltr" class="odt-ltr-term">doEditPerson</bdi><span style="color: #000000">]</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [GET /do/edit?id=XX]، الذي يطلب من النموذج تحديث الشخص ذي المعرف id=XX. </span>عنوان URL <span style="color: #000000">[/do/edit?id=XX] </span>هو العنوان المستخدم لروابط [Edit] و [Add] في عرض [list.jsp]:</p>
+<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>]، الذي يطلب من النموذج تحديث الشخص ذي المعرف <bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX.</bdi> </span>عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <span style="color: #000000">[/<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>] </span>هو العنوان المستخدم لروابط [<bdi dir="ltr" class="odt-ltr-term">Edit</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">Add</bdi>] في عرض [<bdi dir="ltr" class="odt-ltr-term">list.jsp</bdi>]:</p>
 <p><img src="images/1000000000000297000000C42C17D6EF.png" width="462" height="137" style="width:12.22cm;height:3.612cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000297000000C42C17D6EF.png" /></p>
 <p>والذي يكون كوده كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1"> 1</a></span>
@@ -3812,10 +3814,10 @@
 <a id="__codelineno-42-18" name="__codelineno-42-18"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-42-19" name="__codelineno-42-19"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>في السطر 11، نرى عنوان URL [/do/edit?id=XX] لرابط [تحرير]، وفي السطر 17، عنوان URL [/do/edit?id=-1] لرابط [إضافة]. يجب أن تعرض طريقة [doEditPersonne] نموذج التحرير للشخص الذي يحمل المعرف id=XX، أو إذا كانت عملية إضافة، فيجب أن تعرض نموذجًا فارغًا.</p>
+<p>في السطر 11، نرى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>] لرابط [تحرير]، وفي السطر 17، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=-1] لرابط [إضافة]. يجب أن تعرض طريقة [<bdi dir="ltr" class="odt-ltr-term">doEditPersonne</bdi>] نموذج التحرير للشخص الذي يحمل المعرف <bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>، أو إذا كانت عملية إضافة، فيجب أن تعرض نموذجًا فارغًا.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018E00000123861DBA34.png" width="239" height="175" style="display:inline-block; margin:4px;width:6.32cm;height:4.621cm;" class="odt-zoomable" data-zoom-src="images/100000000000018E00000123861DBA34.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000193000001356CF09165.png" width="242" height="185" style="display:inline-block; margin:4px;width:6.399cm;height:4.905cm;" class="odt-zoomable" data-zoom-src="images/1000000000000193000001356CF09165.png" /></td></tr></table>
 
-<p>فيما يلي كود طريقة [doEditPerson]:</p>
+<p>فيما يلي كود طريقة [<bdi dir="ltr" class="odt-ltr-term">doEditPerson</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-43-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-43-3"> 3</a></span>
@@ -3885,32 +3887,32 @@
 <a id="__codelineno-43-34" name="__codelineno-43-34"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li><span style="color: #000000">يستهدف طلب GET عنوان URL بالشكل [/do/edit?id=XX]. في السطر 5، نسترد قيمة [id]. ثم هناك حالتان:</span>
+  <li><span style="color: #000000">يستهدف طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بالشكل [/<bdi dir="ltr" class="odt-ltr-term">do/edit</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>]. في السطر 5، نسترد قيمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>]. ثم هناك حالتان:</span>
   </li>
 </ul>
 <ol>
-  <li><span style="color: #000000">إذا لم تكن قيمة id تساوي -1، فهذا يعني أنه تحديث، وعلينا عرض نموذج مملوء مسبقًا بمعلومات الشخص المراد تعديله. في السطر 10، يتم طلب هذا الشخص من طبقة [service].</span>
+  <li><span style="color: #000000">إذا لم تكن قيمة <bdi dir="ltr" class="odt-ltr-term">id</bdi> تساوي -1، فهذا يعني أنه تحديث، وعلينا عرض نموذج مملوء مسبقًا بمعلومات الشخص المراد تعديله. في السطر 10، يتم طلب هذا الشخص من طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>].</span>
   </li>
-  <li><span style="color: #000000">إذا كانت id تساوي -1، فهذا يعد إضافة، ويجب عرض نموذج فارغ. للقيام بذلك، يتم إنشاء شخص فارغ في السطرين 13-14.</span>
+  <li><span style="color: #000000">إذا كانت <bdi dir="ltr" class="odt-ltr-term">id</bdi> تساوي -1، فهذا يعد إضافة، ويجب عرض نموذج فارغ. للقيام بذلك، يتم إنشاء شخص فارغ في السطرين 13-14.</span>
   </li>
 </ol>
 
 <ul>
-  <li><span style="color: #000000">يتم وضع كائن [Person] في قالب الصفحة [edit.jsp] الموصوف </span>في القسم<a href="#personnes-01-edit-jsp"><u><span style="color: #0563c1"> 14.8.2</span></u></a><span style="color: #000000">. يتضمن هذا القالب العناصر التالية: [errorEdit, id, version, firstName, errorFirstName, lastName, errorLastName, dateOfBirth, errorDateOfBirth, spouse, numberOfChildren, errorNumberOfChildren]. يتم تهيئة هذه العناصر في الأسطر 17-30، باستثناء تلك التي تكون قيمتها سلسلة فارغة [firstNameError، lastNameError، birthDateError، </span><span style="color: #000000">childrenCountError]. ونعلم أنه في حالة عدم وجودها في القالب، ستعرض مكتبة JSTL سلسلة فارغة كقيمة لها. وعلى الرغم من أن عنصر [errorEdit] يحتوي أيضًا على سلسلة فارغة كقيمة له، إلا أنه يتم تهيئته لأن يتم إجراء فحص لقيمته في صفحة [edit.jsp].</span>
+  <li><span style="color: #000000">يتم وضع كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] في قالب الصفحة [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>] الموصوف </span>في القسم<a href="#personnes-01-edit-jsp"><u><span style="color: #0563c1"> 14.8.2</span></u></a><span style="color: #000000">. يتضمن هذا القالب العناصر التالية: [<bdi dir="ltr" class="odt-ltr-term">errorEdit</bdi>, <bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">version</bdi>, <bdi dir="ltr" class="odt-ltr-term">firstName</bdi>, <bdi dir="ltr" class="odt-ltr-term">errorFirstName</bdi>, <bdi dir="ltr" class="odt-ltr-term">lastName</bdi>, <bdi dir="ltr" class="odt-ltr-term">errorLastName</bdi>, <bdi dir="ltr" class="odt-ltr-term">dateOfBirth</bdi>, <bdi dir="ltr" class="odt-ltr-term">errorDateOfBirth</bdi>, <bdi dir="ltr" class="odt-ltr-term">spouse</bdi>, <bdi dir="ltr" class="odt-ltr-term">numberOfChildren</bdi>, <bdi dir="ltr" class="odt-ltr-term">errorNumberOfChildren</bdi>]. يتم تهيئة هذه العناصر في الأسطر 17-30، باستثناء تلك التي تكون قيمتها سلسلة فارغة [<bdi dir="ltr" class="odt-ltr-term">firstNameError</bdi>، <bdi dir="ltr" class="odt-ltr-term">lastNameError</bdi>، <bdi dir="ltr" class="odt-ltr-term">birthDateError</bdi>، </span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">childrenCountError</bdi>]. ونعلم أنه في حالة عدم وجودها في القالب، ستعرض مكتبة <bdi dir="ltr" class="odt-ltr-term">JSTL</bdi> سلسلة فارغة كقيمة لها. وعلى الرغم من أن عنصر [<bdi dir="ltr" class="odt-ltr-term">errorEdit</bdi>] يحتوي أيضًا على سلسلة فارغة كقيمة له، إلا أنه يتم تهيئته لأن يتم إجراء فحص لقيمته في صفحة [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>].</span>
   </li>
 </ul>
 
 <ul>
-  <li><span style="color: #000000">بمجرد أن يصبح النموذج جاهزًا، يتم تمرير التحكم إلى صفحة [edit.jsp]، في السطرين 32 و33، والتي ستقوم بإنشاء عرض [edit].</span>
+  <li><span style="color: #000000">بمجرد أن يصبح النموذج جاهزًا، يتم تمرير التحكم إلى صفحة [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>]، في السطرين 32 و33، والتي ستقوم بإنشاء عرض [<bdi dir="ltr" class="odt-ltr-term">edit</bdi>].</span>
   </li>
 </ul>
 
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طريقة [doValidatePersonne<span style="color: #000000">]</span></p>
+<p>طريقة [<bdi dir="ltr" class="odt-ltr-term">doValidatePersonne</bdi><span style="color: #000000">]</span></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [POST /do/validate]، الذي يتحقق من صحة نموذج التحديث. يتم تشغيل هذا الطلب POST بواسطة زر [Validate]</span>:</p>
+<p><span style="color: #000000">تتعامل هذه الطريقة مع طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">do/validate</bdi>]، الذي يتحقق من صحة نموذج التحديث. يتم تشغيل هذا الطلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> بواسطة زر [<bdi dir="ltr" class="odt-ltr-term">Validate</bdi>]</span>:</p>
 <p><img src="images/100000000000019C0000017E70BC3B22.png" width="289" height="268" style="width:7.65cm;height:7.093cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019C0000017E70BC3B22.png" /></p>
-<p><span style="color: #000000">دعونا نستعرض عناصر الإدخال في نموذج HTML في العرض أعلاه:</span></p>
+<p><span style="color: #000000">دعونا نستعرض عناصر الإدخال في نموذج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> في العرض أعلاه:</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-44-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-44-3"> 3</a></span>
@@ -3943,7 +3945,7 @@
 <a id="__codelineno-44-15" name="__codelineno-44-15"></a>            <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Valider&quot;</span><span class="p">&gt;</span>
 <a id="__codelineno-44-16" name="__codelineno-44-16"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p><span style="color: #000000">يحتوي طلب POST على المعلمات [firstName, lastName, dateOfBirth, spouse, numberOfChildren, id, version] ويتم إرساله إلى عنوان URL [/do/validate] (السطر 1). تتم معالجته بواسطة الطريقة [doValidatePerson] التالية:</span></p>
+<p><span style="color: #000000">يحتوي طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> على المعلمات [<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>, <bdi dir="ltr" class="odt-ltr-term">lastName</bdi>, <bdi dir="ltr" class="odt-ltr-term">dateOfBirth</bdi>, <bdi dir="ltr" class="odt-ltr-term">spouse</bdi>, <bdi dir="ltr" class="odt-ltr-term">numberOfChildren</bdi>, <bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">version</bdi>] ويتم إرساله إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/validate</bdi>] (السطر 1). تتم معالجته بواسطة الطريقة [<bdi dir="ltr" class="odt-ltr-term">doValidatePerson</bdi>] التالية:</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-45-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-45-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-45-3">  3</a></span>
@@ -4147,63 +4149,63 @@
 <a id="__codelineno-45-101" name="__codelineno-45-101"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li><span style="color: #000000">الأسطر 8-14: يتم استرداد المعلمة [firstName] من طلب POST والتحقق من صحتها. إذا كانت غير صحيحة، يتم تهيئة العنصر [firstNameError] برسالة خطأ ووضعه في سمات الطلب.</span>
+  <li><span style="color: #000000">الأسطر 8-14: يتم استرداد المعلمة [<bdi dir="ltr" class="odt-ltr-term">firstName</bdi>] من طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> والتحقق من صحتها. إذا كانت غير صحيحة، يتم تهيئة العنصر [<bdi dir="ltr" class="odt-ltr-term">firstNameError</bdi>] برسالة خطأ ووضعه في سمات الطلب.</span>
   </li>
-  <li><span style="color: #000000">الأسطر 16–22: يتم اتباع نفس العملية لمعلمة [lastName]</span>
+  <li><span style="color: #000000">الأسطر 16–22: يتم اتباع نفس العملية لمعلمة [<bdi dir="ltr" class="odt-ltr-term">lastName</bdi>]</span>
   </li>
-  <li><span style="color: #000000">الأسطر 24-32: يتم تطبيق نفس العملية على المعلمة [dateOfBirth]</span>
+  <li><span style="color: #000000">الأسطر 24-32: يتم تطبيق نفس العملية على المعلمة [<bdi dir="ltr" class="odt-ltr-term">dateOfBirth</bdi>]</span>
   </li>
-  <li><span style="color: #000000">السطر 34: يتم استرداد المعلمة [spouse]. لا نتحقق من صحتها لأنها، من حيث المبدأ، تأتي من قيمة زر اختيار. ومع ذلك، لا شيء يمنع برنامجًا من إرسال طلب [POST /people-01/do/validate] مصحوبًا بمعلمة [spouse] وهمية. لذلك يجب أن نختبر صحة هذه المعلمة. هنا، نعتمد على معالجة الاستثناءات لدينا، والتي تؤدي إلى عرض صفحة </span><span style="color: #000000">[exception.jsp] إذا لم يتعامل وحدة التحكم مع الاستثناء بنفسها. لذا، إذا فشل تحويل المعلمة [marie] إلى قيمة منطقية في السطر 34، فسيتم إلقاء استثناء، مما يؤدي إلى إرسال صفحة [exception.jsp] إلى العميل. هذا السلوك يناسبنا.</span>
+  <li><span style="color: #000000">السطر 34: يتم استرداد المعلمة [<bdi dir="ltr" class="odt-ltr-term">spouse</bdi>]. لا نتحقق من صحتها لأنها، من حيث المبدأ، تأتي من قيمة زر اختيار. ومع ذلك، لا شيء يمنع برنامجًا من إرسال طلب [<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">people-01/do/validate</bdi>] مصحوبًا بمعلمة [<bdi dir="ltr" class="odt-ltr-term">spouse</bdi>] وهمية. لذلك يجب أن نختبر صحة هذه المعلمة. هنا، نعتمد على معالجة الاستثناءات لدينا، والتي تؤدي إلى عرض صفحة </span><span style="color: #000000">[<bdi dir="ltr" class="odt-ltr-term">exception.jsp</bdi>] إذا لم يتعامل وحدة التحكم مع الاستثناء بنفسها. لذا، إذا فشل تحويل المعلمة [<bdi dir="ltr" class="odt-ltr-term">marie</bdi>] إلى قيمة منطقية في السطر 34، فسيتم إلقاء استثناء، مما يؤدي إلى إرسال صفحة [<bdi dir="ltr" class="odt-ltr-term">exception.jsp</bdi>] إلى العميل. هذا السلوك يناسبنا.</span>
   </li>
-  <li><span style="color: #000000">الأسطر 34-54: نسترد المعلمة [nbEnfants] ونتحقق من قيمتها.</span>
+  <li><span style="color: #000000">الأسطر 34-54: نسترد المعلمة [<bdi dir="ltr" class="odt-ltr-term">nbEnfants</bdi>] ونتحقق من قيمتها.</span>
   </li>
-  <li><span style="color: #000000">السطر 56: نسترد المعلمة [id] دون التحقق من قيمتها</span>
+  <li><span style="color: #000000">السطر 56: نسترد المعلمة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] دون التحقق من قيمتها</span>
   </li>
-  <li><span style="color: #000000">السطر 58: نفعل الشيء نفسه مع المعلمة [version]</span>
+  <li><span style="color: #000000">السطر 58: نفعل الشيء نفسه مع المعلمة [<bdi dir="ltr" class="odt-ltr-term">version</bdi>]</span>
   </li>
   <li><span style="color: #000000">الأسطر 60-65: إذا كان النموذج غير صالح، يتم إعادة عرضه مع رسائل الخطأ التي تم إنشاؤها مسبقًا</span>
   </li>
-  <li><span style="color: #000000">الأسطر 67-69: إذا كان صالحًا، نقوم بإنشاء كائن [Person] جديد باستخدام حقول النموذج</span>
+  <li><span style="color: #000000">الأسطر 67-69: إذا كان صالحًا، نقوم بإنشاء كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] جديد باستخدام حقول النموذج</span>
   </li>
-  <li><span style="color: #000000">الأسطر 70-78: يتم حفظ الشخص. قد تفشل عملية الحفظ. في بيئة متعددة المستخدمين، قد يكون الشخص المراد تعديله قد تم حذفه أو تعديله بالفعل بواسطة شخص آخر. في هذه الحالة، ستقوم طبقة [dao] بإلقاء استثناء، والذي نتعامل معه هنا.</span>
+  <li><span style="color: #000000">الأسطر 70-78: يتم حفظ الشخص. قد تفشل عملية الحفظ. في بيئة متعددة المستخدمين، قد يكون الشخص المراد تعديله قد تم حذفه أو تعديله بالفعل بواسطة شخص آخر. في هذه الحالة، ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بإلقاء استثناء، والذي نتعامل معه هنا.</span>
   </li>
-  <li><span style="color: #000000">السطر 80: إذا لم تحدث أي استثناءات، يتم إعادة توجيه العميل إلى عنوان URL [/do/list] لعرض الحالة الجديدة للمجموعة.</span>
+  <li><span style="color: #000000">السطر 80: إذا لم تحدث أي استثناءات، يتم إعادة توجيه العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/list</bdi>] لعرض الحالة الجديدة للمجموعة.</span>
   </li>
   <li><span style="color: #000000">السطر 75: إذا حدث استثناء أثناء الحفظ، نطلب إعادة عرض النموذج الأولي، مع تمرير رسالة خطأ الاستثناء إليه (المعلمة الثالثة).</span>
   </li>
 </ul>
 
-<p>تقوم طريقة [showFormulaire] (الأسطر 84–101) بإنشاء القالب المطلوب لصفحة [edit.jsp] باستخدام القيم المدخلة (<em>request.getParameter(&quot; ... &quot;))</em>. تذكر أن رسائل الخطأ قد تمت إضافتها بالفعل إلى القالب بواسطة طريقة [doValidatePersonne]. يتم عرض صفحة [edit.jsp] في الأسطر 99–100.</p>
+<p>تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">showFormulaire</bdi>] (الأسطر 84–101) بإنشاء القالب المطلوب لصفحة [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>] باستخدام القيم المدخلة (<em><bdi dir="ltr" class="odt-ltr-term">request.getParameter</bdi>(&quot; ... &quot;))</em>. تذكر أن رسائل الخطأ قد تمت إضافتها بالفعل إلى القالب بواسطة طريقة [<bdi dir="ltr" class="odt-ltr-term">doValidatePersonne</bdi>]. يتم عرض صفحة [<bdi dir="ltr" class="odt-ltr-term">edit.jsp</bdi>] في الأسطر 99–100.</p>
 <h2 id="149">14.9. <span style="color: #4f81bd">اختبار تطبيق الويب</span></h2>
 <p>تم عرض عدد من الاختبارات في القسم<a href="#spring-mvc-37-ecrans"><u><span style="color: #0563c1"> 14.1</span></u></a>. ندعو القارئ إلى إجرائها مرة أخرى. نعرض هنا لقطات شاشة إضافية توضح حالات تعارض الوصول إلى البيانات في بيئة متعددة المستخدمين:</p>
-<p>سيكون [Firefox] هو متصفح المستخدم U1. يطلب المستخدم U1 عنوان URL [http://localhost:8080/personnes-01]:</p>
+<p>سيكون [<bdi dir="ltr" class="odt-ltr-term">Firefox</bdi>] هو متصفح المستخدم <bdi dir="ltr" class="odt-ltr-term">U1.</bdi> يطلب المستخدم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personnes-01</bdi>]:</p>
 <p><img src="images/10000000000002AA00000117A8902F9C.png" width="477" height="195" style="width:12.629cm;height:5.166cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AA00000117A8902F9C.png" /></p>
-<p>سيكون [IE] متصفح المستخدم U2. يطلب المستخدم U2 نفس عنوان URL:</p>
+<p>سيكون [<bdi dir="ltr" class="odt-ltr-term">IE</bdi>] متصفح المستخدم <bdi dir="ltr" class="odt-ltr-term">U2.</bdi> يطلب المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> نفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL:</bdi></p>
 <p><img src="images/10000000000002A5000000F46AB7CDBC.png" width="474" height="171" style="width:12.539cm;height:4.519cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A5000000F46AB7CDBC.png" /></p>
-<p>يبدأ المستخدم U1 في تعديل السجل الخاص بـ [Lemarchand]:</p>
+<p>يبدأ المستخدم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> في تعديل السجل الخاص بـ [<bdi dir="ltr" class="odt-ltr-term">Lemarchand</bdi>]:</p>
 <p><img src="images/10000000000001D000000169F414850A.png" width="325" height="253" style="width:8.59cm;height:6.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D000000169F414850A.png" /></p>
-<p>يقوم المستخدم U2 بنفس الشيء:</p>
+<p>يقوم المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> بنفس الشيء:</p>
 <p><img src="images/10000000000001A4000001550B6A1282.png" width="296" height="240" style="width:7.83cm;height:6.357cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A4000001550B6A1282.png" /></p>
-<p>يقوم المستخدم U1 بإجراء تغييرات وحفظها:</p>
+<p>يقوم المستخدم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> بإجراء تغييرات وحفظها:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055D000002155D0E89DD.png" width="680" height="264" style="display:inline-block; margin:4px;width:17.997cm;height:6.987cm;" class="odt-zoomable" data-zoom-src="images/100000000000055D000002155D0E89DD.png" /></td></tr></table>
 
-<p>يقوم المستخدم U2 بنفس الشيء:</p>
+<p>يقوم المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> بنفس الشيء:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000551000002EFCF2FE485.png" width="680" height="375" style="display:inline-block; margin:4px;width:17.997cm;height:9.931cm;" class="odt-zoomable" data-zoom-src="images/1000000000000551000002EFCF2FE485.png" /></td></tr></table>
 
-<p>يعود المستخدم U2 إلى قائمة الأشخاص الذين يستخدمون رابط [إلغاء] في النموذج:</p>
+<p>يعود المستخدم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> إلى قائمة الأشخاص الذين يستخدمون رابط [إلغاء] في النموذج:</p>
 <p><img src="images/1000000000000229000000F108A3EFAD.png" width="387" height="169" style="width:10.239cm;height:4.463cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000229000000F108A3EFAD.png" /></p>
-<p>ويجد الشخص [Lemarchand] كما عدّله U1. والآن يقوم U2 بحذف [Lemarchand]:</p>
+<p>ويجد الشخص [<bdi dir="ltr" class="odt-ltr-term">Lemarchand</bdi>] كما عدّله <bdi dir="ltr" class="odt-ltr-term">U1.</bdi> والآن يقوم <bdi dir="ltr" class="odt-ltr-term">U2</bdi> بحذف [<bdi dir="ltr" class="odt-ltr-term">Lemarchand</bdi>]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005560000014B75C7B833.png" width="680" height="165" style="display:inline-block; margin:4px;width:17.997cm;height:4.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000005560000014B75C7B833.png" /></td></tr></table>
 
-<p>لا يزال لدى U1 قائمته الخاصة ويريد تعديل [Lemarchand] مرة أخرى:</p>
+<p>لا يزال لدى <bdi dir="ltr" class="odt-ltr-term">U1</bdi> قائمته الخاصة ويريد تعديل [<bdi dir="ltr" class="odt-ltr-term">Lemarchand</bdi>] مرة أخرى:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055C0000016C2E13A1E1.png" width="680" height="180" style="display:inline-block; margin:4px;width:17.997cm;height:4.775cm;" class="odt-zoomable" data-zoom-src="images/100000000000055C0000016C2E13A1E1.png" /></td></tr></table>
 
-<p>يستخدم U1 رابط [العودة إلى القائمة] لمعرفة ما يجري:</p>
+<p>يستخدم <bdi dir="ltr" class="odt-ltr-term">U1</bdi> رابط [العودة إلى القائمة] لمعرفة ما يجري:</p>
 <p><img src="images/1000000000000280000000FA1870135A.png" width="448" height="175" style="width:11.85cm;height:4.628cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000280000000FA1870135A.png" /></p>
-<p>يكتشف أن [Lemarchand] لم يعد موجودًا بالفعل في القائمة...</p>
+<p>يكتشف أن [<bdi dir="ltr" class="odt-ltr-term">Lemarchand</bdi>] لم يعد موجودًا بالفعل في القائمة...</p>
 <h2 id="1410">14.10. <span style="color: #4f81bd">الخلاصة</span></h2>
-<p><span style="color: #000000">لقد قمنا بتطبيق بنية MVC ضمن بنية ثلاثية المستويات [الويب، منطق الأعمال، DAO] باستخدام مثال بسيط لإدارة قائمة بالأشخاص. وقد سمح لنا ذلك بتطبيق المفاهيم التي تم عرضها في الأقسام السابقة. في النسخة التي قمنا بفحصها، تم الاحتفاظ بقائمة الأشخاص في الذاكرة. وسنستكشف قريبًا نسخًا يتم فيها تخزين هذه القائمة في جدول قاعدة بيانات.</span></p>
-<p><span style="color: #000000">ولكن أولاً، سنقدم أداة تسمى </span><strong>Spring IoC</strong><span style="color: #000000">، والتي تسهل تكامل الطبقات المختلفة لتطبيق </span><em>متعدد الطبقات</em><span style="color: #000000">.</span></p>
+<p><span style="color: #000000">لقد قمنا بتطبيق بنية <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> ضمن بنية ثلاثية المستويات [الويب، منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] باستخدام مثال بسيط لإدارة قائمة بالأشخاص. وقد سمح لنا ذلك بتطبيق المفاهيم التي تم عرضها في الأقسام السابقة. في النسخة التي قمنا بفحصها، تم الاحتفاظ بقائمة الأشخاص في الذاكرة. وسنستكشف قريبًا نسخًا يتم فيها تخزين هذه القائمة في جدول قاعدة بيانات.</span></p>
+<p><span style="color: #000000">ولكن أولاً، سنقدم أداة تسمى </span><strong><bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi></strong><span style="color: #000000">، والتي تسهل تكامل الطبقات المختلفة لتطبيق </span><em>متعدد الطبقات</em><span style="color: #000000">.</span></p>
 
 
 

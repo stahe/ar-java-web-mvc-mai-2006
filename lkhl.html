@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -920,26 +922,26 @@
 <h1 id="21">21. <span style="color: #365f91">الخلاصة</span></h1>
 <p>دعونا نستعرض ما تم عرضه في هذا المستند:</p>
 <ul>
-  <li>أساسيات برمجة الويب بلغة Java باستخدام السيرفلتات وصفحات JSP
+  <li>أساسيات برمجة الويب بلغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> باستخدام السيرفلتات وصفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>
   </li>
-  <li>مقدمة إلى بنية MVC
+  <li>مقدمة إلى بنية <bdi dir="ltr" class="odt-ltr-term">MVC</bdi>
   </li>
-  <li>مقدمة إلى بنية 3-tier
+  <li>مقدمة إلى بنية 3-<bdi dir="ltr" class="odt-ltr-term">tier</bdi>
   </li>
-  <li>مقدمة إلى Spring IoC
+  <li>مقدمة إلى <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>
   </li>
   <li>أمثلة لتوضيح هذه النقاط
   </li>
 </ul>
 
-<p>نعتقد أن القراء الذين وصلوا إلى هذه المرحلة أصبحوا جاهزين لتطوير تطبيقات الويب الخاصة بهم بلغة Java. كما أنهم جاهزون للتعامل مع أساليب تطوير أخرى مشابهة لتلك التي تم تناولها في هذا المستند. دعونا نستعرض بنية تطبيقات الويب التي تم تطويرها هنا:</p>
+<p>نعتقد أن القراء الذين وصلوا إلى هذه المرحلة أصبحوا جاهزين لتطوير تطبيقات الويب الخاصة بهم بلغة <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> كما أنهم جاهزون للتعامل مع أساليب تطوير أخرى مشابهة لتلك التي تم تناولها في هذا المستند. دعونا نستعرض بنية تطبيقات الويب التي تم تطويرها هنا:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046200000161FC07A7FF.png" width="561" height="177" style="display:inline-block; margin:4px;width:14.843cm;height:4.671cm;" class="odt-zoomable" data-zoom-src="images/100000000000046200000161FC07A7FF.png" /></td></tr></table>
 
 <p>بالنسبة للتطبيقات البسيطة، هذه البنية كافية. بمجرد كتابة عدة تطبيقات من هذا النوع، ستلاحظ أن سيرفلتات تطبيقين مختلفين:</p>
 <ol>
-  <li>تستخدمان نفس الآلية لتحديد الطريقة [doAction] التي يجب تنفيذها لمعالجة الإجراء المطلوب من قبل المستخدم
+  <li>تستخدمان نفس الآلية لتحديد الطريقة [<bdi dir="ltr" class="odt-ltr-term">doAction</bdi>] التي يجب تنفيذها لمعالجة الإجراء المطلوب من قبل المستخدم
   </li>
-  <li>في الواقع لا يختلفان إلا في محتوى طرق [doAction] هذه
+  <li>في الواقع لا يختلفان إلا في محتوى طرق [<bdi dir="ltr" class="odt-ltr-term">doAction</bdi>] هذه
   </li>
 </ol>
 
@@ -953,16 +955,16 @@
   </li>
 </ul>
 
-<p>وقد ظهرت أدوات، تُعرف غالبًا باسم «الأطر»، لتزويد المطورين بهذه الإمكانيات. وأقدمها وأشهرها على الأرجح هو <strong>Struts</strong> (http://struts.apache.org/). ويُعد <strong>Jakarta Struts</strong> أحد مشاريع <strong>مؤسسة Apache للبرمجيات</strong> (www.apache.org). ويرد وصف لهذا الإطار في (http://tahe.developpez.com/java/struts/).</p>
-<p>يقدم إطار عمل <strong>Spring</strong> (http://www.springframework.org/)، الذي ظهر مؤخرًا، ميزات مشابهة لتلك الموجودة في Struts. ويشير هذا على وجه التحديد إلى وحدة <strong>Spring MVC</strong> الخاصة به<strong>.</strong> وقد تم وصف استخدامه في عدة مقالات (http://tahe.developpez.com/java/springmvc-part1/).</p>
-<p>لا يقتصر Spring على مفهوم MVC لطبقة [الويب] في تطبيق ثلاثي الطبقات. فهو مفيد حتى في التطبيقات خارج نطاق الويب.</p>
-<p><span style="color: #000000">وبالتالي، اختتمنا دورتنا بتنفيذ بنية MVC ضمن بنية ثلاثية الطبقات [الويب، منطق الأعمال، DAO] باستخدام مثال أساسي لإدارة قائمة بالأشخاص.</span></p>
+<p>وقد ظهرت أدوات، تُعرف غالبًا باسم «الأطر»، لتزويد المطورين بهذه الإمكانيات. وأقدمها وأشهرها على الأرجح هو <strong><bdi dir="ltr" class="odt-ltr-term">Struts</bdi></strong> (<bdi dir="ltr" class="odt-ltr-term">http://struts.apache.org/</bdi>). ويُعد <strong><bdi dir="ltr" class="odt-ltr-term">Jakarta Struts</bdi></strong> أحد مشاريع <strong>مؤسسة <bdi dir="ltr" class="odt-ltr-term">Apache</bdi> للبرمجيات</strong> (<bdi dir="ltr" class="odt-ltr-term">www.apache.org</bdi>). ويرد وصف لهذا الإطار في (<bdi dir="ltr" class="odt-ltr-term">http://tahe.developpez.com/java/struts/</bdi>).</p>
+<p>يقدم إطار عمل <strong><bdi dir="ltr" class="odt-ltr-term">Spring</bdi></strong> (<bdi dir="ltr" class="odt-ltr-term">http://www.springframework.org/</bdi>)، الذي ظهر مؤخرًا، ميزات مشابهة لتلك الموجودة في <bdi dir="ltr" class="odt-ltr-term">Struts.</bdi> ويشير هذا على وجه التحديد إلى وحدة <strong><bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi></strong> الخاصة به<strong>.</strong> وقد تم وصف استخدامه في عدة مقالات (<bdi dir="ltr" class="odt-ltr-term">http://tahe.developpez.com/java/springmvc-part1/</bdi>).</p>
+<p>لا يقتصر <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> على مفهوم <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> لطبقة [الويب] في تطبيق ثلاثي الطبقات. فهو مفيد حتى في التطبيقات خارج نطاق الويب.</p>
+<p><span style="color: #000000">وبالتالي، اختتمنا دورتنا بتنفيذ بنية <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> ضمن بنية ثلاثية الطبقات [الويب، منطق الأعمال، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] باستخدام مثال أساسي لإدارة قائمة بالأشخاص.</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000447000001DB43FCAB36.png" width="548" height="238" style="display:inline-block; margin:4px;width:14.487cm;height:6.285cm;" class="odt-zoomable" data-zoom-src="images/1000000000000447000001DB43FCAB36.png" /></td></tr></table>
 
-<p><span style="color: #000000">في الإصدار 1 من التطبيق، كانت قائمة الأشخاص محفوظة في الذاكرة وتختفي عند إغلاق التطبيق الويب. أما في الإصدارات الأخرى، فتُخزّن قائمة الأشخاص في جدول قاعدة بيانات. وقد استخدمنا أربعة أنظمة إدارة قواعد بيانات مختلفة: Firebird وPostgres وMySQL وSQL Server Express.</span></p>
-<p><span style="color: #000000">بفضل </span><strong>Spring</strong> <span style="color: #000000">IoC، أمكن الاحتفاظ بالطبقة [الويب] من الإصدار 1 بالكامل في الإصدارات اللاحقة. وبذلك أثبتنا أنه من الممكن بناء بنى ذات مست</span><em>ويات متعددة (n-tier)</em> <span style="color: #000000">ذات طبقات مستقلة.</span></p>
-<p><span style="color: #000000">مع الإصدارات التي تستخدم قاعدة بيانات، أثبتنا مساهمة Spring في بناء طبقات [DAO] و[service]. بفضل تكامل Spring مع iBATIS، تمكنا من بناء أربعة إصدارات تختلف فقط في ملفات التكوين الخاصة بها. تم استخدام نفس فئة [DaoImplCommon] لتنفيذ طبقة [dao] في جميع الإصدارات الأربعة. لمعالجة مشكلة خاصة بنظام إدارة قواعد البيانات Firebird، كان علينا اشتقاق هذه الفئة ولكن لم نحتاج إلى تعديلها.</span></p>
-<p><span style="color: #000000">وأخيرًا، أوضحنا كيف سمح لنا Spring بإدارة المعاملات بشكل إعلاني في طبقة [service].</span></p>
+<p><span style="color: #000000">في الإصدار 1 من التطبيق، كانت قائمة الأشخاص محفوظة في الذاكرة وتختفي عند إغلاق التطبيق الويب. أما في الإصدارات الأخرى، فتُخزّن قائمة الأشخاص في جدول قاعدة بيانات. وقد استخدمنا أربعة أنظمة إدارة قواعد بيانات مختلفة: <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> و<bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> و<bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> و<bdi dir="ltr" class="odt-ltr-term">SQL Server Express.</bdi></span></p>
+<p><span style="color: #000000">بفضل </span><strong><bdi dir="ltr" class="odt-ltr-term">Spring</bdi></strong> <span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">IoC</bdi>، أمكن الاحتفاظ بالطبقة [الويب] من الإصدار 1 بالكامل في الإصدارات اللاحقة. وبذلك أثبتنا أنه من الممكن بناء بنى ذات مست</span><em>ويات متعددة (<bdi dir="ltr" class="odt-ltr-term">n-tier</bdi>)</em> <span style="color: #000000">ذات طبقات مستقلة.</span></p>
+<p><span style="color: #000000">مع الإصدارات التي تستخدم قاعدة بيانات، أثبتنا مساهمة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> في بناء طبقات [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. بفضل تكامل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> مع <bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>، تمكنا من بناء أربعة إصدارات تختلف فقط في ملفات التكوين الخاصة بها. تم استخدام نفس فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] لتنفيذ طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في جميع الإصدارات الأربعة. لمعالجة مشكلة خاصة بنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>، كان علينا اشتقاق هذه الفئة ولكن لم نحتاج إلى تعديلها.</span></p>
+<p><span style="color: #000000">وأخيرًا، أوضحنا كيف سمح لنا <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> بإدارة المعاملات بشكل إعلاني في طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>].</span></p>
 <p><span style="color: #000000">نشجع القراء على استكشاف جميع الميزات التي يقدمها هذا المنتج.</span></p>
 
 

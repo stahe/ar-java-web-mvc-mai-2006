@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1059,15 +1061,15 @@
 
 
 
-<h1 id="10-mvc-person-5">10. <span style="color: #365f91">تطبيق الويب MVC [person] – الإصدار 5</span></h1>
+<h1 id="10-mvc-person-5">10. <span style="color: #365f91">تطبيق الويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] – الإصدار 5</span></h1>
 <p><a id="personne3-introduction1"></a></p>
 <h2 id="101">10.1. <span style="color: #4f81bd">مقدمة</span></h2>
 <p>في هذا الإصدار، نقوم بإجراء تغييرين:</p>
-<p>يتعلق التغيير الأول بكيفية إشارة العميل إلى الخادم بالإجراء الذي يرغب في تنفيذه. حتى الآن، كان يتم تحديد ذلك باستخدام معلمة تسمى [action] في طلب GET أو POST الخاص بالعميل. هنا، سيتم تحديد الإجراء من خلال العنصر الأخير في عنوان URL الذي يطلبه العميل، كما هو موضح في التسلسل التالي:</p>
+<p>يتعلق التغيير الأول بكيفية إشارة العميل إلى الخادم بالإجراء الذي يرغب في تنفيذه. حتى الآن، كان يتم تحديد ذلك باستخدام معلمة تسمى [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] في طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST</bdi> الخاص بالعميل. هنا، سيتم تحديد الإجراء من خلال العنصر الأخير في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يطلبه العميل، كما هو موضح في التسلسل التالي:</p>
 <p><img src="images/10000000000005180000016504D44577.png" width="652" height="179" style="width:17.251cm;height:4.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005180000016504D44577.png" /></p>
-<p>في [1]، عنوان URL الذي تم إرسال النموذج إليه هو [/person5/do/validateForm]. العنصر الأخير [validateForm] من عنوان URL هو الذي سمح لوحدة التحكم بالتعرف على الإجراء المطلوب تنفيذه. في [2]، تم إرسال طلب POST الذي تم تشغيله بواسطة رابط [Return to form] إلى عنوان URL [/person5/do/returnForm]. هنا مرة أخرى، يحدد العنصر الأخير [returnForm] من عنوان URL للوحدة التحكم الإجراء الذي يجب تنفيذه.</p>
-<p>نحن نقدم هذا التغيير لأنه الطريقة المستخدمة من قبل أطر عمل تطوير الويب الأكثر استخدامًا، مثل <em>Struts</em> أو <em>Spring MVC</em>.</p>
-<p>ستكون جميع عناوين URL في التطبيق بالشكل [/person5/do/action]. سيحدد ملف [web.xml] لتطبيق [/person5] أنه يقبل عناوين URL بالشكل [/do/*]:</p>
+<p>في [1]، عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي تم إرسال النموذج إليه هو [/<bdi dir="ltr" class="odt-ltr-term">person5/do/validateForm</bdi>]. العنصر الأخير [<bdi dir="ltr" class="odt-ltr-term">validateForm</bdi>] من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هو الذي سمح لوحدة التحكم بالتعرف على الإجراء المطلوب تنفيذه. في [2]، تم إرسال طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> الذي تم تشغيله بواسطة رابط [<bdi dir="ltr" class="odt-ltr-term">Return to form</bdi>] إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">person5/do/returnForm</bdi>]. هنا مرة أخرى، يحدد العنصر الأخير [<bdi dir="ltr" class="odt-ltr-term">returnForm</bdi>] من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للوحدة التحكم الإجراء الذي يجب تنفيذه.</p>
+<p>نحن نقدم هذا التغيير لأنه الطريقة المستخدمة من قبل أطر عمل تطوير الويب الأكثر استخدامًا، مثل <em><bdi dir="ltr" class="odt-ltr-term">Struts</bdi></em> أو <em><bdi dir="ltr" class="odt-ltr-term">Spring MVC</bdi></em>.</p>
+<p>ستكون جميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> في التطبيق بالشكل [/<bdi dir="ltr" class="odt-ltr-term">person5/do/action</bdi>]. سيحدد ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] لتطبيق [/<bdi dir="ltr" class="odt-ltr-term">person5</bdi>] أنه يقبل عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بالشكل [/<bdi dir="ltr" class="odt-ltr-term">do/</bdi>*]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">personne</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span></span></span>
@@ -1080,7 +1082,7 @@
 <span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>        // on récupère l&#39;action à exécuter
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>String action=request.getPathInfo();
 </code></pre></div></td></tr></table></div>
-<p>تُرجع طريقة [getPathInfo] الخاصة بكائن [request] العنصر الأخير من عنوان URL للطلب.</p>
+<p>تُرجع طريقة [<bdi dir="ltr" class="odt-ltr-term">getPathInfo</bdi>] الخاصة بكائن [<bdi dir="ltr" class="odt-ltr-term">request</bdi>] العنصر الأخير من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للطلب.</p>
 <p>التغيير الثاني يتعلق بكيفية تخزين مدخلات المستخدم بين دورات الطلب/الاستجابة. حالياً، يتم تخزين هذه المعلومات في جلسة عمل. قد يكون لهذا النهج عيوب إذا كان هناك العديد من المستخدمين وكمية كبيرة من البيانات لتخزينها لكل واحد منهم. في الواقع، لكل مستخدم جلسة عمل شخصية خاصة به. علاوة على ذلك، تظل الجلسة نشطة لبعض الوقت بعد تسجيل خروج المستخدم، ما لم يتم توفير خيار تسجيل الخروج. وبالتالي، فإن 1,000 جلسة عمل بحجم 100 بايت لكل منها ستشغل 1 ميغابايت من الذاكرة. ويظل هذا متطلبًا معتدلاً، وقليلة هي التطبيقات التي لديها 1,000 جلسة عمل نشطة في وقت واحد.</p>
 <p>ومع ذلك، هناك بدائل للجلسات التي تستهلك ذاكرة أقل، ومن الجيد أن تكون على دراية بها. هنا، سنستخدم طريقة ملفات تعريف الارتباط. دعونا نوضح ذلك بمثال.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
@@ -1088,7 +1090,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055B000001A7FFA399FA.png" width="680" height="210" style="display:inline-block; margin:4px;width:17.997cm;height:5.553cm;" class="odt-zoomable" data-zoom-src="images/100000000000055B000001A7FFA399FA.png" /></td></tr></table>
 
-<p>ينتج عن دورة الطلب/الاستجابة هذه التبادلات التالية عبر بروتوكول HTTP بين العميل والخادم:</p>
+<p>ينتج عن دورة الطلب/الاستجابة هذه التبادلات التالية عبر بروتوكول <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> بين العميل والخادم:</p>
 <p>[1]: [طلب العميل]</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -1120,7 +1122,7 @@
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">txtNom</span><span class="o">=</span><span class="n">pauline</span><span class="o">&amp;</span><span class="n">txtAge</span><span class="o">=</span><span class="mi">18</span>
 </code></pre></div></td></tr></table></div>
-<p>هذا طلب POST قياسي. لا يوجد شيء غير عادي هنا، باستثناء أنه على الرغم من أننا لن نستخدم جلسة عمل، فإن خادم الويب ينشئ واحدة على أي حال. ويتضح ذلك من رمز الجلسة الذي يرسله المتصفح إلى الخادم في السطر 11، والذي كان قد تلقّاه سابقًا من الخادم.</p>
+<p>هذا طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> قياسي. لا يوجد شيء غير عادي هنا، باستثناء أنه على الرغم من أننا لن نستخدم جلسة عمل، فإن خادم الويب ينشئ واحدة على أي حال. ويتضح ذلك من رمز الجلسة الذي يرسله المتصفح إلى الخادم في السطر 11، والذي كان قد تلقّاه سابقًا من الخادم.</p>
 <p>[2]: [استجابة الخادم]</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
@@ -1136,13 +1138,13 @@
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>Content-Length: 547
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a>Date: Mon, 22 May 2006 08:03:51 GMT
 </code></pre></div></td></tr></table></div>
-<p>يمكننا أن نرى أنه في السطرين 3 و 4، تم إرسال رؤوس HTTP [Set-Cookie] إلى متصفح العميل، واحدة للاسم (السطر 3) وواحدة للعمر (السطر 4). قيم ملفات تعريف الارتباط هذه هي القيم المنشورة في السطر 14 من POST [1] أعلاه.</p>
+<p>يمكننا أن نرى أنه في السطرين 3 و 4، تم إرسال رؤوس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Set-Cookie</bdi>] إلى متصفح العميل، واحدة للاسم (السطر 3) وواحدة للعمر (السطر 4). قيم ملفات تعريف الارتباط هذه هي القيم المنشورة في السطر 14 من <bdi dir="ltr" class="odt-ltr-term">POST</bdi> [1] أعلاه.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p>الخطوة 2: العودة إلى النموذج</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 
 <p><img src="images/1000000000000549000001A3D6C2B924.png" width="677" height="209" style="width:17.9cm;height:5.542cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000549000001A3D6C2B924.png" /></p>
-<p>ينتج عن دورة الطلب/الاستجابة هذه التبادلات HTTP التالية بين العميل والخادم:</p>
+<p>ينتج عن دورة الطلب/الاستجابة هذه التبادلات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التالية بين العميل والخادم:</p>
 <p>[1]: [طلب العميل]</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
@@ -1170,7 +1172,7 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">www</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">urlencoded</span>
 <a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">0</span>
 </code></pre></div></td></tr></table></div>
-<p>هنا نرى طلب POST الذي تم تشغيله بالنقر على رابط [العودة إلى النموذج]. في السطر 11، نرى أن المتصفح يرسل ملفات تعريف الارتباط التي تلقّاها [name, age, JSESSIONID] إلى الخادم باستخدام رأس HTTP [Cookie]. هكذا تعمل ملفات تعريف الارتباط. يرسل العميل إلى الخادم ملفات تعريف الارتباط التي أرسلها الخادم إليه. في هذا المثال، سيتلقى وحدة التحكم القيم [pauline, 18]، والتي يجب أن يضعها في حقول [txtName, txtAge] في عرض [form] المعروض في [2].</p>
+<p>هنا نرى طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> الذي تم تشغيله بالنقر على رابط [العودة إلى النموذج]. في السطر 11، نرى أن المتصفح يرسل ملفات تعريف الارتباط التي تلقّاها [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>, <bdi dir="ltr" class="odt-ltr-term">JSESSIONID</bdi>] إلى الخادم باستخدام رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Cookie</bdi>]. هكذا تعمل ملفات تعريف الارتباط. يرسل العميل إلى الخادم ملفات تعريف الارتباط التي أرسلها الخادم إليه. في هذا المثال، سيتلقى وحدة التحكم القيم [<bdi dir="ltr" class="odt-ltr-term">pauline</bdi>, 18]، والتي يجب أن يضعها في حقول [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>, <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] في عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>] المعروض في [2].</p>
 <p>[2]: [استجابة الخادم]</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -1183,12 +1185,12 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>Date: Mon, 22 May 2006 08:16:47 GMT
 </code></pre></div></td></tr></table></div>
 <p>لا يوجد شيء محدد يستحق الذكر هنا سوى حقيقة أن الخادم لم يرسل أي ملفات تعريف ارتباط في هذا الرد. لن يمنع هذا المتصفح من إعادة إرسال جميع ملفات تعريف الارتباط التي تلقاها من الخادم في التبادل التالي، حتى لو لم يكن لذلك أي فائدة. لذلك، نقوم بتقليل الحمل على الذاكرة المتاحة للخادم على حساب زيادة تدفق الأحرف في التبادلات بين العميل والخادم.</p>
-<h2 id="102-eclipse">10.2. <span style="color: #4f81bd">مشروع Eclipse</span></h2>
-<p>لإنشاء مشروع Eclipse [mvc-personne-05] لتطبيق الويب [/personne5]، قم بنسخ مشروع [mvc-personne-04] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
+<h2 id="102-eclipse">10.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></h2>
+<p>لإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-05</bdi>] لتطبيق الويب [/<bdi dir="ltr" class="odt-ltr-term">personne5</bdi>]، قم بنسخ مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-04</bdi>] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB0000019D59396DF5.png" width="164" height="289" style="display:inline-block; margin:4px;width:4.35cm;height:7.645cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB0000019D59396DF5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016A0000005ACA1567F4.png" width="253" height="63" style="display:inline-block; margin:4px;width:6.699cm;height:1.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A0000005ACA1567F4.png" /></td></tr></table>
 
-<h2 id="103-personne5">10.3. <span style="color: #4f81bd">تكوين تطبيق الويب [personne5]</span></h2>
-<p>فيما يلي ملف <strong>web.xml</strong> الخاص بتطبيق <strong>/personne5</strong>:</p>
+<h2 id="103-personne5">10.3. <span style="color: #4f81bd">تكوين تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">personne5</bdi>]</span></h2>
+<p>فيما يلي ملف <strong><bdi dir="ltr" class="odt-ltr-term">web.xml</bdi></strong> الخاص بتطبيق <strong>/<bdi dir="ltr" class="odt-ltr-term">personne5</bdi></strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?<span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span>?&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -1219,13 +1221,13 @@
 
 <p>هذا الملف مطابق للملف الموجود في الإصدار السابق باستثناء بعض التفاصيل:</p>
 <ul>
-  <li>السطر 6: تغير اسم العرض لتطبيق الويب إلى [mvc-personne-05]
+  <li>السطر 6: تغير اسم العرض لتطبيق الويب إلى [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-05</bdi>]
   </li>
-  <li>السطر 18: عناوين URL التي يتعامل معها التطبيق هي على شكل [/do/*]. في السابق، كان يتم التعامل مع عنوان URL [/main] فقط. الآن، هناك عدد من عناوين URL يساوي عدد الإجراءات المطلوب التعامل معها.
+  <li>السطر 18: عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي يتعامل معها التطبيق هي على شكل [/<bdi dir="ltr" class="odt-ltr-term">do/</bdi>*]. في السابق، كان يتم التعامل مع عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">main</bdi>] فقط. الآن، هناك عدد من عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> يساوي عدد الإجراءات المطلوب التعامل معها.
   </li>
 </ul>
 
-<p>تتغير الصفحة الرئيسية [index.jsp]:</p>
+<p>تتغير الصفحة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1235,13 +1237,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 5: تقوم صفحة [index.jsp] بإعادة توجيه العميل إلى عنوان URL [/person5/do/form]، وهو ما يعادل مطالبة وحدة التحكم بتنفيذ الإجراء [form].
+  <li>السطر 5: تقوم صفحة [<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>] بإعادة توجيه العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">person5/do/form</bdi>]، وهو ما يعادل مطالبة وحدة التحكم بتنفيذ الإجراء [<bdi dir="ltr" class="odt-ltr-term">form</bdi>].
   </li>
 </ul>
 
 <h2 id="104">10.4. <span style="color: #4f81bd">كود العرض</span></h2>
-<p>لا تتغير طرق العرض [form، response، errors] إلا قليلاً. التغيير الوحيد هو أن الإجراء المطلوب تنفيذه لم يعد محدداً بنفس الطريقة السابقة، عندما كان يُعرَّف في حقل مخفي باسم [action] في النماذج المرسلة. الآن يتم تعريفه في عنوان URL الهدف للنماذج المرسلة، أي في سمة [action] لعلامة &lt;form&gt;:</p>
-<p>[form.jsp]:</p>
+<p>لا تتغير طرق العرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>، <bdi dir="ltr" class="odt-ltr-term">response</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>] إلا قليلاً. التغيير الوحيد هو أن الإجراء المطلوب تنفيذه لم يعد محدداً بنفس الطريقة السابقة، عندما كان يُعرَّف في حقل مخفي باسم [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] في النماذج المرسلة. الآن يتم تعريفه في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف للنماذج المرسلة، أي في سمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] لعلامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt;:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">form.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
@@ -1264,13 +1266,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر [13]: يعود ظهور المعلمة [action] في النموذج بعد غيابها لفترة في الإصدارات السابقة. لفهم قيمة هذه السمة هنا، تذكر أن جميع عناوين URL التي يعالجها التطبيق تكون على شكل [/do/action]. في السطر [13]، تحتوي السمة [action] على عنوان URL نسبي كقيمة لها (لا يبدأ بـ /). لذلك، سيكملها المتصفح بعنوان URL للصفحة المعروضة حاليًا، والذي يكون بالضرورة عنوان URL بالشكل [/do/action]. سيتم استبدال العنصر الأخير بعنوان URL النسبي للسمة [action] لعلامة &lt;form&gt; للحصول على عنوان URL [/do/validationFormulaire] كهدف POST.
+  <li>السطر [13]: يعود ظهور المعلمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] في النموذج بعد غيابها لفترة في الإصدارات السابقة. لفهم قيمة هذه السمة هنا، تذكر أن جميع عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي يعالجها التطبيق تكون على شكل [/<bdi dir="ltr" class="odt-ltr-term">do/action</bdi>]. في السطر [13]، تحتوي السمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] على عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> نسبي كقيمة لها (لا يبدأ بـ /). لذلك، سيكملها المتصفح بعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> للصفحة المعروضة حاليًا، والذي يكون بالضرورة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> بالشكل [/<bdi dir="ltr" class="odt-ltr-term">do/action</bdi>]. سيتم استبدال العنصر الأخير بعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> النسبي للسمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] لعلامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt; للحصول على عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/validationFormulaire</bdi>] كهدف <bdi dir="ltr" class="odt-ltr-term">POST.</bdi>
   </li>
-  <li>اختفى الحقل المخفي [action]
+  <li>اختفى الحقل المخفي [<bdi dir="ltr" class="odt-ltr-term">action</bdi>]
   </li>
 </ul>
 
-<p>[response.jsp]:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">response.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1289,13 +1291,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر [7]: سيكون هدف POST هو [/do/returnForm]
+  <li>السطر [7]: سيكون هدف <bdi dir="ltr" class="odt-ltr-term">POST</bdi> هو [/<bdi dir="ltr" class="odt-ltr-term">do/returnForm</bdi>]
   </li>
-  <li>تمت إزالة الحقل المخفي [action] من النموذج في السطرين 7 و8.
+  <li>تمت إزالة الحقل المخفي [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] من النموذج في السطرين 7 و8.
   </li>
 </ul>
 
-<p>[errors.jsp]:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">errors.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
@@ -1313,20 +1315,20 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر [6]: سيكون هدف POST هو [/do/returnForm]
+  <li>السطر [6]: سيكون هدف <bdi dir="ltr" class="odt-ltr-term">POST</bdi> هو [/<bdi dir="ltr" class="odt-ltr-term">do/returnForm</bdi>]
   </li>
-  <li>تمت إزالة الحقل المخفي [action] من النموذج في السطرين 6 و7.
+  <li>تمت إزالة الحقل المخفي [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] من النموذج في السطرين 6 و7.
   </li>
 </ul>
 
 <p>ندعو القراء إلى اختبار هذه العروض الجديدة باستخدام النهج الذي شوهد في الإصدارات السابقة.</p>
-<h2 id="105-servletpersonne">10.5. <span style="color: #4f81bd">وحدة التحكم [ServletPersonne]</span></h2>
-<p>ستتولى وحدة التحكم [ServletPersonne] الخاصة بتطبيق الويب [/personne5] معالجة الإجراءات التالية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">رقم</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">الطلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المصدر</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المعالجة</mark></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[GET /person5/do/form]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان URL الذي أدخله المستخدم</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [form] فارغ</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[POST</div><div style="margin:0 0 0.5em 0">/person5/do/formValidation]</div><div style="margin:0 0 0.5em 0">مع المعلمات [txtName، txtAge]</div><div style="margin:0 0 0.5em 0">تم النشر</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على</div><div style="margin:0 0 0.5em 0">[إرسال] في</div><div style="margin:0 0 0.5em 0">[form]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تحقق من قيم المعلمات [txtName، txtAge]</div><div style="margin:0 0 0.5em 0">- إذا كانت غير صحيحة، أرسل عرض [errors(errors)]</div><div style="margin:0 0 0.5em 0">- إذا كانت صحيحة، أرسل عرض [response(name,age)]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[POST</div><div style="margin:0 0 0.5em 0">/person5/do/returnForm]</div><div style="margin:0 0 0.5em 0">بدون معلمات مرسلة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على [العودة إلى</div><div style="margin:0 0 0.5em 0">الاستمارة] من</div><div style="margin:0 0 0.5em 0">[الاستجابة] و[الأخطاء].</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [النموذج] مملوءًا مسبقًا بأحدث القيم المدخلة</div></td></tr></table>
+<h2 id="105-servletpersonne">10.5. <span style="color: #4f81bd">وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>]</span></h2>
+<p>ستتولى وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] الخاصة بتطبيق الويب [/<bdi dir="ltr" class="odt-ltr-term">personne5</bdi>] معالجة الإجراءات التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">رقم</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">الطلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المصدر</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المعالجة</mark></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">person5/do/form</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي أدخله المستخدم</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>] فارغ</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">POST</bdi></div><div style="margin:0 0 0.5em 0">/<bdi dir="ltr" class="odt-ltr-term">person5/do/formValidation</bdi>]</div><div style="margin:0 0 0.5em 0">مع المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>، <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>]</div><div style="margin:0 0 0.5em 0">تم النشر</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على</div><div style="margin:0 0 0.5em 0">[إرسال] في</div><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تحقق من قيم المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>، <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>]</div><div style="margin:0 0 0.5em 0">- إذا كانت غير صحيحة، أرسل عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>(<bdi dir="ltr" class="odt-ltr-term">errors</bdi>)]</div><div style="margin:0 0 0.5em 0">- إذا كانت صحيحة، أرسل عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>,<bdi dir="ltr" class="odt-ltr-term">age</bdi>)]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">POST</bdi></div><div style="margin:0 0 0.5em 0">/<bdi dir="ltr" class="odt-ltr-term">person5/do/returnForm</bdi>]</div><div style="margin:0 0 0.5em 0">بدون معلمات مرسلة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على [العودة إلى</div><div style="margin:0 0 0.5em 0">الاستمارة] من</div><div style="margin:0 0 0.5em 0">[الاستجابة] و[الأخطاء].</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [النموذج] مملوءًا مسبقًا بأحدث القيم المدخلة</div></td></tr></table>
 
-<p>هيكل وحدة التحكم [ServletPersonne] مطابق للنسخة السابقة. سنستعرض التغييرات التي تم إجراؤها على الطرق [doValidationFormulaire، doRetourFormulaire، doGet]؛ بينما تظل الطرق [init، doInit، doPost] دون تغيير.</p>
-<h3 id="1051-doget">10.5.1. <span style="color: #4f81bd">طريقة [doGet]</span></h3>
-<p>لا تسترد طريقة [doGet] الإجراء المراد تنفيذه بنفس الطريقة المتبعة في الإصدارات السابقة:</p>
+<p>هيكل وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] مطابق للنسخة السابقة. سنستعرض التغييرات التي تم إجراؤها على الطرق [<bdi dir="ltr" class="odt-ltr-term">doValidationFormulaire</bdi>، <bdi dir="ltr" class="odt-ltr-term">doRetourFormulaire</bdi>، <bdi dir="ltr" class="odt-ltr-term">doGet</bdi>]؛ بينما تظل الطرق [<bdi dir="ltr" class="odt-ltr-term">init</bdi>، <bdi dir="ltr" class="odt-ltr-term">doInit</bdi>، <bdi dir="ltr" class="odt-ltr-term">doPost</bdi>] دون تغيير.</p>
+<h3 id="1051-doget">10.5.1. <span style="color: #4f81bd">طريقة [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>]</span></h3>
+<p>لا تسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">doGet</bdi>] الإجراء المراد تنفيذه بنفس الطريقة المتبعة في الإصدارات السابقة:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1398,18 +1400,18 @@
 <a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 12: استرداد الإجراء المراد تنفيذه. ويكون في صيغة [/action].
+  <li>السطر 12: استرداد الإجراء المراد تنفيذه. ويكون في صيغة [/<bdi dir="ltr" class="odt-ltr-term">action</bdi>].
   </li>
-  <li>الأسطر 18–22: معالجة الإجراء [/form] المطلوب بواسطة طلب GET
+  <li>الأسطر 18–22: معالجة الإجراء [/<bdi dir="ltr" class="odt-ltr-term">form</bdi>] المطلوب بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi>
   </li>
-  <li>الأسطر 23–27: معالجة الإجراء [/validateForm] المطلوب بواسطة طلب POST
+  <li>الأسطر 23–27: معالجة الإجراء [/<bdi dir="ltr" class="odt-ltr-term">validateForm</bdi>] المطلوب بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>
   </li>
-  <li>الأسطر 28–32: معالجة الإجراء [/returnForm] المطلوب بواسطة طلب POST
+  <li>الأسطر 28–32: معالجة الإجراء [/<bdi dir="ltr" class="odt-ltr-term">returnForm</bdi>] المطلوب بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi>
   </li>
 </ul>
 
-<h3 id="1052-dovalidationformulaire">10.5.2. <span style="color: #4f81bd">طريقة [doValidationFormulaire]</span></h3>
-<p>تقوم هذه الطريقة بمعالجة الطلب رقم 2 [POST /person5/do/validationFormulaire] مع [txtName, txtAge] في العناصر المرسلة. وفيما يلي شفرة هذه الطريقة:</p>
+<h3 id="1052-dovalidationformulaire">10.5.2. <span style="color: #4f81bd">طريقة [<bdi dir="ltr" class="odt-ltr-term">doValidationFormulaire</bdi>]</span></h3>
+<p>تقوم هذه الطريقة بمعالجة الطلب رقم 2 [<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">person5/do/validationFormulaire</bdi>] مع [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>, <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] في العناصر المرسلة. وفيما يلي شفرة هذه الطريقة:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1436,18 +1438,18 @@
 </code></pre></div></td></tr></table></div>
 <p>ما الجديد:</p>
 <ul>
-  <li>تُرجع الطريقة [doValidationFormulaire] إحدى قيمتي [response] أو [errors]. وبغض النظر عن الاستجابة، يقوم وحدة التحكم بتعيين ملفين من ملفات تعريف الارتباط بداخلها، في السطرين 8 و9. يتم تمثيل ملف تعريف الارتباط بواسطة كائن [Cookie] الذي يقبل منشئه معلمتين: مفتاح ملف تعريف الارتباط والقيمة المرتبطة به.
+  <li>تُرجع الطريقة [<bdi dir="ltr" class="odt-ltr-term">doValidationFormulaire</bdi>] إحدى قيمتي [<bdi dir="ltr" class="odt-ltr-term">response</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>]. وبغض النظر عن الاستجابة، يقوم وحدة التحكم بتعيين ملفين من ملفات تعريف الارتباط بداخلها، في السطرين 8 و9. يتم تمثيل ملف تعريف الارتباط بواسطة كائن [<bdi dir="ltr" class="odt-ltr-term">Cookie</bdi>] الذي يقبل منشئه معلمتين: مفتاح ملف تعريف الارتباط والقيمة المرتبطة به.
   </li>
-  <li>السطر 8: يتم وضع القيمة التي تم إدخالها للاسم في ملف تعريف ارتباط بمفتاح &quot;name&quot;
+  <li>السطر 8: يتم وضع القيمة التي تم إدخالها للاسم في ملف تعريف ارتباط بمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;
   </li>
-  <li>السطر 9: يتم وضع القيمة التي تم إدخالها للعمر في ملف تعريف ارتباط بمفتاح &quot;age&quot;
+  <li>السطر 9: يتم وضع القيمة التي تم إدخالها للعمر في ملف تعريف ارتباط بمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;
   </li>
-  <li>تتم إضافة ملف تعريف ارتباط إلى استجابة HTTP المرسلة إلى العميل باستخدام طريقة [response.addCookie]. يتم إعداد هذه الاستجابة هنا فقط. ولن يتم إرسالها فعليًا إلا عند تنفيذ صفحة JSP الخاصة بالطريقة المرسلة إلى العميل.
+  <li>تتم إضافة ملف تعريف ارتباط إلى استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المرسلة إلى العميل باستخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">response.addCookie</bdi>]. يتم إعداد هذه الاستجابة هنا فقط. ولن يتم إرسالها فعليًا إلا عند تنفيذ صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> الخاصة بالطريقة المرسلة إلى العميل.
   </li>
 </ul>
 
-<h3 id="1053-doretourformulaire">10.5.3. <span style="color: #4f81bd">طريقة [doRetourFormulaire]</span></h3>
-<p>تقوم هذه الطريقة بمعالجة الطلب رقم 2 [POST /person5/do/retourFormulaire] دون أي بيانات مرسلة. وفيما يلي شفرة هذه الطريقة:</p>
+<h3 id="1053-doretourformulaire">10.5.3. <span style="color: #4f81bd">طريقة [<bdi dir="ltr" class="odt-ltr-term">doRetourFormulaire</bdi>]</span></h3>
+<p>تقوم هذه الطريقة بمعالجة الطلب رقم 2 [<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">person5/do/retourFormulaire</bdi>] دون أي بيانات مرسلة. وفيما يلي شفرة هذه الطريقة:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1501,16 +1503,16 @@
 <a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>ما الجديد:</p>
-<p>يجب أن تعرض طريقة [doRetourFormulaire] نموذجًا مملوءًا مسبقًا بأحدث الإدخالات. في الإصدار السابق، كانت هذه البيانات تُخزَّن في الجلسة (session). أما في هذا الإصدار، فلم نعد نستخدم الجلسة، بل نستخدم ملفات تعريف الارتباط (cookies) لتخزين البيانات بين عمليات التبادل بين العميل والخادم. عندما طلب العميل التحقق من صحة النموذج، تلقى عرض [response] أو [errors] كاستجابة، حسب الاقتضاء، إلى جانب ملفين من ملفات تعريف الارتباط يحملان اسمي &quot;name&quot; و&quot;age&quot;. عند النقر على رابط [Back to form] في هذين العرضين — مما يؤدي إلى إرسال طلب POST إلى عنوان URL [/do/retourFormulaire] — يرسل المتصفح ملفَي تعريف الارتباط اللذين تلقاهما إلى الخادم.</p>
+<p>يجب أن تعرض طريقة [<bdi dir="ltr" class="odt-ltr-term">doRetourFormulaire</bdi>] نموذجًا مملوءًا مسبقًا بأحدث الإدخالات. في الإصدار السابق، كانت هذه البيانات تُخزَّن في الجلسة (<bdi dir="ltr" class="odt-ltr-term">session</bdi>). أما في هذا الإصدار، فلم نعد نستخدم الجلسة، بل نستخدم ملفات تعريف الارتباط (<bdi dir="ltr" class="odt-ltr-term">cookies</bdi>) لتخزين البيانات بين عمليات التبادل بين العميل والخادم. عندما طلب العميل التحقق من صحة النموذج، تلقى عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>] كاستجابة، حسب الاقتضاء، إلى جانب ملفين من ملفات تعريف الارتباط يحملان اسمي &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot; و&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;. عند النقر على رابط [<bdi dir="ltr" class="odt-ltr-term">Back to form</bdi>] في هذين العرضين — مما يؤدي إلى إرسال طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/retourFormulaire</bdi>] — يرسل المتصفح ملفَي تعريف الارتباط اللذين تلقاهما إلى الخادم.</p>
 <ul>
-  <li>الأسطر 4–18: نسترد قيم ملفات تعريف الارتباط المسماة &quot;name&quot; و&quot;age&quot;. ومن الغريب أنه لا توجد طريقة لاسترداد قيمة ملف تعريف الارتباط بناءً على مفتاحه. لذلك، يجب علينا تكرار كل ملف من ملفات تعريف الارتباط المستلمة.
+  <li>الأسطر 4–18: نسترد قيم ملفات تعريف الارتباط المسماة &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot; و&quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;. ومن الغريب أنه لا توجد طريقة لاسترداد قيمة ملف تعريف الارتباط بناءً على مفتاحه. لذلك، يجب علينا تكرار كل ملف من ملفات تعريف الارتباط المستلمة.
   </li>
-  <li>بمجرد الانتهاء من ذلك، يتم وضع القيمتين اللتين تم الحصول عليهما في قالب عرض [form] (السطور 20–21) حتى يتمكن من عرضهما.
+  <li>بمجرد الانتهاء من ذلك، يتم وضع القيمتين اللتين تم الحصول عليهما في قالب عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>] (السطور 20–21) حتى يتمكن من عرضهما.
   </li>
 </ul>
 
 <h2 id="106">10.6. <span style="color: #4f81bd">الاختبار</span></h2>
-<p>ابدأ أو أعد تشغيل Tomcat بعد دمج مشروع Eclipse [person-mvc-05] فيه، ثم اطلب عنوان URL [http://localhost:8080/personne5].</p>
+<p>ابدأ أو أعد تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> بعد دمج مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">person-mvc-05</bdi>] فيه، ثم اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne5</bdi>].</p>
 
 
 

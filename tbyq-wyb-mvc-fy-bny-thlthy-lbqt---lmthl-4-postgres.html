@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1009,12 +1011,12 @@
 
 
 
-<h1 id="18-mvc-4-postgres">18. <span style="color: #365f91">تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 4، Postgres</span></h1>
-<h2 id="181-postgres">18.1. <span style="color: #4f81bd">قاعدة بيانات Postgres</span></h2>
-<p>في هذا الإصدار، سنقوم بتخزين قائمة الأشخاص في جدول قاعدة بيانات Postgres 8.x [http://www.postgres.org]. وفيما يلي، تم التقاط لقطات الشاشة من عميل EMS PostgreSQL Manager Lite [http://www.sqlmanager.net/fr/products/postgresql/manager]، وهو عميل إدارة مجاني لنظام إدارة قواعد البيانات Postgres.</p>
-<p>تسمى قاعدة البيانات [dbpersonnes]. وهي تحتوي على جدول باسم [PERSONNES]:</p>
+<h1 id="18-mvc-4-postgres">18. <span style="color: #365f91">تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> في بنية ثلاثية الطبقات – المثال 4، <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi></span></h1>
+<h2 id="181-postgres">18.1. <span style="color: #4f81bd">قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi></span></h2>
+<p>في هذا الإصدار، سنقوم بتخزين قائمة الأشخاص في جدول قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> 8.<bdi dir="ltr" class="odt-ltr-term">x</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://www.postgres.org</bdi>]. وفيما يلي، تم التقاط لقطات الشاشة من عميل <bdi dir="ltr" class="odt-ltr-term">EMS PostgreSQL Manager Lite</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://www.sqlmanager.net/fr/products/postgresql/manager</bdi>]، وهو عميل إدارة مجاني لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Postgres.</bdi></p>
+<p>تسمى قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpersonnes</bdi>]. وهي تحتوي على جدول باسم [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]:</p>
 <p><img src="images/10000000000000DA0000019F63C2A51A.png" width="153" height="291" style="width:4.039cm;height:7.689cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DA0000019F63C2A51A.png" /></p>
-<p>سيحتوي جدول [PERSONNES] على قائمة الأشخاص الذين يديرهم تطبيق الويب. تم إنشاؤه باستخدام عبارات SQL التالية:</p>
+<p>سيحتوي جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] على قائمة الأشخاص الذين يديرهم تطبيق الويب. تم إنشاؤه باستخدام عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالية:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1041,35 +1043,35 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="ss">&quot;PERSONNES_chk_PRENOM&quot;</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">((</span><span class="ss">&quot;PRENOM&quot;</span><span class="p">)::</span><span class="nb">text</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">)</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">OIDS</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<p>لن نتطرق إلى هذه الجدولة، التي تشبه جدول Firebird [PERSONNES] الذي تمت مناقشته سابقًا. لاحظ، مع ذلك، أن أسماء الأعمدة والجداول محاطة بعلامات اقتباس. علاوة على ذلك، هذه الأسماء حساسة لحالة الأحرف. من الممكن أن يكون هذا السلوك في Postgres 8.x قابلاً للتكوين. لم أقم بالتحقيق في هذا الأمر بشكل أعمق.</p>
-<p>قد تحتوي الجدول [PERSONNES] على المحتوى التالي:</p>
+<p>لن نتطرق إلى هذه الجدولة، التي تشبه جدول <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] الذي تمت مناقشته سابقًا. لاحظ، مع ذلك، أن أسماء الأعمدة والجداول محاطة بعلامات اقتباس. علاوة على ذلك، هذه الأسماء حساسة لحالة الأحرف. من الممكن أن يكون هذا السلوك في <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> 8.<bdi dir="ltr" class="odt-ltr-term">x</bdi> قابلاً للتكوين. لم أقم بالتحقيق في هذا الأمر بشكل أعمق.</p>
+<p>قد تحتوي الجدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] على المحتوى التالي:</p>
 <p><img src="images/1000000000000270000000B1BB534938.png" width="437" height="124" style="width:11.561cm;height:3.279cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000270000000B1BB534938.png" /></p>
-<p>بالإضافة إلى جدول [PERSONNES]، تحتوي قاعدة البيانات [dbpersonnes] على كائن يُسمى تسلسل باسم [SEQ_ID]. يُنتج هذا المولد أعدادًا صحيحة متتالية سنستخدمها لملء المفتاح الأساسي [ID] لفئة [PERSONNES]. لنأخذ مثالاً لتوضيح كيفية عمله:</p>
+<p>بالإضافة إلى جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]، تحتوي قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpersonnes</bdi>] على كائن يُسمى تسلسل باسم [<bdi dir="ltr" class="odt-ltr-term">SEQ</bdi>_ID]. يُنتج هذا المولد أعدادًا صحيحة متتالية سنستخدمها لملء المفتاح الأساسي [<bdi dir="ltr" class="odt-ltr-term">ID</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. لنأخذ مثالاً لتوضيح كيفية عمله:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005660000021F4FC241D7.png" width="680" height="267" style="display:inline-block; margin:4px;width:17.997cm;height:7.071cm;" class="odt-zoomable" data-zoom-src="images/10000000000005660000021F4FC241D7.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054A000001228A337DE1.png" width="677" height="145" style="display:inline-block; margin:4px;width:17.912cm;height:3.836cm;" class="odt-zoomable" data-zoom-src="images/100000000000054A000001228A337DE1.png" /></td></tr></table>
 
-<p>يمكننا ملاحظة أن [القيمة التالية] لتسلسل [SEQ_ID] قد تغيرت (انقر عليها مرتين + F5 للتحديث):</p>
+<p>يمكننا ملاحظة أن [القيمة التالية] لتسلسل [<bdi dir="ltr" class="odt-ltr-term">SEQ</bdi>_ID] قد تغيرت (انقر عليها مرتين + <bdi dir="ltr" class="odt-ltr-term">F5</bdi> للتحديث):</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016C000000C5B42EEE20.png" width="255" height="138" style="display:inline-block; margin:4px;width:6.74cm;height:3.648cm;" class="odt-zoomable" data-zoom-src="images/100000000000016C000000C5B42EEE20.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>عبارة SQL </p>
+<p>عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;&quot;SEQ_ID&quot;&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>يسمح لنا بالتالي باسترداد القيمة التالية في تسلسل [SEQ_ID]. سنستخدمه في ملف [people-postgres.xml]، الذي يحتوي على عبارات SQL التي يتم تنفيذها على نظام إدارة قواعد البيانات (DBMS).</p>
-<h2 id="182-eclipse-dao-service">18.2. <span style="color: #4f81bd">مشروع Eclipse لطبقات [dao] و [service]</span></h2>
-<p>لتطوير طبقات [dao] و [service] لتطبيقنا باستخدام قاعدة بيانات Postgres 8.x، سنستخدم مشروع Eclipse التالي [spring-mvc-39]:</p>
+<p>يسمح لنا بالتالي باسترداد القيمة التالية في تسلسل [<bdi dir="ltr" class="odt-ltr-term">SEQ</bdi>_ID]. سنستخدمه في ملف [<bdi dir="ltr" class="odt-ltr-term">people-postgres.xml</bdi>]، الذي يحتوي على عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي يتم تنفيذها على نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>).</p>
+<h2 id="182-eclipse-dao-service">18.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p>لتطوير طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لتطبيقنا باستخدام قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> 8.<bdi dir="ltr" class="odt-ltr-term">x</bdi>، سنستخدم مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي [<bdi dir="ltr" class="odt-ltr-term">spring-mvc-39</bdi>]:</p>
 <p><img src="images/10000000000000E000000063258DEAF4.png" width="158" height="70" style="width:4.17cm;height:1.843cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E000000063258DEAF4.png" /></p>
-<p>المشروع هو مشروع Java بسيط، وليس مشروع ويب Tomcat.</p>
+<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> بسيط، وليس مشروع ويب <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>مجلد [src]</p>
+<p>مجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يحتوي هذا المجلد على شفرة المصدر لطبقات [dao] و[service]:</p>
+<p>يحتوي هذا المجلد على شفرة المصدر لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]:</p>
 <p><img src="images/100000000000011300000160906459E0.png" width="193" height="247" style="width:5.11cm;height:6.541cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011300000160906459E0.png" /></p>
-<p>قد تكون جميع الملفات التي تحتوي على [postgres] في أسمائها قد تم تعديلها أو لم يتم تعديلها مقارنة بإصدار Firebird. وفيما يلي، نصف الملفات التي تم تعديلها.</p>
+<p>قد تكون جميع الملفات التي تحتوي على [<bdi dir="ltr" class="odt-ltr-term">postgres</bdi>] في أسمائها قد تم تعديلها أو لم يتم تعديلها مقارنة بإصدار <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> وفيما يلي، نصف الملفات التي تم تعديلها.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>مجلد [database]</p>
+<p>مجلد [<bdi dir="ltr" class="odt-ltr-term">database</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يحتوي هذا المجلد على البرنامج النصي لإنشاء قاعدة بيانات Postgres للمستخدمين:</p>
+<p>يحتوي هذا المجلد على البرنامج النصي لإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> للمستخدمين:</p>
 <p><img src="images/1000000000000093000000214220834E.png" width="103" height="23" style="width:2.72cm;height:0.61cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000093000000214220834E.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1178,17 +1180,17 @@
 <a id="__codelineno-2-53" name="__codelineno-2-53"></a><span class="k">COMMENT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="s1">&#39;Standard public schema&#39;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>مجلد [lib]</p>
+<p>مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يحتوي هذا المجلد على الأرشيفات التي يتطلبها التطبيق:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015300000185C0C8F66D.png" width="170" height="195" style="display:inline-block; margin:4px;width:4.486cm;height:5.149cm;" class="odt-zoomable" data-zoom-src="images/100000000000015300000185C0C8F66D.png" /></td></tr></table>
 
-<p>لاحظ وجود برنامج تشغيل JDBC لنظام إدارة قواعد البيانات Postgres 8.x. جميع هذه الملفات جزء من <em>مسار فئات</em> مشروع Eclipse.</p>
-<h2 id="183-dao">18.3. <span style="color: #4f81bd">طبقة [dao]</span></h2>
-<p>طبقة [dao] هي كما يلي:</p>
+<p>لاحظ وجود برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> 8.<bdi dir="ltr" class="odt-ltr-term">x.</bdi> جميع هذه الملفات جزء من <em>مسار فئات</em> مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse.</bdi></p>
+<h2 id="183-dao">18.3. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h2>
+<p>طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هي كما يلي:</p>
 <p><img src="images/100000000000011900000141946563BC.png" width="197" height="225" style="width:5.2cm;height:5.941cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011900000141946563BC.png" /></p>
-<p>نحن نعرض فقط التغييرات مقارنة بإصدار [Firebird].</p>
-<p>ملف التعيين [personne-postgres.xml] هو كما يلي:</p>
+<p>نحن نعرض فقط التغييرات مقارنة بإصدار [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>].</p>
+<p>ملف التعيين [<bdi dir="ltr" class="odt-ltr-term">personne-postgres.xml</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;UTF-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1242,24 +1244,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;/sqlMap&gt;</span></span></span>
 </code></pre></div>
 
-<p>هذا هو نفس محتوى [people-firebird.xml] مع الاختلافات الطفيفة التالية:</p>
+<p>هذا هو نفس محتوى [<bdi dir="ltr" class="odt-ltr-term">people-firebird.xml</bdi>] مع الاختلافات الطفيفة التالية:</p>
 <ul>
   <li><span style="color: #000000">تُوضع أسماء الأعمدة والجداول بين علامتي اقتباس، ويُراعي فيها التمييز بين الأحرف الكبيرة والصغيرة</span>
   </li>
-  <li><span style="color: #000000">تغيرت عبارة SQL &quot;Person.insertOne&quot; في الأسطر 34–41. تختلف طريقة إنشاء المفتاح الأساسي في Postgres عن تلك المستخدمة في Firebird:</span>
+  <li><span style="color: #000000">تغيرت عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> &quot;<bdi dir="ltr" class="odt-ltr-term">Person.insertOne</bdi>&quot; في الأسطر 34–41. تختلف طريقة إنشاء المفتاح الأساسي في <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> عن تلك المستخدمة في <bdi dir="ltr" class="odt-ltr-term">Firebird:</bdi></span>
     <ul>
-      <li><span style="color: #000000">السطر 36: يوفر جملة SQL [SELECT nextval(&#x27;&quot;SEQ_ID&quot;&#x27;)] المفتاح الأساسي. صيغة [as value] إلزامية. يمثل [value] المفتاح الذي تم الحصول عليه. سيتم تعيين هذه القيمة إلى حقل كائن [Person] المحدد بواسطة السمة [keyProperty] (السطر 35)، وهو هنا حقل [id].</span>
+      <li><span style="color: #000000">السطر 36: يوفر جملة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">SELECT nextval</bdi>(&#x27;&quot;<bdi dir="ltr" class="odt-ltr-term">SEQ_ID</bdi>&quot;&#x27;)] المفتاح الأساسي. صيغة [<bdi dir="ltr" class="odt-ltr-term">as value</bdi>] إلزامية. يمثل [<bdi dir="ltr" class="odt-ltr-term">value</bdi>] المفتاح الذي تم الحصول عليه. سيتم تعيين هذه القيمة إلى حقل كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] المحدد بواسطة السمة [<bdi dir="ltr" class="odt-ltr-term">keyProperty</bdi>] (السطر 35)، وهو هنا حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>].</span>
       </li>
-      <li><span style="color: #000000">يتم تنفيذ عبارات SQL داخل العلامة &lt;insert&gt; بالترتيب الذي تظهر به. لذلك، يتم تنفيذ SELECT قبل INSERT. بحلول وقت حدوث عملية الإدراج، سيكون حقل [id] للكائن [Person] قد تم تحديثه بواسطة عبارة SQL SELECT.</span>
+      <li><span style="color: #000000">يتم تنفيذ عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> داخل العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">insert</bdi>&gt; بالترتيب الذي تظهر به. لذلك، يتم تنفيذ <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> قبل <bdi dir="ltr" class="odt-ltr-term">INSERT.</bdi> بحلول وقت حدوث عملية الإدراج، سيكون حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] للكائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] قد تم تحديثه بواسطة عبارة <bdi dir="ltr" class="odt-ltr-term">SQL SELECT.</bdi></span>
       </li>
-      <li><span style="color: #000000">الأسطر 38-40: إدراج كائن [Person]</span>
+      <li><span style="color: #000000">الأسطر 38-40: إدراج كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]</span>
       </li>
     </ul>
   </li>
 </ul>
 
-<p><span style="color: #000000">فئة التنفيذ [DaoImplCommon] لطبقة [dao] هي الفئة التي تمت دراستها في إصدار [Firebird].</span></p>
-<p><span style="color: #000000">تم تكييف تكوين طبقة [dao] مع نظام إدارة قواعد البيانات [Postgres]. وبالتالي، يكون ملف التكوين [spring-config-test-dao-postgres.xml] كما يلي:</span></p>
+<p><span style="color: #000000">فئة التنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هي الفئة التي تمت دراستها في إصدار [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>].</span></p>
+<p><span style="color: #000000">تم تكييف تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] مع نظام إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">Postgres</bdi>]. وبالتالي، يكون ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-postgres.xml</bdi>] كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span> <span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span> <span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -1300,29 +1302,29 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 5–19: يشير bean [dataSource] الآن إلى قاعدة البيانات [Postgres] [dbpersonnes]، التي يديرها [postgres] بكلمة مرور [postgres]. يجب على القارئ تعديل هذا التكوين وفقًا لبيئته الخاصة.</span>
+  <li><span style="color: #000000">الأسطر 5–19: يشير <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">dataSource</bdi>] الآن إلى قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">Postgres</bdi>] [<bdi dir="ltr" class="odt-ltr-term">dbpersonnes</bdi>]، التي يديرها [<bdi dir="ltr" class="odt-ltr-term">postgres</bdi>] بكلمة مرور [<bdi dir="ltr" class="odt-ltr-term">postgres</bdi>]. يجب على القارئ تعديل هذا التكوين وفقًا لبيئته الخاصة.</span>
   </li>
-  <li><span style="color: #000000">السطر 31: فئة [DaoImplCommon] هي فئة التنفيذ لطبقة [dao]</span>
+  <li><span style="color: #000000">السطر 31: فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] هي فئة التنفيذ لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">بعد إجراء هذه التغييرات، يمكننا الانتقال إلى الاختبار.</span></p>
-<h2 id="184-dao-service">18.4. <span style="color: #4f81bd">اختبارات طبقات [dao] و[service]</span></h2>
-<p><span style="color: #000000">اختبارات طبقات [dao] و [service] هي نفسها المستخدمة في إصدار [Firebird]. دعونا نطلق نظام إدارة قواعد البيانات Postgres ثم نجري اختبارات Eclipse. النتائج التي تم الحصول عليها هي كما يلي:</span></p>
+<h2 id="184-dao-service">18.4. <span style="color: #4f81bd">اختبارات طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p><span style="color: #000000">اختبارات طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] هي نفسها المستخدمة في إصدار [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>]. دعونا نطلق نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi> ثم نجري اختبارات <bdi dir="ltr" class="odt-ltr-term">Eclipse.</bdi> النتائج التي تم الحصول عليها هي كما يلي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000559000001B78BDBCE03.png" width="680" height="218" style="display:inline-block; margin:4px;width:17.997cm;height:5.771cm;" class="odt-zoomable" data-zoom-src="images/1000000000000559000001B78BDBCE03.png" /></td></tr></table>
 
-<p><span style="color: #000000">يمكننا أن نرى أن الاختبارات نجحت مع تطبيق [DaoImplCommon]. لن نحتاج إلى اشتقاق هذه الفئة كما كان علينا أن نفعل مع نظام إدارة قواعد البيانات [Firebird].</span></p>
-<h2 id="185-web">18.5. <span style="color: #4f81bd">اختبارات تطبيق [Web]</span></h2>
-<p><span style="color: #000000">لاختبار تطبيق الويب باستخدام نظام إدارة قواعد البيانات [Postgres]، نقوم بإنشاء مشروع Eclipse [mvc-personnes-04B] بطريقة مماثلة لتلك المستخدمة في إنشاء مشروع [mvc-personnes-03B] باستخدام قاعدة بيانات Firebird (انظر </span>القسم<a href="#web-firebird"><u><span style="color: #0563c1"> 17.7</span></u></a><span style="color: #000000">). ومع ذلك، لن نحتاج إلى إعادة إنشاء أرشيفات [personnes-dao.jar] و [personnes-service.jar]. في الواقع، لم نقم بتعديل أي فئات مقارنة بمشروع [mvc-personnes-03B]. يحتوي أرشيف [personnes-dao.jar] ببساطة على فئة [DaoImplFirebird]، التي لم تعد هناك حاجة إليها.</span></p>
+<p><span style="color: #000000">يمكننا أن نرى أن الاختبارات نجحت مع تطبيق [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]. لن نحتاج إلى اشتقاق هذه الفئة كما كان علينا أن نفعل مع نظام إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>].</span></p>
+<h2 id="185-web">18.5. <span style="color: #4f81bd">اختبارات تطبيق [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>]</span></h2>
+<p><span style="color: #000000">لاختبار تطبيق الويب باستخدام نظام إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">Postgres</bdi>]، نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-04B</bdi>] بطريقة مماثلة لتلك المستخدمة في إنشاء مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>] باستخدام قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> (انظر </span>القسم<a href="#web-firebird"><u><span style="color: #0563c1"> 17.7</span></u></a><span style="color: #000000">). ومع ذلك، لن نحتاج إلى إعادة إنشاء أرشيفات [<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">personnes-service.jar</bdi>]. في الواقع، لم نقم بتعديل أي فئات مقارنة بمشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>]. يحتوي أرشيف [<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>] ببساطة على فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>]، التي لم تعد هناك حاجة إليها.</span></p>
 <p><img src="images/10000000000000E4000001816C62BA8F.png" width="159" height="269" style="width:4.219cm;height:7.124cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E4000001816C62BA8F.png" /></p>
-<p><span style="color: #000000">نقوم بنشر مشروع الويب [mvc-personnes-04B] داخل Tomcat:</span></p>
+<p><span style="color: #000000">نقوم بنشر مشروع الويب [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-04B</bdi>] داخل <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015B00000090D83F7489.png" width="244" height="101" style="display:inline-block; margin:4px;width:6.451cm;height:2.678cm;" class="odt-zoomable" data-zoom-src="images/100000000000015B00000090D83F7489.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013100000059298FC360.png" width="214" height="62" style="display:inline-block; margin:4px;width:5.65cm;height:1.649cm;" class="odt-zoomable" data-zoom-src="images/100000000000013100000059298FC360.png" /></td></tr></table>
 
-<p><span style="color: #000000">نحن جاهزون لإجراء الاختبارات</span><a id="tests-web-firebird1"></a><span style="color: #000000"> . أصبحت محتويات جدول [PERSONNES] الآن كما يلي:</span></p>
+<p><span style="color: #000000">نحن جاهزون لإجراء الاختبارات</span><a id="tests-web-firebird1"></a><span style="color: #000000"> . أصبحت محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] الآن كما يلي:</span></p>
 <p><img src="images/1000000000000270000000AC77151CC1.png" width="437" height="120" style="width:11.561cm;height:3.187cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000270000000AC77151CC1.png" /></p>
-<p><span style="color: #000000">Tomcat قيد التشغيل. باستخدام متصفح، نطلب عنوان URL [http://localhost:8080/mvc-personnes-04B]:</span></p>
+<p><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> قيد التشغيل. باستخدام متصفح، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/mvc-personnes-04B</bdi>]:</span></p>
 <p><img src="images/100000000000029900000113969BFA4E.png" width="466" height="193" style="width:12.321cm;height:5.096cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029900000113969BFA4E.png" /></p>
-<p><span style="color: #000000">نضيف    شخصًا جديدًا باستخدام رابط [Add]:</span></p>
+<p><span style="color: #000000">نضيف    شخصًا جديدًا باستخدام رابط [<bdi dir="ltr" class="odt-ltr-term">Add</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019A00000173505499AE.png" width="287" height="260" style="display:inline-block; margin:4px;width:7.59cm;height:6.869cm;" class="odt-zoomable" data-zoom-src="images/100000000000019A00000173505499AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023800000120E76E3AC6.png" width="341" height="173" style="display:inline-block; margin:4px;width:9.021cm;height:4.574cm;" class="odt-zoomable" data-zoom-src="images/100000000000023800000120E76E3AC6.png" /></td></tr></table>
 
 <p><span style="color: #000000">نتحقق من الإضافة في قاعدة البيانات:</span></p>

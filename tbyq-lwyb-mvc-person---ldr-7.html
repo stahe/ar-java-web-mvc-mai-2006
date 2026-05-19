@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1059,18 +1061,18 @@
 
 
 
-<h1 id="12-mvc-person-7">12. <span style="color: #365f91">تطبيق الويب MVC [person] – الإصدار 7</span></h1>
+<h1 id="12-mvc-person-7">12. <span style="color: #365f91">تطبيق الويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] – الإصدار 7</span></h1>
 <p><a id="personne3-introduction111"></a></p>
 <h2 id="121">12.1. <span style="color: #4f81bd">مقدمة</span></h2>
 <p>في هذا الإصدار، نفترض أنه قد تكون هناك متصفحات عملاء قامت بتعطيل:</p>
 <ol>
   <li>إرسال ملفات تعريف الارتباط من الخادم
   </li>
-  <li>تنفيذ كود JavaScript المضمن في صفحات HTML المعروضة
+  <li>تنفيذ كود <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> المضمن في صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المعروضة
   </li>
 </ol>
 
-<p>ومع ذلك، نريد أن يتمكن هذا النوع من المتصفحات من استخدام تطبيقنا. النقطة 2 تعيدنا إلى الإصدار 2 من تطبيقنا، حيث تم إدخال JavaScript بدءًا من الإصدار 3. كان الإصدار 2 يشغل التطبيق بدون JavaScript، لذا تم حل النقطة 2.</p>
+<p>ومع ذلك، نريد أن يتمكن هذا النوع من المتصفحات من استخدام تطبيقنا. النقطة 2 تعيدنا إلى الإصدار 2 من تطبيقنا، حيث تم إدخال <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi> بدءًا من الإصدار 3. كان الإصدار 2 يشغل التطبيق بدون <bdi dir="ltr" class="odt-ltr-term">JavaScript</bdi>، لذا تم حل النقطة 2.</p>
 <p>قد تكون النقطة 1 صعبة أو غير صعبة في التعامل معها. كان الإصدار 6 من تطبيقنا يعمل بدون ملفات تعريف الارتباط. من خلال دمج الإصدارين 2 و6، نحقق النتيجة المرجوة. سنضيف قيدًا إضافيًا: يجب أن يدير التطبيق جلسة عمل. هذا ليس قيدًا بلا معنى. في تطبيق يتعين على المستخدمين فيه المصادقة، يجب أن يخزن الخادم اسم المستخدم وكلمة المرور الخاصين بالمستخدم لمنعهم من الاضطرار إلى المصادقة في كل صفحة يطلبونها.</p>
 <p>حتى الآن، استخدمنا ثلاثة حلول لتخزين المعلومات أثناء التبادلات بين العميل والخادم: </p>
 <ol>
@@ -1083,8 +1085,8 @@
 </ol>
 
 <p>يمكن استبعاد الحل 2 لأن متصفح العميل قد يكون قد عطل ملفات تعريف الارتباط.</p>
-<p>الحل 3 هو الحل الوارد في الإصدار 6، والذي درسناه سابقًا. لا يمكن استخدامه لأسباب أمنية. إذا تم تضمين زوج اسم المستخدم/كلمة المرور في كل صفحة يتم إرسالها إلى المتصفح، فهذا يعني أنه ينتقل عبر الشبكة مع كل تبادل بين العميل والخادم. وهذا ليس جيدًا لأمن التطبيق. يمكننا عندئذٍ التفكير في استخدام بروتوكول HTTPS، الذي يقوم بتشفير عمليات التبادل بين العميل والخادم. ومع ذلك، فإن استخدامه لكل صفحة من صفحات التطبيق سيزيد من حمل الخادم.</p>
-<p>قد ترغب في استبعاد الحل 1 لأنه يعتمد أيضًا على ملفات تعريف الارتباط. أثناء التبادل الأول بين العميل والخادم، يرسل الخادم إلى العميل رمز جلسة، والذي يرسله العميل بدوره إلى الخادم مع كل طلب جديد. بفضل هذا الرمز، يمكن للخادم التعرف على العميل وتزويده بالمعلومات التي خزنها خلال تبادل سابق. يتم إرسال رمز الجلسة من قبل الخادم في ملف تعريف ارتباط. يمكن للمتصفح الذي لم يتم تعطيل ملفات تعريف الارتباط فيه إرسال ملف تعريف الارتباط هذا إلى الخادم في الطلبات اللاحقة. إذا تم تعطيل ملفات تعريف الارتباط، فهناك حل آخر: يمكن للمتصفح تضمين رمز الجلسة في عنوان URL الذي يطلبه. هذا ما نراه الآن عندما نعيد زيارة ملف [index.jsp] من الإصدار 4:</p>
+<p>الحل 3 هو الحل الوارد في الإصدار 6، والذي درسناه سابقًا. لا يمكن استخدامه لأسباب أمنية. إذا تم تضمين زوج اسم المستخدم/كلمة المرور في كل صفحة يتم إرسالها إلى المتصفح، فهذا يعني أنه ينتقل عبر الشبكة مع كل تبادل بين العميل والخادم. وهذا ليس جيدًا لأمن التطبيق. يمكننا عندئذٍ التفكير في استخدام بروتوكول <bdi dir="ltr" class="odt-ltr-term">HTTPS</bdi>، الذي يقوم بتشفير عمليات التبادل بين العميل والخادم. ومع ذلك، فإن استخدامه لكل صفحة من صفحات التطبيق سيزيد من حمل الخادم.</p>
+<p>قد ترغب في استبعاد الحل 1 لأنه يعتمد أيضًا على ملفات تعريف الارتباط. أثناء التبادل الأول بين العميل والخادم، يرسل الخادم إلى العميل رمز جلسة، والذي يرسله العميل بدوره إلى الخادم مع كل طلب جديد. بفضل هذا الرمز، يمكن للخادم التعرف على العميل وتزويده بالمعلومات التي خزنها خلال تبادل سابق. يتم إرسال رمز الجلسة من قبل الخادم في ملف تعريف ارتباط. يمكن للمتصفح الذي لم يتم تعطيل ملفات تعريف الارتباط فيه إرسال ملف تعريف الارتباط هذا إلى الخادم في الطلبات اللاحقة. إذا تم تعطيل ملفات تعريف الارتباط، فهناك حل آخر: يمكن للمتصفح تضمين رمز الجلسة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يطلبه. هذا ما نراه الآن عندما نعيد زيارة ملف [<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>] من الإصدار 4:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;%@ <span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1093,13 +1095,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">c:redirect </span><span style="color:#7f007f">url</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/main&quot;</span><span style="color:#008080">/&gt;</span></span></span>
 </code></pre></div>
 
-<p>تذكر أن السطر 5 أعلاه يعيد توجيه العميل إلى عنوان URL [/personne4/main?jsessionid=XX]، حيث XX هو رمز الجلسة، كما هو موضح في لقطة الشاشة أدناه التي تم الحصول عليها بعد طلب عنوان URL [http://localhost:8080/personne4]:</p>
+<p>تذكر أن السطر 5 أعلاه يعيد توجيه العميل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">personne4/main</bdi>?<bdi dir="ltr" class="odt-ltr-term">jsessionid</bdi>=<bdi dir="ltr" class="odt-ltr-term">XX</bdi>]، حيث <bdi dir="ltr" class="odt-ltr-term">XX</bdi> هو رمز الجلسة، كما هو موضح في لقطة الشاشة أدناه التي تم الحصول عليها بعد طلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>]:</p>
 <p><img src="images/10000000000001C900000100E465AB41.png" width="320" height="179" style="width:8.46cm;height:4.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C900000100E465AB41.png" /></p>
-<p>دعونا نلقي نظرة فاحصة على كيفية عمل علامة &lt;c:redirect&gt; فيما يتعلق برمز الجلسة. دعونا نستخدم متصفحًا يقبل ملفات تعريف الارتباط. أدناه، نقوم بتكوين متصفح Firefox:</p>
+<p>دعونا نلقي نظرة فاحصة على كيفية عمل علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; فيما يتعلق برمز الجلسة. دعونا نستخدم متصفحًا يقبل ملفات تعريف الارتباط. أدناه، نقوم بتكوين متصفح <bdi dir="ltr" class="odt-ltr-term">Firefox:</bdi></p>
 <p><img src="images/100000000000033A000001E591BFB416.png" width="413" height="242" style="width:10.927cm;height:6.415cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033A000001E591BFB416.png" /></p>
-<p>في [1]، نقوم بتمكين ملفات تعريف الارتباط، وفي [2] نقوم بحذف أي ملفات موجودة للبدء من حالة معروفة. ثم نطلب عنوان URL [http://localhost:8080/personne4]. نتلقى الاستجابة التالية:</p>
+<p>في [1]، نقوم بتمكين ملفات تعريف الارتباط، وفي [2] نقوم بحذف أي ملفات موجودة للبدء من حالة معروفة. ثم نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>]. نتلقى الاستجابة التالية:</p>
 <p><img src="images/10000000000001DC000000EA780B084E.png" width="333" height="164" style="width:8.819cm;height:4.336cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DC000000EA780B084E.png" /></p>
-<p>كان طلب HTTP الأولي للعميل كما يلي:</p>
+<p>كان طلب <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> الأولي للعميل كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1118,7 +1120,7 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span><span class="p">:</span> <span class="mi">300</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
 </code></pre></div></td></tr></table></div>
-<p>لاحظ أن العميل لا يرسل ملف تعريف ارتباط للجلسة. استجابة HTTP المرسلة من الخادم هي كما يلي:</p>
+<p>لاحظ أن العميل لا يرسل ملف تعريف ارتباط للجلسة. استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> المرسلة من الخادم هي كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -1136,9 +1138,9 @@
 <ul>
   <li>السطر 1: يطلب الخادم من العميل إعادة التوجيه
   </li>
-  <li>السطر 3: يرسل الخادم رمز جلسة مرتبط بسمة [JSESSIONID]
+  <li>السطر 3: يرسل الخادم رمز جلسة مرتبط بسمة [<bdi dir="ltr" class="odt-ltr-term">JSESSIONID</bdi>]
   </li>
-  <li>السطر 4: يحتوي عنوان URL لإعادة التوجيه على رمز الجلسة. وقد وضعته العلامة &lt;c:redirect&gt; هناك لأن العميل لم يرسل ملف تعريف ارتباط للجلسة.
+  <li>السطر 4: يحتوي عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه على رمز الجلسة. وقد وضعته العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; هناك لأن العميل لم يرسل ملف تعريف ارتباط للجلسة.
   </li>
 </ul>
 
@@ -1164,7 +1166,7 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">Cookie</span><span class="p">:</span> <span class="n">JSESSIONID</span><span class="o">=</span><span class="mi">1</span><span class="n">ACA010A6BA28FB9E30A1D3184F574BC</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 1: يطلب عنوان URL لإعادة التوجيه، بما في ذلك رمز الجلسة. ولهذا السبب يعرض المتصفح عنوان URL هذا في لقطة الشاشة.
+  <li>السطر 1: يطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه، بما في ذلك رمز الجلسة. ولهذا السبب يعرض المتصفح عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا في لقطة الشاشة.
   </li>
   <li>السطر 10: يرسل المتصفح رمز الجلسة الذي أرسله إليه الخادم في التبادل السابق. هذه هي الطريقة التي تعمل بها ملفات تعريف الارتباط عادةً عندما تكون ممكّنة على متصفح العميل. إذا لم تكن ممكّنة، فلن يتم إرسال ملفات تعريف الارتباط المستلمة.
   </li>
@@ -1182,9 +1184,9 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>Date: Tue, 23 May 2006 09:10:05 GMT
 </code></pre></div></td></tr></table></div>
 <p>لقد عثر على الصفحة المطلوبة ويقوم بإرسالها. لاحظ أنه لم يعد يرسل رمز الجلسة. هكذا تعمل رموز الجلسة عادةً: يرسلها الخادم إلى المتصفح مرة واحدة في شكل ملف تعريف ارتباط، ثم يعيد المتصفح إرسالها مع كل طلب ليتم التعرف عليه.</p>
-<p>الآن، باستخدام نفس المتصفح، دعونا نطلب عنوان URL [http://localhost:8080/personne4] مرة أخرى عن طريق كتابته يدويًا. ثم نحصل على الصفحة التالية:</p>
+<p>الآن، باستخدام نفس المتصفح، دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>] مرة أخرى عن طريق كتابته يدويًا. ثم نحصل على الصفحة التالية:</p>
 <p><img src="images/10000000000001B7000000EA876CF963.png" width="307" height="164" style="width:8.13cm;height:4.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B7000000EA876CF963.png" /></p>
-<p>يمكننا أن نرى أن عنوان URL الذي يعرضه المتصفح لم يعد يحتوي على رمز الجلسة. دعونا نلقي نظرة على أول تبادل بين العميل والخادم:</p>
+<p>يمكننا أن نرى أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يعرضه المتصفح لم يعد يحتوي على رمز الجلسة. دعونا نلقي نظرة على أول تبادل بين العميل والخادم:</p>
 <p>أرسل المتصفح الطلب التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
@@ -1218,16 +1220,16 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a>Transfer-Encoding: chunked
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a>Date: Tue, 23 May 2006 09:24:39 GMT
 </code></pre></div></td></tr></table></div>
-<p>يُوجه العميل إلى إعادة التوجيه. ونظرًا لأنه تلقى رمز جلسة من العميل، فإنه يواصل الجلسة ولا يرسل رمز جلسة جديدًا. وللسبب نفسه، لا تتضمن علامة &lt;c:redirect&gt; رمز الجلسة هذا في عنوان URL لإعادة التوجيه. وهذا هو السبب في أن عنوان URL الموضح في لقطة الشاشة أعلاه لا يحتوي على رمز جلسة.</p>
-<p>النقطة الأساسية المستفادة من كل هذا هي القاعدة التالية: لا تتضمن علامة &lt;c:redirect&gt; رمز الجلسة في عنوان URL لإعادة التوجيه إلا إذا لم يرسل العميل رأس HTTP: </p>
+<p>يُوجه العميل إلى إعادة التوجيه. ونظرًا لأنه تلقى رمز جلسة من العميل، فإنه يواصل الجلسة ولا يرسل رمز جلسة جديدًا. وللسبب نفسه، لا تتضمن علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; رمز الجلسة هذا في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه. وهذا هو السبب في أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الموضح في لقطة الشاشة أعلاه لا يحتوي على رمز جلسة.</p>
+<p>النقطة الأساسية المستفادة من كل هذا هي القاعدة التالية: لا تتضمن علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; رمز الجلسة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه إلا إذا لم يرسل العميل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP:</bdi> </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Cookie: JSESSIONID=1ACA010A6BA28FB9E30A1D3184F574BC
 </code></pre></div>
-<p>تنطبق هذه القاعدة أيضًا على علامة &lt;c:url&gt;، التي سنستعرضها لاحقًا.</p>
+<p>تنطبق هذه القاعدة أيضًا على علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:url</bdi>&gt;، التي سنستعرضها لاحقًا.</p>
 <p>ماذا يحدث مع متصفح تم تعطيل ملفات تعريف الارتباط عليه؟ دعونا نجرب ذلك. أولاً، نقوم بإعادة تعيين المتصفح:</p>
 <p><img src="images/1000000000000318000001327098B904.png" width="396" height="153" style="width:10.478cm;height:4.048cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000318000001327098B904.png" /></p>
-<p>في [1]، نقوم بتعطيل ملفات تعريف الارتباط، وفي [2] نحذف أي ملفات موجودة لنبدأ من حالة معروفة. ثم نطلب عنوان URL [http://localhost:8080/personne4]. نحصل على الاستجابة التالية:</p>
+<p>في [1]، نقوم بتعطيل ملفات تعريف الارتباط، وفي [2] نحذف أي ملفات موجودة لنبدأ من حالة معروفة. ثم نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>]. نحصل على الاستجابة التالية:</p>
 <p><img src="images/10000000000001DB000000EA884B8A2A.png" width="333" height="164" style="width:8.8cm;height:4.336cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DB000000EA884B8A2A.png" /></p>
-<p>نحصل على نفس النتيجة كما في السابق. ومع ذلك، فإن تبادلات HTTP ليست متطابقة تمامًا:</p>
+<p>نحصل على نفس النتيجة كما في السابق. ومع ذلك، فإن تبادلات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> ليست متطابقة تمامًا:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -1297,44 +1299,44 @@
 <ul>
   <li>الأسطر 1–9: الطلب الأول للمتصفح. لا يرسل ملف تعريف ارتباط للجلسة.
   </li>
-  <li>الأسطر 11-17: استجابة الخادم، التي توجه المتصفح لإعادة التوجيه إلى عنوان URL آخر. وهي ترسل ملف تعريف ارتباط للجلسة. السطر 13: تضمنت علامة &lt;c:redirect&gt; الرمز المميز في عنوان URL لإعادة التوجيه في السطر 14.
+  <li>الأسطر 11-17: استجابة الخادم، التي توجه المتصفح لإعادة التوجيه إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> آخر. وهي ترسل ملف تعريف ارتباط للجلسة. السطر 13: تضمنت علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; الرمز المميز في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لإعادة التوجيه في السطر 14.
   </li>
   <li>الأسطر 19-27: الطلب الثاني للمتصفح. لا يعيد المتصفح ملف تعريف الارتباط للجلسة الذي أرسله الخادم للتو لأن ملفات تعريف الارتباط الخاصة به معطلة.
   </li>
-  <li>الأسطر 29-33: استجابة الخادم. يمكننا أن نرى أنه على الرغم من أن المتصفح لم يرسل ملف تعريف ارتباط الجلسة، فإن الخادم لا يبدأ جلسة جديدة كما قد يتوقع المرء. ويتضح ذلك من حقيقة أنه لا يرسل رأس HTTP [Set-Cookie] كما فعل في السطر 13. وهذا يعني أنه يواصل الجلسة السابقة. وقد تمكن من استرداد هذه الجلسة بفضل رمز الجلسة الموجود في عنوان URL الذي طلبه المتصفح في السطر 19.
+  <li>الأسطر 29-33: استجابة الخادم. يمكننا أن نرى أنه على الرغم من أن المتصفح لم يرسل ملف تعريف ارتباط الجلسة، فإن الخادم لا يبدأ جلسة جديدة كما قد يتوقع المرء. ويتضح ذلك من حقيقة أنه لا يرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Set-Cookie</bdi>] كما فعل في السطر 13. وهذا يعني أنه يواصل الجلسة السابقة. وقد تمكن من استرداد هذه الجلسة بفضل رمز الجلسة الموجود في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي طلبه المتصفح في السطر 19.
   </li>
 </ul>
 
 <p>لاحظ أن الخادم يتتبع الجلسة عن طريق استرداد رمز الجلسة الذي أرسله العميل بطريقتين ممكنتين:</p>
 <ul>
-  <li>في رأس HTTP [Set-Cookie] المرسل من العميل
+  <li>في رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Set-Cookie</bdi>] المرسل من العميل
   </li>
-  <li>في عنوان URL الذي طلبه العميل
+  <li>في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي طلبه العميل
   </li>
 </ul>
 
-<p>الآن، باستخدام نفس المتصفح، دعونا نطلب عنوان URL [http://localhost:8080/personne4] مرة أخرى عن طريق كتابته يدويًا، تمامًا كما فعلنا عندما كانت ملفات تعريف الارتباط ممكّنة. ثم نحصل على الصفحة التالية:</p>
+<p>الآن، باستخدام نفس المتصفح، دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>] مرة أخرى عن طريق كتابته يدويًا، تمامًا كما فعلنا عندما كانت ملفات تعريف الارتباط ممكّنة. ثم نحصل على الصفحة التالية:</p>
 <p><img src="images/10000000000001DD000000E82DD0E474.png" width="334" height="162" style="width:8.83cm;height:4.295cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DD000000E82DD0E474.png" /></p>
-<p>النتيجة مختلفة عما رأيناه عندما كانت ملفات تعريف الارتباط مسموحة: رمز الجلسة موجود في عنوان URL الذي يعرضه المتصفح. دعونا نوضح هذه النتيجة دون فحص تبادلات HTTP التي حدثت:</p>
+<p>النتيجة مختلفة عما رأيناه عندما كانت ملفات تعريف الارتباط مسموحة: رمز الجلسة موجود في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي يعرضه المتصفح. دعونا نوضح هذه النتيجة دون فحص تبادلات <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> التي حدثت:</p>
 <p><strong>[ملفات تعريف الارتباط ممكّنة]</strong></p>
 <ul>
-  <li>أثناء الطلب الثاني لعنوان URL [http://localhost:8080/personne4]، أرسل متصفح العميل ملف تعريف الارتباط الخاص بالجلسة الذي تلقّاه من الخادم أثناء الطلب الأول لنفس عنوان URL. وبالتالي، لم تتضمن علامة &lt;c:redirect&gt; رمز الجلسة في عنوان إعادة التوجيه.
+  <li>أثناء الطلب الثاني لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>]، أرسل متصفح العميل ملف تعريف الارتباط الخاص بالجلسة الذي تلقّاه من الخادم أثناء الطلب الأول لنفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> وبالتالي، لم تتضمن علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; رمز الجلسة في عنوان إعادة التوجيه.
   </li>
 </ul>
 
 <p><strong>[ملفات تعريف الارتباط معطلة]</strong></p>
 <ul>
-  <li>أثناء الطلب الثاني لعنوان URL [http://localhost:8080/personne4]، لا يرسل متصفح العميل ملف تعريف الارتباط الخاص بالجلسة الذي تلقّاه من الخادم أثناء الطلب الأول لنفس عنوان URL، نظرًا لأن ملفات تعريف الارتباط لديه معطلة. وبالتالي، تتضمن علامة &lt;c:redirect&gt; رمز الجلسة في عنوان URL الخاص بإعادة التوجيه. وهذا هو سبب ظهوره في لقطة الشاشة أعلاه.
+  <li>أثناء الطلب الثاني لعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne4</bdi>]، لا يرسل متصفح العميل ملف تعريف الارتباط الخاص بالجلسة الذي تلقّاه من الخادم أثناء الطلب الأول لنفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi>، نظرًا لأن ملفات تعريف الارتباط لديه معطلة. وبالتالي، تتضمن علامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt; رمز الجلسة في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الخاص بإعادة التوجيه. وهذا هو سبب ظهوره في لقطة الشاشة أعلاه.
   </li>
 </ul>
 
-<p>تسمح لك علامتا <strong>&lt;c:redirect&gt;</strong> و <strong>&lt;c:url&gt;</strong> بتضمين رمز الجلسة في عناوين URL. وهذا هو الحل المقترح هنا.</p>
-<h2 id="122-eclipse">12.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">مشروع Eclipse</span></strong></span></h2>
-<p>لإنشاء مشروع Eclipse [mvc-personne-07] لتطبيق الويب [/personne7]، قم بنسخ المشروع [mvc-personne-06] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
+<p>تسمح لك علامتا <strong>&lt;<bdi dir="ltr" class="odt-ltr-term">c:redirect</bdi>&gt;</strong> و <strong>&lt;<bdi dir="ltr" class="odt-ltr-term">c:url</bdi>&gt;</strong> بتضمين رمز الجلسة في عناوين <bdi dir="ltr" class="odt-ltr-term">URL.</bdi> وهذا هو الحل المقترح هنا.</p>
+<h2 id="122-eclipse">12.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></strong></span></h2>
+<p>لإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>] لتطبيق الويب [/<bdi dir="ltr" class="odt-ltr-term">personne7</bdi>]، قم بنسخ المشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-06</bdi>] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E200000170B908DED8.png" width="158" height="258" style="display:inline-block; margin:4px;width:4.189cm;height:6.821cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E200000170B908DED8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012F0000005D4DF8005A.png" width="211" height="65" style="display:inline-block; margin:4px;width:5.59cm;height:1.716cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F0000005D4DF8005A.png" /></td></tr></table>
 
-<h2 id="123-personne7">12.3. <span style="color: #4f81bd">تكوين تطبيق الويب [personne7]</span></h2>
-<p>فيما يلي ملف <strong>web.xml</strong> الخاص بتطبيق <strong>/personne7</strong>:</p>
+<h2 id="123-personne7">12.3. <span style="color: #4f81bd">تكوين تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">personne7</bdi>]</span></h2>
+<p>فيما يلي ملف <strong><bdi dir="ltr" class="odt-ltr-term">web.xml</bdi></strong> الخاص بتطبيق <strong>/<bdi dir="ltr" class="odt-ltr-term">personne7</bdi></strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;?<span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span>?&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -1342,18 +1344,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 </code></pre></div>
 
-<p>هذا الملف مطابق للملف الموجود في الإصدار السابق باستثناء السطر 3، حيث تغير اسم العرض لتطبيق الويب إلى [mvc-personne-07]. وتبقى الصفحة الرئيسية [index.jsp] دون تغيير.</p>
+<p>هذا الملف مطابق للملف الموجود في الإصدار السابق باستثناء السطر 3، حيث تغير اسم العرض لتطبيق الويب إلى [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>]. وتبقى الصفحة الرئيسية [<bdi dir="ltr" class="odt-ltr-term">index.jsp</bdi>] دون تغيير.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">c:redirect </span><span style="color:#7f007f">url</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/do/formulaire&quot;</span><span style="color:#008080">/&gt;</span></span></span>
 </code></pre></div>
 
 <h2 id="124">12.4. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">كود العرض</span></strong></span></h2>
-<p>تعود طرق العرض [form، response، errors] إلى ما كانت عليه في الإصدار 2، أي بدون JavaScript. ومع ذلك، فإنها تحتفظ بعلامات JSTL من أحدث الإصدارات.</p>
-<h3 id="1241-form">12.4.1. <span style="color: #4f81bd">عرض [form]</span></h3>
+<p>تعود طرق العرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>، <bdi dir="ltr" class="odt-ltr-term">response</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>] إلى ما كانت عليه في الإصدار 2، أي بدون <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi> ومع ذلك، فإنها تحتفظ بعلامات <bdi dir="ltr" class="odt-ltr-term">JSTL</bdi> من أحدث الإصدارات.</p>
+<h3 id="1241-form">12.4.1. <span style="color: #4f81bd">عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>]</span></h3>
 <p><img src="images/100000000000014E000000EBEA15BD02.png" width="234" height="165" style="width:6.189cm;height:4.355cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014E000000EBEA15BD02.png" /></p>
-<p>تمت إزالة الأزرار المرتبطة برمز JavaScript.</p>
-<p>[form.jsp]:</p>
+<p>تمت إزالة الأزرار المرتبطة برمز <bdi dir="ltr" class="odt-ltr-term">JavaScript.</bdi></p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">form.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">  </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1394,20 +1396,20 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 14: يتم كتابة عنوان URL الهدف لـ POST باستخدام العلامة &lt;c:url&gt; بحيث يتم تضمين رمز الجلسة في حالة ما إذا كان العميل متصفحًا لا يرسل رأس HTTP [Cookie].
+  <li>السطر 14: يتم كتابة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لـ <bdi dir="ltr" class="odt-ltr-term">POST</bdi> باستخدام العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:url</bdi>&gt; بحيث يتم تضمين رمز الجلسة في حالة ما إذا كان العميل متصفحًا لا يرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Cookie</bdi>].
   </li>
-  <li>يحتوي النموذج على زرين [submit]: [Submit] (السطر 28) و [Clear] (السطر 30). كلا الزرين لهما نفس الاسم: <i>button</i>. عند تشغيل POST، سيرسل المتصفح المعلمة:
+  <li>يحتوي النموذج على زرين [<bdi dir="ltr" class="odt-ltr-term">submit</bdi>]: [<bdi dir="ltr" class="odt-ltr-term">Submit</bdi>] (السطر 28) و [<bdi dir="ltr" class="odt-ltr-term">Clear</bdi>] (السطر 30). كلا الزرين لهما نفس الاسم: <i><bdi dir="ltr" class="odt-ltr-term">button</bdi></i>. عند تشغيل <bdi dir="ltr" class="odt-ltr-term">POST</bdi>، سيرسل المتصفح المعلمة:
   </li>
-  <li><i>button=Submit </i>إذا تم تشغيل POST بواسطة زر [Submit]
+  <li><i><bdi dir="ltr" class="odt-ltr-term">button</bdi>=<bdi dir="ltr" class="odt-ltr-term">Submit</bdi> </i>إذا تم تشغيل <bdi dir="ltr" class="odt-ltr-term">POST</bdi> بواسطة زر [<bdi dir="ltr" class="odt-ltr-term">Submit</bdi>]
   </li>
-  <li><i>button=Clear </i>إذا تم تشغيل POST بواسطة زر [Clear]
+  <li><i><bdi dir="ltr" class="odt-ltr-term">button</bdi>=<bdi dir="ltr" class="odt-ltr-term">Clear</bdi> </i>إذا تم تشغيل <bdi dir="ltr" class="odt-ltr-term">POST</bdi> بواسطة زر [<bdi dir="ltr" class="odt-ltr-term">Clear</bdi>]
   </li>
 </ul>
 
-<p>ستساعدنا هذه المعلمة في تحديد الإجراء المحدد الذي يجب اتخاذه، حيث إن عنوان URL [/do/validationFormulaire] يتوافق الآن مع إجراءين مختلفين.</p>
-<h3 id="1242-response">12.4.2. <span style="color: #4f81bd">طريقة العرض [response]</span></h3>
+<p>ستساعدنا هذه المعلمة في تحديد الإجراء المحدد الذي يجب اتخاذه، حيث إن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">do/validationFormulaire</bdi>] يتوافق الآن مع إجراءين مختلفين.</p>
+<h3 id="1242-response">12.4.2. <span style="color: #4f81bd">طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>]</span></h3>
 <p><img src="images/10000000000000FC000000DF7959044F.png" width="177" height="156" style="width:4.671cm;height:4.133cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FC000000DF7959044F.png" /></p>
-<p>[response.jsp]:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">response.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1439,13 +1441,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 24: يتم كتابة عنوان URL الهدف لـ HREF باستخدام العلامة &lt;c:url&gt; بحيث يتم تضمين رمز الجلسة في حالة ما إذا كان العميل متصفحًا لا يرسل رأس HTTP [Cookie].
+  <li>السطر 24: يتم كتابة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لـ <bdi dir="ltr" class="odt-ltr-term">HREF</bdi> باستخدام العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:url</bdi>&gt; بحيث يتم تضمين رمز الجلسة في حالة ما إذا كان العميل متصفحًا لا يرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Cookie</bdi>].
   </li>
 </ul>
 
-<h3 id="1243-errors">12.4.3. <span style="color: #4f81bd">عرض [errors]</span></h3>
+<h3 id="1243-errors">12.4.3. <span style="color: #4f81bd">عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>]</span></h3>
 <p><img src="images/100000000000020C000000CF2FE8287F.png" width="367" height="145" style="width:9.7cm;height:3.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020C000000CF2FE8287F.png" /></p>
-<p>[errors.jsp]:</p>
+<p>[<bdi dir="ltr" class="odt-ltr-term">errors.jsp</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1471,13 +1473,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 18: يتم كتابة عنوان URL الهدف لـ HREF باستخدام العلامة &lt;c:url&gt; بحيث يتم تضمين رمز الجلسة في حالة ما إذا كان العميل متصفحًا لا يرسل رأس HTTP [Cookie].
+  <li>السطر 18: يتم كتابة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لـ <bdi dir="ltr" class="odt-ltr-term">HREF</bdi> باستخدام العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">c:url</bdi>&gt; بحيث يتم تضمين رمز الجلسة في حالة ما إذا كان العميل متصفحًا لا يرسل رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> [<bdi dir="ltr" class="odt-ltr-term">Cookie</bdi>].
   </li>
 </ul>
 
 <p>ندعو القراء إلى اختبار هذه العروض الجديدة باستخدام نفس النهج المتبع في الإصدارات السابقة.</p>
-<h2 id="125-servletpersonne">12.5. <span style="color: #4f81bd">وحدة التحكم [ServletPersonne]</span></h2>
-<p>وحدة التحكم [ServletPersonne] لتطبيق الويب [/personne7] هي كما يلي: </p>
+<h2 id="125-servletpersonne">12.5. <span style="color: #4f81bd">وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>]</span></h2>
+<p>وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] لتطبيق الويب [/<bdi dir="ltr" class="odt-ltr-term">personne7</bdi>] هي كما يلي: </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">  2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">  3</a></span>
@@ -1725,20 +1727,20 @@
 <a id="__codelineno-8-123" name="__codelineno-8-123"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 35: يتم تنفيذ الإجراء [/retourFormulaire] عبر طلب GET بدلاً من طلب POST كما في الإصدار السابق.
+  <li>السطر 35: يتم تنفيذ الإجراء [/<bdi dir="ltr" class="odt-ltr-term">retourFormulaire</bdi>] عبر طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi> بدلاً من طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> كما في الإصدار السابق.
   </li>
-  <li>الأسطر 70–87: يتم تشغيل الإجراء [/validationFormulaire] بواسطة طلب POST ناتج عن النقر على أحد الزرين [Envoyer] أو [Effacer] في عرض [form]. تتعامل الطريقة [doValidationFormulaire] مع هاتين الحالتين باستخدام طريقتين مختلفتين.
+  <li>الأسطر 70–87: يتم تشغيل الإجراء [/<bdi dir="ltr" class="odt-ltr-term">validationFormulaire</bdi>] بواسطة طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> ناتج عن النقر على أحد الزرين [<bdi dir="ltr" class="odt-ltr-term">Envoyer</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">Effacer</bdi>] في عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>]. تتعامل الطريقة [<bdi dir="ltr" class="odt-ltr-term">doValidationFormulaire</bdi>] مع هاتين الحالتين باستخدام طريقتين مختلفتين.
   </li>
-  <li>الأسطر 90–103: تتوافق طريقة [doEnvoyer] مع طريقة [doValidationFormulaire] من الإصدار السابق. يتم تخزين البيانات المدخلة في الجلسة (الأسطر 96–98)، بينما في الإصدار السابق كانت توضع في الطلب.
+  <li>الأسطر 90–103: تتوافق طريقة [<bdi dir="ltr" class="odt-ltr-term">doEnvoyer</bdi>] مع طريقة [<bdi dir="ltr" class="odt-ltr-term">doValidationFormulaire</bdi>] من الإصدار السابق. يتم تخزين البيانات المدخلة في الجلسة (الأسطر 96–98)، بينما في الإصدار السابق كانت توضع في الطلب.
   </li>
-  <li>الأسطر 58–67: يجب أن تعرض الطريقة الجديدة [doEffacer] نموذجًا فارغًا. يمكننا استدعاء الطريقة [doInit]، التي تؤدي هذه المهمة بالفعل. هنا، ننتهز الفرصة لمسح عناصر [name, age] من الجلسة أيضًا حتى تستمر في عكس أحدث حالة للنموذج.
+  <li>الأسطر 58–67: يجب أن تعرض الطريقة الجديدة [<bdi dir="ltr" class="odt-ltr-term">doEffacer</bdi>] نموذجًا فارغًا. يمكننا استدعاء الطريقة [<bdi dir="ltr" class="odt-ltr-term">doInit</bdi>]، التي تؤدي هذه المهمة بالفعل. هنا، ننتهز الفرصة لمسح عناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] من الجلسة أيضًا حتى تستمر في عكس أحدث حالة للنموذج.
   </li>
-  <li>الأسطر 50-55: نطلب عرض طريقة العرض [form] دون أي تهيئة واضحة لنموذج طريقة العرض. يتكون هذا النموذج في الواقع من عناصر [name, age] الموجودة بالفعل في الجلسة. لا يلزم اتخاذ أي إجراء آخر.
+  <li>الأسطر 50-55: نطلب عرض طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>] دون أي تهيئة واضحة لنموذج طريقة العرض. يتكون هذا النموذج في الواقع من عناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] الموجودة بالفعل في الجلسة. لا يلزم اتخاذ أي إجراء آخر.
   </li>
 </ul>
 
 <h2 id="126">12.6. <span style="color: #4f81bd">الاختبارات</span></h2>
-<p>ابدأ أو أعد تشغيل Tomcat بعد دمج مشروع Eclipse [personne-mvc-07] فيه، ثم اطلب عنوان URL [http://localhost:8080/personne7] باستخدام متصفح مع تعطيل ملفات تعريف الارتباط وحذف ملفات تعريف الارتباط الموجودة. يتم الحصول على الاستجابة التالية:</p>
+<p>ابدأ أو أعد تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> بعد دمج مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">personne-mvc-07</bdi>] فيه، ثم اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne7</bdi>] باستخدام متصفح مع تعطيل ملفات تعريف الارتباط وحذف ملفات تعريف الارتباط الموجودة. يتم الحصول على الاستجابة التالية:</p>
 <p><img src="images/10000000000001F1000000F0D47059AE.png" width="348" height="168" style="width:9.2cm;height:4.443cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F1000000F0D47059AE.png" /></p>
 <p>فيما يلي شفرة المصدر التي يتلقاها المتصفح:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
@@ -1747,7 +1749,7 @@
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a>...
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>السطر 1: رمز الجلسة موجود في عنوان URL الهدف لـ POST.</p>
+<p>السطر 1: رمز الجلسة موجود في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف لـ <bdi dir="ltr" class="odt-ltr-term">POST.</bdi></p>
 <p>دعونا نملأ النموذج ونرسله:</p>
 <p><img src="images/10000000000002F2000000E1E74EB734.png" width="528" height="157" style="width:13.959cm;height:4.165cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F2000000E1E74EB734.png" /></p>
 <p>فيما يلي شفرة المصدر التي يتلقاها المتصفح:</p>
@@ -1759,7 +1761,7 @@
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;retourFormulaire;jsessionid=9D4CC83FEFB51AE78B1FD71EC66F9EF3&quot;</span><span class="p">&gt;</span>Retour au formulaire<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>السطر 3: رمز الجلسة موجود في عنوان URL الهدف للرابط.</p>
+<p>السطر 3: رمز الجلسة موجود في عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الهدف للرابط.</p>
 
 
 

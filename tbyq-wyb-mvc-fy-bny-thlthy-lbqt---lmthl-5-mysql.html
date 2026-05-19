@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1009,12 +1011,12 @@
 
 
 
-<h1 id="19-mvc-5-mysql">19. <span style="color: #365f91">تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 5، MySQL</span></h1>
-<h2 id="191-mysql">19.1. <span style="color: #4f81bd">قاعدة بيانات MySQL</span></h2>
-<p>في هذا الإصدار، سنقوم بتخزين قائمة الأشخاص في جدول قاعدة بيانات MySQL 4.x. استخدمنا حزمة [Apache – MySQL – PHP] المتوفرة على الرابط [http://www.easyphp.org]. وفيما يلي، لقطات الشاشة مأخوذة من عميل MySQL Manager Lite [http://www.sqlmanager.net/fr/products/mysql/manager]، وهو عميل إدارة مجاني لنظام إدارة قواعد البيانات MySQL.</p>
-<p>تسمى قاعدة البيانات [dbpersonnes]. وهي تحتوي على جدول باسم [PERSONNES]:</p>
+<h1 id="19-mvc-5-mysql">19. <span style="color: #365f91">تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> في بنية ثلاثية الطبقات – المثال 5، <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi></span></h1>
+<h2 id="191-mysql">19.1. <span style="color: #4f81bd">قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi></span></h2>
+<p>في هذا الإصدار، سنقوم بتخزين قائمة الأشخاص في جدول قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> 4.<bdi dir="ltr" class="odt-ltr-term">x.</bdi> استخدمنا حزمة [<bdi dir="ltr" class="odt-ltr-term">Apache</bdi> – <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> – <bdi dir="ltr" class="odt-ltr-term">PHP</bdi>] المتوفرة على الرابط [<bdi dir="ltr" class="odt-ltr-term">http://www.easyphp.org</bdi>]. وفيما يلي، لقطات الشاشة مأخوذة من عميل <bdi dir="ltr" class="odt-ltr-term">MySQL Manager Lite</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://www.sqlmanager.net/fr/products/mysql/manager</bdi>]، وهو عميل إدارة مجاني لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">MySQL.</bdi></p>
+<p>تسمى قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">dbpersonnes</bdi>]. وهي تحتوي على جدول باسم [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]:</p>
 <p><img src="images/10000000000000D8000000A0F9BD024D.png" width="151" height="112" style="width:4.001cm;height:2.963cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D8000000A0F9BD024D.png" /></p>
-<p>سيحتوي جدول [PERSONNES] على قائمة بالأشخاص الذين يديرهم تطبيق الويب. تم إنشاؤه باستخدام عبارات SQL التالية:</p>
+<p>سيحتوي جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] على قائمة بالأشخاص الذين يديرهم تطبيق الويب. تم إنشاؤه باستخدام عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التالية:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1035,40 +1037,40 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w">  </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">)</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">latin1</span>
 </code></pre></div></td></tr></table></div>
-<p>يبدو أن MySQL 4.x أقل قدرة من نظامي إدارة قواعد البيانات السابقين. لم أتمكن من إضافة قيود (فحوصات) إلى الجدول.</p>
+<p>يبدو أن <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> 4.<bdi dir="ltr" class="odt-ltr-term">x</bdi> أقل قدرة من نظامي إدارة قواعد البيانات السابقين. لم أتمكن من إضافة قيود (فحوصات) إلى الجدول.</p>
 <ul>
-  <li>السطر 10: يجب أن يكون الجدول من النوع [InnoDB] وليس [MyISAM]، الذي لا يدعم المعاملات.
+  <li>السطر 10: يجب أن يكون الجدول من النوع [<bdi dir="ltr" class="odt-ltr-term">InnoDB</bdi>] وليس [<bdi dir="ltr" class="odt-ltr-term">MyISAM</bdi>]، الذي لا يدعم المعاملات.
   </li>
-  <li>السطر 2: المفتاح الأساسي من النوع <b>auto_increment</b>. إذا تم إدراج صف دون قيمة لعمود ID في الجدول، فسيقوم MySQL تلقائيًا بإنشاء عدد صحيح لهذا العمود. وهذا سيوفر علينا عناء إنشاء المفاتيح الأساسية بأنفسنا.
+  <li>السطر 2: المفتاح الأساسي من النوع <b><bdi dir="ltr" class="odt-ltr-term">auto_increment</bdi></b>. إذا تم إدراج صف دون قيمة لعمود <bdi dir="ltr" class="odt-ltr-term">ID</bdi> في الجدول، فسيقوم <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> تلقائيًا بإنشاء عدد صحيح لهذا العمود. وهذا سيوفر علينا عناء إنشاء المفاتيح الأساسية بأنفسنا.
   </li>
 </ul>
 
-<p>يمكن أن يحتوي الجدول [PERSONNES] على المحتوى التالي:</p>
+<p>يمكن أن يحتوي الجدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] على المحتوى التالي:</p>
 <p><img src="images/1000000000000250000000B6397F308B.png" width="414" height="127" style="width:10.961cm;height:3.371cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000250000000B6397F308B.png" /></p>
-<p>نعلم أنه عند إدراج كائن [Person] عبر طبقة [DAO] الخاصة بنا، فإن حقل [id] لهذا الكائن يساوي -1 قبل الإدراج ويكون له قيمة غير -1 بعد ذلك؛ هذه القيمة هي المفتاح الأساسي المخصص للصف الجديد الذي تم إدراجه في الجدول [PERSONNES]. دعونا نلقي نظرة على مثال لنرى كيف يمكننا تحديد هذه القيمة.</p>
+<p>نعلم أنه عند إدراج كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] عبر طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] الخاصة بنا، فإن حقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] لهذا الكائن يساوي -1 قبل الإدراج ويكون له قيمة غير -1 بعد ذلك؛ هذه القيمة هي المفتاح الأساسي المخصص للصف الجديد الذي تم إدراجه في الجدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. دعونا نلقي نظرة على مثال لنرى كيف يمكننا تحديد هذه القيمة.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000558000000FD0C36C7CD.png" width="680" height="126" style="display:inline-block; margin:4px;width:17.997cm;height:3.328cm;" class="odt-zoomable" data-zoom-src="images/1000000000000558000000FD0C36C7CD.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055300000162285DF619.png" width="680" height="177" style="display:inline-block; margin:4px;width:17.997cm;height:4.674cm;" class="odt-zoomable" data-zoom-src="images/100000000000055300000162285DF619.png" /></td></tr></table>
 
 <p><a id="dao-mysql-exemple-insertion"></a></p>
-<p>عبارة SQL </p>
+<p>عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">LAST_INSERT_ID</span><span class="p">()</span>
 </code></pre></div>
-<p>يسمح لنا بتحديد آخر قيمة تم إدخالها في حقل ID بالجدول. يجب تنفيذه <strong>بعد الإدخال</strong>. وهذا يختلف عن أنظمة إدارة قواعد البيانات [Firebird] و[Postgres]، حيث طلبنا قيمة المفتاح الأساسي للشخص المضاف <strong>قبل الإدخال</strong>. سنستخدمه في ملف [people-mysql.xml]، الذي يحتوي على عبارات SQL التي يتم تنفيذها على قاعدة البيانات.</p>
-<h2 id="192-eclipse-dao-service">19.2. <span style="color: #4f81bd">مشروع Eclipse لطبقات [DAO] و[service]</span></h2>
-<p>لتطوير طبقات [dao] و[service] لتطبيقنا باستخدام قاعدة بيانات MySQL، سنستخدم مشروع Eclipse التالي [mvc-personnes-05]:</p>
+<p>يسمح لنا بتحديد آخر قيمة تم إدخالها في حقل <bdi dir="ltr" class="odt-ltr-term">ID</bdi> بالجدول. يجب تنفيذه <strong>بعد الإدخال</strong>. وهذا يختلف عن أنظمة إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">Postgres</bdi>]، حيث طلبنا قيمة المفتاح الأساسي للشخص المضاف <strong>قبل الإدخال</strong>. سنستخدمه في ملف [<bdi dir="ltr" class="odt-ltr-term">people-mysql.xml</bdi>]، الذي يحتوي على عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي يتم تنفيذها على قاعدة البيانات.</p>
+<h2 id="192-eclipse-dao-service">19.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لطبقات [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p>لتطوير طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لتطبيقنا باستخدام قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>، سنستخدم مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-05</bdi>]:</p>
 <p><img src="images/10000000000000DE00000063B6D4C070.png" width="156" height="70" style="width:4.129cm;height:1.842cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DE00000063B6D4C070.png" /></p>
-<p>المشروع هو مشروع Java بسيط، وليس مشروع ويب Tomcat.</p>
+<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> بسيط، وليس مشروع ويب <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>دليل [src]</p>
+<p>دليل [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يحتوي هذا المجلد على شفرة المصدر لطبقتي [dao] و[service]، بالإضافة إلى ملفات التكوين لهاتين الطبقتين:</p>
+<p>يحتوي هذا المجلد على شفرة المصدر لطبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]، بالإضافة إلى ملفات التكوين لهاتين الطبقتين:</p>
 <p><img src="images/100000000000010D0000016380A19AC1.png" width="188" height="248" style="width:4.979cm;height:6.57cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010D0000016380A19AC1.png" /></p>
-<p>قد تكون جميع الملفات التي تحتوي على [mysql] في أسمائها قد تم تعديلها أو لم يتم تعديلها لإصدارات Firebird و Postgres. وفيما يلي، نصف تلك التي تم تعديلها.</p>
+<p>قد تكون جميع الملفات التي تحتوي على [<bdi dir="ltr" class="odt-ltr-term">mysql</bdi>] في أسمائها قد تم تعديلها أو لم يتم تعديلها لإصدارات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> و <bdi dir="ltr" class="odt-ltr-term">Postgres.</bdi> وفيما يلي، نصف تلك التي تم تعديلها.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>مجلد [database]</p>
+<p>مجلد [<bdi dir="ltr" class="odt-ltr-term">database</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يحتوي هذا المجلد على البرنامج النصي لإنشاء قاعدة بيانات MySQL للمستخدمين:</p>
+<p>يحتوي هذا المجلد على البرنامج النصي لإنشاء قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi> للمستخدمين:</p>
 <p><img src="images/1000000000000093000000214220834E.png" width="103" height="23" style="width:2.72cm;height:0.61cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000093000000214220834E.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1151,17 +1153,17 @@
 <a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="k">COMMIT</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>المجلد [lib]</p>
+<p>المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يحتوي هذا الدليل على الملفات التي يحتاجها التطبيق:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014A000001C7FA46DB91.png" width="165" height="228" style="display:inline-block; margin:4px;width:4.366cm;height:6.02cm;" class="odt-zoomable" data-zoom-src="images/100000000000014A000001C7FA46DB91.png" /></td></tr></table>
 
-<p>لاحظ وجود برنامج تشغيل JDBC لنظام إدارة قواعد البيانات MySQL. جميع هذه الملفات هي جزء من <em>مسار فئات</em> مشروع Eclipse.</p>
-<h2 id="193-dao">19.3. <span style="color: #4f81bd">طبقة [dao]</span></h2>
-<p>طبقة [dao] هي كما يلي:</p>
+<p>لاحظ وجود برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">MySQL.</bdi> جميع هذه الملفات هي جزء من <em>مسار فئات</em> مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse.</bdi></p>
+<h2 id="193-dao">19.3. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h2>
+<p>طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هي كما يلي:</p>
 <p><img src="images/100000000000010D0000014756B49F60.png" width="188" height="229" style="width:4.979cm;height:6.054cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010D0000014756B49F60.png" /></p>
-<p>نحن نعرض فقط التغييرات مقارنة بإصدار [Firebird].</p>
-<p>ملف التعيين [person-mysql.xml] هو كما يلي:</p>
+<p>نحن نعرض فقط التغييرات مقارنة بإصدار [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>].</p>
+<p>ملف التعيين [<bdi dir="ltr" class="odt-ltr-term">person-mysql.xml</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;UTF-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1214,46 +1216,46 @@
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;/sqlMap&gt;</span></span>
 </code></pre></div>
 
-<p>هذا هو نفس محتوى [people-firebird.xml] مع الاختلافات الطفيفة التالية:</p>
+<p>هذا هو نفس محتوى [<bdi dir="ltr" class="odt-ltr-term">people-firebird.xml</bdi>] مع الاختلافات الطفيفة التالية:</p>
 <ul>
-  <li><span style="color: #000000">تم تغيير عبارة SQL &quot;Person.insertOne&quot; في الأسطر 29–37:</span>
+  <li><span style="color: #000000">تم تغيير عبارة <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> &quot;<bdi dir="ltr" class="odt-ltr-term">Person.insertOne</bdi>&quot; في الأسطر 29–37:</span>
   </li>
-  <li><span style="color: #000000">يتم تنفيذ عبارة الإدراج SQL قبل عبارة SELECT، التي تسترد قيمة المفتاح الأساسي للصف الذي تم إدراجه</span>
+  <li><span style="color: #000000">يتم تنفيذ عبارة الإدراج <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> قبل عبارة <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>، التي تسترد قيمة المفتاح الأساسي للصف الذي تم إدراجه</span>
   </li>
-  <li><span style="color: #000000">لا يحتوي أمر الإدراج SQL على قيمة لعمود ID في جدول [PERSONNES]</span>
+  <li><span style="color: #000000">لا يحتوي أمر الإدراج <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> على قيمة لعمود <bdi dir="ltr" class="odt-ltr-term">ID</bdi> في جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">وهذا يعكس مثال الإدراج الذي ناقشناه في </span>القسم<a href="#dao-mysql-exemple-insertion"><u><span style="color: #0563c1"> 19.1</span></u></a><span style="color: #000000">.</span></p>
-<p><span style="color: #000000"><a id="pb-select-after-insert-mysql"></a>لاحظ أن هذا قد يكون مصدرًا محتملاً للمشاكل بين الخيوط المتزامنة. تخيل خيطين، Th1 و Th2، يقومان بعملية إدراج في نفس الوقت. هناك ما مجموعه أربعة أوامر SQL يجب تنفيذها. لنفترض أنها تُنفذ بالترتيب التالي:</span></p>
+<p><span style="color: #000000"><a id="pb-select-after-insert-mysql"></a>لاحظ أن هذا قد يكون مصدرًا محتملاً للمشاكل بين الخيوط المتزامنة. تخيل خيطين، <bdi dir="ltr" class="odt-ltr-term">Th1</bdi> و <bdi dir="ltr" class="odt-ltr-term">Th2</bdi>، يقومان بعملية إدراج في نفس الوقت. هناك ما مجموعه أربعة أوامر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> يجب تنفيذها. لنفترض أنها تُنفذ بالترتيب التالي:</span></p>
 <ol>
-  <li><span style="color: #000000">إدراج I1 بواسطة Th1</span>
+  <li><span style="color: #000000">إدراج <bdi dir="ltr" class="odt-ltr-term">I1</bdi> بواسطة <bdi dir="ltr" class="odt-ltr-term">Th1</bdi></span>
   </li>
-  <li><span style="color: #000000">insert I2 بواسطة Th2</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">insert I2</bdi> بواسطة <bdi dir="ltr" class="odt-ltr-term">Th2</bdi></span>
   </li>
-  <li><span style="color: #000000">select S1 بواسطة Th1</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">select S1</bdi> بواسطة <bdi dir="ltr" class="odt-ltr-term">Th1</bdi></span>
   </li>
-  <li><span style="color: #000000">select S2 بواسطة Th2</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">select S2</bdi> بواسطة <bdi dir="ltr" class="odt-ltr-term">Th2</bdi></span>
   </li>
 </ol>
 
-<p><span style="color: #000000">في الخطوة 3، يسترد Th1 المفتاح الأساسي الذي تم إنشاؤه أثناء عملية الإدراج الأخيرة، وهو مفتاح Th2 وليس مفتاحه الخاص. لست متأكدًا مما إذا كانت طريقة [insert] في iBATIS محمية ضد هذا السيناريو. سنفترض أنها تتعامل مع هذا الأمر بشكل صحيح. إذا لم يكن الأمر كذلك، فسنحتاج إلى اشتقاق فئة التنفيذ [DaoImplCommon] من طبقة [dao] إلى فئة [DaoImplMySQL] حيث يتم مزامنة طريقة [insertPersonne]. وهذا من شأنه أن يحل المشكلة فقط بالنسبة للخيوط في تطبيقنا. إذا كان Th1 و Th2 في المثال أعلاه خيوطًا من تطبيقين مختلفين، فسيتعين عندئذٍ حل المشكلة باستخدام كل من المعاملات ومستوى عزل مناسب بين المعاملات. وسيكون مستوى [serializable]، الذي يتم فيه تنفيذ المعاملات كما لو كانت تعمل بالتسلسل، هو المستوى المناسب.</span></p>
-<p><span style="color: #000000">لاحظ أن هذه المشكلة لا توجد في أنظمة إدارة قواعد البيانات Firebird و Postgres، التي تنفذ SELECT قبل INSERT. على سبيل المثال، انظر التسلسل التالي:</span></p>
+<p><span style="color: #000000">في الخطوة 3، يسترد <bdi dir="ltr" class="odt-ltr-term">Th1</bdi> المفتاح الأساسي الذي تم إنشاؤه أثناء عملية الإدراج الأخيرة، وهو مفتاح <bdi dir="ltr" class="odt-ltr-term">Th2</bdi> وليس مفتاحه الخاص. لست متأكدًا مما إذا كانت طريقة [<bdi dir="ltr" class="odt-ltr-term">insert</bdi>] في <bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi> محمية ضد هذا السيناريو. سنفترض أنها تتعامل مع هذا الأمر بشكل صحيح. إذا لم يكن الأمر كذلك، فسنحتاج إلى اشتقاق فئة التنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] من طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] إلى فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplMySQL</bdi>] حيث يتم مزامنة طريقة [<bdi dir="ltr" class="odt-ltr-term">insertPersonne</bdi>]. وهذا من شأنه أن يحل المشكلة فقط بالنسبة للخيوط في تطبيقنا. إذا كان <bdi dir="ltr" class="odt-ltr-term">Th1</bdi> و <bdi dir="ltr" class="odt-ltr-term">Th2</bdi> في المثال أعلاه خيوطًا من تطبيقين مختلفين، فسيتعين عندئذٍ حل المشكلة باستخدام كل من المعاملات ومستوى عزل مناسب بين المعاملات. وسيكون مستوى [<bdi dir="ltr" class="odt-ltr-term">serializable</bdi>]، الذي يتم فيه تنفيذ المعاملات كما لو كانت تعمل بالتسلسل، هو المستوى المناسب.</span></p>
+<p><span style="color: #000000">لاحظ أن هذه المشكلة لا توجد في أنظمة إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> و <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi>، التي تنفذ <bdi dir="ltr" class="odt-ltr-term">SELECT</bdi> قبل <bdi dir="ltr" class="odt-ltr-term">INSERT.</bdi> على سبيل المثال، انظر التسلسل التالي:</span></p>
 <ol>
-  <li><span style="color: #000000">select S1 from Th1</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">select S1 from Th1</bdi></span>
   </li>
-  <li><span style="color: #000000">SELECT S2 من Th2</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">SELECT S2</bdi> من <bdi dir="ltr" class="odt-ltr-term">Th2</bdi></span>
   </li>
-  <li><span style="color: #000000">insert I1 from Th1</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">insert I1 from Th1</bdi></span>
   </li>
-  <li><span style="color: #000000">insert I2 from Th2</span>
+  <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">insert I2 from Th2</bdi></span>
   </li>
 </ol>
 
-<p><span style="color: #000000">في الخطوتين 1 و 2، يسترد Th1 و Th2 قيم المفتاح الأساسي من نفس المولد. عادةً ما تكون هذه العملية ذرية، وسيسترد Th1 و Th2 قيمتين مختلفتين. إذا لم تكن العملية ذرية، واسترد Th1 و </span><span style="color: #000000">Th2 قيمتين متطابقتين، فسيفشل الإدراج الذي يتم تنفيذه في الخطوة 4 بواسطة Th2 بسبب تكرار المفتاح الأساسي. هذا خطأ قابل للاسترداد بالكامل، ويمكن لـ Th2 إعادة محاولة الإدراج.</span></p>
-<p><span style="color: #000000">سنترك عملية &quot;Personne.insertOne&quot; كما هي حاليًا في ملف [personnes-mysql.xml]، ولكن يجب أن يدرك القارئ أن هناك مشكلة محتملة هنا.</span></p>
-<p><span style="color: #000000">فئة التنفيذ [DaoImplCommon] لطبقة [dao] هي نفسها كما في الإصدارين السابقين.</span></p>
-<p><span style="color: #000000">تم تكييف تكوين طبقة [dao] مع نظام إدارة قواعد البيانات [MySQL]. وبالتالي، فإن ملف التكوين [spring-config-test-dao-mysql.xml] هو كما يلي:</span></p>
+<p><span style="color: #000000">في الخطوتين 1 و 2، يسترد <bdi dir="ltr" class="odt-ltr-term">Th1</bdi> و <bdi dir="ltr" class="odt-ltr-term">Th2</bdi> قيم المفتاح الأساسي من نفس المولد. عادةً ما تكون هذه العملية ذرية، وسيسترد <bdi dir="ltr" class="odt-ltr-term">Th1</bdi> و <bdi dir="ltr" class="odt-ltr-term">Th2</bdi> قيمتين مختلفتين. إذا لم تكن العملية ذرية، واسترد <bdi dir="ltr" class="odt-ltr-term">Th1</bdi> و </span><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">Th2</bdi> قيمتين متطابقتين، فسيفشل الإدراج الذي يتم تنفيذه في الخطوة 4 بواسطة <bdi dir="ltr" class="odt-ltr-term">Th2</bdi> بسبب تكرار المفتاح الأساسي. هذا خطأ قابل للاسترداد بالكامل، ويمكن لـ <bdi dir="ltr" class="odt-ltr-term">Th2</bdi> إعادة محاولة الإدراج.</span></p>
+<p><span style="color: #000000">سنترك عملية &quot;<bdi dir="ltr" class="odt-ltr-term">Personne.insertOne</bdi>&quot; كما هي حاليًا في ملف [<bdi dir="ltr" class="odt-ltr-term">personnes-mysql.xml</bdi>]، ولكن يجب أن يدرك القارئ أن هناك مشكلة محتملة هنا.</span></p>
+<p><span style="color: #000000">فئة التنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] هي نفسها كما في الإصدارين السابقين.</span></p>
+<p><span style="color: #000000">تم تكييف تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] مع نظام إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>]. وبالتالي، فإن ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-mysql.xml</bdi>] هو كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -1294,28 +1296,28 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">الأسطر 5–19: يشير bean [dataSource] الآن إلى قاعدة البيانات [MySQL] [dbpersonnes]، التي يكون [root] هو المسؤول عنها بدون كلمة مرور. يجب على القارئ تعديل هذا التكوين وفقًا لبيئته الخاصة.</span>
+  <li><span style="color: #000000">الأسطر 5–19: يشير <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">dataSource</bdi>] الآن إلى قاعدة البيانات [<bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>] [<bdi dir="ltr" class="odt-ltr-term">dbpersonnes</bdi>]، التي يكون [<bdi dir="ltr" class="odt-ltr-term">root</bdi>] هو المسؤول عنها بدون كلمة مرور. يجب على القارئ تعديل هذا التكوين وفقًا لبيئته الخاصة.</span>
   </li>
-  <li><span style="color: #000000">السطر 31: فئة [DaoImplCommon] هي فئة التنفيذ لطبقة [dao]</span>
+  <li><span style="color: #000000">السطر 31: فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] هي فئة التنفيذ لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span>
   </li>
 </ul>
 
 <p><span style="color: #000000">بعد إجراء هذه التغييرات، يمكننا الانتقال إلى مرحلة الاختبار.</span></p>
-<h2 id="194-dao-service">19.4. <span style="color: #4f81bd">اختبارات طبقات [dao] و[service]</span></h2>
-<p><span style="color: #000000">اختبارات طبقات [dao] و [service] هي نفسها المستخدمة في إصدار [Firebird]. النتائج التي تم الحصول عليها هي كما يلي:</span></p>
+<h2 id="194-dao-service">19.4. <span style="color: #4f81bd">اختبارات طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p><span style="color: #000000">اختبارات طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] هي نفسها المستخدمة في إصدار [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>]. النتائج التي تم الحصول عليها هي كما يلي:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000548000001C9173DFD39.png" width="676" height="229" style="display:inline-block; margin:4px;width:17.886cm;height:6.047cm;" class="odt-zoomable" data-zoom-src="images/1000000000000548000001C9173DFD39.png" /></td></tr></table>
 
-<p><span style="color: #000000">يمكننا أن نرى أن الاختبارات نجحت مع تطبيق [DaoImplCommon]. لن نحتاج إلى اشتقاق هذه الفئة كما كان ضروريًا مع نظام إدارة قواعد البيانات [Firebird].</span></p>
-<h2 id="195-web">19.5. <span style="color: #4f81bd">اختبارات تطبيق [Web]</span></h2>
-<p><span style="color: #000000">لاختبار تطبيق الويب باستخدام نظام إدارة قواعد البيانات [MySQL]، نقوم بإنشاء مشروع Eclipse [mvc-personnes-05B] بطريقة مماثلة لتلك المستخدمة في إنشاء مشروع [mvc-personnes-03B] باستخدام قاعدة بيانات Firebird (انظر </span>القسم<a href="#web-firebird"><u><span style="color: #0563c1"> 17.7</span></u></a><span style="color: #000000">).  ومع ذلك، كما هو الحال مع Postgres، لن </span><span style="color: #000000">نحتاج إلى إعادة إنشاء أرشيفات [personnes-dao.jar] و [personnes-service.jar] لأننا لم نقم بتعديل أي فئات.</span></p>
-<p><span style="color: #000000">نقوم بنشر مشروع الويب [mvc-personnes-05B] داخل Tomcat:</span></p>
+<p><span style="color: #000000">يمكننا أن نرى أن الاختبارات نجحت مع تطبيق [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]. لن نحتاج إلى اشتقاق هذه الفئة كما كان ضروريًا مع نظام إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>].</span></p>
+<h2 id="195-web">19.5. <span style="color: #4f81bd">اختبارات تطبيق [<bdi dir="ltr" class="odt-ltr-term">Web</bdi>]</span></h2>
+<p><span style="color: #000000">لاختبار تطبيق الويب باستخدام نظام إدارة قواعد البيانات [<bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>]، نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-05B</bdi>] بطريقة مماثلة لتلك المستخدمة في إنشاء مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>] باستخدام قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> (انظر </span>القسم<a href="#web-firebird"><u><span style="color: #0563c1"> 17.7</span></u></a><span style="color: #000000">).  ومع ذلك، كما هو الحال مع <bdi dir="ltr" class="odt-ltr-term">Postgres</bdi>، لن </span><span style="color: #000000">نحتاج إلى إعادة إنشاء أرشيفات [<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">personnes-service.jar</bdi>] لأننا لم نقم بتعديل أي فئات.</span></p>
+<p><span style="color: #000000">نقوم بنشر مشروع الويب [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-05B</bdi>] داخل <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001560000008E61AA1E0B.png" width="239" height="99" style="display:inline-block; margin:4px;width:6.331cm;height:2.628cm;" class="odt-zoomable" data-zoom-src="images/10000000000001560000008E61AA1E0B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001360000005A8CC393A1.png" width="217" height="63" style="display:inline-block; margin:4px;width:5.74cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000001360000005A8CC393A1.png" /></td></tr></table>
 
-<p><span style="color: #000000">يتم تشغيل نظام إدارة قواعد البيانات MySQL. ويكون محتوى جدول [PERSONNES] كما يلي:</span></p>
+<p><span style="color: #000000">يتم تشغيل نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">MySQL.</bdi> ويكون محتوى جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>] كما يلي:</span></p>
 <p><img src="images/100000000000024B000000AD724E2BB8.png" width="411" height="121" style="width:10.871cm;height:3.203cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024B000000AD724E2BB8.png" /></p>
-<p><span style="color: #000000">ثم يتم تشغيل Tomcat. باستخدام متصفح، نطلب عنوان URL [http://localhost:8080/mvc-personnes-05B]:</span></p>
+<p><span style="color: #000000">ثم يتم تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi> باستخدام متصفح، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/mvc-personnes-05B</bdi>]:</span></p>
 <p><img src="images/10000000000002340000010ACDC03F1A.png" width="395" height="186" style="width:10.449cm;height:4.928cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002340000010ACDC03F1A.png" /></p>
-<p><span style="color: #000000">نقوم بإضافة    شخصًا جديدًا باستخدام رابط [Add]:</span></p>
+<p><span style="color: #000000">نقوم بإضافة    شخصًا جديدًا باستخدام رابط [<bdi dir="ltr" class="odt-ltr-term">Add</bdi>]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019300000178981FF3E2.png" width="282" height="263" style="display:inline-block; margin:4px;width:7.459cm;height:6.959cm;" class="odt-zoomable" data-zoom-src="images/100000000000019300000178981FF3E2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022600000123D5B450B9.png" width="332" height="176" style="display:inline-block; margin:4px;width:8.789cm;height:4.65cm;" class="odt-zoomable" data-zoom-src="images/100000000000022600000123D5B450B9.png" /></td></tr></table>
 
 <p><span style="color: #000000">نتحقق من الإضافة في قاعدة البيانات:</span></p>

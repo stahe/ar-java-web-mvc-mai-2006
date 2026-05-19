@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -917,40 +919,40 @@
 
 
 
-<h1 id="13-mvc-person-8">13. <span style="color: #365f91">تطبيق ويب MVC [person] – الإصدار 8</span></h1>
-<p>سيكون الإصدار 8 مطابقًا للإصدار 7 ولكنه سيتم نشره في ملف WAR (أرشيف الويب). في Eclipse، انقر بزر الماوس الأيمن على المشروع [mvc-personne-07] واختر خيار [تصدير]:</p>
+<h1 id="13-mvc-person-8">13. <span style="color: #365f91">تطبيق ويب <bdi dir="ltr" class="odt-ltr-term">MVC</bdi> [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] – الإصدار 8</span></h1>
+<p>سيكون الإصدار 8 مطابقًا للإصدار 7 ولكنه سيتم نشره في ملف <bdi dir="ltr" class="odt-ltr-term">WAR</bdi> (أرشيف الويب). في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، انقر بزر الماوس الأيمن على المشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>] واختر خيار [تصدير]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017C00000155172CF8CE.png" width="266" height="239" style="display:inline-block; margin:4px;width:7.04cm;height:6.316cm;" class="odt-zoomable" data-zoom-src="images/100000000000017C00000155172CF8CE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C9000000D1FAE5C0C3.png" width="320" height="146" style="display:inline-block; margin:4px;width:8.46cm;height:3.868cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C9000000D1FAE5C0C3.png" /><img src="images/10000000000002F6000000C8D2EAC76A.png" width="379" height="100" style="display:inline-block; margin:4px;width:10.028cm;height:2.646cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F6000000C8D2EAC76A.png" /></td></tr></table>
 
-<p>من القائمة المنسدلة [1]، حدد اسم الوحدة النمطية المراد تصديرها، وهي في هذه الحالة [mvc-personne-07]، واستخدم زر [Browse] لتحديد ملف .war المراد إنشاؤه، وهو في هذه الحالة [personne8.war]. أكمل العملية بالنقر فوق [Finish]، ثم استخدم مستكشف Windows لعرض الملف الذي تم إنشاؤه:</p>
+<p>من القائمة المنسدلة [1]، حدد اسم الوحدة النمطية المراد تصديرها، وهي في هذه الحالة [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>]، واستخدم زر [<bdi dir="ltr" class="odt-ltr-term">Browse</bdi>] لتحديد ملف .<bdi dir="ltr" class="odt-ltr-term">war</bdi> المراد إنشاؤه، وهو في هذه الحالة [<bdi dir="ltr" class="odt-ltr-term">personne8.war</bdi>]. أكمل العملية بالنقر فوق [<bdi dir="ltr" class="odt-ltr-term">Finish</bdi>]، ثم استخدم مستكشف <bdi dir="ltr" class="odt-ltr-term">Windows</bdi> لعرض الملف الذي تم إنشاؤه:</p>
 <p><img src="images/10000000000001580000004D4BC1677D.png" width="241" height="54" style="width:6.369cm;height:1.425cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001580000004D4BC1677D.png" /></p>
-<p>ملف .war مشابه لملف .zip ويمكن استخراجه باستخدام نفس الأدوات. دعونا نستخرجه ونراجع جميع العناصر في بنية دليله:</p>
+<p>ملف .<bdi dir="ltr" class="odt-ltr-term">war</bdi> مشابه لملف .<bdi dir="ltr" class="odt-ltr-term">zip</bdi> ويمكن استخراجه باستخدام نفس الأدوات. دعونا نستخرجه ونراجع جميع العناصر في بنية دليله:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D3000000BC520BAA39.png" width="148" height="132" style="display:inline-block; margin:4px;width:3.911cm;height:3.485cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D3000000BC520BAA39.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000580000005F37F71800.png" width="62" height="67" style="display:inline-block; margin:4px;width:1.63cm;height:1.76cm;" class="odt-zoomable" data-zoom-src="images/10000000000000580000005F37F71800.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D800000049372F9BB4.png" width="151" height="51" style="display:inline-block; margin:4px;width:4.001cm;height:1.351cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D800000049372F9BB4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BA00000056D2FE540B.png" width="130" height="60" style="display:inline-block; margin:4px;width:3.44cm;height:1.591cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BA00000056D2FE540B.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A3000000863DB8B380.png" width="114" height="94" style="display:inline-block; margin:4px;width:3.02cm;height:2.484cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A3000000863DB8B380.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000CA00000069AACD289B.png" width="141" height="73" style="display:inline-block; margin:4px;width:3.739cm;height:1.944cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CA00000069AACD289B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<p>يمكننا أن نرى أن جميع عناصر مشروع [mvc-personne-07] موجودة، حيث تم استبدال شفرة المصدر بنظيراتها المُجمَّعة الموجودة في [WEB-INF/classes] وفقًا لمعايير نشر السيرفلت.</p>
-<p>سنقوم بنشر تطبيق الويب [personne8.war] داخل Tomcat باتباع الإجراء الموضح في القسم<a href="#jstl-deploiement-doc"><u><span style="color: #0563c1"> 8.1.2</span></u></a> الخاص بنشر وثائق مكتبة JSTL.</p>
-<p>نقوم بتشغيل Tomcat باستخدام الخيار المناسب في قائمة [ابدأ]، ثم ندخل عنوان URL [http://localhost:8080] ونتبع رابط [Tomcat Manager]:</p>
+<p>يمكننا أن نرى أن جميع عناصر مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>] موجودة، حيث تم استبدال شفرة المصدر بنظيراتها المُجمَّعة الموجودة في [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/classes</bdi>] وفقًا لمعايير نشر السيرفلت.</p>
+<p>سنقوم بنشر تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">personne8.war</bdi>] داخل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> باتباع الإجراء الموضح في القسم<a href="#jstl-deploiement-doc"><u><span style="color: #0563c1"> 8.1.2</span></u></a> الخاص بنشر وثائق مكتبة <bdi dir="ltr" class="odt-ltr-term">JSTL.</bdi></p>
+<p>نقوم بتشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> باستخدام الخيار المناسب في قائمة [ابدأ]، ثم ندخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080</bdi>] ونتبع رابط [<bdi dir="ltr" class="odt-ltr-term">Tomcat Manager</bdi>]:</p>
 <p><img src="images/10000000000001530000012EC9798919.png" width="237" height="211" style="width:6.279cm;height:5.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001530000012EC9798919.png" /></p>
-<p>ثم تظهر لنا صفحة المصادقة. نقوم بتسجيل الدخول باسم <em>manager/manager</em> <strong><em>أو</em></strong> <em>admin/admin</em>، كما هو موضح في القسم<a href="#tomcat-manager"><u><span style="color: #0563c1"> 2.3.3</span></u></a>.</p>
+<p>ثم تظهر لنا صفحة المصادقة. نقوم بتسجيل الدخول باسم <em><bdi dir="ltr" class="odt-ltr-term">manager/manager</bdi></em> <strong><em>أو</em></strong> <em><bdi dir="ltr" class="odt-ltr-term">admin/admin</bdi></em>، كما هو موضح في القسم<a href="#tomcat-manager"><u><span style="color: #0563c1"> 2.3.3</span></u></a>.</p>
 <p><img src="images/10000000000001F8000000D67A462871.png" width="353" height="150" style="width:9.329cm;height:3.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F8000000D67A462871.png" /></p>
-<p>تظهر لنا صفحة تسرد التطبيقات التي تم نشرها حاليًا في Tomcat:</p>
+<p>تظهر لنا صفحة تسرد التطبيقات التي تم نشرها حاليًا في <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <p><img src="images/100000000000031E000000DDC90F62BA.png" width="559" height="155" style="width:14.78cm;height:4.092cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031E000000DDC90F62BA.png" /></p>
 <p>يمكننا إضافة تطبيق جديد باستخدام النماذج الموجودة في أسفل الصفحة:</p>
 <p><img src="images/100000000000024D0000007303A3AD27.png" width="412" height="81" style="width:10.91cm;height:2.131cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024D0000007303A3AD27.png" /></p>
-<p>نستخدم زر [Browse] لاختيار ملف .war لنشره.</p>
+<p>نستخدم زر [<bdi dir="ltr" class="odt-ltr-term">Browse</bdi>] لاختيار ملف .<bdi dir="ltr" class="odt-ltr-term">war</bdi> لنشره.</p>
 <p><img src="images/10000000000002710000006C91D6CEA8.png" width="437" height="76" style="width:11.569cm;height:1.998cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002710000006C91D6CEA8.png" /></p>
-<p>لا تظهر الصورة ذلك، لكننا قمنا باختيار ملف [personne8.war] الذي تم إنشاؤه سابقًا. يقوم زر [Deploy] بحفظ هذا التطبيق ونشره داخل Tomcat.</p>
+<p>لا تظهر الصورة ذلك، لكننا قمنا باختيار ملف [<bdi dir="ltr" class="odt-ltr-term">personne8.war</bdi>] الذي تم إنشاؤه سابقًا. يقوم زر [<bdi dir="ltr" class="odt-ltr-term">Deploy</bdi>] بحفظ هذا التطبيق ونشره داخل <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi></p>
 <p><img src="images/10000000000004C400000068ECBBB264.png" width="610" height="52" style="width:16.14cm;height:1.376cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C400000068ECBBB264.png" /></p>
-<p>إذا قمنا بنشر ملف [XX.war]، فسيكون سياق التطبيق (أو اسم التطبيق) هو XX. يظهر هذا في [1]. يعرض العمود [2] اسم العرض للتطبيق. يتم تعيين هذا الاسم في ملف [web.xml] باستخدام العلامة &lt;display-name&gt;. في تطبيق [mvc-personne-07] المؤرشف في [personne8.jar]، كان لدينا:</p>
+<p>إذا قمنا بنشر ملف [<bdi dir="ltr" class="odt-ltr-term">XX.war</bdi>]، فسيكون سياق التطبيق (أو اسم التطبيق) هو <bdi dir="ltr" class="odt-ltr-term">XX.</bdi> يظهر هذا في [1]. يعرض العمود [2] اسم العرض للتطبيق. يتم تعيين هذا الاسم في ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] باستخدام العلامة &lt;<bdi dir="ltr" class="odt-ltr-term">display-name</bdi>&gt;. في تطبيق [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>] المؤرشف في [<bdi dir="ltr" class="odt-ltr-term">personne8.jar</bdi>]، كان لدينا:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">mvc-personne-07</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>وبالتالي، فإن اسم العرض للتطبيق هو [mvc-personne-07]، كما هو موضح في [2].</p>
-<p>لنفتح متصفحًا ونطلب عنوان URL [http://localhost:8080/personne8]:</p>
+<p>وبالتالي، فإن اسم العرض للتطبيق هو [<bdi dir="ltr" class="odt-ltr-term">mvc-personne-07</bdi>]، كما هو موضح في [2].</p>
+<p>لنفتح متصفحًا ونطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne8</bdi>]:</p>
 <p><img src="images/100000000000019E000001091AE08DF9.png" width="290" height="186" style="width:7.669cm;height:4.909cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019E000001091AE08DF9.png" /></p>
-<p>نشجع القراء على مواصلة الاختبار. يعد تجميع تطبيق الويب في ملف .war الطريقة القياسية لتوزيع ونشر تطبيق الويب.</p>
+<p>نشجع القراء على مواصلة الاختبار. يعد تجميع تطبيق الويب في ملف .<bdi dir="ltr" class="odt-ltr-term">war</bdi> الطريقة القياسية لتوزيع ونشر تطبيق الويب.</p>
 
 
 

@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1142,11 +1144,11 @@
 
 
 
-<h1 id="3-java">3. <span style="color: #365f91">أساسيات تطوير الويب بلغة Java</span></h1>
-<p>سنناقش الآن تطوير تطبيقات الويب الديناميكية، أي التطبيقات التي يتم فيها إنشاء صفحات HTML المرسلة إلى المستخدم بواسطة البرامج.</p>
+<h1 id="3-java">3. <span style="color: #365f91">أساسيات تطوير الويب بلغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi></span></h1>
+<p>سنناقش الآن تطوير تطبيقات الويب الديناميكية، أي التطبيقات التي يتم فيها إنشاء صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسلة إلى المستخدم بواسطة البرامج.</p>
 <p><a id="creation-projet-web"></a></p>
-<h2 id="31-eclipse">3.1. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">إنشاء مشروع ويب في Eclipse</span></strong></span></h2>
-<p>سنقوم بتطوير أول تطبيق ويب لنا باستخدام Eclipse/Tomcat. وسنتبع عملية مشابهة لتلك المستخدمة لإنشاء تطبيق ويب بدون Eclipse. مع تشغيل Eclipse، نقوم بإنشاء مشروع جديد:</p>
+<h2 id="31-eclipse">3.1. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">إنشاء مشروع ويب في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></strong></span></h2>
+<p>سنقوم بتطوير أول تطبيق ويب لنا باستخدام <bdi dir="ltr" class="odt-ltr-term">Eclipse/Tomcat.</bdi> وسنتبع عملية مشابهة لتلك المستخدمة لإنشاء تطبيق ويب بدون <bdi dir="ltr" class="odt-ltr-term">Eclipse.</bdi> مع تشغيل <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، نقوم بإنشاء مشروع جديد:</p>
 <p><img src="images/100000000000018C00000064C7877DAC.png" width="277" height="70" style="width:7.331cm;height:1.85cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018C00000064C7877DAC.png" /></p>
 <p>الذي نحدده كمشروع ويب ديناميكي:</p>
 <p><img src="images/10000000000000FA000000FCD866F5D7.png" width="175" height="176" style="width:4.63cm;height:4.667cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FA000000FCD866F5D7.png" /></p>
@@ -1156,19 +1158,19 @@
 <p><img src="images/1000000000000152000000DD80E7DCFE.png" width="237" height="155" style="width:6.26cm;height:4.092cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000152000000DD80E7DCFE.png" /></p>
 <p>تطلب منا الصفحة الأخيرة من المعالج تحديد سياق التطبيق [3]:</p>
 <p><img src="images/100000000000012A00000140BA75A70F.png" width="166" height="178" style="width:4.39cm;height:4.715cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012A00000140BA75A70F.png" /></p>
-<p>بمجرد تأكيد المعالج بالنقر على [Finish]، يتصل Eclipse بالموقع [http://java.sun.com] لاسترداد مستندات معينة يرغب في تخزينها مؤقتًا لتجنب حركة مرور غير ضرورية على الشبكة. ثم يُطلب منك الموافقة على اتفاقية الترخيص:</p>
+<p>بمجرد تأكيد المعالج بالنقر على [<bdi dir="ltr" class="odt-ltr-term">Finish</bdi>]، يتصل <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> بالموقع [<bdi dir="ltr" class="odt-ltr-term">http://java.sun.com</bdi>] لاسترداد مستندات معينة يرغب في تخزينها مؤقتًا لتجنب حركة مرور غير ضرورية على الشبكة. ثم يُطلب منك الموافقة على اتفاقية الترخيص:</p>
 <p><img src="images/10000000000001F6000001004CE0ABD0.png" width="351" height="179" style="width:9.299cm;height:4.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F6000001004CE0ABD0.png" /></p>
-<p>نوافق عليها. يقوم Eclipse بإنشاء مشروع الويب. لعرضه، يستخدم بيئة، تسمى منظور، تختلف عن تلك المستخدمة في مشروع Java التقليدي:</p>
+<p>نوافق عليها. يقوم <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> بإنشاء مشروع الويب. لعرضه، يستخدم بيئة، تسمى منظور، تختلف عن تلك المستخدمة في مشروع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> التقليدي:</p>
 <p><img src="images/10000000000001B1000000A3E86CE167.png" width="303" height="114" style="width:8.02cm;height:3.02cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B1000000A3E86CE167.png" /></p>
-<p>المنظور المرتبط بمشروع الويب هو منظور J2EE. نقبله لنرى... والنتيجة هي كما يلي:</p>
+<p>المنظور المرتبط بمشروع الويب هو منظور <bdi dir="ltr" class="odt-ltr-term">J2EE.</bdi> نقبله لنرى... والنتيجة هي كما يلي:</p>
 <p><img src="images/100000000000012A0000015405D859F7.png" width="209" height="238" style="width:5.519cm;height:6.297cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012A0000015405D859F7.png" /></p>
-<p>منظور J2EE معقد بشكل غير ضروري لمشاريع الويب البسيطة. في هذه الحالة، يكفي منظور Java. للوصول إليه، نستخدم الخيار [Window -&gt; Open perspective -&gt; Java]:</p>
+<p>منظور <bdi dir="ltr" class="odt-ltr-term">J2EE</bdi> معقد بشكل غير ضروري لمشاريع الويب البسيطة. في هذه الحالة، يكفي منظور <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> للوصول إليه، نستخدم الخيار [<bdi dir="ltr" class="odt-ltr-term">Window</bdi> -&gt; <bdi dir="ltr" class="odt-ltr-term">Open perspective</bdi> -&gt; <bdi dir="ltr" class="odt-ltr-term">Java</bdi>]:</p>
 <p><img src="images/10000000000000E1000000F7E6B1FB6D.png" width="180" height="198" style="width:4.761cm;height:5.226cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E1000000F7E6B1FB6D.png" /></p>
-<p><strong>src</strong>: سيحتوي على كود Java لفئات التطبيق بالإضافة إلى الملفات التي يجب أن تكون في <em>مسار</em> فئات التطبيق.</p>
-<p><strong>build/classes</strong> (غير معروض): سيحتوي على ملفات .class للفئات المجمعة بالإضافة إلى نسخة من جميع الملفات غير .java الموجودة في <strong>src</strong>. غالبًا ما يستخدم تطبيق الويب ما يُسمى بملفات &quot;الموارد&quot; التي يجب أن تكون موجودة في <em>مسار</em> فئات التطبيق، أي مجموعة الدلائل التي تبحث فيها JVM عندما يشير التطبيق إلى فئة، سواء أثناء التجميع أو في وقت التشغيل. يضمن Eclipse أن يكون دليل <strong>build/classes</strong> جزءًا من مسار فئات الويب. يتم وضع ملفات &quot;الموارد&quot; في مجلد <strong>src</strong>، مع العلم أن Eclipse سينسخها تلقائيًا إلى <strong>build/classes</strong>.</p>
-<p><strong>WebContent:</strong> سيحتوي على موارد تطبيق الويب التي لا تحتاج إلى أن تكون في <em>مسار فئات</em> التطبيق.</p>
-<p><strong>WEB-INF/lib</strong>: يحتوي على ملفات .jar التي يتطلبها تطبيق الويب.</p>
-<p>دعونا نفحص محتويات ملف [WEB-INF/web.xml] الذي يقوم بتكوين تطبيق [person]:</p>
+<p><strong><bdi dir="ltr" class="odt-ltr-term">src</bdi></strong>: سيحتوي على كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لفئات التطبيق بالإضافة إلى الملفات التي يجب أن تكون في <em>مسار</em> فئات التطبيق.</p>
+<p><strong><bdi dir="ltr" class="odt-ltr-term">build/classes</bdi></strong> (غير معروض): سيحتوي على ملفات .<bdi dir="ltr" class="odt-ltr-term">class</bdi> للفئات المجمعة بالإضافة إلى نسخة من جميع الملفات غير .<bdi dir="ltr" class="odt-ltr-term">java</bdi> الموجودة في <strong><bdi dir="ltr" class="odt-ltr-term">src</bdi></strong>. غالبًا ما يستخدم تطبيق الويب ما يُسمى بملفات &quot;الموارد&quot; التي يجب أن تكون موجودة في <em>مسار</em> فئات التطبيق، أي مجموعة الدلائل التي تبحث فيها <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> عندما يشير التطبيق إلى فئة، سواء أثناء التجميع أو في وقت التشغيل. يضمن <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> أن يكون دليل <strong><bdi dir="ltr" class="odt-ltr-term">build/classes</bdi></strong> جزءًا من مسار فئات الويب. يتم وضع ملفات &quot;الموارد&quot; في مجلد <strong><bdi dir="ltr" class="odt-ltr-term">src</bdi></strong>، مع العلم أن <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> سينسخها تلقائيًا إلى <strong><bdi dir="ltr" class="odt-ltr-term">build/classes</bdi></strong>.</p>
+<p><strong><bdi dir="ltr" class="odt-ltr-term">WebContent:</bdi></strong> سيحتوي على موارد تطبيق الويب التي لا تحتاج إلى أن تكون في <em>مسار فئات</em> التطبيق.</p>
+<p><strong><bdi dir="ltr" class="odt-ltr-term">WEB-INF/lib</bdi></strong>: يحتوي على ملفات .<bdi dir="ltr" class="odt-ltr-term">jar</bdi> التي يتطلبها تطبيق الويب.</p>
+<p>دعونا نفحص محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/web.xml</bdi>] الذي يقوم بتكوين تطبيق [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot; </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://java.sun.com/xml/ns/j2ee&quot; </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot; </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1184,7 +1186,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">web-app</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>لقد سبق أن صادفنا هذا النوع من التكوين عندما درسنا إنشاء صفحات الترحيب في القسم<a href="#page-accueil"><u><span style="color: #0563c1"> 2.3.4</span></u></a>. لا يقوم هذا الملف بأي شيء سوى تعريف سلسلة من صفحات الترحيب. نحتفظ بالصفحة الأولى فقط. يصبح ملف [web.xml] كما يلي:</p>
+<p>لقد سبق أن صادفنا هذا النوع من التكوين عندما درسنا إنشاء صفحات الترحيب في القسم<a href="#page-accueil"><u><span style="color: #0563c1"> 2.3.4</span></u></a>. لا يقوم هذا الملف بأي شيء سوى تعريف سلسلة من صفحات الترحيب. نحتفظ بالصفحة الأولى فقط. يصبح ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><a id="personne-web-xml-1"></a><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -1198,21 +1200,21 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">web-app</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>يجب أن يتوافق محتوى ملف XML أعلاه مع قواعد بناء الجملة المحددة في الملف المحدد بواسطة السمة [xsi:schemaLocation] لعلامة &lt;web-app&gt; الافتتاحية. يقع هذا الملف في [http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd]. هذا ملف XML يمكن الوصول إليه مباشرةً باستخدام متصفح ويب. إذا كان المتصفح حديثًا بما يكفي، فسيكون قادرًا على عرض ملف XML:</p>
+<p>يجب أن يتوافق محتوى ملف <bdi dir="ltr" class="odt-ltr-term">XML</bdi> أعلاه مع قواعد بناء الجملة المحددة في الملف المحدد بواسطة السمة [<bdi dir="ltr" class="odt-ltr-term">xsi:schemaLocation</bdi>] لعلامة &lt;<bdi dir="ltr" class="odt-ltr-term">web-app</bdi>&gt; الافتتاحية. يقع هذا الملف في [<bdi dir="ltr" class="odt-ltr-term">http://java.sun.com/xml/ns/j2ee/web-app</bdi>_2_4.<bdi dir="ltr" class="odt-ltr-term">xsd</bdi>]. هذا ملف <bdi dir="ltr" class="odt-ltr-term">XML</bdi> يمكن الوصول إليه مباشرةً باستخدام متصفح ويب. إذا كان المتصفح حديثًا بما يكفي، فسيكون قادرًا على عرض ملف <bdi dir="ltr" class="odt-ltr-term">XML:</bdi></p>
 <p><img src="images/10000000000002E50000015FA0468181.png" width="519" height="246" style="width:13.72cm;height:6.498cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002E50000015FA0468181.png" /></p>
-<p>سيحاول Eclipse التحقق من صحة مستند XML باستخدام ملف .xsd المحدد في السمة [xsi:schemaLocation] للعلامة الافتتاحية &lt;web-app&gt;. وللقيام بذلك، سيقوم بإرسال طلب عبر الشبكة. إذا كان جهاز الكمبيوتر الخاص بك متصلاً بشبكة خاصة، فيجب عليك إخبار Eclipse بالجهاز الذي يجب استخدامه للخروج من الشبكة الخاصة، وهو ما يُعرف بـ«وكيل HTTP». ويتم ذلك من خلال الخيار [Window -&gt; Preferences -&gt; Internet]:</p>
+<p>سيحاول <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التحقق من صحة مستند <bdi dir="ltr" class="odt-ltr-term">XML</bdi> باستخدام ملف .<bdi dir="ltr" class="odt-ltr-term">xsd</bdi> المحدد في السمة [<bdi dir="ltr" class="odt-ltr-term">xsi:schemaLocation</bdi>] للعلامة الافتتاحية &lt;<bdi dir="ltr" class="odt-ltr-term">web-app</bdi>&gt;. وللقيام بذلك، سيقوم بإرسال طلب عبر الشبكة. إذا كان جهاز الكمبيوتر الخاص بك متصلاً بشبكة خاصة، فيجب عليك إخبار <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> بالجهاز الذي يجب استخدامه للخروج من الشبكة الخاصة، وهو ما يُعرف بـ«وكيل <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>». ويتم ذلك من خلال الخيار [<bdi dir="ltr" class="odt-ltr-term">Window</bdi> -&gt; <bdi dir="ltr" class="odt-ltr-term">Preferences</bdi> -&gt; <bdi dir="ltr" class="odt-ltr-term">Internet</bdi>]:</p>
 <p><img src="images/10000000000003320000012C37ECD483.png" width="401" height="147" style="width:10.61cm;height:3.891cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003320000012C37ECD483.png" /></p>
-<p>حدد المربع (1) إذا كنت على شبكة خاصة. في (2)، أدخل اسم الجهاز الذي يستضيف وكيل HTTP، وفي (3)، منفذ الاستماع الخاص به. أخيرًا، في (4)، حدد الأجهزة التي يجب أن تتجاوز الوكيل — الأجهزة الموجودة على نفس الشبكة الخاصة التي يعمل عليها جهازك.</p>
-<p>سنقوم الآن بإنشاء ملف [index.html] للصفحة الرئيسية.</p>
+<p>حدد المربع (1) إذا كنت على شبكة خاصة. في (2)، أدخل اسم الجهاز الذي يستضيف وكيل <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi>، وفي (3)، منفذ الاستماع الخاص به. أخيرًا، في (4)، حدد الأجهزة التي يجب أن تتجاوز الوكيل — الأجهزة الموجودة على نفس الشبكة الخاصة التي يعمل عليها جهازك.</p>
+<p>سنقوم الآن بإنشاء ملف [<bdi dir="ltr" class="odt-ltr-term">index.html</bdi>] للصفحة الرئيسية.</p>
 <p><a id="personne-accueil"></a></p>
 <h2 id="32">3.2. <span style="color: #4f81bd">إنشاء صفحة رئيسية</span></h2>
-<p>انقر بزر الماوس الأيمن على مجلد [WebContent] واختر [New -&gt; Other]:</p>
+<p>انقر بزر الماوس الأيمن على مجلد [<bdi dir="ltr" class="odt-ltr-term">WebContent</bdi>] واختر [<bdi dir="ltr" class="odt-ltr-term">New</bdi> -&gt; <bdi dir="ltr" class="odt-ltr-term">Other</bdi>]:</p>
 <p><img src="images/10000000000000F10000010131ACD524.png" width="169" height="180" style="width:4.461cm;height:4.757cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000F10000010131ACD524.png" /></p>
-<p>حدد النوع [HTML] وانقر على [Next] -&gt;</p>
+<p>حدد النوع [<bdi dir="ltr" class="odt-ltr-term">HTML</bdi>] وانقر على [<bdi dir="ltr" class="odt-ltr-term">Next</bdi>] -&gt;</p>
 <p><img src="images/10000000000002AF000000FB1CDEA6CA.png" width="338" height="123" style="width:8.939cm;height:3.267cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AF000000FB1CDEA6CA.png" /></p>
-<p>في الأعلى، حدد المجلد الأصلي [WebContent] في (1) أو (2)، ثم حدد اسم الملف المراد إنشاؤه في (3). بمجرد الانتهاء من ذلك، انتقل إلى الصفحة التالية من المعالج:</p>
+<p>في الأعلى، حدد المجلد الأصلي [<bdi dir="ltr" class="odt-ltr-term">WebContent</bdi>] في (1) أو (2)، ثم حدد اسم الملف المراد إنشاؤه في (3). بمجرد الانتهاء من ذلك، انتقل إلى الصفحة التالية من المعالج:</p>
 <p><img src="images/10000000000002B500000192ADC0CB0E.png" width="346" height="201" style="width:9.149cm;height:5.308cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B500000192ADC0CB0E.png" /></p>
-<p>باستخدام (1)، يمكننا إنشاء ملف HTML مملوء مسبقًا بـ (2). إذا قمنا بإلغاء تحديد (1)، فسننشئ ملف HTML فارغًا. نترك (1) محددًا للاستفادة من قالب الكود. نكمل المعالج بالنقر فوق [إنهاء]. ثم يتم إنشاء ملف [index.html]:</p>
+<p>باستخدام (1)، يمكننا إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> مملوء مسبقًا بـ (2). إذا قمنا بإلغاء تحديد (1)، فسننشئ ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> فارغًا. نترك (1) محددًا للاستفادة من قالب الكود. نكمل المعالج بالنقر فوق [إنهاء]. ثم يتم إنشاء ملف [<bdi dir="ltr" class="odt-ltr-term">index.html</bdi>]:</p>
 <p><img src="images/100000000000014F0000019B342C3A9D.png" width="165" height="203" style="width:4.369cm;height:5.36cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014F0000019B342C3A9D.png" /></p>
 <p>بالمحتوى التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1247,26 +1249,26 @@
 
 <p><a id="personne-test-accueil"></a></p>
 <h2 id="33">3.3. <span style="color: #4f81bd">اختبار الصفحة الرئيسية</span></h2>
-<p>إذا لم تكن موجودة، فاعرض طريقة عرض [الخوادم] باستخدام الخيار [نافذة -&gt; إظهار طريقة العرض -&gt; أخرى -&gt; الخوادم]، ثم انقر بزر الماوس الأيمن على خادم Tomcat 5.5:</p>
+<p>إذا لم تكن موجودة، فاعرض طريقة عرض [الخوادم] باستخدام الخيار [نافذة -&gt; إظهار طريقة العرض -&gt; أخرى -&gt; الخوادم]، ثم انقر بزر الماوس الأيمن على خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat 5.5</bdi>:</p>
 <p><img src="images/10000000000001540000017D750C0C0E.png" width="238" height="267" style="width:6.301cm;height:7.061cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001540000017D750C0C0E.png" /></p>
-<p>يتيح لك الخيار [إضافة وإزالة الكائنات] أعلاه إضافة أو إزالة تطبيقات الويب من خادم Tomcat:</p>
+<p>يتيح لك الخيار [إضافة وإزالة الكائنات] أعلاه إضافة أو إزالة تطبيقات الويب من خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <p><img src="images/10000000000002BE000001586BA593EC.png" width="345" height="169" style="width:9.13cm;height:4.473cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE000001586BA593EC.png" /></p>
-<p>يتم سرد مشاريع الويب التي يتعرف عليها Eclipse في (1). يمكنك تسجيلها في خادم Tomcat باستخدام (2). تظهر تطبيقات الويب المسجلة في خادم Tomcat في (4). يمكنك إلغاء تسجيلها باستخدام (3). دعنا نسجل مشروع [person]:</p>
+<p>يتم سرد مشاريع الويب التي يتعرف عليها <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> في (1). يمكنك تسجيلها في خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> باستخدام (2). تظهر تطبيقات الويب المسجلة في خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> في (4). يمكنك إلغاء تسجيلها باستخدام (3). دعنا نسجل مشروع [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]:</p>
 <p><img src="images/10000000000001EE000000BDEA54709C.png" width="346" height="132" style="width:9.149cm;height:3.5cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE000000BDEA54709C.png" /></p>
-<p>ثم أكمل معالج التسجيل بالنقر فوق [إنهاء]. تُظهر طريقة العرض [الخوادم] أن مشروع [person] قد تم تسجيله على Tomcat:</p>
+<p>ثم أكمل معالج التسجيل بالنقر فوق [إنهاء]. تُظهر طريقة العرض [الخوادم] أن مشروع [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] قد تم تسجيله على <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <p><img src="images/100000000000013C0000006449954C81.png" width="221" height="70" style="width:5.851cm;height:1.852cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013C0000006449954C81.png" /></p>
-<p>الآن، لنقم بتشغيل خادم Tomcat:</p>
+<p>الآن، لنقم بتشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000165000000CF7378956F.png" width="250" height="145" style="display:inline-block; margin:4px;width:6.609cm;height:3.831cm;" class="odt-zoomable" data-zoom-src="images/1000000000000165000000CF7378956F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014300000067A4FED624.png" width="226" height="72" style="display:inline-block; margin:4px;width:5.98cm;height:1.907cm;" class="odt-zoomable" data-zoom-src="images/100000000000014300000067A4FED624.png" /></td></tr></table>
 
 <p>قم بتشغيل متصفح الويب:</p>
 <p><img src="images/100000000000008E0000006852DC8D1C.png" width="99" height="73" style="width:2.63cm;height:1.926cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000008E0000006852DC8D1C.png" /></p>
-<p>ثم أدخل عنوان URL [http://localhost:8080/personne]. هذا العنوان هو جذر تطبيق الويب. لم يتم طلب أي مستند. في هذه الحالة، يتم عرض الصفحة الرئيسية للتطبيق. إذا لم تكن موجودة، يتم الإبلاغ عن خطأ. هنا، الصفحة الرئيسية موجودة. وهي ملف [index.html] الذي أنشأناه سابقًا. والنتيجة هي كما يلي:</p>
+<p>ثم أدخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne</bdi>]. هذا العنوان هو جذر تطبيق الويب. لم يتم طلب أي مستند. في هذه الحالة، يتم عرض الصفحة الرئيسية للتطبيق. إذا لم تكن موجودة، يتم الإبلاغ عن خطأ. هنا، الصفحة الرئيسية موجودة. وهي ملف [<bdi dir="ltr" class="odt-ltr-term">index.html</bdi>] الذي أنشأناه سابقًا. والنتيجة هي كما يلي:</p>
 <p><img src="images/100000000000011F000000BD37BAC59A.png" width="201" height="132" style="width:5.309cm;height:3.496cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011F000000BD37BAC59A.png" /></p>
-<p>وهذا يتطابق مع المتوقع. الآن، دعونا نستخدم متصفحًا خارج Eclipse ونطلب نفس عنوان URL:</p>
+<p>وهذا يتطابق مع المتوقع. الآن، دعونا نستخدم متصفحًا خارج <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> ونطلب نفس عنوان <bdi dir="ltr" class="odt-ltr-term">URL:</bdi></p>
 <p><img src="images/1000000000000180000000BEED96927A.png" width="269" height="133" style="width:7.11cm;height:3.517cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000180000000BEED96927A.png" /></p>
-<p>وبالتالي، يمكن الوصول إلى تطبيق الويب [person] خارج Eclipse أيضًا.</p>
-<h2 id="34-html">3.4. <span style="color: #4f81bd">إنشاء نموذج HTML</span></h2>
-<p>سنقوم الآن بإنشاء مستند HTML ثابت [form.html] في المجلد [person]:</p>
+<p>وبالتالي، يمكن الوصول إلى تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] خارج <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> أيضًا.</p>
+<h2 id="34-html">3.4. <span style="color: #4f81bd">إنشاء نموذج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi></span></h2>
+<p>سنقوم الآن بإنشاء مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> ثابت [<bdi dir="ltr" class="odt-ltr-term">form.html</bdi>] في المجلد [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]:</p>
 <p><img src="images/100000000000011C00000166B68A8DED.png" width="154" height="194" style="width:4.069cm;height:5.129cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011C00000166B68A8DED.png" /></p>
 <p>لإنشائه، اتبع الإجراء الموضح في القسم<a href="#personne-accueil"><u><span style="color: #0563c1"> 3.</span></u></a>2، الصفحة<a href="#personne-accueil"><u><span style="color: #0563c1"> 33</span></u></a>. وسيكون محتواه كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1303,47 +1305,47 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>يتوافق كود HTML أعلاه مع النموذج أدناه:</p>
+<p>يتوافق كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> أعلاه مع النموذج أدناه:</p>
 <p><img src="images/100000000000028B000001781168F3AD.png" width="323" height="186" style="width:8.541cm;height:4.934cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000028B000001781168F3AD.png" /></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>رقم
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>نوع HTML</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>اسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>كود HTML</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>نوع <bdi dir="ltr" class="odt-ltr-term">HTML</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>اسم</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>الدور</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;text&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">txtName</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 14</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">أدخل الاسم</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;<bdi dir="ltr" class="odt-ltr-term">input type</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">text</bdi>&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">txtName</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 14</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">أدخل الاسم</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>2
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;text&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">txtAge</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 18</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">إدخال العمر</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;<bdi dir="ltr" class="odt-ltr-term">input type</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">text</bdi>&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">txtAge</bdi></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 18</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">إدخال العمر</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>3
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;submit&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 23</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">إرسال القيم المدخلة إلى الخادم على عنوان URL /person1/main</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;<bdi dir="ltr" class="odt-ltr-term">input type</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">submit</bdi>&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 23</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">إرسال القيم المدخلة إلى الخادم على عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>4
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;reset&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 24</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لاستعادة الصفحة إلى الحالة التي استقبلها بها المتصفح في البداية</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;<bdi dir="ltr" class="odt-ltr-term">input type</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">reset</bdi>&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 24</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لاستعادة الصفحة إلى الحالة التي استقبلها بها المتصفح في البداية</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>5
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;input type=&quot;button&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 25</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لمسح محتويات حقول الإدخال [1] و[2]</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;<bdi dir="ltr" class="odt-ltr-term">input type</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">button</bdi>&quot;&gt;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">السطر 25</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">لمسح محتويات حقول الإدخال [1] و[2]</div></td></tr></table>
 
-<p>لنحفظ المستند في المجلد &lt;person&gt;/WebContent. قم بتشغيل Tomcat إذا لزم الأمر. باستخدام متصفح، انتقل إلى عنوان URL <strong>http://localhost:8080/personne/formulaire.html</strong>:</p>
+<p>لنحفظ المستند في المجلد &lt;<bdi dir="ltr" class="odt-ltr-term">person</bdi>&gt;/<bdi dir="ltr" class="odt-ltr-term">WebContent.</bdi> قم بتشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> إذا لزم الأمر. باستخدام متصفح، انتقل إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <strong><bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire.html</bdi></strong>:</p>
 <p><img src="images/10000000000001E5000001007F3A7B10.png" width="339" height="179" style="width:8.98cm;height:4.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E5000001007F3A7B10.png" /></p>
 <p>فيما يلي بنية العميل/الخادم لهذا التطبيق الأساسي:</p>
 <p><img src="images/1000000000000397000000E699AC3F20.png" width="460" height="115" style="width:12.158cm;height:3.043cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000397000000E699AC3F20.png" /></p>
-<p>يقع خادم الويب بين المستخدم وتطبيق الويب ولم يتم تصويره هنا. [formulaire.html] هو مستند ثابت يعرض نفس المحتوى لكل طلب من العميل. تهدف برمجة الويب إلى إنشاء محتوى مخصص لطلب العميل. ثم يتم إنشاء هذا المحتوى برمجياً. أحد الحلول هو استخدام JSP (صفحة خادم Java) بدلاً من ملف HTML الثابت. وهذا ما سنقوم بفحصه الآن.</p>
-<h2 id="35-jsp">3.5. <span style="color: #4f81bd">إنشاء صفحة JSP</span></h2>
+<p>يقع خادم الويب بين المستخدم وتطبيق الويب ولم يتم تصويره هنا. [<bdi dir="ltr" class="odt-ltr-term">formulaire.html</bdi>] هو مستند ثابت يعرض نفس المحتوى لكل طلب من العميل. تهدف برمجة الويب إلى إنشاء محتوى مخصص لطلب العميل. ثم يتم إنشاء هذا المحتوى برمجياً. أحد الحلول هو استخدام <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> (صفحة خادم <bdi dir="ltr" class="odt-ltr-term">Java</bdi>) بدلاً من ملف <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> الثابت. وهذا ما سنقوم بفحصه الآن.</p>
+<h2 id="35-jsp">3.5. <span style="color: #4f81bd">إنشاء صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi></span></h2>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]: الفصل 1، الفصل 2: 2.2، 2.2.1، 2.2.2، 2.2.3، 2.2.4</p>
+<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]: الفصل 1، الفصل 2: 2.2، 2.2.1، 2.2.2، 2.2.3، 2.2.4</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يتم تحويل بنية العميل/الخادم السابقة على النحو التالي:</p>
 <p><img src="images/100000000000039A000000E2EB124936.png" width="461" height="113" style="width:12.197cm;height:2.99cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039A000000E2EB124936.png" /></p>
-<p>صفحة JSP هي نوع من صفحات HTML المعلمة. لا تتلقى بعض عناصر الصفحة قيمها إلا في وقت التشغيل. ويتم حساب هذه القيم بواسطة البرنامج. وبالتالي، لدينا صفحة ديناميكية: قد تؤدي الطلبات المتتالية للصفحة إلى استجابات مختلفة. هنا، نشير إلى صفحة HTML التي يعرضها متصفح العميل على أنها الاستجابة. في النهاية، يتلقى المتصفح دائمًا مستند HTML. يتم إنشاء مستند HTML هذا بواسطة خادم الويب من صفحة JSP، التي تعمل كقالب. يتم استبدال عناصرها الديناميكية بقيمها الفعلية في وقت إنشاء مستند HTML.</p>
-<p>لإنشاء صفحة JSP، انقر بزر الماوس الأيمن على مجلد [WebContent] واختر الخيار [New -&gt; Other]:</p>
+<p>صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> هي نوع من صفحات <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المعلمة. لا تتلقى بعض عناصر الصفحة قيمها إلا في وقت التشغيل. ويتم حساب هذه القيم بواسطة البرنامج. وبالتالي، لدينا صفحة ديناميكية: قد تؤدي الطلبات المتتالية للصفحة إلى استجابات مختلفة. هنا، نشير إلى صفحة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> التي يعرضها متصفح العميل على أنها الاستجابة. في النهاية، يتلقى المتصفح دائمًا مستند <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> يتم إنشاء مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> هذا بواسطة خادم الويب من صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>، التي تعمل كقالب. يتم استبدال عناصرها الديناميكية بقيمها الفعلية في وقت إنشاء مستند <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi></p>
+<p>لإنشاء صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>، انقر بزر الماوس الأيمن على مجلد [<bdi dir="ltr" class="odt-ltr-term">WebContent</bdi>] واختر الخيار [<bdi dir="ltr" class="odt-ltr-term">New</bdi> -&gt; <bdi dir="ltr" class="odt-ltr-term">Other</bdi>]:</p>
 <p><img src="images/10000000000000B40000010235F142D6.png" width="126" height="180" style="width:3.33cm;height:4.773cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000B40000010235F142D6.png" /></p>
-<p>نختار النوع [JSP] ونضغط على [Next] -&gt;</p>
+<p>نختار النوع [<bdi dir="ltr" class="odt-ltr-term">JSP</bdi>] ونضغط على [<bdi dir="ltr" class="odt-ltr-term">Next</bdi>] -&gt;</p>
 <p><img src="images/10000000000001660000015AAF6DCA3B.png" width="169" height="164" style="width:4.48cm;height:4.33cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001660000015AAF6DCA3B.png" /></p>
-<p>في الأعلى، نختار المجلد الأصلي [WebContent] في (1) أو (2)، ثم نحدد في (3) اسم الملف المراد إنشاؤه. بمجرد الانتهاء من ذلك، ننتقل إلى الصفحة التالية من المعالج:</p>
+<p>في الأعلى، نختار المجلد الأصلي [<bdi dir="ltr" class="odt-ltr-term">WebContent</bdi>] في (1) أو (2)، ثم نحدد في (3) اسم الملف المراد إنشاؤه. بمجرد الانتهاء من ذلك، ننتقل إلى الصفحة التالية من المعالج:</p>
 <p><img src="images/10000000000002B3000001F29DBB7E14.png" width="345" height="249" style="width:9.13cm;height:6.579cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B3000001F29DBB7E14.png" /></p>
-<p>باستخدام (1)، يمكننا إنشاء ملف JSP مملوء مسبقًا بـ (2). إذا قمنا بإلغاء تحديد (1)، فإننا ننشئ ملف JSP فارغًا. نترك (1) محددًا للاستفادة من قالب الكود. نكمل المعالج بالنقر على [Finish]. ثم يتم إنشاء ملف [formulaire.jsp]:</p>
+<p>باستخدام (1)، يمكننا إنشاء ملف <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> مملوء مسبقًا بـ (2). إذا قمنا بإلغاء تحديد (1)، فإننا ننشئ ملف <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> فارغًا. نترك (1) محددًا للاستفادة من قالب الكود. نكمل المعالج بالنقر على [<bdi dir="ltr" class="odt-ltr-term">Finish</bdi>]. ثم يتم إنشاء ملف [<bdi dir="ltr" class="odt-ltr-term">formulaire.jsp</bdi>]:</p>
 <p><img src="images/100000000000014B000001B125F05C61.png" width="162" height="212" style="width:4.279cm;height:5.599cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014B000001B125F05C61.png" /></p>
 <p>بالمحتوى التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1360,7 +1362,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>تشير السطر 1 إلى أننا نتعامل مع صفحة JSP. نقوم بتحويل النص أعلاه على النحو التالي:</p>
+<p>تشير السطر 1 إلى أننا نتعامل مع صفحة <bdi dir="ltr" class="odt-ltr-term">JSP.</bdi> نقوم بتحويل النص أعلاه على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
@@ -1406,95 +1408,95 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>أصبح المستند الذي كان ثابتًا في البداية ديناميكيًا الآن من خلال إدخال كود Java. بالنسبة لهذا النوع من المستندات، سنقوم دائمًا بما يلي:</p>
+<p>أصبح المستند الذي كان ثابتًا في البداية ديناميكيًا الآن من خلال إدخال كود <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> بالنسبة لهذا النوع من المستندات، سنقوم دائمًا بما يلي:</p>
 <ul>
-  <li>نضع كود Java في بداية المستند لاسترداد المعلمات اللازمة لعرض المستند. غالبًا ما توجد هذه المعلمات في كائن <b>الطلب</b>. يمثل هذا الكائن طلب العميل. وقد يكون قد مر عبر عدة سيرفلتات وصفحات JSP التي ربما أثرت محتواه. هنا، سيأتي مباشرة من المتصفح.
+  <li>نضع كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> في بداية المستند لاسترداد المعلمات اللازمة لعرض المستند. غالبًا ما توجد هذه المعلمات في كائن <b>الطلب</b>. يمثل هذا الكائن طلب العميل. وقد يكون قد مر عبر عدة سيرفلتات وصفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> التي ربما أثرت محتواه. هنا، سيأتي مباشرة من المتصفح.
   </li>
-  <li>يتبع ذلك كود HTML. وعادةً ما يعرض ببساطة المتغيرات التي تم حسابها مسبقًا في كود Java باستخدام علامات<b> &lt;%= variable %&gt;</b>. لاحظ هنا أن علامة = تقع مباشرةً بجوار علامة %. وهذا سبب شائع لحدوث الأخطاء.
+  <li>يتبع ذلك كود <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> وعادةً ما يعرض ببساطة المتغيرات التي تم حسابها مسبقًا في كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> باستخدام علامات<b> &lt;%= <bdi dir="ltr" class="odt-ltr-term">variable</bdi> %&gt;</b>. لاحظ هنا أن علامة = تقع مباشرةً بجوار علامة %. وهذا سبب شائع لحدوث الأخطاء.
   </li>
 </ul>
 
 <p>ماذا يفعل المستند الديناميكي السابق؟</p>
 <ul>
-  <li>الأسطر 6-9: يسترد معلمتين من الطلب، باسم [txtNom] و [txtAge]، ويخصص قيمهما للمتغيرين [nom] (السطر 6) و [age] (السطر 8). إذا لم يعثر على المعلمات، فإنه يخصص قيمًا افتراضية للمتغيرات المرتبطة.
+  <li>الأسطر 6-9: يسترد معلمتين من الطلب، باسم [<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>]، ويخصص قيمهما للمتغيرين [<bdi dir="ltr" class="odt-ltr-term">nom</bdi>] (السطر 6) و [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] (السطر 8). إذا لم يعثر على المعلمات، فإنه يخصص قيمًا افتراضية للمتغيرات المرتبطة.
   </li>
-  <li>يعرض قيم المتغيرين [name، age] في كود HTML التالي (السطران 25 و29).
+  <li>يعرض قيم المتغيرين [<bdi dir="ltr" class="odt-ltr-term">name</bdi>، <bdi dir="ltr" class="odt-ltr-term">age</bdi>] في كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> التالي (السطران 25 و29).
   </li>
 </ul>
 
-<p>دعونا نجري اختبارًا أوليًا. قم بتشغيل Tomcat إذا لزم الأمر، ثم استخدم متصفحًا لطلب عنوان URL <strong>http://localhost:8080/personne/formulaire.jsp</strong>:</p>
+<p>دعونا نجري اختبارًا أوليًا. قم بتشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> إذا لزم الأمر، ثم استخدم متصفحًا لطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <strong><bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire.jsp</bdi></strong>:</p>
 <p><img src="images/10000000000001F2000000FEC6A58457.png" width="348" height="178" style="width:9.22cm;height:4.703cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000000FEC6A58457.png" /></p>
-<p>تم استدعاء مستند <strong>form.jsp</strong> دون تمرير أي معلمات. وبالتالي، تم عرض القيم الافتراضية. الآن دعونا نطلب عنوان URL <strong>http://localhost:8080/personne/formulaire.jsp?txtNom=martin&amp;txtAge=14</strong>:</p>
+<p>تم استدعاء مستند <strong><bdi dir="ltr" class="odt-ltr-term">form.jsp</bdi></strong> دون تمرير أي معلمات. وبالتالي، تم عرض القيم الافتراضية. الآن دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <strong><bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire.jsp</bdi>?<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>=<bdi dir="ltr" class="odt-ltr-term">martin</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>=14</strong>:</p>
 <p><img src="images/10000000000001E5000000F913804BDE.png" width="339" height="174" style="width:8.98cm;height:4.611cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E5000000F913804BDE.png" /></p>
-<p>هذه المرة، قمنا بتمرير المعلمات <strong>txtNom وtxtAge</strong> إلى صفحة <strong>form.</strong>jsp، وهو ما تتوقعه الصفحة. ثم قامت بعرضهما. نعلم أن هناك طريقتين لتمرير المعلمات إلى صفحة ويب: GET وPOST. في كلتا الحالتين، يتم تخزين المعلمات الممررة في كائن <strong>الطلب</strong> المحدد مسبقًا. هنا، تم تمريرها باستخدام طريقة GET.</p>
+<p>هذه المرة، قمنا بتمرير المعلمات <strong><bdi dir="ltr" class="odt-ltr-term">txtNom</bdi> و<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi></strong> إلى صفحة <strong><bdi dir="ltr" class="odt-ltr-term">form.</bdi></strong><bdi dir="ltr" class="odt-ltr-term">jsp</bdi>، وهو ما تتوقعه الصفحة. ثم قامت بعرضهما. نعلم أن هناك طريقتين لتمرير المعلمات إلى صفحة ويب: <bdi dir="ltr" class="odt-ltr-term">GET</bdi> و<bdi dir="ltr" class="odt-ltr-term">POST.</bdi> في كلتا الحالتين، يتم تخزين المعلمات الممررة في كائن <strong>الطلب</strong> المحدد مسبقًا. هنا، تم تمريرها باستخدام طريقة <bdi dir="ltr" class="odt-ltr-term">GET.</bdi></p>
 <h2 id="36">3.6. <span style="color: #4f81bd">إنشاء سيرفلت</span></h2>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]: الفصل 1، الفصل 2: 2.1، 2.1.1، 2.1.2، 2.3.1</p>
+<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]: الفصل 1، الفصل 2: 2.1، 2.1.1، 2.1.2، 2.3.1</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>في الإصدار السابق، كانت صفحة JSP تتولى معالجة طلب العميل. عند أول استدعاء لهذه الصفحة، يقوم خادم الويب — في هذه الحالة، Tomcat — بإنشاء فئة Java من الصفحة وتجميعها. ونتيجة هذا التجميع هي التي تعالج طلب العميل في النهاية. الفئة التي تم إنشاؤها من صفحة JSP هي <strong>سيرفلت</strong> لأنها تنفذ واجهة [javax.Servlet]:</p>
+<p>في الإصدار السابق، كانت صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> تتولى معالجة طلب العميل. عند أول استدعاء لهذه الصفحة، يقوم خادم الويب — في هذه الحالة، <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> — بإنشاء فئة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> من الصفحة وتجميعها. ونتيجة هذا التجميع هي التي تعالج طلب العميل في النهاية. الفئة التي تم إنشاؤها من صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> هي <strong>سيرفلت</strong> لأنها تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">javax.Servlet</bdi>]:</p>
 <p><img src="images/10000000000000E9000000B78DD89A41.png" width="163" height="128" style="width:4.309cm;height:3.383cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000B78DD89A41.png" /></p>
-<p>يمكن معالجة طلب العميل بواسطة أي فئة تنفذ هذه الواجهة. سنقوم الآن بإنشاء مثل هذه الفئة: <strong>ServletFormulaire</strong>. يتم تحويل بنية العميل/الخادم السابقة على النحو التالي:</p>
+<p>يمكن معالجة طلب العميل بواسطة أي فئة تنفذ هذه الواجهة. سنقوم الآن بإنشاء مثل هذه الفئة: <strong><bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi></strong>. يتم تحويل بنية العميل/الخادم السابقة على النحو التالي:</p>
 <p><img src="images/1000000000000396000000DE09BF4D56.png" width="459" height="111" style="width:12.144cm;height:2.937cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000396000000DE09BF4D56.png" /></p>
-<p>مع البنية القائمة على JSP، تم إنشاء مستند HTML المرسل إلى العميل بواسطة خادم الويب من صفحة JSP التي كانت بمثابة قالب. هنا، سيتم إنشاء مستند HTML المرسل إلى العميل بالكامل بواسطة السيرفلت.</p>
+<p>مع البنية القائمة على <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>، تم إنشاء مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسل إلى العميل بواسطة خادم الويب من صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> التي كانت بمثابة قالب. هنا، سيتم إنشاء مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المرسل إلى العميل بالكامل بواسطة السيرفلت.</p>
 <h3 id="361">3.6.1. <span style="color: #4f81bd">إنشاء السيرفلت</span></h3>
-<p>في Eclipse، انقر بزر الماوس الأيمن على المجلد [src] واختر الخيار لإنشاء فئة:</p>
+<p>في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، انقر بزر الماوس الأيمن على المجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>] واختر الخيار لإنشاء فئة:</p>
 <p><img src="images/10000000000001F6000000B20EDF0F72.png" width="351" height="125" style="width:9.299cm;height:3.297cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F6000000B20EDF0F72.png" /></p>
 <p>ثم حدد خصائص الفئة المراد إنشاؤها:</p>
 <p><img src="images/10000000000002AB000001FBD55C7344.png" width="336" height="249" style="width:8.89cm;height:6.599cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002AB000001FBD55C7344.png" /></p>
 <p>في (1)، أدخل اسم الحزمة؛ وفي (2)، أدخل اسم الفئة المراد إنشاؤها. يجب أن تكون هذه الفئة ممددة للفئة المحددة في (3).  ليس هناك حاجة إلى كتابة الاسم الكامل للفئة بنفسك. يتيح الزر (4) الوصول إلى الفئات الموجودة حاليًا في <em>مسار فئات</em> تطبيق الويب:</p>
 <p><img src="images/1000000000000169000000CC5DA12A43.png" width="172" height="97" style="width:4.54cm;height:2.566cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000169000000CC5DA12A43.png" /></p>
 <p>في (1)، اكتب اسم الفئة التي تبحث عنها. في (2)، سترى الفئات الموجودة في <em>مسار الفئات</em> التي تحتوي أسماؤها على السلسلة التي كتبتها في (1).</p>
-<p>بعد تأكيد معالج الإنشاء، يتم تعديل مشروع الويب [person] على النحو التالي:</p>
+<p>بعد تأكيد معالج الإنشاء، يتم تعديل مشروع الويب [<bdi dir="ltr" class="odt-ltr-term">person</bdi>] على النحو التالي:</p>
 <p><img src="images/1000000000000162000001128D03F955.png" width="164" height="127" style="width:4.33cm;height:3.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000162000001128D03F955.png" /></p>
-<p>تم إنشاء الفئة [ServletFormulaire] مع هيكل أساسي للرمز:</p>
+<p>تم إنشاء الفئة [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>] مع هيكل أساسي للرمز:</p>
 <p><img src="images/10000000000001C8000000A0B50B2265.png" width="319" height="112" style="width:8.451cm;height:2.965cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C8000000A0B50B2265.png" /></p>
-<p>تُظهر لقطة الشاشة أعلاه أن Eclipse يعرض [تحذيرًا] في السطر الذي يعلن عن الفئة. انقر على الرمز (المصباح الكهربائي) الذي يشير إلى هذا [التحذير]:</p>
+<p>تُظهر لقطة الشاشة أعلاه أن <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> يعرض [تحذيرًا] في السطر الذي يعلن عن الفئة. انقر على الرمز (المصباح الكهربائي) الذي يشير إلى هذا [التحذير]:</p>
 <p><img src="images/1000000000000404000000B94F4D27D2.png" width="503" height="90" style="width:13.3cm;height:2.394cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000404000000B94F4D27D2.png" /></p>
 <p>بعد النقر على (1)، تُقترح حلول لإزالة [التحذير] في (2). يؤدي اختيار أحدها إلى ظهور التغيير في الكود الذي سينتج عن هذا الاختيار في (3).</p>
-<p>أدخلت Java 1.5 تغييرات على لغة Java، وما كان صحيحًا في الإصدار السابق قد يؤدي الآن إلى ظهور [تحذيرات]. لا تشير هذه التحذيرات إلى أخطاء من شأنها منع ترجمة الفئة. إنها موجودة لتلفت انتباه المطور إلى أجزاء الكود التي يمكن تحسينها. يشير [التحذير] الحالي إلى أن الفئة يجب أن تحتوي على رقم إصدار. ويُستخدم هذا في تسلسل/إلغاء تسلسل الكائنات، أي عندما يجب تحويل كائن Java <em>.class</em> في الذاكرة إلى تسلسل من البتات المرسلة بالتتابع في دفق الكتابة، أو العكس عندما يجب إنشاء كائن Java <em>.class</em> في الذاكرة من تسلسل من البتات المقروءة بالتتابع في دفق القراءة. كل هذا بعيد كل البعد عن اهتماماتنا الحالية. لذلك سنطلب من المُترجم تجاهل هذا التحذير عن طريق اختيار الخيار [Add @SuppressWarnings ...]. يصبح الكود عندئذٍ كما يلي:</p>
+<p>أدخلت <bdi dir="ltr" class="odt-ltr-term">Java 1.5</bdi> تغييرات على لغة <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، وما كان صحيحًا في الإصدار السابق قد يؤدي الآن إلى ظهور [تحذيرات]. لا تشير هذه التحذيرات إلى أخطاء من شأنها منع ترجمة الفئة. إنها موجودة لتلفت انتباه المطور إلى أجزاء الكود التي يمكن تحسينها. يشير [التحذير] الحالي إلى أن الفئة يجب أن تحتوي على رقم إصدار. ويُستخدم هذا في تسلسل/إلغاء تسلسل الكائنات، أي عندما يجب تحويل كائن <bdi dir="ltr" class="odt-ltr-term">Java</bdi> <em>.<bdi dir="ltr" class="odt-ltr-term">class</bdi></em> في الذاكرة إلى تسلسل من البتات المرسلة بالتتابع في دفق الكتابة، أو العكس عندما يجب إنشاء كائن <bdi dir="ltr" class="odt-ltr-term">Java</bdi> <em>.<bdi dir="ltr" class="odt-ltr-term">class</bdi></em> في الذاكرة من تسلسل من البتات المقروءة بالتتابع في دفق القراءة. كل هذا بعيد كل البعد عن اهتماماتنا الحالية. لذلك سنطلب من المُترجم تجاهل هذا التحذير عن طريق اختيار الخيار [<bdi dir="ltr" class="odt-ltr-term">Add</bdi> @<bdi dir="ltr" class="odt-ltr-term">SuppressWarnings</bdi> ...]. يصبح الكود عندئذٍ كما يلي:</p>
 <p><img src="images/10000000000001AD000000B9ED788C67.png" width="300" height="129" style="width:7.939cm;height:3.424cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AD000000B9ED788C67.png" /></p>
-<p>لم يعد هناك [تحذيرات]. يُسمى السطر المضاف &quot;تعليقًا&quot;، وهو مفهوم تم تقديمه في Java 1.5. سنكمل هذا الكود لاحقًا.</p>
-<h3 id="362-eclipse">3.6.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">مسار فئة مشروع Eclipse</span></strong></span></h3>
-<p><em>مسار</em> الفئات لتطبيق Java هو مجموعة المجلدات وملفات .jar التي يتم البحث فيها عندما يقوم المُجمِّع بتجميعه أو عندما تقوم JVM بتنفيذه. هذان <em>المساران</em> ليسا متطابقين بالضرورة، حيث إن بعض الفئات لا تكون مطلوبة إلا في وقت التشغيل وليس أثناء التجميع. يحتوي كل من مُجمِّع Java و JVM على وسيطة تسمح لك بتحديد <em>مسار</em> الفئات للتطبيق المراد تجميعه أو تنفيذه. بطريقة شفافة إلى حد ما بالنسبة للمستخدم، يتولى Eclipse إنشاء هذه الوسيطة وتمريرها إلى JVM.</p>
-<p>كيف يمكنك تحديد عناصر <em>مسار</em> فئة مشروع Eclipse؟ باستخدام الخيار [&lt;project&gt; / Build Path / Configure Build Path]:</p>
+<p>لم يعد هناك [تحذيرات]. يُسمى السطر المضاف &quot;تعليقًا&quot;، وهو مفهوم تم تقديمه في <bdi dir="ltr" class="odt-ltr-term">Java 1.5</bdi>. سنكمل هذا الكود لاحقًا.</p>
+<h3 id="362-eclipse">3.6.2. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">مسار فئة مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></span></strong></span></h3>
+<p><em>مسار</em> الفئات لتطبيق <bdi dir="ltr" class="odt-ltr-term">Java</bdi> هو مجموعة المجلدات وملفات .<bdi dir="ltr" class="odt-ltr-term">jar</bdi> التي يتم البحث فيها عندما يقوم المُجمِّع بتجميعه أو عندما تقوم <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> بتنفيذه. هذان <em>المساران</em> ليسا متطابقين بالضرورة، حيث إن بعض الفئات لا تكون مطلوبة إلا في وقت التشغيل وليس أثناء التجميع. يحتوي كل من مُجمِّع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> و <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> على وسيطة تسمح لك بتحديد <em>مسار</em> الفئات للتطبيق المراد تجميعه أو تنفيذه. بطريقة شفافة إلى حد ما بالنسبة للمستخدم، يتولى <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> إنشاء هذه الوسيطة وتمريرها إلى <bdi dir="ltr" class="odt-ltr-term">JVM.</bdi></p>
+<p>كيف يمكنك تحديد عناصر <em>مسار</em> فئة مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>؟ باستخدام الخيار [&lt;<bdi dir="ltr" class="odt-ltr-term">project</bdi>&gt; / <bdi dir="ltr" class="odt-ltr-term">Build Path</bdi> / <bdi dir="ltr" class="odt-ltr-term">Configure Build Path</bdi>]:</p>
 <p><img src="images/100000000000021F00000168F70A56D8.png" width="380" height="252" style="width:10.059cm;height:6.669cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021F00000168F70A56D8.png" /></p>
 <p>يؤدي هذا إلى ظهور معالج التكوين التالي:</p>
 <p><img src="images/1000000000000345000001042A3988A3.png" width="413" height="128" style="width:10.931cm;height:3.395cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000345000001042A3988A3.png" /></p>
-<p>تسمح لك علامة التبويب (1) [Libraries] بتحديد قائمة ملفات .jar التي تشكل جزءًا من <em>مسار فئات</em> التطبيق. وبالتالي، يتم البحث عن هذه الملفات بواسطة JVM عندما يطلب التطبيق فئة. تسمح لك الأزرار [2] و[3] بإضافة أرشيفات إلى <em>مسار الفئات</em>. يتيح لك الزر [2] تحديد الأرشيفات الموجودة في مجلدات المشاريع التي يديرها Eclipse، بينما يتيح لك الزر [3] تحديد أي أرشيف من نظام ملفات الكمبيوتر.</p>
+<p>تسمح لك علامة التبويب (1) [<bdi dir="ltr" class="odt-ltr-term">Libraries</bdi>] بتحديد قائمة ملفات .<bdi dir="ltr" class="odt-ltr-term">jar</bdi> التي تشكل جزءًا من <em>مسار فئات</em> التطبيق. وبالتالي، يتم البحث عن هذه الملفات بواسطة <bdi dir="ltr" class="odt-ltr-term">JVM</bdi> عندما يطلب التطبيق فئة. تسمح لك الأزرار [2] و[3] بإضافة أرشيفات إلى <em>مسار الفئات</em>. يتيح لك الزر [2] تحديد الأرشيفات الموجودة في مجلدات المشاريع التي يديرها <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، بينما يتيح لك الزر [3] تحديد أي أرشيف من نظام ملفات الكمبيوتر.</p>
 <p>يظهر أعلاه ثلاث مكتبات:</p>
 <ul>
-  <li>[مكتبة نظام JRE]: المكتبة الأساسية لمشاريع Eclipse Java:
+  <li>[مكتبة نظام <bdi dir="ltr" class="odt-ltr-term">JRE</bdi>]: المكتبة الأساسية لمشاريع <bdi dir="ltr" class="odt-ltr-term">Eclipse Java:</bdi>
   </li>
 </ul>
 
 <p><img src="images/1000000000000178000000BAB7570033.png" width="263" height="130" style="width:6.96cm;height:3.443cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000178000000BAB7570033.png" /></p>
 <ul>
-  <li>[Tomcat v5.5 runtime]: مكتبة مقدمة من خادم Tomcat. تحتوي على الفئات اللازمة لتطوير الويب. يتم تضمين هذه المكتبة في أي مشروع ويب Eclipse مرتبط بخادم Tomcat.
+  <li>[<bdi dir="ltr" class="odt-ltr-term">Tomcat v5.5 runtime</bdi>]: مكتبة مقدمة من خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi> تحتوي على الفئات اللازمة لتطوير الويب. يتم تضمين هذه المكتبة في أي مشروع ويب <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> مرتبط بخادم <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi>
   </li>
 </ul>
 
 <p><img src="images/100000000000021C000000EF0DB44FB5.png" width="378" height="167" style="width:9.999cm;height:4.426cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021C000000EF0DB44FB5.png" /></p>
-<p>إنه أرشيف [servlet-api.jar] الذي يحتوي على فئة [javax.servlet.http.HttpServlet]، وهي الفئة الأم لفئة [ServletFormulaire] التي نقوم بإنشائها حاليًا. ونظرًا لوجود هذا الأرشيف في مسار فئات التطبيق (<em>Classpath</em>)، فقد تم اقتراحه كفئة أم في المعالج الموضح أدناه.</p>
+<p>إنه أرشيف [<bdi dir="ltr" class="odt-ltr-term">servlet-api.jar</bdi>] الذي يحتوي على فئة [<bdi dir="ltr" class="odt-ltr-term">javax.servlet.http.HttpServlet</bdi>]، وهي الفئة الأم لفئة [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>] التي نقوم بإنشائها حاليًا. ونظرًا لوجود هذا الأرشيف في مسار فئات التطبيق (<em><bdi dir="ltr" class="odt-ltr-term">Classpath</bdi></em>)، فقد تم اقتراحه كفئة أم في المعالج الموضح أدناه.</p>
 <p><img src="images/1000000000000165000000D53EB8C724.png" width="172" height="102" style="width:4.54cm;height:2.709cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000165000000D53EB8C724.png" /></p>
 <p>لو لم يكن الأمر كذلك، لما ظهرت في الاقتراحات في [2]. لذلك، إذا كنت تريد في هذا المعالج الإشارة إلى فئة أصلية ولم يتم اقتراحها، فهذا يعني إما أنك أخطأت في كتابة اسم الفئة، أو أن الأرشيف الذي يحتوي عليها ليس موجودًا في <em>مسار</em> فئات التطبيق.</p>
 <ul>
-  <li>تحتوي [مكتبات تطبيقات الويب] على الأرشيفات الموجودة في مجلد [WEB-INF/lib] الخاص بالمشروع. هنا، المجلد فارغ:
+  <li>تحتوي [مكتبات تطبيقات الويب] على الأرشيفات الموجودة في مجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/lib</bdi>] الخاص بالمشروع. هنا، المجلد فارغ:
   </li>
 </ul>
 
 <p><img src="images/10000000000000DD000000632630E8DF.png" width="155" height="69" style="width:4.09cm;height:1.833cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000632630E8DF.png" /></p>
-<p>تظهر الأرشيفات الموجودة في <em>مسار فئات</em> مشروع Eclipse في مستكشف المشروع. على سبيل المثال، بالنسبة لمشروع الويب [person]:</p>
+<p>تظهر الأرشيفات الموجودة في <em>مسار فئات</em> مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> في مستكشف المشروع. على سبيل المثال، بالنسبة لمشروع الويب [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]:</p>
 <p><img src="images/100000000000014A000000E58399EC38.png" width="163" height="113" style="width:4.3cm;height:2.985cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014A000000E58399EC38.png" /></p>
 <p>يتيح لنا مستكشف المشروع الوصول إلى محتويات هذه الأرشيفات:</p>
 <p><img src="images/10000000000001D5000003290D758678.png" width="212" height="366" style="width:5.609cm;height:9.675cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D5000003290D758678.png" /></p>
-<p>كما هو موضح أعلاه، يمكننا أن نرى أن الأرشيف [servlet-api.jar] يحتوي على فئة [javax.servlet.http.HttpServlet].</p>
-<h3 id="363-servlet">3.6.3. <span style="color: #4f81bd">تكوين Servlet</span></h3>
+<p>كما هو موضح أعلاه، يمكننا أن نرى أن الأرشيف [<bdi dir="ltr" class="odt-ltr-term">servlet-api.jar</bdi>] يحتوي على فئة [<bdi dir="ltr" class="odt-ltr-term">javax.servlet.http.HttpServlet</bdi>].</p>
+<h3 id="363-servlet">3.6.3. <span style="color: #4f81bd">تكوين <bdi dir="ltr" class="odt-ltr-term">Servlet</bdi></span></h3>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]: الفصل 2: 2.3، 2.3.1، 2.3.2، 2.3.3، 2.3.4</p>
+<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]: الفصل 2: 2.3، 2.3.1، 2.3.2، 2.3.3، 2.3.4</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يُستخدم ملف [WEB-INF/web.xml] لتكوين تطبيق الويب:</p>
+<p>يُستخدم ملف [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/web.xml</bdi>] لتكوين تطبيق الويب:</p>
 <p><img src="images/100000000000014300000186B7FE11C2.png" width="165" height="199" style="width:4.369cm;height:5.276cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014300000186B7FE11C2.png" /></p>
-<p>بالنسبة لمشروع [person]، يبدو هذا الملف حاليًا كما يلي (انظر الصفحة<a href="#personne-web-xml-1"><u><span style="color: #0563c1"> 32</span></u></a>):</p>
+<p>بالنسبة لمشروع [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]، يبدو هذا الملف حاليًا كما يلي (انظر الصفحة<a href="#personne-web-xml-1"><u><span style="color: #0563c1"> 32</span></u></a>):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -1510,15 +1512,15 @@
 
 <p>إنه يشير فقط إلى وجود ملف ترحيبي (السطر 8). نقوم بتعديله للإعلان عن:</p>
 <ul>
-  <li>وجود سيرفلت [ServletFormulaire]
+  <li>وجود سيرفلت [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>]
   </li>
-  <li>عناوين URL التي تتعامل معها هذه الخدمة
+  <li>عناوين <bdi dir="ltr" class="odt-ltr-term">URL</bdi> التي تتعامل معها هذه الخدمة
   </li>
   <li>معلمات تهيئة السيرفلت
   </li>
 </ul>
 
-<p>سيكون ملف <strong>web.xml</strong> لتطبيقنا كما يلي:</p>
+<p>سيكون ملف <strong><bdi dir="ltr" class="odt-ltr-term">web.xml</bdi></strong> لتطبيقنا كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -1552,30 +1554,30 @@
 
 <p>النقاط الرئيسية في ملف التكوين هذا هي كما يلي:</p>
 <ul>
-  <li>السطور 7–24 تتعلق بوجود سيرفلت [ServletFormulaire]
+  <li>السطور 7–24 تتعلق بوجود سيرفلت [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>]
   </li>
-  <li>الأسطر 7–20: يتم تكوين السيرفلت بين العلامتين &lt;<b>servlet</b>&gt; و&lt;<b>/servlet</b>&gt;. يمكن أن يحتوي التطبيق على سيرفلتات متعددة، وبالتالي على أقسام تكوين &lt;<b>servlet</b>&gt;...&lt;<b>/servlet</b>&gt; متعددة.
+  <li>الأسطر 7–20: يتم تكوين السيرفلت بين العلامتين &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet</bdi></b>&gt; و&lt;<b>/<bdi dir="ltr" class="odt-ltr-term">servlet</bdi></b>&gt;. يمكن أن يحتوي التطبيق على سيرفلتات متعددة، وبالتالي على أقسام تكوين &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet</bdi></b>&gt;...&lt;<b>/<bdi dir="ltr" class="odt-ltr-term">servlet</bdi></b>&gt; متعددة.
   </li>
-  <li>السطر 8: تُعيّن علامة &lt;<b>servlet-name</b>&gt; اسمًا للـservlet — ويمكن أن يكون أي اسم
+  <li>السطر 8: تُعيّن علامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet-name</bdi></b>&gt; اسمًا للـ<bdi dir="ltr" class="odt-ltr-term">servlet</bdi> — ويمكن أن يكون أي اسم
   </li>
-  <li>الأسطر 9–11: تحدد العلامة &lt;<b>servlet-class</b>&gt; الاسم الكامل لفئة السيرفلت. سيبحث Tomcat عن هذه الفئة في <i>مسار فئات</i> مشروع الويب [personne]. وسيجدها في [build/classes]:
+  <li>الأسطر 9–11: تحدد العلامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet-class</bdi></b>&gt; الاسم الكامل لفئة السيرفلت. سيبحث <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> عن هذه الفئة في <i>مسار فئات</i> مشروع الويب [<bdi dir="ltr" class="odt-ltr-term">personne</bdi>]. وسيجدها في [<bdi dir="ltr" class="odt-ltr-term">build/classes</bdi>]:
   </li>
 </ul>
 
 <p><img src="images/100000000000019100000045A7EBC524.png" width="281" height="48" style="width:7.43cm;height:1.279cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019100000045A7EBC524.png" /></p>
 <ul>
-  <li>الأسطر 12–15: تُستخدم العلامة &lt;<b>init-param</b>&gt; لتمرير معلمات التكوين إلى السيرفلت. يتم قراءة هذه المعلمات عمومًا في طريقة <b>init</b> الخاصة بالسيرفلت لأن معلمات التكوين الخاصة به يجب أن تكون معروفة بمجرد تحميله لأول مرة.
+  <li>الأسطر 12–15: تُستخدم العلامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">init-param</bdi></b>&gt; لتمرير معلمات التكوين إلى السيرفلت. يتم قراءة هذه المعلمات عمومًا في طريقة <b><bdi dir="ltr" class="odt-ltr-term">init</bdi></b> الخاصة بالسيرفلت لأن معلمات التكوين الخاصة به يجب أن تكون معروفة بمجرد تحميله لأول مرة.
   </li>
-  <li>الأسطر 13-14: تحدد علامة &lt;<b>param-name</b>&gt; اسم المعلمة، وتحدد &lt;<b>param-value</b>&gt; قيمتها.
+  <li>الأسطر 13-14: تحدد علامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">param-name</bdi></b>&gt; اسم المعلمة، وتحدد &lt;<b><bdi dir="ltr" class="odt-ltr-term">param-value</bdi></b>&gt; قيمتها.
   </li>
-  <li>تحدد الأسطر 12-15 معلمة [defaultName، &quot;unknown&quot;]، وتحدد الأسطر 16-19 معلمة [defaultAge، &quot;XXX&quot;]
+  <li>تحدد الأسطر 12-15 معلمة [<bdi dir="ltr" class="odt-ltr-term">defaultName</bdi>، &quot;<bdi dir="ltr" class="odt-ltr-term">unknown</bdi>&quot;]، وتحدد الأسطر 16-19 معلمة [<bdi dir="ltr" class="odt-ltr-term">defaultAge</bdi>، &quot;<bdi dir="ltr" class="odt-ltr-term">XXX</bdi>&quot;]
   </li>
-  <li>الأسطر 21-24: تُستخدم العلامة &lt;<b>servlet-mapping</b>&gt; لربط سيرفلت (<b>servlet-name</b>) بنمط URL (<b>url-pattern</b>). هنا، النمط بسيط. فهو يحدد أنه كلما اتخذ عنوان URL شكل /formulaire، يجب استخدام سيرفلت formulairepersonne، أي الفئة [istia.st.servlets.ServletFormulaire] (الأسطر 8–11). لذلك، لا يقبل سيرفلت [<b>formulairepersonne] </b>سوى عنوان URL واحد فقط<b>.</b>
+  <li>الأسطر 21-24: تُستخدم العلامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet-mapping</bdi></b>&gt; لربط سيرفلت (<b><bdi dir="ltr" class="odt-ltr-term">servlet-name</bdi></b>) بنمط <bdi dir="ltr" class="odt-ltr-term">URL</bdi> (<b><bdi dir="ltr" class="odt-ltr-term">url-pattern</bdi></b>). هنا، النمط بسيط. فهو يحدد أنه كلما اتخذ عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> شكل /<bdi dir="ltr" class="odt-ltr-term">formulaire</bdi>، يجب استخدام سيرفلت <bdi dir="ltr" class="odt-ltr-term">formulairepersonne</bdi>، أي الفئة [<bdi dir="ltr" class="odt-ltr-term">istia.st.servlets.ServletFormulaire</bdi>] (الأسطر 8–11). لذلك، لا يقبل سيرفلت [<b><bdi dir="ltr" class="odt-ltr-term">formulairepersonne</bdi>] </b>سوى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> واحد فقط<b>.</b>
   </li>
 </ul>
 
-<h3 id="364-servletformulaire">3.6.4. <span style="color: #4f81bd">كود السيرفلت [ServletFormulaire]</span></h3>
-<p>سيحتوي سيرفلت [ServletFormulaire] على الكود التالي:</p>
+<h3 id="364-servletformulaire">3.6.4. <span style="color: #4f81bd">كود السيرفلت [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>]</span></h3>
+<p>سيحتوي سيرفلت [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>] على الكود التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1750,62 +1752,62 @@
 <a id="__codelineno-6-86" name="__codelineno-6-86"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-6-87" name="__codelineno-6-87"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>بمجرد قراءة السيرفلت، يمكننا أن نرى أنه أكثر تعقيدًا بكثير من صفحة JSP المقابلة. هذه قاعدة عامة: السيرفلت غير مناسب لتوليد كود HTML. صفحات JSP مصممة لهذا الغرض. سنعود إلى هذا الموضوع لاحقًا. دعونا نوضح بعض النقاط المهمة حول السيرفلت أعلاه:</p>
+<p>بمجرد قراءة السيرفلت، يمكننا أن نرى أنه أكثر تعقيدًا بكثير من صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> المقابلة. هذه قاعدة عامة: السيرفلت غير مناسب لتوليد كود <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> صفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> مصممة لهذا الغرض. سنعود إلى هذا الموضوع لاحقًا. دعونا نوضح بعض النقاط المهمة حول السيرفلت أعلاه:</p>
 <ul>
-  <li>عند استدعاء السيرفلت لأول مرة، يتم استدعاء طريقة <b>init </b>(السطر 20). هذه هي المرة الوحيدة التي يتم فيها استدعاؤها.
+  <li>عند استدعاء السيرفلت لأول مرة، يتم استدعاء طريقة <b><bdi dir="ltr" class="odt-ltr-term">init</bdi> </b>(السطر 20). هذه هي المرة الوحيدة التي يتم فيها استدعاؤها.
   </li>
-  <li>إذا تم استدعاء السيرفلت عبر طريقة HTTP GET، يتم استدعاء طريقة <b>doGet </b>(السطر 32) لمعالجة طلب العميل.
+  <li>إذا تم استدعاء السيرفلت عبر طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP GET</bdi>، يتم استدعاء طريقة <b><bdi dir="ltr" class="odt-ltr-term">doGet</bdi> </b>(السطر 32) لمعالجة طلب العميل.
   </li>
-  <li>إذا تم استدعاء السيرفلت عبر طريقة HTTP POST، يتم استدعاء طريقة <b>doPost </b>(السطر 82) لمعالجة طلب العميل.
+  <li>إذا تم استدعاء السيرفلت عبر طريقة <bdi dir="ltr" class="odt-ltr-term">HTTP POST</bdi>، يتم استدعاء طريقة <b><bdi dir="ltr" class="odt-ltr-term">doPost</bdi> </b>(السطر 82) لمعالجة طلب العميل.
   </li>
 </ul>
 
-<p>تُستخدم طريقة <strong>init</strong> هنا لاسترداد قيم معلمات التهيئة المسماة &quot;<strong>defaultName&quot;</strong> و&quot;<strong>defaultAge&quot;</strong> من ملف [web.xml]. وتُعد طريقة <strong>init</strong>، التي يتم تنفيذها عند تحميل السيرفلت لأول مرة، المكان المناسب لاسترداد محتويات ملف [web.xml].</p>
+<p>تُستخدم طريقة <strong><bdi dir="ltr" class="odt-ltr-term">init</bdi></strong> هنا لاسترداد قيم معلمات التهيئة المسماة &quot;<strong><bdi dir="ltr" class="odt-ltr-term">defaultName</bdi>&quot;</strong> و&quot;<strong><bdi dir="ltr" class="odt-ltr-term">defaultAge</bdi>&quot;</strong> من ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]. وتُعد طريقة <strong><bdi dir="ltr" class="odt-ltr-term">init</bdi></strong>، التي يتم تنفيذها عند تحميل السيرفلت لأول مرة، المكان المناسب لاسترداد محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>].</p>
 <ul>
-  <li>السطر 22: يتم استرداد تكوين [config] لمشروع الويب. يعكس هذا الكائن محتويات ملف [WEB-INF/web.xml] الخاص بالتطبيق.
+  <li>السطر 22: يتم استرداد تكوين [<bdi dir="ltr" class="odt-ltr-term">config</bdi>] لمشروع الويب. يعكس هذا الكائن محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/web.xml</bdi>] الخاص بالتطبيق.
   </li>
-  <li>السطر 23: في هذا التكوين، نسترد القيمة <i>String </i>للمعلمة المسماة &quot;defaultName&quot;. ستحتوي هذه المعلمة على اسم شخص ما. إذا لم تكن موجودة، فستكون القيمة <i>null</i>.
+  <li>السطر 23: في هذا التكوين، نسترد القيمة <i><bdi dir="ltr" class="odt-ltr-term">String</bdi> </i>للمعلمة المسماة &quot;<bdi dir="ltr" class="odt-ltr-term">defaultName</bdi>&quot;. ستحتوي هذه المعلمة على اسم شخص ما. إذا لم تكن موجودة، فستكون القيمة <i><bdi dir="ltr" class="odt-ltr-term">null</bdi></i>.
   </li>
-  <li>السطران 24-25: إذا لم تكن المعلمة المسماة &quot;defaultName&quot; موجودة، يتم تعيين قيمة افتراضية للمتغير [defaultName].
+  <li>السطران 24-25: إذا لم تكن المعلمة المسماة &quot;<bdi dir="ltr" class="odt-ltr-term">defaultName</bdi>&quot; موجودة، يتم تعيين قيمة افتراضية للمتغير [<bdi dir="ltr" class="odt-ltr-term">defaultName</bdi>].
   </li>
-  <li>الأسطر 26-29: نقوم بنفس الشيء بالنسبة للمعلمة المسماة &quot;defaultAge&quot;.
+  <li>الأسطر 26-29: نقوم بنفس الشيء بالنسبة للمعلمة المسماة &quot;<bdi dir="ltr" class="odt-ltr-term">defaultAge</bdi>&quot;.
   </li>
 </ul>
 
-<p>تشير طريقة <strong>doPost</strong> إلى طريقة <strong>doGet</strong>. وهذا يعني أنه يمكن للعميل إرسال معلماته باستخدام طلب POST أو GET.</p>
-<p>طريقة <strong>doGet</strong>:</p>
+<p>تشير طريقة <strong><bdi dir="ltr" class="odt-ltr-term">doPost</bdi></strong> إلى طريقة <strong><bdi dir="ltr" class="odt-ltr-term">doGet</bdi></strong>. وهذا يعني أنه يمكن للعميل إرسال معلماته باستخدام طلب <bdi dir="ltr" class="odt-ltr-term">POST</bdi> أو <bdi dir="ltr" class="odt-ltr-term">GET.</bdi></p>
+<p>طريقة <strong><bdi dir="ltr" class="odt-ltr-term">doGet</bdi></strong>:</p>
 <ul>
-  <li>السطر 32: تستقبل الطريقة معلمتين، <b>هما `request` </b>و<b>`response`</b>. <b>`request` </b>هو كائن يمثل طلب العميل بالكامل. وهو من النوع <b>`HttpServletRequest`، </b>وهو واجهة. <b>`response` </b>هو من النوع <b>`HttpServletResponse`، </b>وهو أيضًا واجهة. يُستخدم كائن <b>`response` </b>لإرسال استجابة إلى العميل.
+  <li>السطر 32: تستقبل الطريقة معلمتين، <b>هما `<bdi dir="ltr" class="odt-ltr-term">request</bdi>` </b>و<b>`<bdi dir="ltr" class="odt-ltr-term">response</bdi>`</b>. <b>`<bdi dir="ltr" class="odt-ltr-term">request</bdi>` </b>هو كائن يمثل طلب العميل بالكامل. وهو من النوع <b>`<bdi dir="ltr" class="odt-ltr-term">HttpServletRequest</bdi>`، </b>وهو واجهة. <b>`<bdi dir="ltr" class="odt-ltr-term">response</bdi>` </b>هو من النوع <b>`<bdi dir="ltr" class="odt-ltr-term">HttpServletResponse</bdi>`، </b>وهو أيضًا واجهة. يُستخدم كائن <b>`<bdi dir="ltr" class="odt-ltr-term">response</bdi>` </b>لإرسال استجابة إلى العميل.
   </li>
-  <li>يُستخدم<b> request.getParameter(&quot;param&quot;) </b>لاسترداد قيمة المعلمة المسماة <b>&quot;param&quot; </b>من طلب العميل. في السطر 36، نسترد قيمة المعلمة &quot;txtNom&quot;؛ وفي السطر 40، نسترد قيمة المعلمة &quot;txtAge&quot;. إذا لم تكن هذه المعلمات موجودة في الطلب، يتم تعيين قيمة المعلمة إلى <i>null</i>.
+  <li>يُستخدم<b> <bdi dir="ltr" class="odt-ltr-term">request.getParameter</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">param</bdi>&quot;) </b>لاسترداد قيمة المعلمة المسماة <b>&quot;<bdi dir="ltr" class="odt-ltr-term">param</bdi>&quot; </b>من طلب العميل. في السطر 36، نسترد قيمة المعلمة &quot;<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>&quot;؛ وفي السطر 40، نسترد قيمة المعلمة &quot;<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>&quot;. إذا لم تكن هذه المعلمات موجودة في الطلب، يتم تعيين قيمة المعلمة إلى <i><bdi dir="ltr" class="odt-ltr-term">null</bdi></i>.
   </li>
-  <li>الأسطر 37–39: إذا لم تكن المعلمة &quot;txtNom&quot; موجودة في الطلب، يتم تعيين المتغير &quot;nom&quot; بالاسم الافتراضي &quot;defaultNom&quot; الذي تم تهيئته في طريقة <b>init</b>. ويتم إجراء الأمر نفسه في الأسطر 41–43 بالنسبة للعمر.
+  <li>الأسطر 37–39: إذا لم تكن المعلمة &quot;<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>&quot; موجودة في الطلب، يتم تعيين المتغير &quot;<bdi dir="ltr" class="odt-ltr-term">nom</bdi>&quot; بالاسم الافتراضي &quot;<bdi dir="ltr" class="odt-ltr-term">defaultNom</bdi>&quot; الذي تم تهيئته في طريقة <b><bdi dir="ltr" class="odt-ltr-term">init</bdi></b>. ويتم إجراء الأمر نفسه في الأسطر 41–43 بالنسبة للعمر.
   </li>
-  <li>السطر 45: تُستخدم<b> response.setContentType(String) </b>لتعيين قيمة رأس HTTP <b>Content-Type</b>. يُخبر هذا الرأس العميل بطبيعة المستند الذي سيتلقاه. يشير النوع <b>text/html </b>إلى مستند HTML.
+  <li>السطر 45: تُستخدم<b> <bdi dir="ltr" class="odt-ltr-term">response.setContentType</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>) </b>لتعيين قيمة رأس <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> <b><bdi dir="ltr" class="odt-ltr-term">Content-Type</bdi></b>. يُخبر هذا الرأس العميل بطبيعة المستند الذي سيتلقاه. يشير النوع <b><bdi dir="ltr" class="odt-ltr-term">text/html</bdi> </b>إلى مستند <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi>
   </li>
-  <li>السطر 46: تُستخدم<b> response.getWriter() </b>للحصول على دفق كتابة إلى العميل
+  <li>السطر 46: تُستخدم<b> <bdi dir="ltr" class="odt-ltr-term">response.getWriter</bdi>() </b>للحصول على دفق كتابة إلى العميل
   </li>
-  <li>الأسطر 47–78: يتم كتابة مستند HTML المراد إرساله إلى العميل إلى دفق الكتابة الذي تم الحصول عليه في السطر 46.
+  <li>الأسطر 47–78: يتم كتابة مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> المراد إرساله إلى العميل إلى دفق الكتابة الذي تم الحصول عليه في السطر 46.
   </li>
 </ul>
 
-<p>سيؤدي ترجمة هذا السيرفلت إلى إنشاء ملف .class في المجلد [build/classes] التابع لمشروع [person]:</p>
+<p>سيؤدي ترجمة هذا السيرفلت إلى إنشاء ملف .<bdi dir="ltr" class="odt-ltr-term">class</bdi> في المجلد [<bdi dir="ltr" class="odt-ltr-term">build/classes</bdi>] التابع لمشروع [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]:</p>
 <p><img src="images/1000000000000173000000484C01CE59.png" width="260" height="50" style="width:6.87cm;height:1.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000173000000484C01CE59.png" /></p>
-<p>يُنصح القراء بالرجوع إلى وثائق Java الخاصة بالسيرفلت. يمكن استخدام Tomcat لهذا الغرض. يوجد رابط [Documentation] على الصفحة الرئيسية لـ Tomcat 5:</p>
+<p>يُنصح القراء بالرجوع إلى وثائق <bdi dir="ltr" class="odt-ltr-term">Java</bdi> الخاصة بالسيرفلت. يمكن استخدام <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> لهذا الغرض. يوجد رابط [<bdi dir="ltr" class="odt-ltr-term">Documentation</bdi>] على الصفحة الرئيسية لـ <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> 5:</p>
 <p><img src="images/10000000000000E60000008347059867.png" width="161" height="92" style="width:4.26cm;height:2.425cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E60000008347059867.png" /></p>
 <p>يؤدي هذا الرابط إلى صفحة يُنصح القارئ باستكشافها. الرابط إلى وثائق السيرفلت هو كما يلي:</p>
 <p><img src="images/10000000000000E90000009877DD2077.png" width="163" height="106" style="width:4.309cm;height:2.812cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E90000009877DD2077.png" /></p>
 <h3 id="365">3.6.5. <span style="color: #4f81bd">اختبار السيرفلت</span></h3>
-<p>نحن جاهزون لإجراء اختبار.  ابدأ تشغيل خادم Tomcat إذا لزم الأمر. </p>
+<p>نحن جاهزون لإجراء اختبار.  ابدأ تشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> إذا لزم الأمر. </p>
 <p><img src="images/10000000000001780000006284A07523.png" width="301" height="78" style="width:7.96cm;height:2.074cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001780000006284A07523.png" /></p>
-<p>ثم، باستخدام متصفح، اطلب عنوان URL [http://localhost:8080/personne/formulaire]. هنا، نطلب عنوان URL [/form] من السياق [/person]. يحدد ملف [web.xml] لهذا السياق أن عنوان URL [/form] يتم معالجته بواسطة السيرفلت المسمى [formperson]. في نفس الملف، تم تحديد أن هذا السيرفلت هو الفئة [istia.st.servlets.ServletFormulaire]. لذلك، سيكلف Tomcat هذه الفئة بمعالجة طلب العميل. إذا لم تكن الفئة محملة بالفعل، فسيتم تحميلها. ثم ستبقى في الذاكرة للطلبات المستقبلية.</p>
-<p>نحصل على النتيجة التالية باستخدام متصفح Eclipse المدمج:</p>
+<p>ثم، باستخدام متصفح، اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire</bdi>]. هنا، نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">form</bdi>] من السياق [/<bdi dir="ltr" class="odt-ltr-term">person</bdi>]. يحدد ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] لهذا السياق أن عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">form</bdi>] يتم معالجته بواسطة السيرفلت المسمى [<bdi dir="ltr" class="odt-ltr-term">formperson</bdi>]. في نفس الملف، تم تحديد أن هذا السيرفلت هو الفئة [<bdi dir="ltr" class="odt-ltr-term">istia.st.servlets.ServletFormulaire</bdi>]. لذلك، سيكلف <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> هذه الفئة بمعالجة طلب العميل. إذا لم تكن الفئة محملة بالفعل، فسيتم تحميلها. ثم ستبقى في الذاكرة للطلبات المستقبلية.</p>
+<p>نحصل على النتيجة التالية باستخدام متصفح <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> المدمج:</p>
 <p><img src="images/10000000000001F500000100C0815B61.png" width="351" height="179" style="width:9.28cm;height:4.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F500000100C0815B61.png" /></p>
-<p>نحصل على القيم الافتراضية للاسم والعمر، كما هو محدد في ملف [web.xml]. الآن دعونا نطلب عنوان URL [http://localhost:8080/personne/formulaire?txtNom=tintin&amp;txtAge=30]:</p>
+<p>نحصل على القيم الافتراضية للاسم والعمر، كما هو محدد في ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]. الآن دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire</bdi>?<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>=<bdi dir="ltr" class="odt-ltr-term">tintin</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>=30]:</p>
 <p><img src="images/10000000000001EC000000FCB0D41E82.png" width="344" height="176" style="width:9.11cm;height:4.665cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EC000000FCB0D41E82.png" /></p>
-<p>هذه المرة، نحصل على المعلمات التي تم تمريرها في الطلب. ندعو القارئ إلى مراجعة كود السيرفلت [ServletFormulaire] إذا لم يفهم هاتين النتيجتين.</p>
+<p>هذه المرة، نحصل على المعلمات التي تم تمريرها في الطلب. ندعو القارئ إلى مراجعة كود السيرفلت [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>] إذا لم يفهم هاتين النتيجتين.</p>
 <h3 id="366">3.6.6. <span style="color: #4f81bd">إعادة التحميل التلقائي لسياق تطبيق الويب</span></h3>
-<p>لنبدأ تشغيل Tomcat:</p>
+<p>لنبدأ تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <p><img src="images/10000000000001C80000004EA3E33301.png" width="319" height="55" style="width:8.451cm;height:1.446cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C80000004EA3E33301.png" /></p>
 <p>ثم نقوم بتعديل كود السيرفلت على النحو التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
@@ -1841,12 +1843,12 @@
   </li>
 </ul>
 
-<p>لنحفظ الفئة الجديدة. سيؤدي هذا الحفظ إلى إعادة تجميع تلقائية لفئة [ServletFormulaire] بواسطة Eclipse، والتي سيكتشفها Tomcat. ثم سيعيد تحميل سياق تطبيق الويب [personne] لتعكس التغييرات. يظهر هذا في سجلات عرض [console]:</p>
+<p>لنحفظ الفئة الجديدة. سيؤدي هذا الحفظ إلى إعادة تجميع تلقائية لفئة [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>] بواسطة <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، والتي سيكتشفها <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi> ثم سيعيد تحميل سياق تطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">personne</bdi>] لتعكس التغييرات. يظهر هذا في سجلات عرض [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]:</p>
 <p><img src="images/100000000000027000000056710BBCF0.png" width="437" height="60" style="width:11.561cm;height:1.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000027000000056710BBCF0.png" /></p>
-<p>دعونا نطلب عنوان URL [http://localhost:8080/personne/formulaire] دون إعادة تشغيل Tomcat:</p>
+<p>دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire</bdi>] دون إعادة تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <p><img src="images/10000000000001EE000000FED5777B82.png" width="346" height="178" style="width:9.149cm;height:4.704cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE000000FED5777B82.png" /></p>
 <p>تم تطبيق التغيير بنجاح.</p>
-<p>الآن، دعونا نعدل ملف [web.xml] على النحو التالي:</p>
+<p>الآن، دعونا نعدل ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -1872,22 +1874,22 @@
   </li>
 </ul>
 
-<p>الآن بعد الانتهاء من ذلك، دعونا نحفظ ملف [web.xml] الجديد. في عرض [console]، لا يوجد سجل يشير إلى إعادة تحميل سياق التطبيق. دعونا نطلب عنوان URL [http://localhost:8080/personne/formulaire] دون إعادة تشغيل Tomcat:</p>
+<p>الآن بعد الانتهاء من ذلك، دعونا نحفظ ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] الجديد. في عرض [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]، لا يوجد سجل يشير إلى إعادة تحميل سياق التطبيق. دعونا نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire</bdi>] دون إعادة تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></p>
 <p><img src="images/10000000000001EE000000FED5777B82.png" width="346" height="178" style="width:9.149cm;height:4.704cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE000000FED5777B82.png" /></p>
-<p>لم يتم تطبيق التغيير. دعونا نعيد تشغيل Tomcat [انقر بزر الماوس الأيمن على الخادم -&gt; إعادة التشغيل -&gt; بدء التشغيل]:</p>
+<p>لم يتم تطبيق التغيير. دعونا نعيد تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> [انقر بزر الماوس الأيمن على الخادم -&gt; إعادة التشغيل -&gt; بدء التشغيل]:</p>
 <p><img src="images/10000000000001FA00000111861B4B27.png" width="354" height="191" style="width:9.37cm;height:5.055cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FA00000111861B4B27.png" /></p>
-<p>ثم نطلب عنوان URL [http://localhost:8080/personne/formulaire] مرة أخرى:</p>
+<p>ثم نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire</bdi>] مرة أخرى:</p>
 <p><img src="images/10000000000001EC000000F88CA22CBE.png" width="344" height="174" style="width:9.11cm;height:4.591cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EC000000F88CA22CBE.png" /></p>
-<p>هذه المرة، يظهر التغيير الذي تم إجراؤه في [web.xml].</p>
-<p>لا يؤدي التغيير في [web.xml] تلقائيًا إلى إعادة تحميل التطبيق بحيث يتضمن ملف التكوين الجديد. لإجبار تطبيق الويب على إعادة التحميل، يمكنك إعادة تشغيل Tomcat كما فعلنا، ولكن هذه عملية بطيئة إلى حد ما. يفضل استخدام أداة [manager] لإدارة التطبيقات التي تم نشرها في Tomcat. لكي يعمل هذا، يجب أن يكون Tomcat قد تم تكوينه داخل Eclipse كما هو موضح في القسم<a href="#eclipse-tomcat-conftomcat"><u><span style="color: #0563c1"> 2.5</span></u></a>.</p>
-<p>أولاً، باستخدام متصفح Eclipse الداخلي، أدخل عنوان URL [http://localhost:8080] ثم اتبع رابط [Tomcat Manager]، كما هو موضح في نهاية القسم<a href="#tomcat-eclipse"><u><span style="color: #0563c1"> 2.5</span></u></a>:</p>
+<p>هذه المرة، يظهر التغيير الذي تم إجراؤه في [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>].</p>
+<p>لا يؤدي التغيير في [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] تلقائيًا إلى إعادة تحميل التطبيق بحيث يتضمن ملف التكوين الجديد. لإجبار تطبيق الويب على إعادة التحميل، يمكنك إعادة تشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> كما فعلنا، ولكن هذه عملية بطيئة إلى حد ما. يفضل استخدام أداة [<bdi dir="ltr" class="odt-ltr-term">manager</bdi>] لإدارة التطبيقات التي تم نشرها في <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi> لكي يعمل هذا، يجب أن يكون <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> قد تم تكوينه داخل <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> كما هو موضح في القسم<a href="#eclipse-tomcat-conftomcat"><u><span style="color: #0563c1"> 2.5</span></u></a>.</p>
+<p>أولاً، باستخدام متصفح <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الداخلي، أدخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080</bdi>] ثم اتبع رابط [<bdi dir="ltr" class="odt-ltr-term">Tomcat Manager</bdi>]، كما هو موضح في نهاية القسم<a href="#tomcat-eclipse"><u><span style="color: #0563c1"> 2.5</span></u></a>:</p>
 <p><img src="images/10000000000002D10000008AE6C94924.png" width="505" height="97" style="width:13.351cm;height:2.556cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D10000008AE6C94924.png" /></p>
 <p>لنفتح متصفحًا ثانيًا [انقر بزر الماوس الأيمن على المتصفح -&gt; محرر جديد]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B9000000D46176E47F.png" width="130" height="149" style="display:inline-block; margin:4px;width:3.431cm;height:3.932cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B9000000D46176E47F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C0000004D9BCB4F00.png" width="187" height="54" style="display:inline-block; margin:4px;width:4.96cm;height:1.425cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C0000004D9BCB4F00.png" /></td></tr></table>
 
-<p>في هذا المتصفح الثاني، أدخل عنوان URL [http://localhost:8080/formulaire]:</p>
+<p>في هذا المتصفح الثاني، أدخل عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/formulaire</bdi>]:</p>
 <p><img src="images/10000000000001F2000001071ECC5121.png" width="348" height="184" style="width:9.22cm;height:4.868cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F2000001071ECC5121.png" /></p>
-<p>قم بتعديل ملف [web.xml] على النحو التالي، ثم احفظه:</p>
+<p>قم بتعديل ملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] على النحو التالي، ثم احفظه:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;!--  ServletFormulaire --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet</span><span style="color:#008080">&gt;</span></span></span>
@@ -1906,47 +1908,47 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>ثم اطلب عنوان URL [http://localhost:8080/formulaire] مرة أخرى. يمكننا أن نرى أن التغيير لم يتم تطبيقه. الآن، انتقل إلى المتصفح الأول وأعد تحميل تطبيق [person]:</p>
+<p>ثم اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/formulaire</bdi>] مرة أخرى. يمكننا أن نرى أن التغيير لم يتم تطبيقه. الآن، انتقل إلى المتصفح الأول وأعد تحميل تطبيق [<bdi dir="ltr" class="odt-ltr-term">person</bdi>]:</p>
 <p><img src="images/10000000000002D0000000A3AD84D8FE.png" width="504" height="114" style="width:13.34cm;height:3.02cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D0000000A3AD84D8FE.png" /></p>
-<p>ثم اطلب عنوان URL [http://localhost:8080/formulaire] مرة أخرى باستخدام المتصفح الثاني:</p>
+<p>ثم اطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/formulaire</bdi>] مرة أخرى باستخدام المتصفح الثاني:</p>
 <p><img src="images/10000000000001F8000000FF420DD67F.png" width="353" height="178" style="width:9.329cm;height:4.72cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F8000000FF420DD67F.png" /></p>
-<p>تم تطبيق التغيير على [web.xml]. في الممارسة العملية، من المفيد فتح متصفح على تطبيق Tomcat [manager] للتعامل مع هذا النوع من المواقف.</p>
-<h2 id="37-servlet-jsp">3.7. <span style="color: #4f81bd">التفاعل بين صفحة Servlet و JSP</span></h2>
+<p>تم تطبيق التغيير على [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>]. في الممارسة العملية، من المفيد فتح متصفح على تطبيق <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> [<bdi dir="ltr" class="odt-ltr-term">manager</bdi>] للتعامل مع هذا النوع من المواقف.</p>
+<h2 id="37-servlet-jsp">3.7. <span style="color: #4f81bd">التفاعل بين صفحة <bdi dir="ltr" class="odt-ltr-term">Servlet</bdi> و <bdi dir="ltr" class="odt-ltr-term">JSP</bdi></span></h2>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]: الفصل 2: 2.3.7</p>
+<p>المراجع [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1"><bdi dir="ltr" class="odt-ltr-term">ref1</bdi></span></u></a>]: الفصل 2: 2.3.7</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>لنعد إلى البنيتين اللتين درسناهما:</p>
 <p><img src="images/10000000000003B800000161AB42E7E8.png" width="476" height="177" style="width:12.594cm;height:4.671cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B800000161AB42E7E8.png" /></p>
-<p>لا تعتبر أي من هاتين البنيتين مرضية. فكلاهما يعاني من عيب مزج تقنيتين: برمجة Java، التي تتولى منطق تطبيق الويب، وترميز HTML، الذي يتولى عرض المعلومات في المتصفح.</p>
+<p>لا تعتبر أي من هاتين البنيتين مرضية. فكلاهما يعاني من عيب مزج تقنيتين: برمجة <bdi dir="ltr" class="odt-ltr-term">Java</bdi>، التي تتولى منطق تطبيق الويب، وترميز <bdi dir="ltr" class="odt-ltr-term">HTML</bdi>، الذي يتولى عرض المعلومات في المتصفح.</p>
 <ul>
-  <li>الحل القائم على JSP [1] له عيب يتمثل في خلط كود HTML وكود Java داخل نفس الصفحة. لم نرَ هذا في المثال الذي تناولناه، والذي كان بسيطًا. ولكن إذا كان على [formulaire.jsp] التحقق من صحة المعلمات [txtNom, txtAge] في طلب العميل، لكنا اضطررنا إلى وضع كود Java في الصفحة. وهذا سرعان ما يصبح أمرًا يصعب التحكم فيه.
+  <li>الحل القائم على <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> [1] له عيب يتمثل في خلط كود <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> وكود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> داخل نفس الصفحة. لم نرَ هذا في المثال الذي تناولناه، والذي كان بسيطًا. ولكن إذا كان على [<bdi dir="ltr" class="odt-ltr-term">formulaire.jsp</bdi>] التحقق من صحة المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>, <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] في طلب العميل، لكنا اضطررنا إلى وضع كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> في الصفحة. وهذا سرعان ما يصبح أمرًا يصعب التحكم فيه.
   </li>
-  <li>الحل [2]، القائم على سيرفلت، يطرح نفس المشكلة. على الرغم من وجود كود Java فقط في الفئة، إلا أنه يجب أن يولد مستند HTML. مرة أخرى، ما لم يكن مستند HTML بسيطًا، فإن إنشاؤه يصبح معقدًا ويكاد يكون من المستحيل صيانته.
+  <li>الحل [2]، القائم على سيرفلت، يطرح نفس المشكلة. على الرغم من وجود كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> فقط في الفئة، إلا أنه يجب أن يولد مستند <bdi dir="ltr" class="odt-ltr-term">HTML.</bdi> مرة أخرى، ما لم يكن مستند <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> بسيطًا، فإن إنشاؤه يصبح معقدًا ويكاد يكون من المستحيل صيانته.
   </li>
 </ul>
 
-<p>سنتجنب خلط تقنيات Java و HTML من خلال اعتماد البنية التالية:</p>
+<p>سنتجنب خلط تقنيات <bdi dir="ltr" class="odt-ltr-term">Java</bdi> و <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> من خلال اعتماد البنية التالية:</p>
 <p><img src="images/10000000000003D200000168236004C8.png" width="489" height="180" style="width:12.938cm;height:4.763cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003D200000168236004C8.png" /></p>
 <ul>
-  <li>يرسل المستخدم طلبه إلى السيرفلت. يقوم السيرفلت بمعالجته وإنشاء القيم للمعلمات الديناميكية لصفحة JSP [form.jsp]، والتي سيتم استخدامها لإنشاء استجابة HTML للعميل. تشكل هذه القيم ما يُعرف باسم قالب صفحة JSP.
+  <li>يرسل المستخدم طلبه إلى السيرفلت. يقوم السيرفلت بمعالجته وإنشاء القيم للمعلمات الديناميكية لصفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> [<bdi dir="ltr" class="odt-ltr-term">form.jsp</bdi>]، والتي سيتم استخدامها لإنشاء استجابة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للعميل. تشكل هذه القيم ما يُعرف باسم قالب صفحة <bdi dir="ltr" class="odt-ltr-term">JSP.</bdi>
   </li>
-  <li>بمجرد اكتمال عملها، سيطلب السيرفلت من صفحة JSP [form.jsp] إنشاء استجابة HTML للعميل. وفي الوقت نفسه، سيزود صفحة JSP بالعناصر التي تحتاجها لإنشاء هذه الاستجابة — العناصر التي تشكل نموذج الصفحة.
+  <li>بمجرد اكتمال عملها، سيطلب السيرفلت من صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> [<bdi dir="ltr" class="odt-ltr-term">form.jsp</bdi>] إنشاء استجابة <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للعميل. وفي الوقت نفسه، سيزود صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> بالعناصر التي تحتاجها لإنشاء هذه الاستجابة — العناصر التي تشكل نموذج الصفحة.
   </li>
 </ul>
 
 <p>سنستكشف الآن هذه البنية الجديدة.</p>
-<h3 id="371-servletformulaire2">3.7.1. <span style="color: #4f81bd">البرنامج الخادم [ServletFormulaire2]</span></h3>
-<p>في البنية أعلاه، سيُسمى السيرفلت [<strong>ServletFormulaire2</strong>]. وسيتم إنشاؤه في نفس مشروع [personne] كما في السابق، جنبًا إلى جنب مع جميع السيرفلتات المستقبلية:</p>
+<h3 id="371-servletformulaire2">3.7.1. <span style="color: #4f81bd">البرنامج الخادم [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi>]</span></h3>
+<p>في البنية أعلاه، سيُسمى السيرفلت [<strong><bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi></strong>]. وسيتم إنشاؤه في نفس مشروع [<bdi dir="ltr" class="odt-ltr-term">personne</bdi>] كما في السابق، جنبًا إلى جنب مع جميع السيرفلتات المستقبلية:</p>
 <p><img src="images/100000000000015D000001DB87654018.png" width="163" height="222" style="width:4.309cm;height:5.865cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000001DB87654018.png" /></p>
-<p>يتم إنشاء [ServletFormulaire2] أولاً عن طريق نسخ [ServletFormulaire] ولصقه داخل Eclipse:</p>
+<p>يتم إنشاء [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi>] أولاً عن طريق نسخ [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire</bdi>] ولصقه داخل <bdi dir="ltr" class="odt-ltr-term">Eclipse:</bdi></p>
 <ul>
-  <li>اختر [ServletFormulaire.java] -&gt; انقر بزر الماوس الأيمن -&gt; نسخ
+  <li>اختر [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire.java</bdi>] -&gt; انقر بزر الماوس الأيمن -&gt; نسخ
   </li>
-  <li>حدد [istia.st.servlets.personne] -&gt; انقر بزر الماوس الأيمن -&gt; لصق -&gt; أعد تسميته إلى [ServletFormulaire2.java]
+  <li>حدد [<bdi dir="ltr" class="odt-ltr-term">istia.st.servlets.personne</bdi>] -&gt; انقر بزر الماوس الأيمن -&gt; لصق -&gt; أعد تسميته إلى [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2.java</bdi>]
   </li>
 </ul>
 
-<p>ثم نقوم بتعديل كود [ServletFormulaire2] على النحو التالي:</p>
+<p>ثم نقوم بتعديل كود [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi>] على النحو التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -2057,28 +2059,28 @@
 <a id="__codelineno-8-54" name="__codelineno-8-54"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-8-55" name="__codelineno-8-55"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>لم يتغير سوى الجزء الذي يولد استجابة HTTP (الأسطر 44–46):</p>
+<p>لم يتغير سوى الجزء الذي يولد استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> (الأسطر 44–46):</p>
 <ul>
-  <li>السطر 46: صفحة JSP <b>`formulaire2.jsp</b>` مسؤولة عن إنشاء الاستجابة. هذه الصفحة، التي لم نتناولها بعد، ستعرض المعلمات المسترجعة من طلب العميل: الاسم (الأسطر 35–38) والعمر (الأسطر 39–42).
+  <li>السطر 46: صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> <b>`<bdi dir="ltr" class="odt-ltr-term">formulaire2.jsp</bdi></b>` مسؤولة عن إنشاء الاستجابة. هذه الصفحة، التي لم نتناولها بعد، ستعرض المعلمات المسترجعة من طلب العميل: الاسم (الأسطر 35–38) والعمر (الأسطر 39–42).
   </li>
   <li>يتم وضع هاتين القيمتين في سمات الطلب، المرتبطة بمفاتيح. تتم إدارة سمات الطلب كقاموس.
   </li>
-  <li>السطر 44: يتم وضع الاسم في الطلب المرتبط بالمفتاح &quot;name&quot;
+  <li>السطر 44: يتم وضع الاسم في الطلب المرتبط بالمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;
   </li>
-  <li>السطر 45: يتم وضع العمر في الطلب المرتبط بالمفتاح &quot;age&quot;
+  <li>السطر 45: يتم وضع العمر في الطلب المرتبط بالمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;
   </li>
-  <li>السطر 46: يطلب عرض صفحة JSP [formulaire2.jsp]. يتم تمرير ما يلي كمعلمة إليها:
+  <li>السطر 46: يطلب عرض صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> [<bdi dir="ltr" class="odt-ltr-term">formulaire2.jsp</bdi>]. يتم تمرير ما يلي كمعلمة إليها:
   </li>
-  <li>طلب العميل، الذي يسمح لصفحة JSP بالوصول إلى سماتها التي تم تهيئتها للتو بواسطة السيرفلت
+  <li>طلب العميل، الذي يسمح لصفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> بالوصول إلى سماتها التي تم تهيئتها للتو بواسطة السيرفلت
   </li>
-  <li>الاستجابة [response]، والتي ستسمح لصفحة JSP بإنشاء استجابة HTTP للعميل
+  <li>الاستجابة [<bdi dir="ltr" class="odt-ltr-term">response</bdi>]، والتي ستسمح لصفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> بإنشاء استجابة <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> للعميل
   </li>
 </ul>
 
-<p>بمجرد كتابة فئة [ServletFormulaire2]، يظهر كودها المُجمَّع في [build/classes]:</p>
+<p>بمجرد كتابة فئة [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi>]، يظهر كودها المُجمَّع في [<bdi dir="ltr" class="odt-ltr-term">build/classes</bdi>]:</p>
 <p><img src="images/10000000000001650000005899E544BC.png" width="250" height="62" style="width:6.609cm;height:1.63cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001650000005899E544BC.png" /></p>
-<h3 id="372-jsp-formulaire2jsp">3.7.2. <span style="color: #4f81bd">صفحة JSP [formulaire2.jsp]</span></h3>
-<p>يتم إنشاء صفحة JSP <strong>formulaire2.jsp</strong> عن طريق نسخ صفحة [formulaire.jsp] ولصقها</p>
+<h3 id="372-jsp-formulaire2jsp">3.7.2. <span style="color: #4f81bd">صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> [<bdi dir="ltr" class="odt-ltr-term">formulaire2.jsp</bdi>]</span></h3>
+<p>يتم إنشاء صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> <strong><bdi dir="ltr" class="odt-ltr-term">formulaire2.jsp</bdi></strong> عن طريق نسخ صفحة [<bdi dir="ltr" class="odt-ltr-term">formulaire.jsp</bdi>] ولصقها</p>
 <p><img src="images/100000000000008F00000093EA3A5ED7.png" width="100" height="103" style="width:2.649cm;height:2.723cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000008F00000093EA3A5ED7.png" /></p>
 <p>ثم تعديلها على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -2124,16 +2126,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>لم تتغير سوى الأسطر 4–8 مقارنة بـ [formulaire.jsp]:</p>
+<p>لم تتغير سوى الأسطر 4–8 مقارنة بـ [<bdi dir="ltr" class="odt-ltr-term">formulaire.jsp</bdi>]:</p>
 <ul>
-  <li>السطر 6: يسترد قيمة السمة المسماة &quot;name&quot; في [request]، وهي سمة أنشأتها خدمة [ServletFormulaire2].
+  <li>السطر 6: يسترد قيمة السمة المسماة &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot; في [<bdi dir="ltr" class="odt-ltr-term">request</bdi>]، وهي سمة أنشأتها خدمة [<bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi>].
   </li>
-  <li>السطر 7: يقوم بنفس الشيء بالنسبة للسمة &quot;age&quot;
+  <li>السطر 7: يقوم بنفس الشيء بالنسبة للسمة &quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;
   </li>
 </ul>
 
 <h3 id="373">3.7.3. <span style="color: #4f81bd">تكوين التطبيق</span></h3>
-<p>يتم تعديل ملف التكوين [web.xml] على النحو التالي:</p>
+<p>يتم تعديل ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] على النحو التالي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
@@ -2190,16 +2192,16 @@
 
 <p>احتفظنا بالكود الحالي وأضفنا:</p>
 <ul>
-  <li>الأسطر 22–36: قسم &lt;<b>servlet</b>&gt; لتعريف السيرفلت الجديد <b>ServletFormulaire2</b>
+  <li>الأسطر 22–36: قسم &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet</bdi></b>&gt; لتعريف السيرفلت الجديد <b><bdi dir="ltr" class="odt-ltr-term">ServletFormulaire2</bdi></b>
   </li>
-  <li>الأسطر 42–46: قسم &lt;<b>servlet-mapping</b>&gt; لربطه بعنوان URL <b>/formulaire2</b>
+  <li>الأسطر 42–46: قسم &lt;<b><bdi dir="ltr" class="odt-ltr-term">servlet-mapping</bdi></b>&gt; لربطه بعنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> <b>/<bdi dir="ltr" class="odt-ltr-term">formulaire2</bdi></b>
   </li>
 </ul>
 
-<p>قم بتشغيل خادم Tomcat أو إعادة تشغيله إذا لزم الأمر. نطلب عنوان URL </p>
-<p><strong>http://localhost:8080/personne/formulaire2?txtNom=milou&amp;txtAge=10</strong>:</p>
+<p>قم بتشغيل خادم <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> أو إعادة تشغيله إذا لزم الأمر. نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> </p>
+<p><strong><bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personne/formulaire2</bdi>?<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>=<bdi dir="ltr" class="odt-ltr-term">milou</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>=10</strong>:</p>
 <p><img src="images/10000000000001FD000000FE82CBCBBA.png" width="356" height="178" style="width:9.43cm;height:4.706cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001FD000000FE82CBCBBA.png" /></p>
-<p>نحصل على نفس النتيجة كما في السابق، لكن بنية تطبيقنا أصبحت الآن أكثر وضوحًا: سيرفلت يحتوي على منطق التطبيق ويفوض مهمة إرسال الاستجابة إلى العميل إلى صفحة JSP. سنستمر دائمًا بهذه الطريقة من الآن فصاعدًا.</p>
+<p>نحصل على نفس النتيجة كما في السابق، لكن بنية تطبيقنا أصبحت الآن أكثر وضوحًا: سيرفلت يحتوي على منطق التطبيق ويفوض مهمة إرسال الاستجابة إلى العميل إلى صفحة <bdi dir="ltr" class="odt-ltr-term">JSP.</bdi> سنستمر دائمًا بهذه الطريقة من الآن فصاعدًا.</p>
 
 
 
