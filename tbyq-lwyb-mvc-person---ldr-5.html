@@ -1,0 +1,1580 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-java-web-mvc-mai-2006/tbyq-lwyb-mvc-person---ldr-5.html">
+      
+      
+        <link rel="prev" href="tbyq-lwyb-mvc-person---ldr-4.html">
+      
+      
+        <link rel="next" href="tbyq-lwyb-mvc-person---ldr-6.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>10. تطبيق الويب MVC [person] – الإصدار 5 - أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10-mvc-person-5" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" class="md-header__button md-logo" aria-label="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10. تطبيق الويب MVC [person] – الإصدار 5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" class="md-nav__button md-logo" aria-label="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwt-lmstkhdm-fy-hdh-lmstnd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. الأدوات المستخدمة في هذا المستند
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ssyt-twyr-lwyb-bl-java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. أساسيات تطوير الويب بلغة Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="twyr-mvc-lnmwdhj---lr---wd-ltkm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطوير MVC (النموذج – العرض – وحدة التحكم)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-person---ldr-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق ويب MVC [person] – الإصدار 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. تطبيق الويب MVC [person] – الإصدار 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق الويب MVC [person] – الإصدار 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mktb-lmt-jstl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. مكتبة علامات JSTL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق الويب MVC [person] – الإصدار 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق الويب MVC [person] – الإصدار 5
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tbyq-lwyb-mvc-person---ldr-5.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق الويب MVC [person] – الإصدار 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1. مقدمة
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-eclipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. مشروع Eclipse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-personne5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3. تكوين تطبيق الويب [personne5]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4. كود العرض
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-servletpersonne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5. وحدة التحكم [ServletPersonne]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.5. وحدة التحكم [ServletPersonne]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1051-doget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.1. طريقة [doGet]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1052-dovalidationformulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.2. طريقة [doValidationFormulaire]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1053-doretourformulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.3. طريقة [doRetourFormulaire]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6. الاختبار
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق الويب MVC [person] – الإصدار 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق الويب MVC [person] – الإصدار 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-person---ldr-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق ويب MVC [person] – الإصدار 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-ioc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Spring IoC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-3---nm-dr-qwd-lbynt-firebird.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 3 – نظام إدارة قواعد البيانات Firebird
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-4-postgres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 4، Postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-5-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 5، MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-6-sql-server-express.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 6، SQL Server Express
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkhl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. الخلاصة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkwd-mn-lmql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. الكود من المقالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="10-mvc-person-5">10. <span style="color: #365f91">تطبيق الويب MVC [person] – الإصدار 5</span></h1>
+<p><a id="personne3-introduction1"></a></p>
+<h2 id="101">10.1. <span style="color: #4f81bd">مقدمة</span></h2>
+<p>في هذا الإصدار، نقوم بإجراء تغييرين:</p>
+<p>يتعلق التغيير الأول بكيفية إشارة العميل إلى الخادم بالإجراء الذي يرغب في تنفيذه. حتى الآن، كان يتم تحديد ذلك باستخدام معلمة تسمى [action] في طلب GET أو POST الخاص بالعميل. هنا، سيتم تحديد الإجراء من خلال العنصر الأخير في عنوان URL الذي يطلبه العميل، كما هو موضح في التسلسل التالي:</p>
+<p><img src="images/10000000000005180000016504D44577.png" width="652" height="179" style="width:17.251cm;height:4.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005180000016504D44577.png" /></p>
+<p>في [1]، عنوان URL الذي تم إرسال النموذج إليه هو [/person5/do/validateForm]. العنصر الأخير [validateForm] من عنوان URL هو الذي سمح لوحدة التحكم بالتعرف على الإجراء المطلوب تنفيذه. في [2]، تم إرسال طلب POST الذي تم تشغيله بواسطة رابط [Return to form] إلى عنوان URL [/person5/do/returnForm]. هنا مرة أخرى، يحدد العنصر الأخير [returnForm] من عنوان URL للوحدة التحكم الإجراء الذي يجب تنفيذه.</p>
+<p>نحن نقدم هذا التغيير لأنه الطريقة المستخدمة من قبل أطر عمل تطوير الويب الأكثر استخدامًا، مثل <em>Struts</em> أو <em>Spring MVC</em>.</p>
+<p>ستكون جميع عناوين URL في التطبيق بالشكل [/person5/do/action]. سيحدد ملف [web.xml] لتطبيق [/person5] أنه يقبل عناوين URL بالشكل [/do/*]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">personne</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        &lt;url-pattern&gt;/do/*&lt;/url-pattern&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<p>ستقوم وحدة التحكم باسترداد اسم الإجراء المطلوب تنفيذه على النحو التالي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>        // on récupère l&#39;action à exécuter
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>String action=request.getPathInfo();
+</code></pre></div></td></tr></table></div>
+<p>تُرجع طريقة [getPathInfo] الخاصة بكائن [request] العنصر الأخير من عنوان URL للطلب.</p>
+<p>التغيير الثاني يتعلق بكيفية تخزين مدخلات المستخدم بين دورات الطلب/الاستجابة. حالياً، يتم تخزين هذه المعلومات في جلسة عمل. قد يكون لهذا النهج عيوب إذا كان هناك العديد من المستخدمين وكمية كبيرة من البيانات لتخزينها لكل واحد منهم. في الواقع، لكل مستخدم جلسة عمل شخصية خاصة به. علاوة على ذلك، تظل الجلسة نشطة لبعض الوقت بعد تسجيل خروج المستخدم، ما لم يتم توفير خيار تسجيل الخروج. وبالتالي، فإن 1,000 جلسة عمل بحجم 100 بايت لكل منها ستشغل 1 ميغابايت من الذاكرة. ويظل هذا متطلبًا معتدلاً، وقليلة هي التطبيقات التي لديها 1,000 جلسة عمل نشطة في وقت واحد.</p>
+<p>ومع ذلك، هناك بدائل للجلسات التي تستهلك ذاكرة أقل، ومن الجيد أن تكون على دراية بها. هنا، سنستخدم طريقة ملفات تعريف الارتباط. دعونا نوضح ذلك بمثال.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>الخطوة 1: يقوم المستخدم بإرسال نموذج:</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055B000001A7FFA399FA.png" width="680" height="210" style="display:inline-block; margin:4px;width:17.997cm;height:5.553cm;" class="odt-zoomable" data-zoom-src="images/100000000000055B000001A7FFA399FA.png" /></td></tr></table>
+
+<p>ينتج عن دورة الطلب/الاستجابة هذه التبادلات التالية عبر بروتوكول HTTP بين العميل والخادم:</p>
+<p>[1]: [طلب العميل]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">POST</span> <span class="o">/</span><span class="n">personne5</span><span class="o">/</span><span class="n">do</span><span class="o">/</span><span class="n">validationFormulaire</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Windows</span><span class="p">;</span> <span class="n">U</span><span class="p">;</span> <span class="n">Windows</span> <span class="n">NT</span> <span class="mf">5.1</span><span class="p">;</span> <span class="n">fr</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mf">1.8.0.3</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20060426</span> <span class="n">Firefox</span><span class="o">/</span><span class="mf">1.5.0.3</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">Accept</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xhtml</span><span class="o">+</span><span class="n">xml</span><span class="p">,</span><span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">image</span><span class="o">/</span><span class="n">png</span><span class="p">,</span><span class="o">*/*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.5</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">fr</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">de</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.2</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span><span class="n">deflate</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Charset</span><span class="p">:</span> <span class="n">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="o">*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.7</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span><span class="p">:</span> <span class="mi">300</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">Referer</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">personne5</span><span class="o">/</span><span class="n">do</span><span class="o">/</span><span class="n">formulaire</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">Cookie</span><span class="p">:</span> <span class="n">JSESSIONID</span><span class="o">=</span><span class="mi">6</span><span class="n">C6F4D112803A7E3696D41F5750CEDE7</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">www</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">urlencoded</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">24</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">txtNom</span><span class="o">=</span><span class="n">pauline</span><span class="o">&amp;</span><span class="n">txtAge</span><span class="o">=</span><span class="mi">18</span>
+</code></pre></div></td></tr></table></div>
+<p>هذا طلب POST قياسي. لا يوجد شيء غير عادي هنا، باستثناء أنه على الرغم من أننا لن نستخدم جلسة عمل، فإن خادم الويب ينشئ واحدة على أي حال. ويتضح ذلك من رمز الجلسة الذي يرسله المتصفح إلى الخادم في السطر 11، والذي كان قد تلقّاه سابقًا من الخادم.</p>
+<p>[2]: [استجابة الخادم]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>HTTP/1.x 200 OK
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Server: Apache-Coyote/1.1
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>Set-Cookie: nom=pauline
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>Set-Cookie: age=18
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>Content-Type: text/html;charset=ISO-8859-1
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>Content-Length: 547
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>Date: Mon, 22 May 2006 08:03:51 GMT
+</code></pre></div></td></tr></table></div>
+<p>يمكننا أن نرى أنه في السطرين 3 و 4، تم إرسال رؤوس HTTP [Set-Cookie] إلى متصفح العميل، واحدة للاسم (السطر 3) وواحدة للعمر (السطر 4). قيم ملفات تعريف الارتباط هذه هي القيم المنشورة في السطر 14 من POST [1] أعلاه.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>الخطوة 2: العودة إلى النموذج</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<p><img src="images/1000000000000549000001A3D6C2B924.png" width="677" height="209" style="width:17.9cm;height:5.542cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000549000001A3D6C2B924.png" /></p>
+<p>ينتج عن دورة الطلب/الاستجابة هذه التبادلات HTTP التالية بين العميل والخادم:</p>
+<p>[1]: [طلب العميل]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">POST</span> <span class="o">/</span><span class="n">personne5</span><span class="o">/</span><span class="n">do</span><span class="o">/</span><span class="n">retourFormulaire</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Windows</span><span class="p">;</span> <span class="n">U</span><span class="p">;</span> <span class="n">Windows</span> <span class="n">NT</span> <span class="mf">5.1</span><span class="p">;</span> <span class="n">fr</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mf">1.8.0.3</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20060426</span> <span class="n">Firefox</span><span class="o">/</span><span class="mf">1.5.0.3</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">Accept</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xhtml</span><span class="o">+</span><span class="n">xml</span><span class="p">,</span><span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">text</span><span class="o">/</span><span class="n">plain</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">image</span><span class="o">/</span><span class="n">png</span><span class="p">,</span><span class="o">*/*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.5</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Language</span><span class="p">:</span> <span class="n">fr</span><span class="o">-</span><span class="n">fr</span><span class="p">,</span><span class="n">fr</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">en</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span><span class="n">en</span><span class="o">-</span><span class="n">us</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">de</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.2</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span><span class="n">deflate</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Charset</span><span class="p">:</span> <span class="n">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span><span class="o">*</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mf">0.7</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span><span class="p">:</span> <span class="mi">300</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">Referer</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">personne5</span><span class="o">/</span><span class="n">do</span><span class="o">/</span><span class="n">validationFormulaire</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="n">Cookie</span><span class="p">:</span> <span class="n">nom</span><span class="o">=</span><span class="n">pauline</span><span class="p">;</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">;</span> <span class="n">JSESSIONID</span><span class="o">=</span><span class="mi">6</span><span class="n">C6F4D112803A7E3696D41F5750CEDE7</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">www</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">urlencoded</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">0</span>
+</code></pre></div></td></tr></table></div>
+<p>هنا نرى طلب POST الذي تم تشغيله بالنقر على رابط [العودة إلى النموذج]. في السطر 11، نرى أن المتصفح يرسل ملفات تعريف الارتباط التي تلقّاها [name, age, JSESSIONID] إلى الخادم باستخدام رأس HTTP [Cookie]. هكذا تعمل ملفات تعريف الارتباط. يرسل العميل إلى الخادم ملفات تعريف الارتباط التي أرسلها الخادم إليه. في هذا المثال، سيتلقى وحدة التحكم القيم [pauline, 18]، والتي يجب أن يضعها في حقول [txtName, txtAge] في عرض [form] المعروض في [2].</p>
+<p>[2]: [استجابة الخادم]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>HTTP/1.x 200 OK
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>Server: Apache-Coyote/1.1
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>Content-Type: text/html;charset=ISO-8859-1
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>Content-Length: 2341
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>Date: Mon, 22 May 2006 08:16:47 GMT
+</code></pre></div></td></tr></table></div>
+<p>لا يوجد شيء محدد يستحق الذكر هنا سوى حقيقة أن الخادم لم يرسل أي ملفات تعريف ارتباط في هذا الرد. لن يمنع هذا المتصفح من إعادة إرسال جميع ملفات تعريف الارتباط التي تلقاها من الخادم في التبادل التالي، حتى لو لم يكن لذلك أي فائدة. لذلك، نقوم بتقليل الحمل على الذاكرة المتاحة للخادم على حساب زيادة تدفق الأحرف في التبادلات بين العميل والخادم.</p>
+<h2 id="102-eclipse">10.2. <span style="color: #4f81bd">مشروع Eclipse</span></h2>
+<p>لإنشاء مشروع Eclipse [mvc-personne-05] لتطبيق الويب [/personne5]، قم بنسخ مشروع [mvc-personne-04] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB0000019D59396DF5.png" width="164" height="289" style="display:inline-block; margin:4px;width:4.35cm;height:7.645cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB0000019D59396DF5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016A0000005ACA1567F4.png" width="253" height="63" style="display:inline-block; margin:4px;width:6.699cm;height:1.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A0000005ACA1567F4.png" /></td></tr></table>
+
+<h2 id="103-personne5">10.3. <span style="color: #4f81bd">تكوين تطبيق الويب [personne5]</span></h2>
+<p>فيما يلي ملف <strong>web.xml</strong> الخاص بتطبيق <strong>/personne5</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?<span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span>?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">mvc-personne-05</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!--  ServletPersonne --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">personne</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-class</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            istia.st.servlets.personne.ServletPersonne</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-class</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!--  Mapping ServletPersonne--&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">personne</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url-pattern</span><span style="color:#008080">&gt;</span><span style="color:#000000">/do/*</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">url-pattern</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">servlet-mapping</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!--  welcome files --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">welcome-file-list</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">welcome-file</span><span style="color:#008080">&gt;</span><span style="color:#000000">index.jsp</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">welcome-file</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">welcome-file-list</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">web-app</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>هذا الملف مطابق للملف الموجود في الإصدار السابق باستثناء بعض التفاصيل:</p>
+<ul>
+  <li>السطر 6: تغير اسم العرض لتطبيق الويب إلى [mvc-personne-05]
+  </li>
+  <li>السطر 18: عناوين URL التي يتعامل معها التطبيق هي على شكل [/do/*]. في السابق، كان يتم التعامل مع عنوان URL [/main] فقط. الآن، هناك عدد من عناوين URL يساوي عدد الإجراءات المطلوب التعامل معها.
+  </li>
+</ul>
+
+<p>تتغير الصفحة الرئيسية [index.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">c:redirect </span><span style="color:#7f007f">url</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/do/formulaire&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 5: تقوم صفحة [index.jsp] بإعادة توجيه العميل إلى عنوان URL [/person5/do/form]، وهو ما يعادل مطالبة وحدة التحكم بتنفيذ الإجراء [form].
+  </li>
+</ul>
+
+<h2 id="104">10.4. <span style="color: #4f81bd">كود العرض</span></h2>
+<p>لا تتغير طرق العرض [form، response، errors] إلا قليلاً. التغيير الوحيد هو أن الإجراء المطلوب تنفيذه لم يعد محدداً بنفس الطريقة السابقة، عندما كان يُعرَّف في حقل مخفي باسم [action] في النماذج المرسلة. الآن يتم تعريفه في عنوان URL الهدف للنماذج المرسلة، أي في سمة [action] لعلامة &lt;form&gt;:</p>
+<p>[form.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne - formulaire</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;javascript&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#3f5fbf">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">script</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">center</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne - formulaire</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">hr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;frmPersonne&quot; </span><span style="color:#7f007f">action</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;validationFormulaire&quot; </span><span style="color:#7f007f">method</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">center</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر [13]: يعود ظهور المعلمة [action] في النموذج بعد غيابها لفترة في الإصدارات السابقة. لفهم قيمة هذه السمة هنا، تذكر أن جميع عناوين URL التي يعالجها التطبيق تكون على شكل [/do/action]. في السطر [13]، تحتوي السمة [action] على عنوان URL نسبي كقيمة لها (لا يبدأ بـ /). لذلك، سيكملها المتصفح بعنوان URL للصفحة المعروضة حاليًا، والذي يكون بالضرورة عنوان URL بالشكل [/do/action]. سيتم استبدال العنصر الأخير بعنوان URL النسبي للسمة [action] لعلامة &lt;form&gt; للحصول على عنوان URL [/do/validationFormulaire] كهدف POST.
+  </li>
+  <li>اختفى الحقل المخفي [action]
+  </li>
+</ul>
+
+<p>[response.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">...</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;frmPersonne&quot; </span><span style="color:#7f007f">action</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;retourFormulaire&quot; </span><span style="color:#7f007f">method</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">a </span><span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;javascript:document.frmPersonne.submit();&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ${lienRetourFormulaire}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">a</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر [7]: سيكون هدف POST هو [/do/returnForm]
+  </li>
+  <li>تمت إزالة الحقل المخفي [action] من النموذج في السطرين 7 و8.
+  </li>
+</ul>
+
+<p>[errors.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;frmPersonne&quot; </span><span style="color:#7f007f">action</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;retourFormulaire&quot; </span><span style="color:#7f007f">method</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">a </span><span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;javascript:document.frmPersonne.submit();&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ${lienRetourFormulaire}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">a</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر [6]: سيكون هدف POST هو [/do/returnForm]
+  </li>
+  <li>تمت إزالة الحقل المخفي [action] من النموذج في السطرين 6 و7.
+  </li>
+</ul>
+
+<p>ندعو القراء إلى اختبار هذه العروض الجديدة باستخدام النهج الذي شوهد في الإصدارات السابقة.</p>
+<h2 id="105-servletpersonne">10.5. <span style="color: #4f81bd">وحدة التحكم [ServletPersonne]</span></h2>
+<p>ستتولى وحدة التحكم [ServletPersonne] الخاصة بتطبيق الويب [/personne5] معالجة الإجراءات التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">رقم</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">الطلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المصدر</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المعالجة</mark></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[GET /person5/do/form]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان URL الذي أدخله المستخدم</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [form] فارغ</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[POST</div><div style="margin:0 0 0.5em 0">/person5/do/formValidation]</div><div style="margin:0 0 0.5em 0">مع المعلمات [txtName، txtAge]</div><div style="margin:0 0 0.5em 0">تم النشر</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على</div><div style="margin:0 0 0.5em 0">[إرسال] في</div><div style="margin:0 0 0.5em 0">[form]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تحقق من قيم المعلمات [txtName، txtAge]</div><div style="margin:0 0 0.5em 0">- إذا كانت غير صحيحة، أرسل عرض [errors(errors)]</div><div style="margin:0 0 0.5em 0">- إذا كانت صحيحة، أرسل عرض [response(name,age)]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[POST</div><div style="margin:0 0 0.5em 0">/person5/do/returnForm]</div><div style="margin:0 0 0.5em 0">بدون معلمات مرسلة</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على [العودة إلى</div><div style="margin:0 0 0.5em 0">الاستمارة] من</div><div style="margin:0 0 0.5em 0">[الاستجابة] و[الأخطاء].</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [النموذج] مملوءًا مسبقًا بأحدث القيم المدخلة</div></td></tr></table>
+
+<p>هيكل وحدة التحكم [ServletPersonne] مطابق للنسخة السابقة. سنستعرض التغييرات التي تم إجراؤها على الطرق [doValidationFormulaire، doRetourFormulaire، doGet]؛ بينما تظل الطرق [init، doInit، doPost] دون تغيير.</p>
+<h3 id="1051-doget">10.5.1. <span style="color: #4f81bd">طريقة [doGet]</span></h3>
+<p>لا تسترد طريقة [doGet] الإجراء المراد تنفيذه بنفس الطريقة المتبعة في الإصدارات السابقة:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#__codelineno-5-32">32</a></span>
+<span class="normal"><a href="#__codelineno-5-33">33</a></span>
+<span class="normal"><a href="#__codelineno-5-34">34</a></span>
+<span class="normal"><a href="#__codelineno-5-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">        </span><span class="nd">@SuppressWarnings</span><span class="p">(</span><span class="s">&quot;unchecked&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">            </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="p">,</span><span class="w"> </span><span class="n">ServletException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">        </span><span class="c1">// check how the servlet was initialized</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">erreursInitialisation</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="p">...</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">        </span><span class="c1">// retrieve the request sending method</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">méthode</span><span class="o">=</span><span class="n">request</span><span class="p">.</span><span class="na">getMethod</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span><span class="c1">// retrieve the action to be executed</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">action</span><span class="o">=</span><span class="n">request</span><span class="p">.</span><span class="na">getPathInfo</span><span class="p">();</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">        </span><span class="c1">// action?</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">action</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">            </span><span class="n">action</span><span class="o">=</span><span class="s">&quot;/formulaire&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="c1">// execution action</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">méthode</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">action</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;/formulaire&quot;</span><span class="p">)){</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">            </span><span class="c1">// start application</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">            </span><span class="n">doInit</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">méthode</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;post&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">action</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;/validationFormulaire&quot;</span><span class="p">)){</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">            </span><span class="c1">// validation of input form</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">            </span><span class="n">doValidationFormulaire</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">méthode</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;post&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">action</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;/retourFormulaire&quot;</span><span class="p">)){</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">            </span><span class="c1">// back to input form</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="w">            </span><span class="n">doRetourFormulaire</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="w">        </span><span class="c1">// other cases</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="w">        </span><span class="n">doInit</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 12: استرداد الإجراء المراد تنفيذه. ويكون في صيغة [/action].
+  </li>
+  <li>الأسطر 18–22: معالجة الإجراء [/form] المطلوب بواسطة طلب GET
+  </li>
+  <li>الأسطر 23–27: معالجة الإجراء [/validateForm] المطلوب بواسطة طلب POST
+  </li>
+  <li>الأسطر 28–32: معالجة الإجراء [/returnForm] المطلوب بواسطة طلب POST
+  </li>
+</ul>
+
+<h3 id="1052-dovalidationformulaire">10.5.2. <span style="color: #4f81bd">طريقة [doValidationFormulaire]</span></h3>
+<p>تقوم هذه الطريقة بمعالجة الطلب رقم 2 [POST /person5/do/validationFormulaire] مع [txtName, txtAge] في العناصر المرسلة. وفيما يلي شفرة هذه الطريقة:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// form validation</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doValidationFormulaire</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">            </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">        </span><span class="c1">// parameters are retrieved</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;txtNom&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;txtAge&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">        </span><span class="c1">// stored in a cookie</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">addCookie</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Cookie</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">,</span><span class="n">nom</span><span class="p">));</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">addCookie</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Cookie</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="n">age</span><span class="p">));</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="c1">// parameter verification</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>ما الجديد:</p>
+<ul>
+  <li>تُرجع الطريقة [doValidationFormulaire] إحدى قيمتي [response] أو [errors]. وبغض النظر عن الاستجابة، يقوم وحدة التحكم بتعيين ملفين من ملفات تعريف الارتباط بداخلها، في السطرين 8 و9. يتم تمثيل ملف تعريف الارتباط بواسطة كائن [Cookie] الذي يقبل منشئه معلمتين: مفتاح ملف تعريف الارتباط والقيمة المرتبطة به.
+  </li>
+  <li>السطر 8: يتم وضع القيمة التي تم إدخالها للاسم في ملف تعريف ارتباط بمفتاح &quot;name&quot;
+  </li>
+  <li>السطر 9: يتم وضع القيمة التي تم إدخالها للعمر في ملف تعريف ارتباط بمفتاح &quot;age&quot;
+  </li>
+  <li>تتم إضافة ملف تعريف ارتباط إلى استجابة HTTP المرسلة إلى العميل باستخدام طريقة [response.addCookie]. يتم إعداد هذه الاستجابة هنا فقط. ولن يتم إرسالها فعليًا إلا عند تنفيذ صفحة JSP الخاصة بالطريقة المرسلة إلى العميل.
+  </li>
+</ul>
+
+<h3 id="1053-doretourformulaire">10.5.3. <span style="color: #4f81bd">طريقة [doRetourFormulaire]</span></h3>
+<p>تقوم هذه الطريقة بمعالجة الطلب رقم 2 [POST /person5/do/retourFormulaire] دون أي بيانات مرسلة. وفيما يلي شفرة هذه الطريقة:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">        </span><span class="c1">// display pre-filled form</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doRetourFormulaire</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">        </span><span class="c1">// retrieve the user&#39;s cookies</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">        </span><span class="n">Cookie</span><span class="o">[]</span><span class="w"> </span><span class="n">cookies</span><span class="o">=</span><span class="n">request</span><span class="p">.</span><span class="na">getCookies</span><span class="p">();</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">age</span><span class="o">=</span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nbCookies</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">cookies</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">nbCookies</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">cookies</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">)){</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">                </span><span class="n">nom</span><span class="o">=</span><span class="n">cookies</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">                </span><span class="n">nbCookies</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">cookies</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">)){</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">                    </span><span class="n">age</span><span class="o">=</span><span class="n">cookies</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">                    </span><span class="n">nbCookies</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="c1">// prepare the form template</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">        </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">,</span><span class="n">nom</span><span class="p">);</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">        </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="n">age</span><span class="p">);</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">        </span><span class="c1">// the form is displayed</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">        </span><span class="n">getServletContext</span><span class="p">().</span><span class="na">getRequestDispatcher</span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="n">params</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;urlFormulaire&quot;</span><span class="p">)).</span><span class="na">forward</span><span class="p">(</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">                </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>ما الجديد:</p>
+<p>يجب أن تعرض طريقة [doRetourFormulaire] نموذجًا مملوءًا مسبقًا بأحدث الإدخالات. في الإصدار السابق، كانت هذه البيانات تُخزَّن في الجلسة (session). أما في هذا الإصدار، فلم نعد نستخدم الجلسة، بل نستخدم ملفات تعريف الارتباط (cookies) لتخزين البيانات بين عمليات التبادل بين العميل والخادم. عندما طلب العميل التحقق من صحة النموذج، تلقى عرض [response] أو [errors] كاستجابة، حسب الاقتضاء، إلى جانب ملفين من ملفات تعريف الارتباط يحملان اسمي &quot;name&quot; و&quot;age&quot;. عند النقر على رابط [Back to form] في هذين العرضين — مما يؤدي إلى إرسال طلب POST إلى عنوان URL [/do/retourFormulaire] — يرسل المتصفح ملفَي تعريف الارتباط اللذين تلقاهما إلى الخادم.</p>
+<ul>
+  <li>الأسطر 4–18: نسترد قيم ملفات تعريف الارتباط المسماة &quot;name&quot; و&quot;age&quot;. ومن الغريب أنه لا توجد طريقة لاسترداد قيمة ملف تعريف الارتباط بناءً على مفتاحه. لذلك، يجب علينا تكرار كل ملف من ملفات تعريف الارتباط المستلمة.
+  </li>
+  <li>بمجرد الانتهاء من ذلك، يتم وضع القيمتين اللتين تم الحصول عليهما في قالب عرض [form] (السطور 20–21) حتى يتمكن من عرضهما.
+  </li>
+</ul>
+
+<h2 id="106">10.6. <span style="color: #4f81bd">الاختبار</span></h2>
+<p>ابدأ أو أعد تشغيل Tomcat بعد دمج مشروع Eclipse [person-mvc-05] فيه، ثم اطلب عنوان URL [http://localhost:8080/personne5].</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1630 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-java-web-mvc-mai-2006/ldwt-lmstkhdm-fy-hdh-lmstnd.html">
+      
+      
+        <link rel="prev" href="mqdm.html">
+      
+      
+        <link rel="next" href="ssyt-twyr-lwyb-bl-java.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>2. الأدوات المستخدمة في هذا المستند - أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" class="md-header__button md-logo" aria-label="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. الأدوات المستخدمة في هذا المستند
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" class="md-nav__button md-logo" aria-label="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. الأدوات المستخدمة في هذا المستند
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ldwt-lmstkhdm-fy-hdh-lmstnd.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. الأدوات المستخدمة في هذا المستند
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-j-ava-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. J ava 1.5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-tomcat-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. حاوية سيرفلت Tomcat 5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-tomcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. نشر تطبيق ويب على خادم Tomcat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. نشر تطبيق ويب على خادم Tomcat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1. النشر
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-tomcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2. إدارة Tomcat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.3. إدارة تطبيقات الويب التي تم نشرها
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.4. تطبيق ويب مع صفحة رئيسية
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-eclipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. تثبيت Eclipse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-tomcat-eclipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. تكامل Tomcat - Eclipse
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ssyt-twyr-lwyb-bl-java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. أساسيات تطوير الويب بلغة Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="twyr-mvc-lnmwdhj---lr---wd-ltkm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطوير MVC (النموذج – العرض – وحدة التحكم)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-person---ldr-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق ويب MVC [person] – الإصدار 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. تطبيق الويب MVC [person] – الإصدار 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق الويب MVC [person] – الإصدار 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mktb-lmt-jstl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. مكتبة علامات JSTL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق الويب MVC [person] – الإصدار 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق الويب MVC [person] – الإصدار 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق الويب MVC [person] – الإصدار 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق الويب MVC [person] – الإصدار 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-person---ldr-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق ويب MVC [person] – الإصدار 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-ioc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Spring IoC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-3---nm-dr-qwd-lbynt-firebird.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 3 – نظام إدارة قواعد البيانات Firebird
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-4-postgres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 4، Postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-5-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 5، MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-6-sql-server-express.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 6، SQL Server Express
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkhl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. الخلاصة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkwd-mn-lmql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. الكود من المقالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2">2. <span style="color: #365f91">الأدوات المستخدمة في هذا المستند</span></h1>
+<p>في هذا المستند، سنستخدم الأدوات التالية:</p>
+<ul>
+  <li>Java 1.5 JDK
+  </li>
+  <li>خادم الويب TOMCAT (http://tomcat.apache.org/)،
+  </li>
+  <li>بيئة التطوير ECLIPSE (http://www.eclipse.org/) مع المكون الإضافي WTP (Web Tools Package)
+  </li>
+  <li>متصفح ويب (IE، Netscape، Mozilla Firefox، Opera، إلخ).
+  </li>
+</ul>
+
+<p>هذه أدوات مجانية. بشكل عام، يمكن استخدام العديد من الأدوات مفتوحة المصدر في تطوير الويب:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>JAVA IDE
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JBuilder Foundation
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">http://www.borland.com/jbuilder/foundation/index.html</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>مكتبات Java
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Struts
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">http://struts.apache.org/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="6"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>نظام إدارة قواعد البيانات
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MySQL
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">http://www.mysql.com/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="3"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>حاويات سيرفلت
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>تومكات
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">http://tomcat.apache.org/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>المتصفحات
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>نتسكيب
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">http://www.netscape.com/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><a id="jdk15"></a></p>
+<h2 id="21-j-ava-15">2.1. <span style="color: #4f81bd"><strong>J</strong> <strong>ava 1.5</strong></span></h2>
+<p>يتطلب حاوية سيرفلت Tomcat 5.x آلة افتراضية Java 1.5. لذلك يجب عليك أولاً تثبيت هذا الإصدار من Java، والذي يمكن العثور عليه على موقع Sun على الويب على الرابط [http://www.sun.com] -&gt; [http://java.sun.com/j2se/1.5.0/download.jsp] (مايو 2006):</p>
+<p><img src="images/100000000000039400000129B8336477.png" width="639" height="207" style="width:16.91cm;height:5.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039400000129B8336477.png" /></p>
+<p><strong>الخطوة 2</strong>:</p>
+<p><img src="images/10000000000001760000005D61078DC6.png" width="262" height="65" style="width:6.93cm;height:1.723cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001760000005D61078DC6.png" /></p>
+<p><strong>الخطوة 3</strong>:</p>
+<p>قم بتشغيل تثبيت JDK 1.5 من الملف الذي تم تنزيله.</p>
+<p><a id="installtomcat55"></a></p>
+<h2 id="22-tomcat-5">2.2. <span style="color: #4f81bd">حاوية سيرفلت Tomcat 5</span></h2>
+<p>لتشغيل السيرفلتات، نحتاج إلى حاوية سيرفلت. نقدم هنا واحدة منها، وهي Tomcat 5.x، المتوفرة على <strong>http://tomcat.apache.org/</strong>. نوضح الخطوات (مايو 2006) لتثبيتها. إذا كان هناك إصدار سابق من Tomcat مثبت بالفعل، فمن الأفضل إزالته أولاً.</p>
+<p><img src="images/1000000000000170000001EE4FA2B0B3.png" width="256" height="344" style="width:6.78cm;height:9.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000170000001EE4FA2B0B3.png" /></p>
+<p>لتنزيل المنتج، اتبع الرابط [Tomcat 5.x] أعلاه:</p>
+<p><img src="images/1000000000000190000000EFB673D510.png" width="280" height="167" style="width:7.41cm;height:4.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000190000000EFB673D510.png" /></p>
+<p>يمكنك تنزيل ملف .exe لنظام التشغيل Windows. بمجرد التنزيل، ابدأ تثبيت Tomcat:</p>
+<p>انقر على [التالي] -&gt;</p>
+<p><img src="images/10000000000001F400000189BC5401F7.png" width="350" height="275" style="width:9.26cm;height:7.278cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F400000189BC5401F7.png" /></p>
+<p>اقبل شروط الترخيص -&gt;</p>
+<p><img src="images/10000000000001F5000001886142672D.png" width="351" height="274" style="width:9.28cm;height:7.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F5000001886142672D.png" /></p>
+<p>انقر فوق [التالي] -&gt;</p>
+<p><img src="images/10000000000001F20000018718E17B25.png" width="348" height="274" style="width:9.22cm;height:7.239cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F20000018718E17B25.png" /></p>
+<p>اقبل دليل التثبيت المقترح أو قم بتغييره باستخدام [استعراض] -&gt;</p>
+<p><img src="images/10000000000001F4000001877F7F615A.png" width="350" height="274" style="width:9.26cm;height:7.241cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F4000001877F7F615A.png" /></p>
+<p>قم بتعيين اسم المستخدم وكلمة المرور لمسؤول خادم Tomcat. هنا استخدمنا [<em>admin / admin]</em> -&gt;</p>
+<p><img src="images/10000000000002BB00000221E12A58D0.png" width="350" height="273" style="width:9.248cm;height:7.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BB00000221E12A58D0.png" /></p>
+<p>يتطلب Tomcat 5.x وجود JRE 1.5. ومن المفترض أن يكتشف البرنامج تلقائيًا الإصدار المثبت على جهازك. المسار المحدد أعلاه هو مسار JRE 1.5 الذي تم تنزيله في القسم<a href="#jdk15"><u><span style="color: #0563c1"> 2.1</span></u></a>. إذا لم يتم العثور على JRE، فحدد الدليل الجذري له باستخدام الزر [1]. وبمجرد الانتهاء من ذلك، استخدم الزر [تثبيت] لتثبيت Tomcat 5.x -&gt;</p>
+<p><img src="images/10000000000001F5000001883CA14231.png" width="351" height="274" style="width:9.28cm;height:7.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F5000001883CA14231.png" /></p>
+<p>يُكمل الزر [Finish] عملية التثبيت. يُشار إلى وجود Tomcat برمز على الجانب الأيمن من شريط مهام Windows:</p>
+<p><img src="images/100000000000007E0000004A2A00B5AB.png" width="101" height="59" style="width:2.671cm;height:1.57cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000007E0000004A2A00B5AB.png" /></p>
+<p>يمنحك النقر بزر الماوس الأيمن على هذا الرمز إمكانية الوصول إلى أوامر بدء تشغيل الخادم وإيقافه:</p>
+<p><img src="images/10000000000000A70000008A2D875879.png" width="133" height="110" style="width:3.53cm;height:2.917cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000A70000008A2D875879.png" /></p>
+<p>نستخدم خيار [إيقاف الخدمة] لإيقاف خادم الويب الآن:</p>
+<p><img src="images/100000000000004D0000004231AD0E16.png" width="62" height="53" style="width:1.63cm;height:1.397cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000004D0000004231AD0E16.png" /></p>
+<p>لاحظ التغيير في حالة الرمز. يمكن إزالة الرمز من شريط المهام:</p>
+<p><img src="images/10000000000000920000008D81F67C2A.png" width="117" height="113" style="width:3.09cm;height:2.985cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000920000008D81F67C2A.png" /></p>
+<p>تم تثبيت Tomcat في المجلد الذي اختاره المستخدم، والذي سنشير إليه الآن باسم <strong>&lt;tomcat&gt;</strong>. هيكل الدليل لإصدار Tomcat 5.5.17 الذي تم تنزيله هو كما يلي:</p>
+<p><img src="images/1000000000000089000000AD7264C4B6.png" width="96" height="121" style="width:2.54cm;height:3.207cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000089000000AD7264C4B6.png" /></p>
+<p>أضاف تثبيت Tomcat عددًا من الاختصارات إلى قائمة [ابدأ]. نستخدم الرابط [Monitor] أدناه لتشغيل أداة إيقاف/تشغيل Tomcat:</p>
+<p><img src="images/100000000000021A000000AF3356D78B.png" width="376" height="122" style="width:9.961cm;height:3.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021A000000AF3356D78B.png" /></p>
+<p>ثم نرى الرمز الموضح سابقًا:</p>
+<p><img src="images/100000000000004D0000004231AD0E16.png" width="62" height="53" style="width:1.63cm;height:1.397cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000004D0000004231AD0E16.png" /></p>
+<p>يمكن تشغيل أداة مراقبة Tomcat بالنقر المزدوج على هذا الرمز:</p>
+<p><img src="images/100000000000019A00000190D41B038E.png" width="287" height="280" style="width:7.59cm;height:7.405cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019A00000190D41B038E.png" /></p>
+<p>تسمح لنا أزرار [Start - Stop - Pause] - Restart بتشغيل الخادم وإيقافه وإعادة تشغيله. نبدأ تشغيل الخادم بالنقر على [Start]، ثم ندخل عنوان URL http://localhost:8080 باستخدام متصفح. ومن المفترض أن نرى صفحة مشابهة لما يلي:</p>
+<p><img src="images/10000000000003BD00000154E227E6C7.png" width="577" height="205" style="width:15.27cm;height:5.426cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BD00000154E227E6C7.png" /></p>
+<p>يمكنك اتباع الروابط أدناه للتحقق من تثبيت Tomcat بشكل صحيح:</p>
+<p><img src="images/10000000000000E100000084D63B5B07.png" width="158" height="92" style="width:4.17cm;height:2.447cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E100000084D63B5B07.png" /></p>
+<p>تستحق جميع الروابط الموجودة على صفحة [http://localhost:8080] الاستكشاف، ونشجع القارئ على القيام بذلك. ستتاح لنا الفرصة لإعادة زيارة الروابط المستخدمة لإدارة تطبيقات الويب التي تم نشرها على الخادم:</p>
+<p><img src="images/10000000000000E7000000889D7AD7E4.png" width="162" height="95" style="width:4.279cm;height:2.519cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000889D7AD7E4.png" /></p>
+<h2 id="23-tomcat">2.3. <span style="color: #4f81bd">نشر تطبيق ويب على خادم Tomcat</span></h2>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>قراءة [<a href="https://stahe.github.io/ar-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]: الفصل 1، الفصل 2: 2.3.1، 2.3.2، 2.3.3</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="231">2.3.1. <span style="color: #4f81bd">النشر</span></h3>
+<p>يجب أن يتبع تطبيق الويب قواعد معينة ليتم نشره داخل حاوية سيرفلت. لنفترض أن &lt;webapp&gt; هو دليل تطبيق الويب. يتكون تطبيق الويب من:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>فئات
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">في المجلد &lt;webapp&gt;\WEB-INF\classes</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>أرشيفات Java
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">في المجلد &lt;webapp&gt;\WEB-INF\lib</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>طرق العرض والموارد (.jsp، .html، ...)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">في مجلد &lt;webapp&gt; أو المجلدات الفرعية</div></td></tr></table>
+
+<p>يتم تكوين تطبيق الويب عبر ملف XML: <strong>&lt;webapp&gt;\WEB-INF\web.xml</strong>.</p>
+<p>لنقم بإنشاء تطبيق الويب باستخدام بنية الدليل التالية:</p>
+<p><img src="images/100000000000007D00000058C9BC9C24.png" width="87" height="61" style="width:2.311cm;height:1.626cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000007D00000058C9BC9C24.png" /></p>
+<p>سننشئ بنية الدليل المذكورة أعلاه باستخدام مستكشف Windows. المجلدان [classes] و [lib] فارغان هنا. يحتوي المجلد [views] على ملف HTML ثابت:</p>
+<p><img src="images/100000000000015900000057EB61EDD0.png" width="242" height="61" style="width:6.391cm;height:1.612cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015900000057EB61EDD0.png" /></p>
+<p>محتواه كما يلي:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Application exemple<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>      Application exemple active ....
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>إذا قمت بتحميل هذا الملف في متصفح، فستظهر لك الصفحة التالية:</p>
+<p><img src="images/10000000000002680000005FC7584CB0.png" width="431" height="67" style="width:11.411cm;height:1.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002680000005FC7584CB0.png" /></p>
+<p>يُظهر عنوان URL الذي يعرضه المتصفح أن الصفحة لم يتم تقديمها بواسطة خادم ويب، بل تم تحميلها مباشرةً بواسطة المتصفح. ونريد الآن أن تكون متاحة عبر خادم الويب Tomcat.</p>
+<p>لنعد إلى شجرة الدليل &lt;tomcat&gt;:</p>
+<p><img src="images/1000000000000089000000AD7264C4B6.png" width="96" height="121" style="width:2.54cm;height:3.207cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000089000000AD7264C4B6.png" /></p>
+<p>يتم تكوين تطبيقات الويب التي يتم نشرها على خادم Tomcat باستخدام ملفات XML الموجودة في المجلد [&lt;tomcat&gt;\conf\Catalina\localhost]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C10000007A7B34EE12.png" width="135" height="85" style="display:inline-block; margin:4px;width:3.57cm;height:2.258cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C10000007A7B34EE12.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000BD000000565A469739.png" width="132" height="60" style="display:inline-block; margin:4px;width:3.5cm;height:1.593cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BD000000565A469739.png" /></td></tr></table>
+
+<p>يمكن إنشاء ملفات XML هذه يدويًا نظرًا لبساطة هيكلها. لكن بدلاً من اتباع هذا النهج، سنستخدم أدوات الويب التي يوفرها Tomcat.</p>
+<h3 id="232-tomcat">2.3.2. <span style="color: #4f81bd">إدارة Tomcat</span></h3>
+<p>يوفر الخادم، على صفحة تسجيل الدخول الخاصة به http://localhost:8080، روابط للإدارة:</p>
+<p><img src="images/100000000000015000000128F26EF089.png" width="235" height="207" style="width:6.219cm;height:5.479cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015000000128F26EF089.png" /></p>
+<p>يتيح لنا رابط [إدارة Tomcat] تكوين الموارد التي يوفرها Tomcat لتطبيقات الويب المنشورة بداخله، مثل تجمع اتصالات قاعدة البيانات. دعونا نتبع الرابط:</p>
+<p><img src="images/10000000000003010000005EDD6675E9.png" width="538" height="66" style="width:14.24cm;height:1.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003010000005EDD6675E9.png" /></p>
+<p>تشير الصفحة التي تظهر إلى أن إدارة Tomcat 5.x تتطلب حزمة محددة تسمى &quot;admin&quot;. لنعد إلى موقع Tomcat على الويب:</p>
+<p><img src="images/1000000000000218000000A6D8B6858C.png" width="375" height="116" style="width:9.931cm;height:3.076cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000218000000A6D8B6858C.png" /></p>
+<p>دعونا ننزل الملف المضغوط المسمى [إدارة تطبيقات الويب] ثم نقوم بفك ضغطه. محتوياته هي كما يلي:</p>
+<p><img src="images/10000000000000CE0000008984E6427E.png" width="144" height="96" style="width:3.821cm;height:2.542cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CE0000008984E6427E.png" /></p>
+<p>يجب نسخ المجلد [admin] إلى [&lt;tomcat&gt;\server\webapps]، حيث &lt;tomcat&gt; هو المجلد الذي تم تثبيت Tomcat 5.x فيه:</p>
+<p><img src="images/10000000000000C700000113FC8A4A63.png" width="139" height="192" style="width:3.679cm;height:5.084cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C700000113FC8A4A63.png" /></p>
+<p>يحتوي المجلد [localhost] على ملف [admin.xml] الذي يجب نسخه إلى [&lt;tomcat&gt;\conf\Catalina\localhost]:</p>
+<p><img src="images/10000000000000AC000000678C531EE4.png" width="121" height="72" style="width:3.191cm;height:1.91cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000AC000000678C531EE4.png" /></p>
+<p>أوقف Tomcat ثم أعد تشغيله إذا كان قيد التشغيل. بعد ذلك، باستخدام متصفح، اطلب صفحة تسجيل الدخول إلى خادم الويب مرة أخرى:</p>
+<p><img src="images/100000000000014B000001244443D770.png" width="232" height="204" style="width:6.13cm;height:5.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014B000001244443D770.png" /></p>
+<p>اتبع رابط [Tomcat Administration]. ستظهر لك صفحة تسجيل الدخول:</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>ملاحظة</strong>: في الواقع، للحصول على الصفحة أدناه، كان عليّ أولاً إدخال عنوان URL [http://localhost:8080/admin/index.jsp] يدويًا. عندها فقط عمل الرابط [Tomcat Administration] أعلاه. لست متأكدًا مما إذا كان هذا خطأ إجرائيًا من جانبي.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FB000000A0157EB243.png" width="176" height="112" style="display:inline-block; margin:4px;width:4.65cm;height:2.963cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000000A0157EB243.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E4000000A9EB2253F3.png" width="159" height="118" style="display:inline-block; margin:4px;width:4.219cm;height:3.127cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E4000000A9EB2253F3.png" /></td></tr></table>
+
+<p>هنا، يجب عليك إعادة إدخال المعلومات التي قدمتها أثناء تثبيت Tomcat. في حالتنا، ندخل اسم المستخدم وكلمة المرور على النحو التالي: <em>admin / admin</em>. ينقلنا زر [Login] إلى الصفحة التالية:</p>
+<p><img src="images/10000000000000FC0000016F9FD0D308.png" width="177" height="257" style="width:4.671cm;height:6.803cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FC0000016F9FD0D308.png" /></p>
+<p>تسمح هذه الصفحة لمسؤول Tomcat بتحديد</p>
+<ul>
+  <li>مصادر البيانات،
+  </li>
+  <li>والمعلومات اللازمة لإرسال البريد الإلكتروني (Mail Sessions)،
+  </li>
+  <li>بيانات البيئة التي يمكن لجميع التطبيقات الوصول إليها (Environment Entries)،
+  </li>
+  <li>إدارة مستخدمي ومسؤولي Tomcat (المستخدمون)،
+  </li>
+  <li>إدارة مجموعات المستخدمين (المجموعات)،
+  </li>
+  <li>تحديد الأدوار (أي ما يمكن للمستخدم فعله وما لا يمكنه فعله)،
+  </li>
+  <li>تحديد خصائص تطبيقات الويب التي ينشرها الخادم (خدمة كاتالينا)
+  </li>
+</ul>
+
+<p>دعونا نتبع الرابط [الأدوار] أعلاه:</p>
+<p><img src="images/10000000000002A5000000F068F62971.png" width="474" height="168" style="width:12.539cm;height:4.445cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A5000000F068F62971.png" /></p>
+<p>تسمح لك الدور بتحديد ما يمكن للمستخدم أو مجموعة المستخدمين فعله وما لا يمكنهم فعله. ترتبط حقوق معينة بالدور. يرتبط كل مستخدم بدور واحد أو أكثر ويتمتع بالحقوق المرتبطة به. يمنح دور [manager] أدناه الحق في إدارة تطبيقات الويب التي يتم نشرها في Tomcat (النشر، التشغيل، الإيقاف، إلغاء التحميل). سننشئ مستخدم [manager] ونربطه بدور [manager] للسماح له بإدارة تطبيقات Tomcat. للقيام بذلك، نتبع رابط [Users] في صفحة الإدارة:</p>
+<p><img src="images/10000000000002A1000000FB4D9CAD58.png" width="471" height="176" style="width:12.46cm;height:4.648cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A1000000FB4D9CAD58.png" /></p>
+<p>نرى أن هناك عددًا من المستخدمين موجودين بالفعل. نستخدم خيار [إنشاء مستخدم جديد] لإنشاء مستخدم جديد:</p>
+<p><img src="images/100000000000029200000188DE6BB90D.png" width="460" height="274" style="width:12.18cm;height:7.257cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029200000188DE6BB90D.png" /></p>
+<p>نمنح المستخدم <strong>manager</strong> كلمة المرور <strong>manager</strong> ونخصص له دور <strong>manager</strong>. نستخدم زر [Save] لتأكيد هذه الإضافة. يظهر المستخدم الجديد في قائمة المستخدمين:</p>
+<p><img src="images/10000000000000EB000000FF634A5105.png" width="164" height="178" style="width:4.35cm;height:4.72cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000FF634A5105.png" /></p>
+<p>سيتم إضافة هذا المستخدم الجديد إلى الملف [&lt;tomcat&gt;\conf\tomcat-users.xml]:</p>
+<p><img src="images/10000000000000D8000000CCD62F072D.png" width="151" height="143" style="width:4.001cm;height:3.778cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D8000000CCD62F072D.png" /></p>
+<p>الذي يكون محتواه كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nt">&lt;tomcat-users&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;tomcat&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;role1&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;manager&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;tomcat&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;role1&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;role1&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;both&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;tomcat,role1&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;manager&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;manager&quot;</span><span class="w"> </span><span class="na">fullName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;manager&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;admin&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;admin&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;admin,manager&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="nt">&lt;/tomcat-users&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>السطر 10: المستخدم [manager] الذي تم إنشاؤه
+  </li>
+</ul>
+
+<p>هناك طريقة أخرى لإضافة مستخدمين وهي تعديل هذا الملف مباشرة. هذا هو الإجراء الذي يجب اتباعه إذا نسيت، على سبيل المثال، كلمة مرور حساب <strong>admin</strong> أو <strong>manager</strong>.</p>
+<p><a id="tomcat-manager"></a></p>
+<h3 id="233">2.3.3. <span style="color: #4f81bd">إدارة تطبيقات الويب التي تم نشرها</span></h3>
+<p>الآن دعونا نعود إلى صفحة تسجيل الدخول [http://localhost:8080] ونتبع رابط [Tomcat Manager]:</p>
+<p><img src="images/10000000000001530000012EC9798919.png" width="237" height="211" style="width:6.279cm;height:5.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001530000012EC9798919.png" /></p>
+<p>سيؤدي ذلك إلى ظهور صفحة المصادقة. نقوم بتسجيل الدخول باسم <em>manager / manager</em>، أي المستخدم الذي يحمل دور [manager] الذي أنشأناه للتو. في الواقع، لا يمكن استخدام هذا الرابط إلا للمستخدم الذي يحمل هذا الدور. في السطر 11 من ملف [tomcat-users.xml]، نرى أن المستخدم [admin] يحمل أيضًا دور [manager]. لذلك يمكننا أيضًا استخدام بيانات اعتماد [admin / admin].</p>
+<p><img src="images/10000000000001F8000000D67A462871.png" width="353" height="150" style="width:9.329cm;height:3.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F8000000D67A462871.png" /></p>
+<p>يتم توجيهنا إلى صفحة تسرد التطبيقات التي تم نشرها حاليًا في Tomcat:</p>
+<p><img src="images/100000000000039F0000016C59E0553F.png" width="649" height="255" style="width:17.17cm;height:6.742cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039F0000016C59E0553F.png" /></p>
+<p>يمكننا إضافة تطبيق جديد باستخدام النماذج الموجودة في أسفل الصفحة:</p>
+<p><img src="images/100000000000028200000139B2C04842.png" width="449" height="219" style="width:11.89cm;height:5.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000028200000139B2C04842.png" /></p>
+<p>هنا، نريد نشر التطبيق <strong>النموذجي</strong> الذي أنشأناه سابقًا داخل Tomcat. نقوم بذلك على النحو التالي:</p>
+<p><img src="images/100000000000026D000000AABF6A1FE1.png" width="435" height="119" style="width:11.501cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026D000000AABF6A1FE1.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>مسار السياق
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">/example</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">الاسم المستخدم لتعريف تطبيق الويب المراد نشره</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>عنوان URL للدليل
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">C:\data\2005-2006\eclipse\dvp-eclipse-tomcat\example</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">مجلد تطبيق الويب</div></td></tr></table>
+
+<p>لاسترداد الملف [C:\data\2005-2006\eclipse\dvp-eclipse-tomcat\example\views\example.html]، سنطلب عنوان URL [http://localhost:8080/exemple/vues/exemple.html] من Tomcat. وبالتالي، يُستخدم <strong>السياق</strong> لتسمية جذر شجرة دليل تطبيق الويب الذي تم نشره. نستخدم زر [Deploy] لنشر التطبيق. إذا سارت الأمور على ما يرام، فسنحصل على صفحة الاستجابة التالية:</p>
+<p><img src="images/10000000000002D500000062596537D1.png" width="507" height="69" style="width:13.42cm;height:1.813cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D500000062596537D1.png" /></p>
+<p>ويظهر التطبيق الجديد في قائمة التطبيقات التي تم نشرها:</p>
+<p><img src="images/10000000000003780000013C88A06F9A.png" width="533" height="190" style="width:14.101cm;height:5.018cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003780000013C88A06F9A.png" /></p>
+<p>دعونا نعلق سطر السياق <strong>/example</strong> أعلاه:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/example
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">رابط إلى http://localhost:8080/exemple</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ابدأ
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتيح لك بدء تشغيل التطبيق</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>إيقاف
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتيح لك إيقاف التطبيق</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>إعادة التحميل
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يتيح لك إعادة تحميل التطبيق. وهذا ضروري، على سبيل المثال، عندما تقوم بإضافة أو تعديل أو حذف فئات معينة في التطبيق.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>إلغاء النشر
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">يزيل سياق [/example]. يختفي التطبيق من قائمة التطبيقات المتاحة.</div></td></tr></table>
+
+<p>الآن بعد أن تم نشر تطبيق <strong>/example</strong> الخاص بنا، يمكننا إجراء بعض الاختبارات. نطلب الصفحة [example.html] عبر عنوان URL [http://localhost:8080/exemple/vues/exemple.html]:</p>
+<p><img src="images/10000000000001DC000000642B4CDE8F.png" width="333" height="70" style="width:8.819cm;height:1.854cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DC000000642B4CDE8F.png" /></p>
+<p>هناك طريقة أخرى لنشر تطبيق ويب على خادم Tomcat وهي توفير المعلومات التي أدخلناها عبر واجهة الويب في ملف [context].xml الموجود في المجلد [&lt;tomcat&gt;\conf\Catalina\localhost]، حيث [context] هو اسم تطبيق الويب.</p>
+<p>لنعد إلى واجهة إدارة Tomcat:</p>
+<p><img src="images/100000000000037A000000B164E93909.png" width="623" height="124" style="width:16.48cm;height:3.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000037A000000B164E93909.png" /></p>
+<p>دعونا نزيل تطبيق [/example] باستخدام رابط [Undeploy] الخاص به:</p>
+<p><img src="images/10000000000001C30000011A8AD7436E.png" width="316" height="197" style="width:8.35cm;height:5.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C30000011A8AD7436E.png" /></p>
+<p>لم يعد تطبيق [/example] جزءًا من قائمة التطبيقات النشطة. والآن دعونا نحدد ملف [example.xml] التالي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>&lt;Context docBase=&quot;C:/data/2005-2006/eclipse/dvp-eclipse-tomcat/exemple&quot;&gt;
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>&lt;/Context&gt;
+</code></pre></div></td></tr></table></div>
+<p>يتكون ملف XML من علامة &lt;<strong>Context</strong>&gt; واحدة تحدد سمة <strong>docBase</strong> المجلد الذي يحتوي على تطبيق الويب المراد نشره. لنضع هذا الملف في &lt;tomcat&gt;\conf\Catalina\localhost:</p>
+<p><img src="images/10000000000000AE000000794B6207F4.png" width="122" height="85" style="width:3.221cm;height:2.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000AE000000794B6207F4.png" /></p>
+<p>أوقف Tomcat وأعد تشغيله إذا لزم الأمر، ثم اعرض قائمة التطبيقات النشطة باستخدام أداة إدارة Tomcat:</p>
+<p><img src="images/10000000000001C800000132175BFB5E.png" width="319" height="214" style="width:8.451cm;height:5.671cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C800000132175BFB5E.png" /></p>
+<p>التطبيق [/example] موجود بالفعل. دعونا نطلب عنوان URL في المتصفح:</p>
+<p>[http://localhost:8080/exemple/vues/exemple.html]:</p>
+<p>يمكن إزالة تطبيق الويب الذي تم نشره بهذه الطريقة من قائمة التطبيقات المنشورة، بنفس الطريقة السابقة، باستخدام رابط [Undeploy]:</p>
+<p><img src="images/10000000000001D40000006870F2C34A.png" width="328" height="73" style="width:8.67cm;height:1.926cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D40000006870F2C34A.png" /></p>
+<p><img src="images/100000000000037A000000B164E93909.png" width="623" height="124" style="width:16.48cm;height:3.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000037A000000B164E93909.png" /></p>
+<p>في هذه الحالة، يتم إزالة ملف [example.xml] تلقائيًا من المجلد [&lt;tomcat&gt;\conf\Catalina\localhost].</p>
+<p>أخيرًا، لنشر تطبيق ويب داخل Tomcat، يمكنك أيضًا تعريف سياقه في ملف [&lt;tomcat&gt;\conf\server.xml]. لن نتناول هذه النقطة هنا.</p>
+<p><a id="page-accueil"></a></p>
+<h3 id="234">2.3.4. <span style="color: #4f81bd">تطبيق ويب مع صفحة رئيسية</span></h3>
+<p>عندما نطلب عنوان URL [http://localhost:8080/exemple/]، نحصل على الاستجابة التالية:</p>
+<p><img src="images/1000000000000191000000F3E3DA4EFD.png" width="281" height="170" style="width:7.43cm;height:4.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000191000000F3E3DA4EFD.png" /></p>
+<p>يعتمد هذا السلوك على تكوين Tomcat. في الإصدارات السابقة، كنا سنرى محتويات الدليل الفعلي للتطبيق [/example]. ومن الجيد أن Tomcat يمنع ذلك الآن بشكل افتراضي.</p>
+<p>يمكننا تكوينه بحيث يتم عرض ما يُسمى بالصفحة الرئيسية عند طلب السياق. للقيام بذلك، نقوم بإنشاء ملف [web.xml] ووضعه في المجلد &lt;example&gt;\WEB-INF، حيث &lt;example&gt; هو المجلد الفعلي لتطبيق الويب [/example]. هذا الملف كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="nt">&lt;web-app</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">    </span><span class="na">version=</span><span class="s">&quot;2.4&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">  </span><span class="nt">&lt;display-name&gt;</span>Application<span class="w"> </span>Exemple<span class="nt">&lt;/display-name&gt;</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">  </span><span class="nt">&lt;description&gt;</span>Application<span class="w"> </span>web<span class="w"> </span>minimale<span class="nt">&lt;/description&gt;</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="nt">&lt;welcome-file-list&gt;</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">        </span><span class="nt">&lt;welcome-file&gt;</span>/vues/exemple.html<span class="nt">&lt;/welcome-file&gt;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">    </span><span class="nt">&lt;/welcome-file-list&gt;</span><span class="w">    </span>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>الأسطر 2–5: العلامة الجذرية &lt;web-app&gt; مع السمات المنسوخة والملصقة من ملف [web.xml] لتطبيق Tomcat [/admin] (&lt;tomcat&gt;/server/webapps/admin/WEB-INF/web.xml).
+  </li>
+  <li>السطر 7: الاسم المعروض لتطبيق الويب. هذا اسم يتم اختياره بحرية مع قيود أقل من اسم سياق التطبيق. على سبيل المثال، يمكن أن يحتوي على مسافات، وهو ما لا يمكن في اسم السياق. يتم عرض هذا الاسم، على سبيل المثال، بواسطة مسؤول Tomcat:
+  </li>
+</ul>
+
+<p><img src="images/10000000000002B40000011E5A2894F7.png" width="346" height="143" style="width:9.155cm;height:3.784cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B40000011E5A2894F7.png" /></p>
+<ul>
+  <li>السطر 8: وصف تطبيق الويب. يمكن بعد ذلك استرداد هذا النص برمجياً.
+  </li>
+  <li>الأسطر 9-11: قائمة ملفات الترحيب. تُستخدم علامة &lt;welcome-file-list&gt; لتعريف قائمة طرق العرض التي سيتم تقديمها عندما يطلب العميل سياق التطبيق. يمكن أن تكون هناك طرق عرض متعددة. يتم عرض أول عرض يتم العثور عليه للعميل. هنا لدينا عرض واحد فقط: [/views/example.html]. وبالتالي، عندما يطلب العميل عنوان URL [/example]، سيكون عنوان URL [/example/views/example.html] هو الذي يتم تقديمه له فعليًا.
+  </li>
+</ul>
+
+<p>دعونا نحفظ ملف [web.xml] هذا في &lt;example&gt;\WEB-INF:</p>
+<p><img src="images/10000000000000840000006B02778D21.png" width="105" height="85" style="width:2.79cm;height:2.261cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000840000006B02778D21.png" /></p>
+<p>إذا كان Tomcat لا يزال قيد التشغيل، يمكنك إجباره على إعادة تحميل تطبيق الويب [/example] باستخدام رابط [Reload]:</p>
+<p><img src="images/100000000000037800000050429BCF05.png" width="622" height="56" style="width:16.45cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000037800000050429BCF05.png" /></p>
+<p>أثناء عملية &quot;إعادة التحميل&quot; هذه، يقوم Tomcat بإعادة قراءة ملف [web.xml] الموجود في [&lt;example&gt;\WEB-INF] إذا كان موجودًا. وهذا هو الحال هنا. إذا تم إيقاف Tomcat، فقم بإعادة تشغيله.</p>
+<p>باستخدام متصفح، اطلب عنوان URL [http://localhost:8080/exemple/]:</p>
+<p><img src="images/100000000000017F0000006436197B67.png" width="268" height="70" style="width:7.091cm;height:1.85cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F0000006436197B67.png" /></p>
+<p>لقد نجحت آلية ملف المضيف.</p>
+<h2 id="24-eclipse">2.4. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">تثبيت Eclipse</span></strong></span></h2>
+<p>Eclipse هي بيئة تطوير متعددة اللغات. وهي مستخدمة على نطاق واسع في تطوير Java. وهي أداة قابلة للتوسيع من خلال إضافة أدوات تسمى المكونات الإضافية. هناك عدد كبير من المكونات الإضافية، وهذا ما يجعل Eclipse قوية للغاية.</p>
+<p>Eclipse متاح على الرابط [http://www.eclipse.org/downloads/]:</p>
+<p><img src="images/10000000000002C0000000E0CF431884.png" width="493" height="157" style="width:13.04cm;height:4.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C0000000E0CF431884.png" /></p>
+<p>نريد استخدام Eclipse لتطوير الويب باستخدام Java. هناك عدد من المكونات الإضافية المتاحة لهذا الغرض. تساعد هذه المكونات في التحقق من صحة بناء جملة صفحات JSP وملفات XML وغيرها، وتسمح لك باختبار تطبيق ويب داخل Eclipse. سنستخدم أحد هذه المكونات الإضافية، <strong>والذي</strong> يُسمى <strong>Web Tools Package (WTP)</strong>. الإجراء القياسي لتثبيت Eclipse هو كما يلي:</p>
+<ol>
+  <li>تثبيت Eclipse
+  </li>
+  <li>تثبيت المكونات الإضافية التي تحتاجها
+  </li>
+</ol>
+
+<p>يتطلب المكون الإضافي WTP نفسه مكونات إضافية أخرى، مما يجعل تثبيته معقدًا إلى حد ما. لذلك، يقدم موقع Eclipse على الويب حزمة تتضمن منصة تطوير Eclipse والمكون الإضافي WTP إلى جانب جميع المكونات الإضافية الأخرى التي يتطلبها. هذه الحزمة متاحة على موقع Eclipse (مايو 2006) على الرابط [http://download.eclipse.org/webtools/downloads/]:</p>
+<p><img src="images/1000000000000222000000CEEEA1B6D1.png" width="382" height="144" style="width:10.111cm;height:3.815cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000222000000CEEEA1B6D1.png" /></p>
+<p>اتبع الرابط [1.0.2] أعلاه:</p>
+<p>نقوم بتنزيل حزمة [wtp] باستخدام الرابط أعلاه. يحتوي ملف zip الناتج على ما يلي:</p>
+<p><img src="images/1000000000000325000000B3217D7C34.png" width="564" height="125" style="width:14.91cm;height:3.314cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000325000000B3217D7C34.png" /></p>
+<p><img src="images/100000000000014D00000089692CD041.png" width="233" height="96" style="width:6.17cm;height:2.538cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D00000089692CD041.png" /></p>
+<p>ما عليك سوى استخراج هذا المحتوى إلى مجلد. سنشير إلى هذا المجلد باسم &lt;eclipse&gt; من الآن فصاعدًا. ومحتوياته هي كما يلي:</p>
+<p><img src="images/10000000000000D100000135B80A0BE7.png" width="105" height="155" style="width:2.766cm;height:4.089cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D100000135B80A0BE7.png" /></p>
+<p>[eclipse.exe] هو الملف القابل للتنفيذ و[eclipse.ini] هو ملف التكوين الخاص به. لنلقِ نظرة على محتويات الملف الأخير:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>-vmargs
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>-Xms40m
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>-Xmx256m
+</code></pre></div></td></tr></table></div>
+<p>تُستخدم هذه المعلمات عند تشغيل Eclipse على النحو التالي:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>eclipse.exe -vmargs -Xms40m -Xmx256m
+</code></pre></div>
+<p>يمكنك تحقيق نفس النتيجة التي تحققها باستخدام ملف .ini عن طريق إنشاء اختصار يقوم بتشغيل Eclipse باستخدام هذه الحجج نفسها. دعونا نوضحها:</p>
+<ul>
+  <li><b>-vmargs</b>: يشير إلى أن المعلمات التالية مخصصة لآلة Java الافتراضية التي ستشغل Eclipse. في الواقع، Eclipse هو تطبيق Java.
+  </li>
+  <li><b>-Xms40m</b>: ؟
+  </li>
+  <li><b>-Xmx256m</b>: يحدد حجم الذاكرة بالميغابايت المخصصة لآلة Java الافتراضية (JVM) التي تشغل Eclipse. بشكل افتراضي، يبلغ هذا الحجم 256 ميغابايت، كما هو موضح هنا. إذا سمح النظام بذلك، يُفضل استخدام 512 ميغابايت.
+  </li>
+</ul>
+
+<p>يتم تمرير هذه الوسيطات إلى JVM التي ستقوم بتشغيل Eclipse. يتم تمثيل JVM بملف [java.exe] أو [javaw.exe]. أين يوجد هذا الملف؟ في الواقع، يوجد في عدة أماكن:</p>
+<ol>
+  <li>في مسار نظام التشغيل
+  </li>
+  <li>في المجلد &lt;JAVA_HOME&gt;/jre/bin، حيث JAVA_HOME هو متغير نظام يحدد المجلد الجذر لـ JDK.
+  </li>
+  <li>في موقع يتم تمريره كحجة إلى Eclipse بالشكل -vm &lt;path&gt;\javaw.exe
+  </li>
+</ol>
+
+<p>يُفضل هذا الحل الأخير لأن الحلين الآخرين عرضة لتقلبات عمليات تثبيت التطبيقات اللاحقة، والتي قد تغير مسار نظام التشغيل أو متغير JAVA_HOME.</p>
+<p>لذلك نقوم بإنشاء الاختصار التالي:</p>
+<p><img src="images/100000000000015D000000F3E7CBEB9D.png" width="244" height="170" style="width:6.459cm;height:4.496cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000F3E7CBEB9D.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>الهدف
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">&lt;eclipse&gt;\eclipse.exe -vm &quot;C:\Program Files\Java\jre1.5.0_06\bin\javaw.exe&quot; -vmargs -Xms40m -Xmx512m</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>ابدأ في
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">دليل تثبيت Eclipse</div></td></tr></table>
+
+<p>بمجرد الانتهاء من ذلك، قم بتشغيل Eclipse باستخدام هذا الاختصار. ستظهر لك نافذة حوار أولية:</p>
+<p><img src="images/10000000000001B1000000EE017F9FA4.png" width="303" height="167" style="width:8.02cm;height:4.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B1000000EE017F9FA4.png" /></p>
+<p>[مساحة العمل] هي مساحة عمل. دعونا نقبل القيم الافتراضية المقدمة. بشكل افتراضي، سيتم إنشاء مشاريع Eclipse في مجلد &lt;workspace&gt; المحدد في مربع الحوار هذا. هناك طريقة لتجاوز هذا السلوك. وهذا ما سنفعله بشكل منهجي. لذلك، فإن الرد المقدم في مربع الحوار هذا ليس مهمًا.</p>
+<p>بمجرد اكتمال هذه الخطوة، يتم عرض بيئة تطوير Eclipse:</p>
+<p><img src="images/100000000000014100000091A46A2596.png" width="225" height="101" style="width:5.941cm;height:2.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014100000091A46A2596.png" /></p>
+<p>نغلق عرض [Welcome] كما هو مقترح أعلاه:</p>
+<p><img src="images/10000000000001BB000000A0D3E0E64C.png" width="310" height="112" style="width:8.2cm;height:2.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB000000A0D3E0E64C.png" /></p>
+<p>قبل إنشاء مشروع Java، سنقوم بتكوين Eclipse لتحديد JDK الذي سيتم استخدامه لتجميع مشاريع Java. للقيام بذلك، نختار الخيار [Window / Preferences / Java / Installed JREs]:</p>
+<p><img src="images/100000000000023F00000131E878E6BA.png" width="403" height="214" style="width:10.65cm;height:5.65cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023F00000131E878E6BA.png" /></p>
+<p>عادةً، يجب أن يكون JRE (Java Runtime Environment) المستخدم لتشغيل Eclipse نفسه موجودًا في قائمة JREs. وعادةً ما يكون هذا هو الوحيد. يمكنك إضافة JREs باستخدام زر [Add]. يجب عليك بعد ذلك تحديد الدليل الجذر لـ JRE. سيقوم زر [Search] بإطلاق عملية بحث عن JREs على القرص. هذه طريقة جيدة لتتبع JREs التي تقوم بتثبيتها ثم تنسى إلغاء تثبيتها عند الترقية إلى إصدار أحدث. أعلاه، JRE المحدد هو الذي سيتم استخدامه لتجميع وتشغيل مشاريع Java.</p>
+<p>JRE المستخدم في أمثلةنا هو الذي تم تثبيته في القسم<a href="#jdk15"><u><span style="color: #0563c1"> 2.1</span></u></a>، والذي تم استخدامه أيضًا لتشغيل Eclipse. يؤدي النقر المزدوج عليه إلى فتح خصائصه:</p>
+<p><img src="images/10000000000001F400000094CFF7D00F.png" width="350" height="104" style="width:9.26cm;height:2.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F400000094CFF7D00F.png" /></p>
+<p>الآن، دعونا ننشئ مشروع Java [ملف / جديد / مشروع]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001FA0000005A44BC86CD.png" width="354" height="63" style="display:inline-block; margin:4px;width:9.37cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FA0000005A44BC86CD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F200000145272DC3F6.png" width="169" height="227" style="display:inline-block; margin:4px;width:4.48cm;height:6.017cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F200000145272DC3F6.png" /></td></tr></table>
+
+<p>اختر [مشروع Java]، ثم [التالي] -&gt;</p>
+<p><img src="images/10000000000002CA00000172C0429BFF.png" width="357" height="185" style="width:9.446cm;height:4.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CA00000172C0429BFF.png" /></p>
+<p>في [2]، نحدد مجلدًا فارغًا سيتم تثبيت مشروع Java فيه. في [1]، نسمي المشروع. لا يجب أن يكون الاسم مطابقًا لاسم المجلد، كما قد يوحي المثال أعلاه. بمجرد الانتهاء من ذلك، نستخدم زر [Finish] لإكمال معالج الإنشاء. وهذا يعني قبول القيم الافتراضية المقترحة في الصفحات التالية من المعالج.</p>
+<p>لدينا الآن هيكل مشروع Java:</p>
+<p><img src="images/10000000000000FF000000B838BB0DCE.png" width="178" height="129" style="width:4.72cm;height:3.406cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FF000000B838BB0DCE.png" /></p>
+<p>انقر بزر الماوس الأيمن على مشروع [test1] لإنشاء فئة Java:</p>
+<p><img src="images/10000000000001EC00000098F9362CED.png" width="344" height="106" style="width:9.11cm;height:2.813cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EC00000098F9362CED.png" /></p>
+<p><img src="images/10000000000002EC00000256F45BCA6B.png" width="374" height="299" style="width:9.895cm;height:7.911cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002EC00000256F45BCA6B.png" /></p>
+<ul>
+  <li>في [1]، المجلد الذي سيتم إنشاء الفئة فيه. بشكل افتراضي، يقترح Eclipse مجلد المشروع الحالي.
+  </li>
+  <li>في [2]، الحزمة التي سيتم وضع الفئة فيها
+  </li>
+  <li>في [3]، اسم الفئة
+  </li>
+  <li>في [4]، نطلب إنشاء الطريقة الثابتة [main]
+  </li>
+</ul>
+
+<p>نؤكد المعالج بالنقر فوق [Finish]. ثم يتم تعزيز المشروع بفئة:</p>
+<p><img src="images/10000000000000FA0000007FE202980F.png" width="175" height="89" style="width:4.63cm;height:2.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FA0000007FE202980F.png" /></p>
+<p>قام Eclipse بإنشاء الهيكل الأساسي للفئة. يمكن الوصول إليه بالنقر المزدوج على [Test1.java] أعلاه:</p>
+<p><img src="images/1000000000000183000000FB18D1EB70.png" width="271" height="176" style="width:7.17cm;height:4.65cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000183000000FB18D1EB70.png" /></p>
+<p>نقوم بتعديل الكود أعلاه على النحو التالي:</p>
+<p><img src="images/1000000000000182000000A72DD0FDB4.png" width="309" height="134" style="width:8.17cm;height:3.535cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000182000000A72DD0FDB4.png" /></p>
+<p>نقوم بتشغيل برنامج [Test1.java]: [انقر بزر الماوس الأيمن على Test1.java -&gt; تشغيل كـ -&gt; تطبيق Java] </p>
+<p><img src="images/1000000000000236000001DC862D21E9.png" width="396" height="333" style="width:10.479cm;height:8.812cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000236000001DC862D21E9.png" /></p>
+<p>يتم عرض نتيجة التنفيذ في نافذة [Console]:</p>
+<p><img src="images/10000000000002320000005BDE353695.png" width="393" height="64" style="width:10.41cm;height:1.686cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002320000005BDE353695.png" /></p>
+<p><a id="tomcat-eclipse"></a></p>
+<h2 id="25-tomcat-eclipse">2.5. <span style="color: #4f81bd">تكامل Tomcat - Eclipse</span></h2>
+<p>للعمل مع Tomcat مع البقاء داخل Eclipse، نحتاج إلى تعريف هذا الخادم في إعدادات Eclipse. للقيام بذلك، نختار الخيار [ملف / جديد / آخر]. ثم نرى المعالج التالي:</p>
+<p><img src="images/10000000000000C7000000F4CA73BB15.png" width="139" height="170" style="width:3.679cm;height:4.51cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C7000000F4CA73BB15.png" /></p>
+<p>نختار إنشاء خادم جديد. نختار أيقونة [Server] أعلاه ثم نضغط على [Next]:</p>
+<p>يؤدي إضافة الخادم إلى ظهور مجلد في مستكشف مشاريع Eclipse:</p>
+<p>لإدارة Tomcat من Eclipse، نعرض طريقة العرض المسماة [Servers] باستخدام الخيار [Window -&gt; Show View -&gt; Other -&gt; Server]:</p>
+<p><img src="images/10000000000000FB0000009DD4B4489A.png" width="176" height="110" style="width:4.65cm;height:2.909cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FB0000009DD4B4489A.png" /></p>
+<p><img src="images/10000000000001230000011168B562B8.png" width="204" height="191" style="width:5.39cm;height:5.057cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001230000011168B562B8.png" /></p>
+<p>انقر فوق [OK]. ثم تظهر طريقة العرض [Servers]:</p>
+<p><img src="images/10000000000002310000005B1BD0BD52.png" width="393" height="64" style="width:10.389cm;height:1.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002310000005B1BD0BD52.png" /></p>
+<p>تظهر جميع الخوادم المسجلة في هذه النافذة، وفي هذه الحالة خادم Tomcat 5.5 الذي سجلناه للتو. النقر بزر الماوس الأيمن عليه يتيح الوصول إلى الأوامر لبدء تشغيل الخادم وإيقافه وإعادة تشغيله:</p>
+<p><img src="images/10000000000001D4000000FF666264AC.png" width="328" height="179" style="width:8.67cm;height:4.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D4000000FF666264AC.png" /></p>
+<p>في الأعلى، نقوم بتشغيل الخادم. عند بدء تشغيله، يتم كتابة عدد من السجلات في عرض [Console]:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>11 mai 2006 15:31:16 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>INFO: The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jre1.5.0_06\bin;.;C:\WINDOWS\system32;...
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>11 mai 2006 15:31:16 org.apache.coyote.http11.Http11BaseProtocol init
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a>INFO: Initialisation de Coyote HTTP/1.1 sur http-8080
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a>...
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a>INFO: Server startup in 1641 ms
+</code></pre></div></td></tr></table></div>
+<p>يستغرق فهم هذه السجلات بعض الوقت للتعود عليها. لن نتطرق إليها بالتفصيل في الوقت الحالي. ومع ذلك، من المهم التحقق من أنها لا تشير إلى أي أخطاء في تحميل السياق. في الواقع، عند التشغيل، يحاول خادم Tomcat/Eclipse تحميل سياق التطبيقات التي يديرها. يتضمن تحميل سياق التطبيق معالجة ملف [web.xml] الخاص به وتحميل فئة واحدة أو أكثر تقوم بتهيئته. يمكن أن تحدث عدة أنواع من الأخطاء:</p>
+<ul>
+  <li>يحتوي ملف [web.xml] على خطأ في بناء الجملة. هذا هو الخطأ الأكثر شيوعًا. يوصى باستخدام أداة قادرة على التحقق من صحة مستند XML أثناء إنشائه.
+  </li>
+  <li>لم يتم العثور على بعض الفئات المطلوب تحميلها. يتم البحث عنها في [WEB-INF/classes] و [WEB-INF/lib]. يجب عليك عمومًا التحقق من وجود الفئات الضرورية وتدقيق تهجئة تلك المعلنة في ملف [web.xml].
+  </li>
+</ul>
+
+<p>لا يحتوي الخادم الذي تم تشغيله من Eclipse على نفس التكوين المثبت في القسم<a href="#installtomcat55"><u><span style="color: #0563c1"> 2.2</span></u></a>، الصفحة<a href="#installtomcat55"><u><span style="color: #0563c1"> 5</span></u></a>. للتحقق من ذلك، قم بالوصول إلى عنوان URL [http://localhost:8080] باستخدام متصفح:</p>
+<p><img src="images/100000000000015D000000FEB7A5B628.png" width="244" height="178" style="width:6.459cm;height:4.701cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000FEB7A5B628.png" /></p>
+<p>لا تشير هذه الاستجابة إلى أن الخادم لا يعمل، بل إلى أن المورد / المطلوب منه غير متاح. مع دمج خادم Tomcat في Eclipse، ستكون هذه الموارد عبارة عن مشاريع ويب. سنرى ذلك لاحقًا. في الوقت الحالي، دعونا نوقف Tomcat:</p>
+<p><img src="images/10000000000002140000011F3F3C3A8F.png" width="372" height="201" style="width:9.85cm;height:5.315cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002140000011F3F3C3A8F.png" /></p>
+<p><a id="eclipse-tomcat-conftomcat"></a>يمكن تغيير وضع التشغيل السابق. دعونا نعود إلى عرض [Servers] ونضغط مرتين على خادم Tomcat للوصول إلى خصائصه:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012B0000005421B2C8B7.png" width="209" height="59" style="display:inline-block; margin:4px;width:5.54cm;height:1.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000012B0000005421B2C8B7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028C000001F20C548765.png" width="326" height="249" style="display:inline-block; margin:4px;width:8.625cm;height:6.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000028C000001F20C548765.png" /></td></tr></table>
+
+<p>مربع الاختيار [1] مسؤول عن السلوك الموصوف أعلاه. عند تحديده، لا يتم الإعلان عن تطبيقات الويب المطورة في Eclipse في ملفات التكوين الخاصة بخادم Tomcat المرتبط، بل في ملفات تكوين منفصلة. ونتيجة لذلك، لا تتوفر التطبيقات الافتراضية داخل خادم Tomcat — [admin] و [manager]، وهما تطبيقان مفيدان —. لذا، دعونا نلغي تحديد [1] ونعيد تشغيل Tomcat:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B40000007B9C70A7A5.png" width="305" height="86" style="display:inline-block; margin:4px;width:8.08cm;height:2.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B40000007B9C70A7A5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DE00000057E3109BE9.png" width="334" height="61" style="display:inline-block; margin:4px;width:8.849cm;height:1.61cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DE00000057E3109BE9.png" /></td></tr></table>
+
+<p>بمجرد الانتهاء من ذلك، دعونا نطلب عنوان URL [http://localhost:8080] باستخدام متصفح:</p>
+<p><img src="images/100000000000016F000001686E4F1413.png" width="257" height="252" style="width:6.8cm;height:6.669cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016F000001686E4F1413.png" /></p>
+<p>نلاحظ السلوك الموصوف في القسم<a href="#tomcat-manager"><u><span style="color: #0563c1"> 2.3.3</span></u></a>، الصفحة<a href="#tomcat-manager"><u><span style="color: #0563c1"> 15</span></u></a>.</p>
+<p>في الأمثلة السابقة، استخدمنا متصفحًا خارج Eclipse. يمكنك أيضًا استخدام متصفح داخل Eclipse:</p>
+<p><img src="images/100000000000017000000148CDAF2269.png" width="258" height="230" style="width:6.819cm;height:6.078cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017000000148CDAF2269.png" /></p>
+<p>أعلاه، نختار المتصفح الداخلي. لتشغيله من Eclipse، يمكنك استخدام الرمز التالي:</p>
+<p><img src="images/100000000000008E0000006852DC8D1C.png" width="99" height="73" style="width:2.63cm;height:1.926cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000008E0000006852DC8D1C.png" /></p>
+<p>المتصفح الذي سيتم تشغيله فعليًا هو المتصفح الذي تم تحديده عبر خيار [Window -&gt; Web Browser]. هنا، نحصل على المتصفح الداخلي:</p>
+<p><img src="images/100000000000026C0000006E427D019C.png" width="310" height="55" style="width:8.19cm;height:1.453cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026C0000006E427D019C.png" /></p>
+<p>إذا لزم الأمر، قم بتشغيل Tomcat من Eclipse وأدخل عنوان URL [http://localhost:8080] في [1]:</p>
+<p><img src="images/10000000000001A60000011A51DADE98.png" width="296" height="197" style="width:7.819cm;height:5.225cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A60000011A51DADE98.png" /></p>
+<p>اتبع رابط [Tomcat Manager]:</p>
+<p><img src="images/10000000000001440000012036F09775.png" width="227" height="202" style="width:6.001cm;height:5.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001440000012036F09775.png" /></p>
+<p>سيُطلب منك إدخال [اسم المستخدم/كلمة المرور] اللازمين للوصول إلى تطبيق [manager]. استنادًا إلى إعدادات Tomcat التي قمنا بتكوينها سابقًا، يمكنك إدخال [admin/admin] أو [manager/manager]. ستظهر لك بعد ذلك قائمة بالتطبيقات التي تم نشرها:</p>
+<p><img src="images/10000000000002D10000008AE6C94924.png" width="505" height="97" style="width:13.351cm;height:2.556cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D10000008AE6C94924.png" /></p>
+<p>نرى تطبيق [person] الذي أنشأناه. سيكون الرابط [Reload] المرتبط به مفيدًا لاحقًا.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

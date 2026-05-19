@@ -1,0 +1,1514 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-java-web-mvc-mai-2006/tbyq-lwyb-mvc-person---ldr-4.html">
+      
+      
+        <link rel="prev" href="mktb-lmt-jstl.html">
+      
+      
+        <link rel="next" href="tbyq-lwyb-mvc-person---ldr-5.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>9. تطبيق الويب MVC [person] – الإصدار 4 - أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-mvc-person-4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" class="md-header__button md-logo" aria-label="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9. تطبيق الويب MVC [person] – الإصدار 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" class="md-nav__button md-logo" aria-label="أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    أساسيات تطوير الويب باستخدام نموذج MVC في Java: دليل عملي
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ldwt-lmstkhdm-fy-hdh-lmstnd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. الأدوات المستخدمة في هذا المستند
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ssyt-twyr-lwyb-bl-java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. أساسيات تطوير الويب بلغة Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="twyr-mvc-lnmwdhj---lr---wd-ltkm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تطوير MVC (النموذج – العرض – وحدة التحكم)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-person---ldr-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. تطبيق ويب MVC [person] – الإصدار 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. تطبيق الويب MVC [person] – الإصدار 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. تطبيق الويب MVC [person] – الإصدار 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mktb-lmt-jstl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. مكتبة علامات JSTL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق الويب MVC [person] – الإصدار 4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tbyq-lwyb-mvc-person---ldr-4.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. تطبيق الويب MVC [person] – الإصدار 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-eclipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. مشروع Eclipse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-personne4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. تكوين تطبيق الويب [personne4]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. كود العرض
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3. كود العرض">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1. عرض [form]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2. طريقة العرض [response]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.3. عرض [errors]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4. اختبار العرض
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-servletpersonne" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5. وحدة التحكم [ServletPersonne]
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5. وحدة التحكم [ServletPersonne]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#951-doinit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.1. طريقة [doInit]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#952-dovalidationformulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.2. طريقة [doValidationFormulaire]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#953-doretourformulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5.3. طريقة [doRetourFormulaire]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6. الاختبارات
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تطبيق الويب MVC [person] – الإصدار 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. تطبيق الويب MVC [person] – الإصدار 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-lwyb-mvc-person---ldr-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. تطبيق الويب MVC [person] – الإصدار 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-person---ldr-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تطبيق ويب MVC [person] – الإصدار 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-ioc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Spring IoC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-3---nm-dr-qwd-lbynt-firebird.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 3 – نظام إدارة قواعد البيانات Firebird
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-4-postgres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 4، Postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-5-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 5، MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tbyq-wyb-mvc-fy-bny-thlthy-lbqt---lmthl-6-sql-server-express.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. تطبيق ويب MVC في بنية ثلاثية الطبقات – المثال 6، SQL Server Express
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkhl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. الخلاصة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lkwd-mn-lmql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. الكود من المقالة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="9-mvc-person-4">9. <span style="color: #365f91">تطبيق الويب MVC [person] – الإصدار 4</span></h1>
+<p>يستخدم هذا الإصدار مكتبة علامات JSTL التي تم عرضها سابقًا.</p>
+<h2 id="91-eclipse">9.1. <span style="color: #4f81bd">مشروع Eclipse</span></h2>
+<p>لإنشاء مشروع Eclipse [mvc-personne-04] لتطبيق الويب [/personne4]، قم بنسخ مشروع [mvc-personne-03] باتباع الإجراء الموضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a> في الصفحة<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 78</span></u></a>.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E20000018E954B13DB.png" width="158" height="279" style="display:inline-block; margin:4px;width:4.189cm;height:7.377cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E20000018E954B13DB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017600000067F57B7DA1.png" width="262" height="72" style="display:inline-block; margin:4px;width:6.939cm;height:1.91cm;" class="odt-zoomable" data-zoom-src="images/100000000000017600000067F57B7DA1.png" /></td></tr></table>
+
+<h2 id="92-personne4">9.2. <span style="color: #4f81bd">تكوين تطبيق الويب [personne4]</span></h2>
+<p>فيما يلي ملف <strong>web.xml</strong> الخاص بتطبيق <strong>/personne4</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;?<span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span>?&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">web-app </span><span style="color:#7f007f">id</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;WebApp_ID&quot; </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;2.4&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span><span style="color:#000000">mvc-personne-04</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">display-name</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#3f5fbf">...</span></span></span>
+</code></pre></div>
+
+<p>هذا الملف مطابق للملف الموجود في الإصدار السابق باستثناء السطر 6، حيث تغير اسم العرض لتطبيق الويب إلى [mvc-personne-04].</p>
+<p>تتغير الصفحة الرئيسية [index.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%@ <span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">c:redirect </span><span style="color:#7f007f">url</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/main&quot;</span><span style="color:#008080">/&gt;</span></span></span>
+</code></pre></div>
+
+<ul>
+  <li>السطر 5: تقوم الصفحة [index.jsp] بإعادة توجيه العميل إلى عنوان URL [/main]، الذي يؤدي إلى وحدة التحكم [ServletPersonne] للتطبيق [/personne4]. تنتمي علامة &lt;c:redirect&gt; إلى مكتبة JSTL / Core. وتتميز بخاصية إكمال عنوان URL الخاص بسمة [url] الخاصة بها عن طريق إضافة:
+  </li>
+  <li>البادئة [/context]، حيث [context] هو سياق التطبيق، وهو في هذه الحالة [personne4].
+  </li>
+  <li>اللاحقة [?jsessionid=id_session] إذا لم يرسل المتصفح الذي يقوم بالطلب ملف تعريف ارتباط للجلسة. يشير المعرف [jsessionid] إلى معرف رمز الجلسة الذي يرسله خادم الويب إلى عملائه. وهو يعتمد على خادم الويب. هنا، هو خادم Tomcat. [id_session] هو رمز الجلسة نفسه.
+  </li>
+</ul>
+
+<p>وبالتالي، فإن عنوان URL الفعلي لإعادة التوجيه في السطر 5 من [index.jsp] هو عنوان URL [/person4/main?jsessionid=XX]، حيث XX هو رمز الجلسة. يظهر هذا في الصفحة أدناه، التي تم الحصول عليها بعد طلب عنوان URL [http://localhost:8080/personne4] في البداية:</p>
+<p><img src="images/10000000000001C900000100E465AB41.png" width="320" height="179" style="width:8.46cm;height:4.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C900000100E465AB41.png" /></p>
+<p>العلاقة بين علامة &lt;c:redirect&gt; ورمز الجلسة دقيقة للغاية. من المبكر جدًا الخوض في تفاصيلها هنا، ولكن ستتاح لنا الفرصة لإعادة النظر فيها لاحقًا.</p>
+<h2 id="93">9.3. <span style="color: #4f81bd">كود العرض</span></h2>
+<h3 id="931-form">9.3.1. <span style="color: #4f81bd">عرض [form]</span></h3>
+<p>لم يتغير هذا العرض:</p>
+<p><img src="images/10000000000001C900000100E465AB41.png" width="320" height="179" style="width:8.46cm;height:4.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C900000100E465AB41.png" /></p>
+<p>يتم إنشاؤه بواسطة صفحة JSP التالية [formulaire.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">  </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#000080">HTML </span><span style="color:#808080">PUBLIC </span><span style="color:#000080">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne - formulaire</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;javascript&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#3f5fbf">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">script</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">center</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne - formulaire</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">hr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;frmPersonne&quot; </span><span style="color:#7f007f">method</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span><span style="color:#000000">Nom</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;txtNom&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span>&quot;<span style="color:#000000">${nom}</span>&quot;<span style="color:#000000"> </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text&quot; </span><span style="color:#7f007f">size</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;20&quot;</span><span style="color:#008080">&gt;&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span><span style="color:#000000">Age</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;txtAge&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span>&quot;<span style="color:#000000">${age}</span>&quot;<span style="color:#000000"> </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text&quot; </span><span style="color:#7f007f">size</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;3&quot;</span><span style="color:#008080">&gt;&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;submit&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;Submit&quot;</span><span style="color:#008080">&gt;&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;button&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;[Envoyer]&quot; </span><span style="color:#7f007f">onclick</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;envoyer()&quot;</span><span style="color:#008080">&gt;&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;reset&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;Rétablir&quot;</span><span style="color:#008080">&gt;&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;button&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;[Effacer]&quot; </span><span style="color:#7f007f">onclick</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;effacer()&quot;</span><span style="color:#008080">&gt;&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;hidden&quot; </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;action&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;validationFormulaire&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">center</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>ما الجديد:</p>
+<ul>
+  <li>السطر 4: إعلان مكتبة العلامات JSTL / Core
+  </li>
+  <li>السطران 21 و25: استرداد السمات [name, age] من قالب الصفحة. لاحظ أن البحث عن هذه السمات سيتم بالتتابع في الطلب، والجلسة، وتطبيق صفحة JSP. في حالتنا، سيضعها وحدة التحكم في الجلسة.
+  </li>
+  <li>لم يعد هناك أي كود Java في بداية صفحة JSP لاسترداد نموذج الصفحة بسبب التنفيذ السابق.
+  </li>
+</ul>
+
+<h3 id="932-response">9.3.2. <span style="color: #4f81bd">طريقة العرض [response]</span></h3>
+<p>لم تتغير طريقة العرض هذه:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000163000000FE805EBD6A.png" width="248" height="178" style="display:inline-block; margin:4px;width:6.57cm;height:4.701cm;" class="odt-zoomable" data-zoom-src="images/1000000000000163000000FE805EBD6A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000132000000E5D2700262.png" width="214" height="160" style="display:inline-block; margin:4px;width:5.669cm;height:4.242cm;" class="odt-zoomable" data-zoom-src="images/1000000000000132000000E5D2700262.png" /></td></tr></table>
+
+<p>صفحة JSP الجديدة [response.jsp] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#000080">HTML </span><span style="color:#808080">PUBLIC </span><span style="color:#000080">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne - réponse</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">hr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span><span style="color:#000000">Nom</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span><span style="color:#000000">${nom}&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">          </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span><span style="color:#000000">Age</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">td</span><span style="color:#008080">&gt;</span><span style="color:#000000">${age}&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">tr</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">table</span><span style="color:#008080">&gt;</span><span style="color:#000000">      </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">br</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;frmPersonne&quot; </span><span style="color:#7f007f">method</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;hidden&quot; </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;action&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;retourFormulaire&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">a </span><span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;javascript:document.frmPersonne.submit();&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ${lienRetourFormulaire}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">a</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>ما الجديد:</p>
+<ul>
+  <li>السطر 4: إعلان مكتبة العلامات JSTL / Core
+  </li>
+  <li>الأسطر 16 و20 و28: استرداد السمات [name، age، formSubmitLink] في قالب الصفحة. لم يعد هناك أي كود Java في أعلى صفحة JSP لاسترداد هذه السمات.
+  </li>
+</ul>
+
+<h3 id="933-errors">9.3.3. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">عرض [errors]</span></strong></span></h3>
+<p>لم يتغير هذا العرض:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000195000000CDC590A812.png" width="284" height="144" style="display:inline-block; margin:4px;width:7.519cm;height:3.806cm;" class="odt-zoomable" data-zoom-src="images/1000000000000195000000CDC590A812.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000169000000FFB9EB5CDB.png" width="253" height="179" style="display:inline-block; margin:4px;width:6.69cm;height:4.725cm;" class="odt-zoomable" data-zoom-src="images/1000000000000169000000FFB9EB5CDB.png" /></td></tr></table>
+
+<p>صفحة JSP الجديدة [errors.jsp] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">page </span><span style="color:#7f007f">language</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;java&quot; </span><span style="color:#7f007f">contentType</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;text/html; charset=ISO-8859-1&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">    </span><span style="color:#7f007f">pageEncoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;ISO-8859-1&quot;</span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#000080">HTML </span><span style="color:#808080">PUBLIC </span><span style="color:#000080">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#bf5f3f">&lt;%@ </span><span style="color:#3f7f7f">taglib </span><span style="color:#7f007f">uri</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;/WEB-INF/c.tld&quot; </span><span style="color:#7f007f">prefix</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;c&quot; </span><span style="color:#bf5f3f">%&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">Personne</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Les erreurs suivantes se sont produites</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">ul</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">c:forEach </span><span style="color:#7f007f">var</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;erreur&quot; </span><span style="color:#7f007f">items</span><span style="color:#000000">=</span>&quot;<span style="color:#000000">${erreurs}</span>&quot;<span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span><span style="color:#000000">${erreur}</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">li</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">c:forEach</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">ul</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">br</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;frmPersonne&quot; </span><span style="color:#7f007f">method</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;post&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#7f007f">type</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;hidden&quot; </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;action&quot; </span><span style="color:#7f007f">value</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;retourFormulaire&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">form</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">a </span><span style="color:#7f007f">href</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;javascript:document.frmPersonne.submit();&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      ${lienRetourFormulaire}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">a</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>ما الجديد:</p>
+<ul>
+  <li>السطر 4: إعلان مكتبة العلامات JSTL / Core
+  </li>
+  <li>الأسطر 13–15: عرض قائمة الأخطاء باستخدام JSTL
+  </li>
+  <li>لم يعد هناك أي كود Java في أعلى صفحة JSP لاسترداد القالب الخاص بها.
+  </li>
+</ul>
+
+<h2 id="94">9.4. <span style="color: #4f81bd">اختبار العرض</span></h2>
+<p>لاختبار طرق العرض السابقة، نقوم بنسخ صفحات JSP الخاصة بها في مجلد /WebContent/JSP التابع لمشروع Eclipse:</p>
+<p><img src="images/100000000000015D0000014DEC0E83C0.png" width="175" height="167" style="width:4.618cm;height:4.406cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D0000014DEC0E83C0.png" /></p>
+<p>ثم، في مجلد JSP، يتم تعديل الصفحات على النحو التالي:</p>
+<p>[form.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// -- test : on crée le modèle de la page</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  session.setAttribute(</span><span style="color:#2a00ff">&quot;nom&quot;</span><span style="color:#000000">,</span><span style="color:#2a00ff">&quot;tintin&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  session.setAttribute(</span><span style="color:#2a00ff">&quot;age&quot;</span><span style="color:#000000">,</span><span style="color:#2a00ff">&quot;30&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">%&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>تمت إضافة السطرين 4 و5 لإنشاء القالب المطلوب للصفحة.</p>
+<p>[response.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// -- test : on crée le modèle de la page</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  request.setAttribute(</span><span style="color:#2a00ff">&quot;nom&quot;</span><span style="color:#000000">,</span><span style="color:#2a00ff">&quot;milou&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  request.setAttribute(</span><span style="color:#2a00ff">&quot;age&quot;</span><span style="color:#000000">,</span><span style="color:#2a00ff">&quot;10&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  request.setAttribute(</span><span style="color:#2a00ff">&quot;lienRetourFormulaire&quot;</span><span style="color:#000000">,</span><span style="color:#2a00ff">&quot;Retour au formulaire&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">%&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+</code></pre></div>
+
+<p>تمت إضافة الأسطر 4-6 لإنشاء القالب المطلوب للصفحة.</p>
+<p>[errors.jsp]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;%</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// -- test : on crée le modèle de la page</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  ArrayList&lt;String&gt; erreurs1=</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;String&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  erreurs1.add(</span><span style="color:#2a00ff">&quot;erreur1&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  erreurs1.add(</span><span style="color:#2a00ff">&quot;erreur2&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  request.setAttribute(</span><span style="color:#2a00ff">&quot;erreurs&quot;</span><span style="color:#000000">,erreurs1);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  request.setAttribute(</span><span style="color:#2a00ff">&quot;lienRetourFormulaire&quot;</span><span style="color:#000000">,</span><span style="color:#2a00ff">&quot;Retour au formulaire&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">%&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+</code></pre></div>
+
+<p>تمت إضافة الأسطر 4–8 لإنشاء القالب المطلوب للصفحة.</p>
+<p>قم بتشغيل Tomcat إذا لم تكن قد قمت بذلك بعد، ثم اطلب عناوين URL التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000154000000FB82B2F70E.png" width="238" height="176" style="display:inline-block; margin:4px;width:6.301cm;height:4.651cm;" class="odt-zoomable" data-zoom-src="images/1000000000000154000000FB82B2F70E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000160000000E0D6328EC8.png" width="246" height="157" style="display:inline-block; margin:4px;width:6.519cm;height:4.149cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000000E0D6328EC8.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019D000000DC78E252D6.png" width="289" height="154" style="display:inline-block; margin:4px;width:7.65cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/100000000000019D000000DC78E252D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>نحصل على عدد المشاهدات المتوقع. </p>
+<h2 id="95-servletpersonne">9.5. <span style="color: #4f81bd">وحدة التحكم [ServletPersonne]</span></h2>
+<p>ستتولى وحدة التحكم [ServletPersonne] الخاصة بتطبيق الويب [/personne3] معالجة الإجراءات التالية:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">لا.</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">الطلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المصدر</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المعالجة</mark></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[GET /person4/main]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان URL الذي أدخله المستخدم</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [نموذج] فارغ</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[POST /person4/hand]</div><div style="margin:0 0 0.5em 0">مع المعلمات [txtName,</div><div style="margin:0 0 0.5em 0">txtAge،</div><div style="margin:0 0 0.5em 0">action=validateForm]</div><div style="margin:0 0 0.5em 0"> تم النشر</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على</div><div style="margin:0 0 0.5em 0">[إرسال] في</div><div style="margin:0 0 0.5em 0">[form]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تحقق من قيم معلمات [txtName، txtAge]</div><div style="margin:0 0 0.5em 0">- إذا كانت غير صحيحة، أرسل عرض [errors(errors)]</div><div style="margin:0 0 0.5em 0">- إذا كانت صحيحة، أرسل عرض [response(name,age)]</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[POST /person4/main]</div><div style="margin:0 0 0.5em 0">مع المعلمات</div><div style="margin:0 0 0.5em 0">[action=returnForm]</div><div style="margin:0 0 0.5em 0">تم النشر</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على [العودة إلى</div><div style="margin:0 0 0.5em 0">نموذج] من</div><div style="margin:0 0 0.5em 0">[الاستجابة] و[الأخطاء].</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [النموذج] مملوءًا مسبقًا بأحدث القيم المدخلة</div></td></tr></table>
+
+<p>هيكل وحدة التحكم [ServletPersonne] مطابق للنسخة السابقة. سنستعرض التغييرات التي تم إجراؤها على الطرق [doInit، doValidationFormulaire، doRetourFormulaire]؛ بينما تظل الطرق [init، doGet، doPost] دون تغيير.</p>
+<h3 id="951-doinit">9.5.1. <span style="color: #4f81bd">طريقة [doInit]</span></h3>
+<p>تتعامل هذه الطريقة مع الطلب رقم 1 [GET /personne4/main]. وفيما يلي شفرة هذه الطريقة:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">    </span><span class="c1">// empty form display</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doInit</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">getServletContext</span><span class="p">().</span><span class="na">getRequestDispatcher</span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="n">params</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;urlFormulaire&quot;</span><span class="p">)).</span><span class="na">forward</span><span class="p">(</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">                </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>ما الجديد:</p>
+<ul>
+  <li>السطر 3: يتم عرض طريقة العرض [form]. تتوقع طريقة العرض هذه وجود السمتين &quot;name&quot; و&quot;age&quot; في القالب الخاص بها. ولن تجدهما هناك لأن وحدة التحكم لا توفرهما. في هذه الحالة، ستسترد مكتبة JSTL مؤشرات <i>فارغة </i>لهذه السمات. لا يتسبب هذا في أي أخطاء، وسيتم عرض قيم فارغة لعنصري <i>${name} و${age} </i>في عرض [form]. هذا يناسبنا. وبذلك نتجنب الحاجة إلى تهيئة نموذج عرض [form].
+  </li>
+</ul>
+
+<h3 id="952-dovalidationformulaire">9.5.2. <span style="color: #4f81bd">طريقة [doValidationFormulaire]</span></h3>
+<p>تتعامل هذه الطريقة مع الطلب رقم 2 [POST /person4/main] مع [action, txtName, txtAge] في العناصر المرسلة. وفيما يلي شفرة هذه الطريقة:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">    </span><span class="c1">// form validation</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doValidationFormulaire</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">            </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">                </span><span class="c1">// parameters are retrieved</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;txtNom&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;txtAge&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="c1">// stored in the session</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="n">HttpSession</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getSession</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">        </span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="n">session</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;nom&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="n">session</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="c1">// parameter verification</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">...</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">        </span><span class="c1">// parameters are correct - send response page</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;lienRetourFormulaire&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="n">params</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;lienRetourFormulaire&quot;</span><span class="p">));</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="n">getServletContext</span><span class="p">().</span><span class="na">getRequestDispatcher</span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="n">params</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;urlReponse&quot;</span><span class="p">)).</span><span class="na">forward</span><span class="p">(</span><span class="n">request</span><span class="p">,</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">                </span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>ما الجديد:</p>
+<ul>
+  <li>السطر 15: تُرجع الطريقة [doValidationFormulaire] عرض [response]. يحتوي هذا العرض على العناصر [name، age، formReturnLink] في نموذجه. تتم إضافة [formReturnLink] إلى النموذج في السطر 14 عبر الطلب. يتم وضع العناصر [name، age] في النموذج في الأسطر 8-10 عبر الجلسة. في الإصدار السابق، كنا نضع أيضًا العناصر [name، age] في الطلب عند إرسال عرض [response] لأن هذا العرض كان يتوقع وجودها هناك. هنا، مع مكتبة JSTL، نعلم أنه سيتم البحث في السياقات المختلفة (الطلب، الجلسة، التطبيق) للعثور على عناصر النموذج. وبالتالي سيتم العثور عليها في الجلسة لأن وحدة التحكم وضعتها هناك (الأسطر 8-10).
+  </li>
+</ul>
+
+<h3 id="953-doretourformulaire">9.5.3. <span style="color: #4f81bd">طريقة [doRetourFormulaire]</span></h3>
+<p>تقوم هذه الطريقة بمعالجة الطلب رقم 3 [POST /person4/main] مع [action=retourFormulaire] في العناصر المرسلة. وفيما يلي كودها:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">    </span><span class="c1">// display pre-filled form</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">doRetourFormulaire</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="c1">// the form is displayed</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="n">getServletContext</span><span class="p">().</span><span class="na">getRequestDispatcher</span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="n">params</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;urlFormulaire&quot;</span><span class="p">)).</span><span class="na">forward</span><span class="p">(</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">                </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>ما الجديد:</p>
+<ul>
+  <li>السطر 4: يتم عرض طريقة العرض [form]. تتوقع طريقة العرض هذه وجود السمتين &quot;name&quot; و&quot;age&quot; في نموذجها. وستجدهما في الجلسة (session) لأن الطريقة [doValidationForm] قد وضعتهما هناك، وهذه الطريقة تُنفَّذ بالضرورة قبل الطريقة [doReturnForm]. لذلك، لا توجد حاجة لتهيئة نموذج [form] قبل عرضه في السطر 4. ونتيجة لذلك، فإن طريقتي [doInit] و [doReturnForm] متطابقتان، ويمكننا إزالة الإجراء [returnForm] واستبداله بالإجراء [init]. وعندئذ ستختفي طريقة [doReturnForm].
+  </li>
+</ul>
+
+<h2 id="96">9.6. <span style="color: #4f81bd">الاختبارات</span></h2>
+<p>في هذا الإصدار الجديد، لم تتغير سوى طرق العرض. يبقى وحدة التحكم [ServletPersonne] دون تغيير. لقد سمح لنا استخدام JSTL ببساطة باستخدام النموذج الذي أنشأته وحدة التحكم داخل صفحات JSP بسهولة أكبر.</p>
+<p>ابدأ أو أعد تشغيل Tomcat بعد دمج مشروع Eclipse [personne-mvc-04]. اطلب عنوان URL [http://localhost:8080/personne4].</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+Share Alike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
