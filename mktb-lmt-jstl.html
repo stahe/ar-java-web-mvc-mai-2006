@@ -1063,7 +1063,7 @@
 <p>العلامة (السطر 4)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;%@ taglib uri=&quot;/WEB-INF/c.tld&quot; prefix=&quot;c&quot; %&gt;
 </code></pre></div>
-<p>تشير إلى استخدام مكتبة علامات محددة في الملف [/<bdi dir="ltr" class="odt-ltr-term">WEB-INF/c.tld</bdi>]. سيتم استخدام هذه العلامات في كود الصفحة، مسبوقة بالحرف <strong><bdi dir="ltr" class="odt-ltr-term">c</bdi></strong> (<bdi dir="ltr" class="odt-ltr-term">prefix</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">c</bdi>&quot;). يمكنك استخدام أي بادئة من اختيارك. هنا، يشير <strong>الحرف <bdi dir="ltr" class="odt-ltr-term">c</bdi></strong> إلى [<bdi dir="ltr" class="odt-ltr-term">core</bdi>]. تسمح لك البادئات باستخدام مكتبات العلامات التي قد تحتوي على نفس الأسماء لبعض العلامات. ويؤدي استخدام البادئة إلى حل أي غموض. <strong>لم تعد</strong> الصفحة الجديدة <strong>تحتوي على كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi></strong> في المكانين اللذين كانا يحتويان عليه سابقًا:</p>
+<p>تشير إلى استخدام مكتبة علامات محددة في الملف [/<bdi dir="ltr" class="odt-ltr-term">WEB-INF/c.tld</bdi>]. سيتم استخدام هذه العلامات في كود الصفحة، مسبوقة بالحرف <strong>c</strong> (<bdi dir="ltr" class="odt-ltr-term">prefix</bdi>=&quot;c&quot;). يمكنك استخدام أي بادئة من اختيارك. هنا، يشير <strong>الحرف c</strong> إلى [<bdi dir="ltr" class="odt-ltr-term">core</bdi>]. تسمح لك البادئات باستخدام مكتبات العلامات التي قد تحتوي على نفس الأسماء لبعض العلامات. ويؤدي استخدام البادئة إلى حل أي غموض. <strong>لم تعد</strong> الصفحة الجديدة <strong>تحتوي على كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi></strong> في المكانين اللذين كانا يحتويان عليه سابقًا:</p>
 <ul>
   <li>استرداد قالب الصفحة [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>, <bdi dir="ltr" class="odt-ltr-term">returnFormLink</bdi>] (قسم تمت إزالته)
   </li>
@@ -1099,9 +1099,9 @@
   </li>
 </ul>
 
-<p>يمكن أن تتخذ المجموعة المحددة بواسطة السمة <code>**&lt;bdi dir="ltr" class="odt-ltr-term"&gt;items&lt;/bdi&gt;**</code> أشكالاً متنوعة: <em>مصفوفة</em>، أو <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></em>، أو كائن يطبق واجهة <em><bdi dir="ltr" class="odt-ltr-term">List</bdi></em>، وما إلى ذلك.</p>
+<p>يمكن أن تتخذ المجموعة المحددة بواسطة السمة <code>**items**</code> أشكالاً متنوعة: <em>مصفوفة</em>، أو <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></em>، أو كائن يطبق واجهة <em><bdi dir="ltr" class="odt-ltr-term">List</bdi></em>، وما إلى ذلك.</p>
 <ul>
-  <li>يُستخدم<b> <bdi dir="ltr" class="odt-ltr-term">var</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">error</bdi>&quot; </b>لتسمية العنصر الحالي للمجموعة قيد المعالجة. سيتم تنفيذ حلقة &lt;<bdi dir="ltr" class="odt-ltr-term">forEach</bdi>&gt; تباعًا لكل عنصر من عناصر مجموعة <b><bdi dir="ltr" class="odt-ltr-term">items</bdi></b>. داخل الحلقة، سيُشار إلى عنصر المجموعة قيد المعالجة هنا باسم <b><bdi dir="ltr" class="odt-ltr-term">error</bdi></b>.
+  <li>يُستخدم<b> var=&quot;<bdi dir="ltr" class="odt-ltr-term">error</bdi>&quot; </b>لتسمية العنصر الحالي للمجموعة قيد المعالجة. سيتم تنفيذ حلقة &lt;<bdi dir="ltr" class="odt-ltr-term">forEach</bdi>&gt; تباعًا لكل عنصر من عناصر مجموعة <b><bdi dir="ltr" class="odt-ltr-term">items</bdi></b>. داخل الحلقة، سيُشار إلى عنصر المجموعة قيد المعالجة هنا باسم <b><bdi dir="ltr" class="odt-ltr-term">error</bdi></b>.
   </li>
 </ul>
 
@@ -1112,7 +1112,7 @@
   </li>
   <li>بسبب السمة <b><bdi dir="ltr" class="odt-ltr-term">items</bdi>=&quot;${<bdi dir="ltr" class="odt-ltr-term">errors</bdi>}&quot;</b>، ستبحث صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> عن سمة باسم <bdi dir="ltr" class="odt-ltr-term">errors</bdi>، بالتتابع في <b>الطلب</b>، <b>والجلسة</b>، <b>والتطبيق</b>. وستجدها في الطلب: ستُرجع<b> <bdi dir="ltr" class="odt-ltr-term">request.getAttribute</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">errors</bdi>&quot;) </b>قائمة <i><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi> </i>التي وضعها وحدة التحكم في الطلب؛
   </li>
-  <li>وبالتالي، ستشير متغير <i><bdi dir="ltr" class="odt-ltr-term">error</bdi> </i>الخاص بالسمة<b> <bdi dir="ltr" class="odt-ltr-term">var</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">error</bdi>&quot; </b>إلى العنصر الحالي في <i><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></i>، وهو كائن <i><bdi dir="ltr" class="odt-ltr-term">String</bdi></i>. ستقوم طريقة<b> <bdi dir="ltr" class="odt-ltr-term">error.toString</bdi>() </b>بإدراج قيمة هذا الكائن <i><bdi dir="ltr" class="odt-ltr-term">String</bdi> </i>— في هذه الحالة، رسالة خطأ — في إخراج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للصفحة.
+  <li>وبالتالي، ستشير متغير <i><bdi dir="ltr" class="odt-ltr-term">error</bdi> </i>الخاص بالسمة<b> var=&quot;<bdi dir="ltr" class="odt-ltr-term">error</bdi>&quot; </b>إلى العنصر الحالي في <i><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></i>، وهو كائن <i><bdi dir="ltr" class="odt-ltr-term">String</bdi></i>. ستقوم طريقة<b> <bdi dir="ltr" class="odt-ltr-term">error.toString</bdi>() </b>بإدراج قيمة هذا الكائن <i><bdi dir="ltr" class="odt-ltr-term">String</bdi> </i>— في هذه الحالة، رسالة خطأ — في إخراج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> للصفحة.
   </li>
 </ul>
 
@@ -1131,10 +1131,10 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>                <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>     <span class="p">&lt;/</span><span class="nt">c:forEach</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>حيث [<bdi dir="ltr" class="odt-ltr-term">listarticles</bdi>] عبارة عن <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></em> من كائنات من النوع [<bdi dir="ltr" class="odt-ltr-term">Article</bdi>]، والتي نفترض أنها <bdi dir="ltr" class="odt-ltr-term">JavaBean</bdi> مع الحقول [<bdi dir="ltr" class="odt-ltr-term">id</bdi>, <bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">price</bdi>, <bdi dir="ltr" class="odt-ltr-term">currentStock</bdi>, <bdi dir="ltr" class="odt-ltr-term">minimumStock</bdi>]، ولكل من هذه الحقول طرق <strong><bdi dir="ltr" class="odt-ltr-term">get</bdi></strong> و <strong><bdi dir="ltr" class="odt-ltr-term">set</bdi></strong> الخاصة بها. تم وضع كائن [<bdi dir="ltr" class="odt-ltr-term">listarticles</bdi>] في الطلب بواسطة وحدة التحكم. تسترد صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> السابقة هذا الكائن من سمة <strong><bdi dir="ltr" class="odt-ltr-term">items</bdi></strong> لعلامة <strong><bdi dir="ltr" class="odt-ltr-term">forEach</bdi></strong>. وبالتالي، يشير كائن <strong>المقالة</strong> الحالي (<bdi dir="ltr" class="odt-ltr-term">var</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">article</bdi>&quot;) إلى كائن من النوع [<bdi dir="ltr" class="odt-ltr-term">Article</bdi>]. انظر إلى العلامة في السطر 3:</p>
+<p>حيث [<bdi dir="ltr" class="odt-ltr-term">listarticles</bdi>] عبارة عن <em><bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi></em> من كائنات من النوع [<bdi dir="ltr" class="odt-ltr-term">Article</bdi>]، والتي نفترض أنها <bdi dir="ltr" class="odt-ltr-term">JavaBean</bdi> مع الحقول [id, <bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">price</bdi>, <bdi dir="ltr" class="odt-ltr-term">currentStock</bdi>, <bdi dir="ltr" class="odt-ltr-term">minimumStock</bdi>]، ولكل من هذه الحقول طرق <strong>get</strong> و <strong>set</strong> الخاصة بها. تم وضع كائن [<bdi dir="ltr" class="odt-ltr-term">listarticles</bdi>] في الطلب بواسطة وحدة التحكم. تسترد صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> السابقة هذا الكائن من سمة <strong><bdi dir="ltr" class="odt-ltr-term">items</bdi></strong> لعلامة <strong><bdi dir="ltr" class="odt-ltr-term">forEach</bdi></strong>. وبالتالي، يشير كائن <strong>المقالة</strong> الحالي (var=&quot;<bdi dir="ltr" class="odt-ltr-term">article</bdi>&quot;) إلى كائن من النوع [<bdi dir="ltr" class="odt-ltr-term">Article</bdi>]. انظر إلى العلامة في السطر 3:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;c:out value=&quot;${article.nom}&quot;/&gt;
 </code></pre></div>
-<p>ماذا يعني <em>${<bdi dir="ltr" class="odt-ltr-term">article.nom</bdi>}</em>؟ في الواقع، يعني أشياء مختلفة حسب طبيعة كائن <strong><bdi dir="ltr" class="odt-ltr-term">article</bdi></strong>. للحصول على قيمة <strong><bdi dir="ltr" class="odt-ltr-term">article.</bdi></strong><bdi dir="ltr" class="odt-ltr-term">nom</bdi>، ستحاول صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> القيام بأمرين:</p>
+<p>ماذا يعني <em>${<bdi dir="ltr" class="odt-ltr-term">article.nom</bdi>}</em>؟ في الواقع، يعني أشياء مختلفة حسب طبيعة كائن <strong><bdi dir="ltr" class="odt-ltr-term">article</bdi></strong>. للحصول على قيمة <strong><bdi dir="ltr" class="odt-ltr-term">article.</bdi></strong>nom، ستحاول صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> القيام بأمرين:</p>
 <ol>
   <li><b><bdi dir="ltr" class="odt-ltr-term">article.getNom</bdi>() </b>- لاحظ تهجئة <b><bdi dir="ltr" class="odt-ltr-term">getNom</bdi> </b>لاسترداد حقل <b>الاسم </b>(معيار <bdi dir="ltr" class="odt-ltr-term">JavaBean</bdi>)
   </li>
@@ -1170,7 +1170,7 @@
 
 <p>يحتوي ملف <bdi dir="ltr" class="odt-ltr-term">ZIP</bdi> الذي تم تنزيله على ما يلي:</p>
 <p><img src="images/10000000000000C0000000CC673C6073.png" width="135" height="143" style="width:3.56cm;height:3.784cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C0000000CC673C6073.png" /></p>
-<p>الملفان بامتداد .<bdi dir="ltr" class="odt-ltr-term">war</bdi> هما أرشيفات لتطبيقات الويب:</p>
+<p>الملفان بامتداد .war هما أرشيفات لتطبيقات الويب:</p>
 <ul>
   <li><bdi dir="ltr" class="odt-ltr-term">standard-doc:</bdi> وثائق حول علامات <bdi dir="ltr" class="odt-ltr-term">JSTL</bdi>
   </li>
@@ -1186,7 +1186,7 @@
 <p><img src="images/100000000000039F0000016C59E0553F.png" width="649" height="255" style="width:17.17cm;height:6.742cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039F0000016C59E0553F.png" /></p>
 <p>يمكننا إضافة تطبيق جديد باستخدام النماذج الموجودة في أسفل الصفحة:</p>
 <p><img src="images/100000000000024D0000007303A3AD27.png" width="412" height="81" style="width:10.91cm;height:2.131cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024D0000007303A3AD27.png" /></p>
-<p>نستخدم زر [<bdi dir="ltr" class="odt-ltr-term">Browse</bdi>] لاختيار ملف .<bdi dir="ltr" class="odt-ltr-term">war</bdi> لنشره.</p>
+<p>نستخدم زر [<bdi dir="ltr" class="odt-ltr-term">Browse</bdi>] لاختيار ملف .war لنشره.</p>
 <p><img src="images/100000000000024F0000006B8D265A8B.png" width="413" height="75" style="width:10.94cm;height:1.981cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024F0000006B8D265A8B.png" /></p>
 <p>لا تظهر الصورة ذلك، لكننا قمنا باختيار ملف [<bdi dir="ltr" class="odt-ltr-term">standard-examples.war</bdi>] من توزيع <bdi dir="ltr" class="odt-ltr-term">JSTL</bdi> الذي تم تنزيله. يقوم زر [<bdi dir="ltr" class="odt-ltr-term">Deploy</bdi>] بحفظ هذا التطبيق ونشره داخل <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi></p>
 <p><img src="images/10000000000002D200000072144A90DD.png" width="505" height="80" style="width:13.37cm;height:2.111cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D200000072144A90DD.png" /></p>
@@ -1200,20 +1200,20 @@
 </code></pre></div>
 <p>لقد سبق أن تناولنا هذه العلامة في القسم<a href="#balise-taglib"><u><span style="color: #0563c1"> 8.1.1</span></u></a>، وقدمنا شرحًا موجزًا لها:</p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">uri</bdi>]: <bdi dir="ltr" class="odt-ltr-term">URI</bdi> (مُعرّف الموارد الموحد) حيث توجد تعريفات العلامات المستخدمة في الصفحة. سيستخدم خادم الويب هذا <bdi dir="ltr" class="odt-ltr-term">URI</bdi> عندما تُترجم صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> إلى كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لتصبح سيرفلت. كما تستخدمه أدوات تطوير صفحات الويب للتحقق من صحة بناء جملة العلامات المستخدمة في الصفحة أو لتقديم اقتراحات الإكمال التلقائي. عندما تبدأ في كتابة علامة، يمكن لأداة مألوفة بالمكتبة أن تقترح على المستخدم السمات المحتملة لتلك العلامة.
+  <li>[uri]: <bdi dir="ltr" class="odt-ltr-term">URI</bdi> (مُعرّف الموارد الموحد) حيث توجد تعريفات العلامات المستخدمة في الصفحة. سيستخدم خادم الويب هذا <bdi dir="ltr" class="odt-ltr-term">URI</bdi> عندما تُترجم صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> إلى كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> لتصبح سيرفلت. كما تستخدمه أدوات تطوير صفحات الويب للتحقق من صحة بناء جملة العلامات المستخدمة في الصفحة أو لتقديم اقتراحات الإكمال التلقائي. عندما تبدأ في كتابة علامة، يمكن لأداة مألوفة بالمكتبة أن تقترح على المستخدم السمات المحتملة لتلك العلامة.
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">prefix</bdi>]: البادئة التي تحدد هذه العلامات في الصفحة
   </li>
 </ul>
 
-<p>لا يمكن استخدام عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://java.sun.com/jsp/jstl/core</bdi>] إذا لم تكن متصلاً بالإنترنت العام. في هذه الحالة، يمكنك وضع ملف تعريف العلامة محلياً. يتم توفير العديد من هذه الملفات مع توزيع <bdi dir="ltr" class="odt-ltr-term">JSTL 1.2</bdi> في مجلد [<bdi dir="ltr" class="odt-ltr-term">tld</bdi>] (تعريف لغة العلامات):</p>
+<p>لا يمكن استخدام عنوان <bdi dir="ltr" class="odt-ltr-term">URI</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://java.sun.com/jsp/jstl/core</bdi>] إذا لم تكن متصلاً بالإنترنت العام. في هذه الحالة، يمكنك وضع ملف تعريف العلامة محلياً. يتم توفير العديد من هذه الملفات مع توزيع <bdi dir="ltr" class="odt-ltr-term">JSTL 1.2</bdi> في مجلد [tld] (تعريف لغة العلامات):</p>
 <p><img src="images/10000000000000C90000012E11247D3A.png" width="141" height="211" style="width:3.72cm;height:5.59cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C90000012E11247D3A.png" /></p>
 <p><bdi dir="ltr" class="odt-ltr-term">JSTL</bdi> هي في الواقع مجموعة من مكتبات العلامات. سنستخدم فقط مكتبة [<bdi dir="ltr" class="odt-ltr-term">c.tld</bdi>]، المعروفة باسم المكتبة &quot;الأساسية&quot;. سنضع ملف [<bdi dir="ltr" class="odt-ltr-term">c.tld</bdi>] المذكور أعلاه في مجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF</bdi>] لتطبيقاتنا:</p>
 <p><img src="images/1000000000000076000000440B082809.png" width="82" height="47" style="width:2.18cm;height:1.256cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000076000000440B082809.png" /></p>
 <p>ونقوم بتضمين العلامة التالية في صفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> الخاصة بنا لإعلان استخدام المكتبة &quot;الأساسية&quot;:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;%@ taglib uri=&quot;/WEB-INF/c.tld&quot; prefix=&quot;c&quot; %&gt;
 </code></pre></div>
-<p>بينما يتيح لنا استخدام مكتبات العلامات تجنب وضع كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> في صفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>، فإن هذه العلامات تُترجم بالطبع إلى كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> عند ترجمة صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> إلى خادم <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> وهي تستخدم فئات محددة في ملفين <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> [<bdi dir="ltr" class="odt-ltr-term">jstl.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">standard.jar</bdi>] موجودين في المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] لتوزيع <bdi dir="ltr" class="odt-ltr-term">JSTL:</bdi></p>
+<p>بينما يتيح لنا استخدام مكتبات العلامات تجنب وضع كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> في صفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi>، فإن هذه العلامات تُترجم بالطبع إلى كود <bdi dir="ltr" class="odt-ltr-term">Java</bdi> عند ترجمة صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> إلى خادم <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> وهي تستخدم فئات محددة في ملفين <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> [<bdi dir="ltr" class="odt-ltr-term">jstl.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">standard.jar</bdi>] موجودين في المجلد [lib] لتوزيع <bdi dir="ltr" class="odt-ltr-term">JSTL:</bdi></p>
 <p><img src="images/10000000000000760000005B7B91247B.png" width="83" height="64" style="width:2.191cm;height:1.69cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000760000005B7B91247B.png" /></p>
 <p>يتم وضع هذين الملفين <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> في مجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/lib</bdi>] لتطبيقاتنا:</p>
 <p><img src="images/100000000000009D000000613B95D366.png" width="110" height="68" style="width:2.91cm;height:1.797cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000009D000000613B95D366.png" /></p>

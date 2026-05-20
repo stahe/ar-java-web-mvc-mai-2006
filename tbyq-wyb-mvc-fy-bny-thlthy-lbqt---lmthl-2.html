@@ -983,14 +983,14 @@
 <p>لقد كتبنا تطبيق [<bdi dir="ltr" class="odt-ltr-term">people-01</bdi>] بالهيكل التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000453000001A688342E64.png" width="554" height="211" style="display:inline-block; margin:4px;width:14.646cm;height:5.583cm;" class="odt-zoomable" data-zoom-src="images/1000000000000453000001A688342E64.png" /></td></tr></table>
 
-<p>قامت طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بتنفيذ قائمة الأشخاص التي تتم إدارتها باستخدام كائن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>]. وقد سمح لنا ذلك بتجنب تعقيد طبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بشكل مفرط، حتى نتمكن من التركيز على طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]. نريد تطوير التطبيق نحو بيئة أكثر واقعية حيث يتم تخزين قائمة الأشخاص في جدول قاعدة بيانات. سيتطلب هذا منا تغيير طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. سيؤثر هذا على الطبقتين الأخريين. للاستفادة من استقلالية الطبقات التي يوفرها <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>، سنأخذ تطبيق [<bdi dir="ltr" class="odt-ltr-term">people-01</bdi>] ونقوم بتكوينه باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring IoC:</bdi></p>
+<p>قامت طبقة [dao] بتنفيذ قائمة الأشخاص التي تتم إدارتها باستخدام كائن [<bdi dir="ltr" class="odt-ltr-term">ArrayList</bdi>]. وقد سمح لنا ذلك بتجنب تعقيد طبقتي [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بشكل مفرط، حتى نتمكن من التركيز على طبقة [web]. نريد تطوير التطبيق نحو بيئة أكثر واقعية حيث يتم تخزين قائمة الأشخاص في جدول قاعدة بيانات. سيتطلب هذا منا تغيير طبقة [dao]. سيؤثر هذا على الطبقتين الأخريين. للاستفادة من استقلالية الطبقات التي يوفرها <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>، سنأخذ تطبيق [<bdi dir="ltr" class="odt-ltr-term">people-01</bdi>] ونقوم بتكوينه باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring IoC:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000460000001EFDB5A51B6.png" width="560" height="248" style="display:inline-block; margin:4px;width:14.817cm;height:6.549cm;" class="odt-zoomable" data-zoom-src="images/1000000000000460000001EFDB5A51B6.png" /></td></tr></table>
 
-<p>سيُطلق على التطبيق الجديد اسم [<bdi dir="ltr" class="odt-ltr-term">people-02</bdi>]. وبمجرد كتابته، نعلم أننا سنتمكن من تعديل طبقتي [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] دون تغيير الكود في طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]. وهذا بالضبط ما نسعى إليه.</p>
+<p>سيُطلق على التطبيق الجديد اسم [<bdi dir="ltr" class="odt-ltr-term">people-02</bdi>]. وبمجرد كتابته، نعلم أننا سنتمكن من تعديل طبقتي [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] دون تغيير الكود في طبقة [web]. وهذا بالضبط ما نسعى إليه.</p>
 <p>نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> جديد [<bdi dir="ltr" class="odt-ltr-term">people-02</bdi>] عن طريق نسخ ولصق مشروع [<bdi dir="ltr" class="odt-ltr-term">people-01</bdi>]، كما هو موضح في القسم<a href="#personne2-eclipse"><u><span style="color: #0563c1"> 6.2</span></u></a>:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015700000177DD14A364.png" width="172" height="188" style="display:inline-block; margin:4px;width:4.538cm;height:4.962cm;" class="odt-zoomable" data-zoom-src="images/100000000000015700000177DD14A364.png" /></td></tr></table>
 
-<p>في [1]، نرى ظهور ملف التكوين، الذي سنحدد فيه الفاصوليا لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. ومحتواه كما يلي:</p>
+<p>في [1]، نرى ظهور ملف التكوين، الذي سنحدد فيه الفاصوليا لطبقات [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. ومحتواه كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;1.0&quot; </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#000080">beans </span><span style="color:#808080">PUBLIC </span><span style="color:#000080">&quot;-//SPRING//DTD BEAN//EN&quot; </span><span style="color:#3f7f5f">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1007,11 +1007,11 @@
 </code></pre></div>
 
 <ul>
-  <li>السطر 5: يُعرّف الفول المسمى [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] كمثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>]. بعد إنشاء المثيل، يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] الخاصة بالمثيل.
+  <li>السطر 5: يُعرّف الفول المسمى [dao] كمثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>]. بعد إنشاء المثيل، يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] الخاصة بالمثيل.
   </li>
   <li>الأسطر 7-10: تحدد الفاصوليا المسماة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] كمثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>].
   </li>
-  <li>الأسطر 8–10: يتم تهيئة الخاصية [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] لمثيل [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] بالإشارة إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] التي تم إنشاؤها في السطر 5. تذكر أن فئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] تحتوي بالفعل على الخاصية [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] ومُعيّن القيمة المقابل:
+  <li>الأسطر 8–10: يتم تهيئة الخاصية [dao] لمثيل [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] بالإشارة إلى طبقة [dao] التي تم إنشاؤها في السطر 5. تذكر أن فئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] تحتوي بالفعل على الخاصية [dao] ومُعيّن القيمة المقابل:
   </li>
 </ul>
 
@@ -1076,7 +1076,7 @@
 <a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="n">service</span><span class="p">.</span><span class="na">setDao</span><span class="p">(</span><span class="n">dao</span><span class="p">);</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>في السطر 5، كان علينا تسمية فئة التنفيذ لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بشكل صريح، وفي السطر 12، فئة التنفيذ لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. مع <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>، تصبح طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] كما يلي:</p>
+<p>في السطر 5، كان علينا تسمية فئة التنفيذ لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بشكل صريح، وفي السطر 12، فئة التنفيذ لطبقة [dao]. مع <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>، تصبح طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1108,7 +1108,7 @@
 <a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 7: لم يعد الحقل الخاص [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] من النوع [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] بل من النوع [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]، أي من نوع واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وبالتالي، لم تعد طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] مرتبطة بتنفيذ محدد لهذه الواجهة.
+  <li>السطر 7: لم يعد الحقل الخاص [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] من النوع [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] بل من النوع [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]، أي من نوع واجهة طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وبالتالي، لم تعد طبقة [web] مرتبطة بتنفيذ محدد لهذه الواجهة.
   </li>
   <li>السطر 14: تهيئة الحقل [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] من ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">spring-config.xml</bdi>].
   </li>
@@ -1124,7 +1124,7 @@
 <ul>
   <li>سيتطلب هذا إعادة كتابة طبقة [<b><bdi dir="ltr" class="odt-ltr-term">DAO</bdi></b>]. وهذا أمر سهل الفهم.
   </li>
-  <li>سيتم تعديل طبقة [<b><bdi dir="ltr" class="odt-ltr-term">service</bdi></b>] أيضًا. حاليًا، يتمثل دورها الوحيد في ضمان الوصول المتزامن إلى البيانات التي تديرها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. ولهذا الغرض، قمنا بمزامنة جميع الطرق في طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وقد أوضحنا سبب وضع هذه المزامنة في هذه الطبقة بدلاً من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. في الإصدار الجديد، ستظل طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] تضطلع بالدور الوحيد المتمثل في مزامنة الوصول، ولكن سيتم التعامل مع ذلك من خلال معاملات قاعدة البيانات بدلاً من مزامنة أساليب <bdi dir="ltr" class="odt-ltr-term">Java.</bdi>
+  <li>سيتم تعديل طبقة [<b><bdi dir="ltr" class="odt-ltr-term">service</bdi></b>] أيضًا. حاليًا، يتمثل دورها الوحيد في ضمان الوصول المتزامن إلى البيانات التي تديرها طبقة [dao]. ولهذا الغرض، قمنا بمزامنة جميع الطرق في طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. وقد أوضحنا سبب وضع هذه المزامنة في هذه الطبقة بدلاً من طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]. في الإصدار الجديد، ستظل طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] تضطلع بالدور الوحيد المتمثل في مزامنة الوصول، ولكن سيتم التعامل مع ذلك من خلال معاملات قاعدة البيانات بدلاً من مزامنة أساليب <bdi dir="ltr" class="odt-ltr-term">Java.</bdi>
   </li>
   <li>ستبقى طبقة [<b>الويب</b>] دون تغيير.
   </li>
@@ -1133,17 +1133,17 @@
 <p>لتسهيل الانتقال من إصدار إلى آخر، نقوم بإنشاء مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> جديد [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>]، وهو نسخة من المشروع السابق [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02</bdi>]، ولكن تم وضع طبقات [الويب، الخدمة، <bdi dir="ltr" class="odt-ltr-term">DAO</bdi>، الكيانات] في أرشيفات .<bdi dir="ltr" class="odt-ltr-term">jar:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000164000002BC0809F742.png" width="178" height="350" style="display:inline-block; margin:4px;width:4.71cm;height:9.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000164000002BC0809F742.png" /></td></tr></table>
 
-<p>يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>] الآن على ملف تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">spring-config.xml</bdi>] فقط. وكان يحتوي سابقًا أيضًا على شفرة المصدر لفئات <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> تمت إزالة هذه العناصر واستبدالها بنسخها المُجمَّعة الموضوعة في أرشيفات [<bdi dir="ltr" class="odt-ltr-term">people-</bdi>*.<bdi dir="ltr" class="odt-ltr-term">jar</bdi>] الموضحة في [1]:</p>
+<p>يحتوي المجلد [src] الآن على ملف تكوين <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">spring-config.xml</bdi>] فقط. وكان يحتوي سابقًا أيضًا على شفرة المصدر لفئات <bdi dir="ltr" class="odt-ltr-term">Java.</bdi> تمت إزالة هذه العناصر واستبدالها بنسخها المُجمَّعة الموضوعة في أرشيفات [<bdi dir="ltr" class="odt-ltr-term">people-</bdi>*.jar] الموضحة في [1]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000056900000114243CBF46.png" width="680" height="136" style="display:inline-block; margin:4px;width:17.997cm;height:3.586cm;" class="odt-zoomable" data-zoom-src="images/100000000000056900000114243CBF46.png" /></td></tr></table>
 
-<p>تم تكوين مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>] ليشمل أرشيفات [<bdi dir="ltr" class="odt-ltr-term">personnes-</bdi>*.<bdi dir="ltr" class="odt-ltr-term">jar</bdi>] في <em>مسار <bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi></em> الخاص به.</p>
+<p>تم تكوين مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>] ليشمل أرشيفات [<bdi dir="ltr" class="odt-ltr-term">personnes-</bdi>*.jar] في <em>مسار <bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi></em> الخاص به.</p>
 <p><span style="color: #000000">نقوم بنشر مشروع الويب [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>] داخل <bdi dir="ltr" class="odt-ltr-term">Tomcat:</bdi></span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015C0000008D0075AC9C.png" width="244" height="99" style="display:inline-block; margin:4px;width:6.451cm;height:2.614cm;" class="odt-zoomable" data-zoom-src="images/100000000000015C0000008D0075AC9C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013500000053B64772D2.png" width="216" height="58" style="display:inline-block; margin:4px;width:5.72cm;height:1.536cm;" class="odt-zoomable" data-zoom-src="images/100000000000013500000053B64772D2.png" /></td></tr></table>
 
 <p>لاختبار المشروع، نقوم بتشغيل <bdi dir="ltr" class="odt-ltr-term">Tomcat</bdi> ثم نطلب عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [<bdi dir="ltr" class="odt-ltr-term">http://localhost:8080/personnes02B</bdi>]:</p>
 <p><img src="images/100000000000029A0000010DB46373D4.png" width="466" height="188" style="width:12.33cm;height:4.979cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029A0000010DB46373D4.png" /></p>
 <p>ندعو القارئ إلى إجراء اختبارات إضافية.</p>
-<p>في إصدار قاعدة البيانات، سنقوم بتغيير طبقتي [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. نريد أن نوضح أنه يكفي عندئذٍ استبدال أرشيفات [<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">personnes-service.jar</bdi>] في المشروع السابق بالأرشيفات الجديدة حتى يعمل تطبيقنا الآن مع قاعدة بيانات. لن نحتاج إلى المساس بأرشيفات طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] وطبقة [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>].</p>
+<p>في إصدار قاعدة البيانات، سنقوم بتغيير طبقتي [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] و [dao]. نريد أن نوضح أنه يكفي عندئذٍ استبدال أرشيفات [<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">personnes-service.jar</bdi>] في المشروع السابق بالأرشيفات الجديدة حتى يعمل تطبيقنا الآن مع قاعدة بيانات. لن نحتاج إلى المساس بأرشيفات طبقة [web] وطبقة [<bdi dir="ltr" class="odt-ltr-term">entities</bdi>].</p>
 
 
 

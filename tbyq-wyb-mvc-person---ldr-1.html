@@ -1156,7 +1156,7 @@
 <h2 id="52">5.2. <span style="color: #4f81bd">بنية التطبيق</span></h2>
 <p>سيكون لتطبيق الويب [<bdi dir="ltr" class="odt-ltr-term">person1</bdi>] البنية التالية:</p>
 <p><img src="images/100000000000038B00000152145C92CE.png" width="454" height="169" style="width:12cm;height:4.471cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000038B00000152145C92CE.png" /></p>
-<p>هذه بنية أحادية الطبقة: لا توجد طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]، بل طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] فقط. [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] هو وحدة التحكم في التطبيق التي تتولى معالجة جميع طلبات العملاء. وللاستجابة لهذه الطلبات، يستخدم أحد العروض الثلاثة [<bdi dir="ltr" class="odt-ltr-term">form</bdi>، <bdi dir="ltr" class="odt-ltr-term">response</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>].</p>
+<p>هذه بنية أحادية الطبقة: لا توجد طبقات [<bdi dir="ltr" class="odt-ltr-term">business</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]، بل طبقة [web] فقط. [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] هو وحدة التحكم في التطبيق التي تتولى معالجة جميع طلبات العملاء. وللاستجابة لهذه الطلبات، يستخدم أحد العروض الثلاثة [<bdi dir="ltr" class="odt-ltr-term">form</bdi>، <bdi dir="ltr" class="odt-ltr-term">response</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>].</p>
 <p>علينا تحديد كيفية قيام وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] بتحديد الإجراء الذي يجب اتخاذها عند تلقي طلب من المستخدم. طلب العميل هو دفق <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> يختلف اعتمادًا على ما إذا كان قد تم إجراؤه باستخدام أمر <bdi dir="ltr" class="odt-ltr-term">GET</bdi> أو <bdi dir="ltr" class="odt-ltr-term">POST.</bdi></p>
 <p><strong>طلب <bdi dir="ltr" class="odt-ltr-term">GET</bdi></strong></p>
 <p>في هذه الحالة، يبدو تدفق <bdi dir="ltr" class="odt-ltr-term">HTTP</bdi> كما يلي:</p>
@@ -1185,9 +1185,9 @@
 </code></pre></div>
 <p>يمكن استخدام عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> هذا لتحديد الإجراء المطلوب تنفيذه. يمكن استخدام طرق مختلفة:</p>
 <ol>
-  <li>يحدد معلمة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الإجراء، على سبيل المثال [/<bdi dir="ltr" class="odt-ltr-term">app</bdi>?<bdi dir="ltr" class="odt-ltr-term">action</bdi>=<bdi dir="ltr" class="odt-ltr-term">add</bdi>&amp;<bdi dir="ltr" class="odt-ltr-term">id</bdi>=4]. هنا، تُعلم معلمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] وحدة التحكم بالإجراء المطلوب.
+  <li>يحدد معلمة عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الإجراء، على سبيل المثال [/app?<bdi dir="ltr" class="odt-ltr-term">action</bdi>=add&amp;id=4]. هنا، تُعلم معلمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] وحدة التحكم بالإجراء المطلوب.
   </li>
-  <li>يحدد العنصر الأخير من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الإجراء، على سبيل المثال [/<bdi dir="ltr" class="odt-ltr-term">app/add</bdi>?<bdi dir="ltr" class="odt-ltr-term">id</bdi>=4]. هنا، يستخدم وحدة التحكم العنصر الأخير من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">add</bdi>] لتحديد الإجراء الذي يجب أن تقوم به.
+  <li>يحدد العنصر الأخير من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الإجراء، على سبيل المثال [/<bdi dir="ltr" class="odt-ltr-term">app/add</bdi>?id=4]. هنا، يستخدم وحدة التحكم العنصر الأخير من عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/add] لتحديد الإجراء الذي يجب أن تقوم به.
   </li>
 </ol>
 
@@ -1279,7 +1279,7 @@
 <p>بمجرد اكتماله، سيبدو المشروع كما يلي:</p>
 <p><img src="images/10000000000000E30000017F6F0446E5.png" width="159" height="268" style="width:4.2cm;height:7.086cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E30000017F6F0446E5.png" /></p>
 <ul>
-  <li>توجد وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] في المجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]
+  <li>توجد وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] في المجلد [src]
   </li>
   <li>توجد صفحات <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> الخاصة بعروض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>، <bdi dir="ltr" class="odt-ltr-term">response</bdi>، <bdi dir="ltr" class="odt-ltr-term">errors</bdi>] في المجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/vues</bdi>]، مما يمنع المستخدم من الوصول إليها مباشرةً، كما هو موضح في المثال التالي:
   </li>
@@ -1417,7 +1417,7 @@
 <ul>
   <li>[<bdi dir="ltr" class="odt-ltr-term">name</bdi>]: اسم (سلسلة) موجود في سمات الجلسة المرتبطة بالمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">age</bdi>]: عمر (سلسلة) موجود في سمات الجلسة المرتبطة بالمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;
+  <li>[age]: عمر (سلسلة) موجود في سمات الجلسة المرتبطة بالمفتاح &quot;age&quot;
   </li>
 </ul>
 
@@ -1468,7 +1468,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 6-7: تبدأ صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> باسترداد العناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] لنموذجها من الطلب. في التشغيل العادي للتطبيق، سيقوم وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] بإنشاء هذا النموذج.
+  <li>السطران 6-7: تبدأ صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> باسترداد العناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age] لنموذجها من الطلب. في التشغيل العادي للتطبيق، سيقوم وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] بإنشاء هذا النموذج.
   </li>
   <li>الأسطر 18-38: تقوم صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> بإنشاء نموذج <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> (علامة &lt;<bdi dir="ltr" class="odt-ltr-term">form</bdi>&gt;)
   </li>
@@ -1476,7 +1476,7 @@
   </li>
   <li>القيم المرسلة هي قيم حقول <bdi dir="ltr" class="odt-ltr-term">HTML</bdi> [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>] (السطر 22) و[<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] (السطر 26) و[<bdi dir="ltr" class="odt-ltr-term">action</bdi>] (السطر 37). سيسمح هذا المعامل الأخير لوحدة التحكم بمعرفة ما يتعين عليها القيام به.
   </li>
-  <li>عند عرض النموذج لأول مرة، يتم تهيئة حقول الإدخال [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] بالمتغيرات [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] (السطر 22) و [<bdi dir="ltr" class="odt-ltr-term">age</bdi>] (السطر 26) على التوالي. تحصل هذه المتغيرات على قيمها من سمات الطلب (السطران 6-7)، والتي من المعروف أن السيرفلت يقوم بتهيئتها. وبالتالي، فإن السيرفلت هو الذي يحدد المحتوى الأولي لحقول الإدخال في النموذج.
+  <li>عند عرض النموذج لأول مرة، يتم تهيئة حقول الإدخال [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] بالمتغيرات [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] (السطر 22) و [age] (السطر 26) على التوالي. تحصل هذه المتغيرات على قيمها من سمات الطلب (السطران 6-7)، والتي من المعروف أن السيرفلت يقوم بتهيئتها. وبالتالي، فإن السيرفلت هو الذي يحدد المحتوى الأولي لحقول الإدخال في النموذج.
   </li>
   <li>السطر 33: يعيد الزر [<bdi dir="ltr" class="odt-ltr-term">Reset</bdi>] من النوع [<bdi dir="ltr" class="odt-ltr-term">reset</bdi>] النموذج إلى الحالة التي كان عليها عندما استلمه المتصفح.
   </li>
@@ -1484,7 +1484,7 @@
   </li>
 </ul>
 
-<p>من الآن فصاعدًا، سنشير إلى هذا العرض باسم عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>)] عندما نريد تحديد اسم العرض ونموذجه. بالإضافة إلى ذلك، لاحظ أنه عندما ينقر المستخدم على زر [<bdi dir="ltr" class="odt-ltr-term">Submit</bdi>]، يتم إرسال المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>, <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi>].</p>
+<p>من الآن فصاعدًا، سنشير إلى هذا العرض باسم عرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age)] عندما نريد تحديد اسم العرض ونموذجه. بالإضافة إلى ذلك، لاحظ أنه عندما ينقر المستخدم على زر [<bdi dir="ltr" class="odt-ltr-term">Submit</bdi>]، يتم إرسال المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>, <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>] إلى عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi>].</p>
 <h3 id="552-response">5.5.2. <span style="color: #4f81bd">طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>]</span></h3>
 <p>تعرض هذه العرض القيم التي تم إدخالها في النموذج عندما تكون صالحة:</p>
 <p><img src="images/1000000000000559000001C5EA2FEDAD.png" width="680" height="225" style="width:17.997cm;height:5.955cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000559000001C5EA2FEDAD.png" /></p>
@@ -1492,7 +1492,7 @@
 <ul>
   <li>[<bdi dir="ltr" class="odt-ltr-term">name</bdi>]: اسم (سلسلة) موجود في سمات الجلسة، مرتبط بالمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">name</bdi>&quot;
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">age</bdi>]: عمر (سلسلة) موجود في سمات الجلسة، مرتبط بالمفتاح &quot;<bdi dir="ltr" class="odt-ltr-term">age</bdi>&quot;
+  <li>[age]: عمر (سلسلة) موجود في سمات الجلسة، مرتبط بالمفتاح &quot;age&quot;
   </li>
 </ul>
 
@@ -1530,13 +1530,13 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 6-7: تبدأ صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> باسترداد عناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] الخاصة بنموذجها من الطلب. أثناء التشغيل العادي للتطبيق، سيقوم وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] بإنشاء هذا النموذج.
+  <li>السطران 6-7: تبدأ صفحة <bdi dir="ltr" class="odt-ltr-term">JSP</bdi> باسترداد عناصر [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age] الخاصة بنموذجها من الطلب. أثناء التشغيل العادي للتطبيق، سيقوم وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] بإنشاء هذا النموذج.
   </li>
-  <li>ثم يتم عرض عناصر النموذج [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] في السطرين 20 و 24
+  <li>ثم يتم عرض عناصر النموذج [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age] في السطرين 20 و 24
   </li>
 </ul>
 
-<p>وبالتالي، نشير إلى هذا العرض باسم عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>)].</p>
+<p>وبالتالي، نشير إلى هذا العرض باسم عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age)].</p>
 <h3 id="553-errors">5.5.3. <span style="color: #4f81bd">عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>]</span></h3>
 <p>تُبلغ هذه العرضة عن أخطاء الإدخال في النموذج:</p>
 <p><img src="images/1000000000000562000001CC8B8EA19E.png" width="680" height="227" style="width:17.997cm;height:6.008cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000562000001CC8B8EA19E.png" /></p>
@@ -1685,7 +1685,7 @@
 </ul>
 
 <p>ستتولى وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>] الإجراءات التالية:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">طلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">الطلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">منشأ</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المعالجة</mark></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/hand</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي أدخله المستخدم</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [نموذج] فارغ</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/hand</bdi>]</div><div style="margin:0 0 0.5em 0">مع المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>,</div><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>، <bdi dir="ltr" class="odt-ltr-term">action</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على</div><div style="margin:0 0 0.5em 0">[إرسال] في</div><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تحقق من قيم المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>، <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>]</div><div style="margin:0 0 0.5em 0">- إذا كانت الإجابات خاطئة، فقم بإرسال عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>(<bdi dir="ltr" class="odt-ltr-term">errors</bdi>)]</div><div style="margin:0 0 0.5em 0">- إذا كانت صحيحة، أرسل عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>,<bdi dir="ltr" class="odt-ltr-term">age</bdi>)]</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">طلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">الطلب</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">منشأ</mark></b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b><mark style="background-color: #c0c0c0">المعالجة</mark></b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/hand</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> الذي أدخله المستخدم</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- إرسال عرض [نموذج] فارغ</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/hand</bdi>]</div><div style="margin:0 0 0.5em 0">مع المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>,</div><div style="margin:0 0 0.5em 0"><bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>، <bdi dir="ltr" class="odt-ltr-term">action</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">انقر على</div><div style="margin:0 0 0.5em 0">[إرسال] في</div><div style="margin:0 0 0.5em 0">[<bdi dir="ltr" class="odt-ltr-term">form</bdi>]</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">- تحقق من قيم المعلمات [<bdi dir="ltr" class="odt-ltr-term">txtName</bdi>، <bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>]</div><div style="margin:0 0 0.5em 0">- إذا كانت الإجابات خاطئة، فقم بإرسال عرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>(<bdi dir="ltr" class="odt-ltr-term">errors</bdi>)]</div><div style="margin:0 0 0.5em 0">- إذا كانت صحيحة، أرسل عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>,age)]</div></td></tr></table>
 
 <p>يبدأ التطبيق عندما يطلب المستخدم عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> [/<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi>]. وفقًا لملف [<bdi dir="ltr" class="odt-ltr-term">web.xml</bdi>] الخاص بالتطبيق (انظر القسم<a href="#personne1-web-xml"><u><span style="color: #0563c1"> 5.4</span></u></a>)، تتم معالجة هذا الطلب بواسطة مثيل لفئة <bdi dir="ltr" class="odt-ltr-term">ServletPersonne</bdi>، والتي سنقوم بوصفها الآن.</p>
 <h3 id="571">5.7.1. <span style="color: #4f81bd">هيكل وحدة التحكم</span></h3>
@@ -2026,7 +2026,7 @@
 </code></pre></div>
 <p>تتوقع طريقة العرض [<bdi dir="ltr" class="odt-ltr-term">errors</bdi>] وجود مفتاح باسم &quot;<bdi dir="ltr" class="odt-ltr-term">errors</bdi>&quot; في الطلب. يقوم وحدة التحكم بإنشاء هذا المفتاح في السطر 20.</p>
 <ul>
-  <li>السطر 28: نسترد طريقة [<bdi dir="ltr" class="odt-ltr-term">get</bdi>] أو [<bdi dir="ltr" class="odt-ltr-term">post</bdi>] التي استخدمها العميل لإجراء الطلب
+  <li>السطر 28: نسترد طريقة [get] أو [<bdi dir="ltr" class="odt-ltr-term">post</bdi>] التي استخدمها العميل لإجراء الطلب
   </li>
   <li>السطر 30: نسترد قيمة المعلمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>] من الطلب. تذكر أنه في تطبيقنا، الطلب رقم 2 فقط [<bdi dir="ltr" class="odt-ltr-term">POST</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi>] يحتوي على المعلمة [<bdi dir="ltr" class="odt-ltr-term">action</bdi>]. في هذا الطلب، تحتوي على القيمة [<bdi dir="ltr" class="odt-ltr-term">validationFormulaire</bdi>].
   </li>
@@ -2041,7 +2041,7 @@
 </ul>
 
 <h3 id="574-doinit">5.7.4. <span style="color: #4f81bd">طريقة [<bdi dir="ltr" class="odt-ltr-term">doInit</bdi>]</span></h3>
-<p>تتعامل هذه الطريقة مع الطلب رقم 1 [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi>]. بالنسبة لهذا الطلب، يجب أن تُرجع طريقة العرض الفارغة [<bdi dir="ltr" class="odt-ltr-term">form</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>)]. وفيما يلي شفرة هذه الطريقة:</p>
+<p>تتعامل هذه الطريقة مع الطلب رقم 1 [<bdi dir="ltr" class="odt-ltr-term">GET</bdi> /<bdi dir="ltr" class="odt-ltr-term">person1/main</bdi>]. بالنسبة لهذا الطلب، يجب أن تُرجع طريقة العرض الفارغة [<bdi dir="ltr" class="odt-ltr-term">form</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age)]. وفيما يلي شفرة هذه الطريقة:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
@@ -2102,7 +2102,7 @@
 </code></pre></div>
 
 <ul>
-  <li>السطران 16-17: يتم تهيئة نموذج [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>] الخاص بعرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>] بسلسلتين فارغتين.
+  <li>السطران 16-17: يتم تهيئة نموذج [<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age] الخاص بعرض [<bdi dir="ltr" class="odt-ltr-term">form</bdi>] بسلسلتين فارغتين.
   </li>
 </ul>
 
@@ -2209,7 +2209,7 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 35-38: إذا كانت المعلمتان المسترجعتان &quot;<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>&quot; و&quot;<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>&quot; تحتويان على قيم صالحة، يتم عرض عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, <bdi dir="ltr" class="odt-ltr-term">age</bdi>)]. تذكر قالب عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>]:
+  <li>الأسطر 35-38: إذا كانت المعلمتان المسترجعتان &quot;<bdi dir="ltr" class="odt-ltr-term">txtNom</bdi>&quot; و&quot;<bdi dir="ltr" class="odt-ltr-term">txtAge</bdi>&quot; تحتويان على قيم صالحة، يتم عرض عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>(<bdi dir="ltr" class="odt-ltr-term">name</bdi>, age)]. تذكر قالب عرض [<bdi dir="ltr" class="odt-ltr-term">response</bdi>]:
   </li>
 </ul>
 

@@ -1215,24 +1215,24 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">GEN_ID</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">GEN_PERSONNES_ID</span><span class="p">,</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">RDB$DATABASE</span>
 </code></pre></div>
 <p>لذلك يعرض القيمة التالية لمولد [<bdi dir="ltr" class="odt-ltr-term">GEN</bdi>_PERSONNES_ID]. <bdi dir="ltr" class="odt-ltr-term">GEN</bdi>_ID هي دالة داخلية في <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>، و[<bdi dir="ltr" class="odt-ltr-term">RDB</bdi>$<bdi dir="ltr" class="odt-ltr-term">DATABASE</bdi>] هي جدول نظامي في نظام إدارة قواعد البيانات هذا.</p>
-<h2 id="172-eclipse-dao-service">17.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
-<p>لتطوير طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لتطبيق قاعدة البيانات الخاص بنا، سنستخدم مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03</bdi>]:</p>
+<h2 id="172-eclipse-dao-service">17.2. <span style="color: #4f81bd">مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> لطبقات [dao] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
+<p>لتطوير طبقات [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لتطبيق قاعدة البيانات الخاص بنا، سنستخدم مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03</bdi>]:</p>
 <p><img src="images/10000000000000DE0000007827F82A08.png" width="155" height="84" style="width:4.11cm;height:2.223cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DE0000007827F82A08.png" /></p>
-<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> بسيط، وليس مشروع ويب <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi> تذكر أن الإصدار 2 من تطبيقنا سيستخدم طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] من الإصدار 1. لذلك لا داعي لكتابة هذه الطبقة.</p>
+<p>المشروع هو مشروع <bdi dir="ltr" class="odt-ltr-term">Java</bdi> بسيط، وليس مشروع ويب <bdi dir="ltr" class="odt-ltr-term">Tomcat.</bdi> تذكر أن الإصدار 2 من تطبيقنا سيستخدم طبقة [web] من الإصدار 1. لذلك لا داعي لكتابة هذه الطبقة.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>مجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]</p>
+<p>مجلد [src]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>يحتوي هذا المجلد على شفرة المصدر لطبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]:</p>
+<p>يحتوي هذا المجلد على شفرة المصدر لطبقتي [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]:</p>
 <p><img src="images/100000000000010C00000178BCAA9E6B.png" width="187" height="263" style="width:4.96cm;height:6.959cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010C00000178BCAA9E6B.png" /></p>
 <p>ويحتوي على حزم متنوعة:</p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.dao</bdi>]: تحتوي على طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.dao</bdi>]: تحتوي على طبقة [dao]
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.entites</bdi>]: تحتوي على فئة [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.people.service</bdi>]: تحتوي على فئة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.tests</bdi>]: تحتوي على اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">istia.st.mvc.personnes.tests</bdi>]: تحتوي على اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> لطبقات [dao] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
 </ul>
 
@@ -1372,36 +1372,36 @@
 <a id="__codelineno-2-61" name="__codelineno-2-61"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">PERSONNES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">PK_PERSONNES</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>]</p>
+<p>المجلد [lib]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>يحتوي هذا المجلد على الملفات التي يحتاجها التطبيق:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000166000001C20E4C8C14.png" width="179" height="225" style="display:inline-block; margin:4px;width:4.736cm;height:5.953cm;" class="odt-zoomable" data-zoom-src="images/1000000000000166000001C20E4C8C14.png" /></td></tr></table>
 
-<p>لاحظ وجود برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> [<bdi dir="ltr" class="odt-ltr-term">firebirdsql-full.jar</bdi>] لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>، بالإضافة إلى عدد من ملفات [<bdi dir="ltr" class="odt-ltr-term">spring-</bdi>*.<bdi dir="ltr" class="odt-ltr-term">jar</bdi>]. كان بإمكاننا استخدام ملف [<bdi dir="ltr" class="odt-ltr-term">spring.jar</bdi>] الوحيد الموجود في مجلد [<bdi dir="ltr" class="odt-ltr-term">dist</bdi>] الخاص بالتوزيع، والذي يحتوي على جميع فئات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> يمكننا أيضًا استخدام الأرشيفات الضرورية للمشروع فقط. وهذا ما قمنا به هنا، مسترشدين بأخطاء الفئات المفقودة التي أبلغ عنها <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> وأسماء أرشيفات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الجزئية. تم وضع جميع هذه الأرشيفات من المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] في <em>مسار فئات (<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>)</em> المشروع.</p>
+<p>لاحظ وجود برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> [<bdi dir="ltr" class="odt-ltr-term">firebirdsql-full.jar</bdi>] لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi>، بالإضافة إلى عدد من ملفات [<bdi dir="ltr" class="odt-ltr-term">spring-</bdi>*.jar]. كان بإمكاننا استخدام ملف [<bdi dir="ltr" class="odt-ltr-term">spring.jar</bdi>] الوحيد الموجود في مجلد [<bdi dir="ltr" class="odt-ltr-term">dist</bdi>] الخاص بالتوزيع، والذي يحتوي على جميع فئات <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi> يمكننا أيضًا استخدام الأرشيفات الضرورية للمشروع فقط. وهذا ما قمنا به هنا، مسترشدين بأخطاء الفئات المفقودة التي أبلغ عنها <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> وأسماء أرشيفات <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> الجزئية. تم وضع جميع هذه الأرشيفات من المجلد [lib] في <em>مسار فئات (<bdi dir="ltr" class="odt-ltr-term">Classpath</bdi>)</em> المشروع.</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p>مجلد [<bdi dir="ltr" class="odt-ltr-term">dist</bdi>]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
 <p>سيحتوي هذا المجلد على الأرشيفات الناتجة عن تجميع فئات التطبيق:</p>
 <p><img src="images/10000000000000AC00000031B670528E.png" width="121" height="34" style="width:3.191cm;height:0.908cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000AC00000031B670528E.png" /></p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>]: أرشيف طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">personnes-dao.jar</bdi>]: أرشيف طبقة [dao]
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">personnes-service.jar</bdi>]: أرشيف طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
 </ul>
 
-<h2 id="173-dao">17.3. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h2>
-<h3 id="1731-dao">17.3.1. <span style="color: #4f81bd">مكونات طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></h3>
-<p>تتكون طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] من الفئات والواجهات التالية:</p>
+<h2 id="173-dao">17.3. <span style="color: #4f81bd">طبقة [dao]</span></h2>
+<h3 id="1731-dao">17.3.1. <span style="color: #4f81bd">مكونات طبقة [dao]</span></h3>
+<p>تتكون طبقة [dao] من الفئات والواجهات التالية:</p>
 <p><img src="images/10000000000000CA00000061B4166F40.png" width="141" height="68" style="width:3.739cm;height:1.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA00000061B4166F40.png" /></p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] هي الواجهة التي توفرها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
+  <li>[<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] هي الواجهة التي توفرها طبقة [dao]
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] هي تطبيق لهذه الواجهة حيث يتم تخزين مجموعة الأشخاص في جدول قاعدة بيانات. تجمع [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] الوظائف المستقلة عن نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>).
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>] هي فئة مشتقة من [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] لإدارة قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> على وجه التحديد.
   </li>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] هو نوع الاستثناءات غير المعالجة التي تطلقها طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. هذه الفئة موجودة منذ الإصدار 1.
+  <li>[<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] هو نوع الاستثناءات غير المعالجة التي تطلقها طبقة [dao]. هذه الفئة موجودة منذ الإصدار 1.
   </li>
 </ul>
 
@@ -1575,7 +1575,7 @@
 <p><img src="images/10000000000002ED00000145D4A163B0.png" width="524" height="227" style="width:13.869cm;height:6.018cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002ED00000145D4A163B0.png" /></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044A000000BDAD0A7557.png" width="549" height="94" style="display:inline-block; margin:4px;width:14.526cm;height:2.499cm;" class="odt-zoomable" data-zoom-src="images/100000000000044A000000BDAD0A7557.png" /></td></tr></table>
 
-<p>يتطلب استخدام إطار عمل [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] ملفين مضغوطين [<bdi dir="ltr" class="odt-ltr-term">ibatis-common</bdi>، <bdi dir="ltr" class="odt-ltr-term">ibatis-sqlmap</bdi>]، وقد تم وضعهما في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] الخاص بالمشروع:</p>
+<p>يتطلب استخدام إطار عمل [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] ملفين مضغوطين [<bdi dir="ltr" class="odt-ltr-term">ibatis-common</bdi>، <bdi dir="ltr" class="odt-ltr-term">ibatis-sqlmap</bdi>]، وقد تم وضعهما في مجلد [lib] الخاص بالمشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000135000001FCF30962D0.png" width="155" height="254" style="display:inline-block; margin:4px;width:4.089cm;height:6.722cm;" class="odt-zoomable" data-zoom-src="images/1000000000000135000001FCF30962D0.png" /></td></tr></table>
 
 <p>تغلف فئة [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientDaoSupport</bdi>] الجزء العام من استخدام إطار عمل [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]، أي مقاطع الكود الموجودة في جميع طبقات [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] التي تستخدم أداة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]. لكتابة الجزء غير العام من الكود — أي الكود الخاص بطبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] التي نكتبها — ما عليك سوى اشتقاق فئة [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientDaoSupport</bdi>]. وهذا ما نقوم به هنا.</p>
@@ -1600,7 +1600,7 @@
   </li>
 </ol>
 
-<p>إذا كان تطبيق [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] الخاص بنا يعمل مباشرة مع [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]، فسيتعين عليه تنفيذ هذه التسلسل بشكل متكرر. العملية 3 هي الوحيدة الخاصة بطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]؛ أما العمليات الأخرى فهي عامة. ستتولى فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientDaoSupport</bdi>] العمليات 1 و 2 و 4 و 5 بنفسها، وتفوض العملية 3 إلى فئتها المشتقة، وهي في هذه الحالة فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>].</p>
+<p>إذا كان تطبيق [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>] الخاص بنا يعمل مباشرة مع [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]، فسيتعين عليه تنفيذ هذه التسلسل بشكل متكرر. العملية 3 هي الوحيدة الخاصة بطبقة [dao]؛ أما العمليات الأخرى فهي عامة. ستتولى فئة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientDaoSupport</bdi>] العمليات 1 و 2 و 4 و 5 بنفسها، وتفوض العملية 3 إلى فئتها المشتقة، وهي في هذه الحالة فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>].</p>
 <p>لكي تعمل فئة [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientDaoSupport</bdi>]، فإنها تتطلب مرجعًا إلى كائن <bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient sqlMapClient</bdi>]، الذي سيتولى الاتصال بقاعدة البيانات. يتطلب هذا الكائن شيئين لكي يعمل:</p>
 <ul>
   <li>كائن [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>] متصل بقاعدة البيانات التي سيطلب منها الاتصالات
@@ -1609,7 +1609,7 @@
   </li>
 </ul>
 
-<p>سيكون التكوين الأولي لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] الخاصة بنا والذي يعكس البنية المذكورة أعلاه كما يلي:</p>
+<p>سيكون التكوين الأولي لطبقة [dao] الخاصة بنا والذي يعكس البنية المذكورة أعلاه كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- the [dao] layer access classes --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;bean</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;dao&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">class=</span><span style="color:#000080">&quot;istia.st.mvc.personnes.dao.DaoImplCommon&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -1699,7 +1699,7 @@
 
 <p>هناك العديد من تطبيقات واجهة [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>] المتاحة مجانًا. هنا، سنستخدم تطبيق [<bdi dir="ltr" class="odt-ltr-term">commons DBCP</bdi>] المتاح على الرابط [<bdi dir="ltr" class="odt-ltr-term">http://jakarta.apache.org/commons/dbcp/</bdi>]:</p>
 <p><img src="images/1000000000000344000000BD9E46BCC4.png" width="585" height="132" style="width:15.48cm;height:3.5cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000344000000BD9E46BCC4.png" /></p>
-<p>يتطلب استخدام أداة [<bdi dir="ltr" class="odt-ltr-term">commons DBCP</bdi>] ملفين مضغوطين [<bdi dir="ltr" class="odt-ltr-term">commons-dbcp</bdi>، <bdi dir="ltr" class="odt-ltr-term">commons-pool</bdi>]، وكلاهما تم وضعهما في مجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] الخاص بالمشروع:</p>
+<p>يتطلب استخدام أداة [<bdi dir="ltr" class="odt-ltr-term">commons DBCP</bdi>] ملفين مضغوطين [<bdi dir="ltr" class="odt-ltr-term">commons-dbcp</bdi>، <bdi dir="ltr" class="odt-ltr-term">commons-pool</bdi>]، وكلاهما تم وضعهما في مجلد [lib] الخاص بالمشروع:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000113000001E2B61D39F2.png" width="138" height="241" style="display:inline-block; margin:4px;width:3.639cm;height:6.378cm;" class="odt-zoomable" data-zoom-src="images/1000000000000113000001E2B61D39F2.png" /></td></tr></table>
 
 <p>توفر فئة [<bdi dir="ltr" class="odt-ltr-term">BasicDataSource</bdi>] من [<bdi dir="ltr" class="odt-ltr-term">commons DBCP</bdi>] تطبيق [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>] الذي نحتاجه:</p>
@@ -1716,7 +1716,7 @@
   </li>
 </ol>
 
-<p>قد يبدو ملف التكوين لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] الخاصة بنا كما يلي:</p>
+<p>قد يبدو ملف التكوين لطبقة [dao] الخاصة بنا كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><a id="spring-config-tests-dao-firebird-xml"></a><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -1771,7 +1771,7 @@
 <p>لقد أحرزنا تقدمًا كبيرًا، ولكن لا تزال هناك بعض نقاط التكوين التي يجب توضيحها: يشير السطر 28 إلى ملف [<bdi dir="ltr" class="odt-ltr-term">sql-map-config-firebird.xml</bdi>]، الذي يجب أن يقوم بتكوين <bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi>]. قبل فحص محتوياته، دعونا نعرض موقع ملفات التكوين هذه في مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> الخاص بنا:</p>
 <p><img src="images/100000000000010F000000A24005F566.png" width="190" height="114" style="width:5.039cm;height:3.013cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010F000000A24005F566.png" /></p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-firebird.xml</bdi>] هو ملف التكوين لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] التي فحصناها للتو
+  <li>[<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-firebird.xml</bdi>] هو ملف التكوين لطبقة [dao] التي فحصناها للتو
   </li>
   <li>يُشار إلى [<bdi dir="ltr" class="odt-ltr-term">sql-map-config-firebird.xml</bdi>] بواسطة [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-firebird.xml</bdi>]. سنقوم بفحصه.
   </li>
@@ -1779,7 +1779,7 @@
   </li>
 </ul>
 
-<p>توجد الملفات الثلاثة المذكورة أعلاه في المجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>]. في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، هذا يعني أنها ستكون موجودة في مجلد [<bdi dir="ltr" class="odt-ltr-term">bin</bdi>] الخاص بالمشروع (غير موضح أعلاه) عند وقت التشغيل. هذا المجلد هو جزء من <em>مسار</em> فئات التطبيق <em>(<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi></em>). وبالتالي، ستكون الملفات الثلاثة المذكورة أعلاه موجودة في <em>مسار</em> فئات التطبيق. وهذا أمر ضروري.</p>
+<p>توجد الملفات الثلاثة المذكورة أعلاه في المجلد [src]. في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>، هذا يعني أنها ستكون موجودة في مجلد [bin] الخاص بالمشروع (غير موضح أعلاه) عند وقت التشغيل. هذا المجلد هو جزء من <em>مسار</em> فئات التطبيق <em>(<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi></em>). وبالتالي، ستكون الملفات الثلاثة المذكورة أعلاه موجودة في <em>مسار</em> فئات التطبيق. وهذا أمر ضروري.</p>
 <p>ملف [<bdi dir="ltr" class="odt-ltr-term">sql-map-config-firebird.xml</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;UTF-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">?&gt;</span></span></span>
@@ -1867,7 +1867,7 @@
   </li>
 </ul>
 
-<p>سيتم شرح دور ومغزى محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">people-firebird.xml</bdi>] من خلال دراسة فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]، التي تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].</p>
+<p>سيتم شرح دور ومغزى محتويات ملف [<bdi dir="ltr" class="odt-ltr-term">people-firebird.xml</bdi>] من خلال دراسة فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]، التي تنفذ طبقة [dao].</p>
 <h3 id="1733-daoimplcommon">17.3.3. <span style="color: #4f81bd"><strong>فئة [</strong><bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi><strong>]</strong></span></h3>
 <p>دعونا نعيد النظر في بنية الوصول إلى البيانات:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D0000000A145595459.png" width="616" height="81" style="display:inline-block; margin:4px;width:16.298cm;height:2.131cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D0000000A145595459.png" /></td></tr></table>
@@ -2000,8 +2000,8 @@
 <p><img src="images/100000000000033A0000002FCE0B91CC.png" width="578" height="33" style="width:15.3cm;height:0.871cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033A0000002FCE0B91CC.png" /></p>
 <p>يغلف النوع [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>] كائن [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi>] من طبقة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]. ومن خلاله سنقوم بالوصول إلى قاعدة البيانات. يمكن استخدام نوع [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] <bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi> مباشرةً لأن فئة [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientDaoSupport</bdi>] لديها حق الوصول إليه:</p>
 <p><img src="images/10000000000003170000002FF02BE8B7.png" width="554" height="33" style="width:14.651cm;height:0.871cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003170000002FF02BE8B7.png" /></p>
-<p>عيب فئة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] <bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi> هو أنها ترمي استثناءات [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>]، وهو نوع استثناء خاضع للرقابة، أي استثناء يجب معالجته بواسطة كتلة <bdi dir="ltr" class="odt-ltr-term">try/catch</bdi> أو الإعلان عنه في توقيع الطرق التي ترمي به. ومع ذلك، دعونا نتذكر أن طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] التي لا تتضمن طرقها استثناءات في توقيعاتها. وبالتالي، لا يمكن أن تحتوي طرق الفئات التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] على استثناءات في توقيعاتها. لذلك، يجب علينا اعتراض كل استثناء [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>] يرميه طبقة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] وتغليفه في استثناء غير متحكم فيه. وسيكون نوع [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] من مشروعنا مناسبًا لهذا التغليف.</p>
-<p>بدلاً من معالجة هذه الاستثناءات بأنفسنا، سنعهد بها إلى نوع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>]، الذي يغلف كائن [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi>] من طبقة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]. في الواقع، تم تصميم [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>] لاعتراض استثناءات [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>] التي ترميها طبقة [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi>] وتغليفها في نوع [<a id="dataaccessexception"></a> <bdi dir="ltr" class="odt-ltr-term">DataAccessException</bdi>] غير المعالج. هذا السلوك يناسبنا. نحتاج ببساطة إلى تذكر أن طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] قادرة الآن على رمي نوعين من الاستثناءات غير المعالجة:</p>
+<p>عيب فئة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] <bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi> هو أنها ترمي استثناءات [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>]، وهو نوع استثناء خاضع للرقابة، أي استثناء يجب معالجته بواسطة كتلة <bdi dir="ltr" class="odt-ltr-term">try/catch</bdi> أو الإعلان عنه في توقيع الطرق التي ترمي به. ومع ذلك، دعونا نتذكر أن طبقة [dao] تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] التي لا تتضمن طرقها استثناءات في توقيعاتها. وبالتالي، لا يمكن أن تحتوي طرق الفئات التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] على استثناءات في توقيعاتها. لذلك، يجب علينا اعتراض كل استثناء [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>] يرميه طبقة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] وتغليفه في استثناء غير متحكم فيه. وسيكون نوع [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] من مشروعنا مناسبًا لهذا التغليف.</p>
+<p>بدلاً من معالجة هذه الاستثناءات بأنفسنا، سنعهد بها إلى نوع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>]، الذي يغلف كائن [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi>] من طبقة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]. في الواقع، تم تصميم [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>] لاعتراض استثناءات [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>] التي ترميها طبقة [<bdi dir="ltr" class="odt-ltr-term">SqlMapClient</bdi>] وتغليفها في نوع [<a id="dataaccessexception"></a> <bdi dir="ltr" class="odt-ltr-term">DataAccessException</bdi>] غير المعالج. هذا السلوك يناسبنا. نحتاج ببساطة إلى تذكر أن طبقة [dao] قادرة الآن على رمي نوعين من الاستثناءات غير المعالجة:</p>
 <ul>
   <li>نوع [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] المخصص لدينا
   </li>
@@ -2018,7 +2018,7 @@
 <p><img src="images/10000000000002100000003230DD8473.png" width="370" height="35" style="width:9.781cm;height:0.926cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002100000003230DD8473.png" /></p>
 <p>تسمح لك هذه الطريقة بإصدار عبارة [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] واسترداد النتيجة كقائمة من الكائنات:</p>
 <ul>
-  <li>[<bdi dir="ltr" class="odt-ltr-term">statementName</bdi>]: معرف (<bdi dir="ltr" class="odt-ltr-term">id</bdi>) عبارة [<bdi dir="ltr" class="odt-ltr-term">select</bdi>] في ملف التكوين
+  <li>[<bdi dir="ltr" class="odt-ltr-term">statementName</bdi>]: معرف (id) عبارة [<bdi dir="ltr" class="odt-ltr-term">select</bdi>] في ملف التكوين
   </li>
   <li>[<bdi dir="ltr" class="odt-ltr-term">parameterObject</bdi>]: كائن &quot;<bdi dir="ltr" class="odt-ltr-term">parameter</bdi>&quot; لـ [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>] المعلم. يمكن أن يتخذ كائن &quot;<bdi dir="ltr" class="odt-ltr-term">parameter</bdi>&quot; شكلين:
     <ul>
@@ -2103,7 +2103,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><bdi dir="ltr" class="odt-ltr-term">getOne</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>تسترد هذه الطريقة شخصًا محددًا بواسطة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] الخاص به. وفيما يلي كودها:</p>
+<p>تسترد هذه الطريقة شخصًا محددًا بواسطة [id] الخاص به. وفيما يلي كودها:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -2156,7 +2156,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>تسمح لك هذه الطريقة بحذف شخص تم تحديده بواسطة [<bdi dir="ltr" class="odt-ltr-term">id</bdi>] الخاص به. وفيما يلي كودها:</p>
+<p>تسمح لك هذه الطريقة بحذف شخص تم تحديده بواسطة [id] الخاص به. وفيما يلي كودها:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
@@ -2188,7 +2188,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        ID=#value# </span><span style="color:#0000e1">&lt;/delete&gt;</span></span></span>
 </code></pre></div>
 
-<p>يتم تكوين أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> بواسطة المعلمة #<bdi dir="ltr" class="odt-ltr-term">value#</bdi> (السطر 3) من النوع [<bdi dir="ltr" class="odt-ltr-term">parameterClass</bdi>=&quot;<bdi dir="ltr" class="odt-ltr-term">int</bdi>&quot;] (السطر 2). سيكون هذا هو معرف الشخص الذي يتم البحث عنه (السطر 5 من <em><bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi></em>)</p>
+<p>يتم تكوين أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> بواسطة المعلمة #<bdi dir="ltr" class="odt-ltr-term">value#</bdi> (السطر 3) من النوع [<bdi dir="ltr" class="odt-ltr-term">parameterClass</bdi>=&quot;int&quot;] (السطر 2). سيكون هذا هو معرف الشخص الذي يتم البحث عنه (السطر 5 من <em><bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi></em>)</p>
 <ul>
   <li>السطر 4: نتيجة طريقة<i> [<bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>].<bdi dir="ltr" class="odt-ltr-term">delete</bdi> </i>هي عدد الصفوف التي تم حذفها.
   </li>
@@ -2289,13 +2289,13 @@
     <ul>
       <li>استعلام <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> الذي يجب تنفيذه للحصول على قيمة المفتاح الأساسي. الاستعلام الموضح هنا هو الذي قدمناه في <span style="color: #000000">القسم</span><a href="#firebird-genid"><u><span style="color: #0563c1"> 17.1</span></u></a><span style="color: #000000">. تجدر الإشارة إلى نقطتين:</span>
         <ul>
-          <li><b>&quot;<bdi dir="ltr" class="odt-ltr-term">as</bdi> &#x27;<bdi dir="ltr" class="odt-ltr-term">value</bdi>&#x27;&quot; </b><span style="color: #000000">إلزامي. يمكنك أيضًا كتابة </span><i>&quot;<bdi dir="ltr" class="odt-ltr-term">as value</bdi>&quot;، </i><span style="color: #000000">لكن </span><i>&quot;<bdi dir="ltr" class="odt-ltr-term">value</bdi>&quot; </i><span style="color: #000000">هي كلمة رئيسية في <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> يجب وضعها بين علامتي اقتباس.</span>
+          <li><b>&quot;as &#x27;<bdi dir="ltr" class="odt-ltr-term">value</bdi>&#x27;&quot; </b><span style="color: #000000">إلزامي. يمكنك أيضًا كتابة </span><i>&quot;<bdi dir="ltr" class="odt-ltr-term">as value</bdi>&quot;، </i><span style="color: #000000">لكن </span><i>&quot;<bdi dir="ltr" class="odt-ltr-term">value</bdi>&quot; </i><span style="color: #000000">هي كلمة رئيسية في <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> يجب وضعها بين علامتي اقتباس.</span>
           </li>
           <li>يُسمى جدول <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> في الواقع [<bdi dir="ltr" class="odt-ltr-term">RDB</bdi>$<bdi dir="ltr" class="odt-ltr-term">DATABASE</bdi>]. ومع ذلك، يتم تفسير الحرف $ بواسطة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>]. وقد تم تجاوزه عن طريق مضاعفته.
           </li>
         </ul>
       </li>
-      <li>الحقل في كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] الذي يجب تهيئته بالقيمة التي تم استردادها بواسطة عبارة [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>]، وهو في هذه الحالة الحقل [<bdi dir="ltr" class="odt-ltr-term">id</bdi>]. يتم تحديد هذا الحقل بواسطة السمة [<bdi dir="ltr" class="odt-ltr-term">keyProperty</bdi>] في السطر 2.
+      <li>الحقل في كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] الذي يجب تهيئته بالقيمة التي تم استردادها بواسطة عبارة [<bdi dir="ltr" class="odt-ltr-term">SELECT</bdi>]، وهو في هذه الحالة الحقل [id]. يتم تحديد هذا الحقل بواسطة السمة [<bdi dir="ltr" class="odt-ltr-term">keyProperty</bdi>] في السطر 2.
       </li>
     </ul>
   </li>
@@ -2376,9 +2376,9 @@
   </li>
 </ul>
 
-<h2 id="174-dao">17.4. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">اختبارات لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</span></strong></span></h2>
+<h2 id="174-dao">17.4. <span style="color: #4f81bd"><strong><span style="color: #4f81bd">اختبارات لطبقة [dao]</span></strong></span></h2>
 <h3 id="1741-daoimplcommon">17.4.1. <span style="color: #4f81bd">اختبار تنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]</span></h3>
-<p><span style="color: #000000">الآن بعد أن كتبنا طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]، نقترح اختبارها باستخدام اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit:</bdi></span></p>
+<p><span style="color: #000000">الآن بعد أن كتبنا طبقة [dao]، نقترح اختبارها باستخدام اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit:</bdi></span></p>
 <p><img src="images/10000000000000EE00000082C83262AB.png" width="167" height="91" style="width:4.41cm;height:2.409cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000EE00000082C83262AB.png" /></p>
 <p><span style="color: #000000">قبل إجراء اختبارات شاملة، يمكننا البدء ببرنامج [<bdi dir="ltr" class="odt-ltr-term">main</bdi>] بسيط يعرض محتويات جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. هذه هي فئة [<bdi dir="ltr" class="odt-ltr-term">MainTestDaoFirebird</bdi>]:</span></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
@@ -2428,7 +2428,7 @@
 <a id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><span style="color: #000000"> </span></p>
-<p><span style="color: #000000">ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-firebird.xml</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]، المستخدم في السطور 13–14، هو كما يلي:</span></p>
+<p><span style="color: #000000">ملف التكوين [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-firebird.xml</bdi>] لطبقة [dao]، المستخدم في السطور 13–14، هو كما يلي:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span> <span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span> <span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -2975,11 +2975,11 @@
 </code></pre></div></td></tr></table></div>
 <p>نقوم بإنشاء 100 مؤشر ترابط ستقوم بإدراج 100 شخص مختلف في وقت واحد. ستحصل جميع مؤشرات الترابط هذه على مفتاح أساسي للشخص الذي تحتاج إلى إدراجه، ثم يتم إيقافها مؤقتًا لمدة 10 مللي ثانية (السطر 10 – <bdi dir="ltr" class="odt-ltr-term">insertPerson</bdi>) قبل أن تتمكن من تنفيذ عملية الإدراج. نريد التحقق من أن كل شيء يسير بسلاسة، وعلى وجه الخصوص، أن مؤشرات الترابط تحصل بالفعل على قيم مفاتيح أساسية مختلفة.</p>
 <ul>
-  <li>الأسطر 7–11: يتم إنشاء مصفوفة من 100 شخص. هؤلاء الأشخاص هم جميعًا نسخ من الشخص <bdi dir="ltr" class="odt-ltr-term">p</bdi> الذي تم إنشاؤه في الأسطر 4–5.
+  <li>الأسطر 7–11: يتم إنشاء مصفوفة من 100 شخص. هؤلاء الأشخاص هم جميعًا نسخ من الشخص p الذي تم إنشاؤه في الأسطر 4–5.
   </li>
   <li>الأسطر 14–17: يتم تشغيل 100 مؤشر ترابط للإدراج. كل مؤشر ترابط مسؤول عن إدراج واحد من الأشخاص الـ 100 الذين تم إنشاؤهم مسبقًا.
   </li>
-  <li>الأسطر 19-23: ينتظر [<bdi dir="ltr" class="odt-ltr-term">test6</bdi>] انتهاء كل خيط من الخيوط المائة التي أطلقها. وعندما يكتشف أن الخيط رقم <bdi dir="ltr" class="odt-ltr-term">i</bdi> قد انتهى، يحذف الشخص الذي أدخله هذا الخيط للتو.
+  <li>الأسطر 19-23: ينتظر [<bdi dir="ltr" class="odt-ltr-term">test6</bdi>] انتهاء كل خيط من الخيوط المائة التي أطلقها. وعندما يكتشف أن الخيط رقم i قد انتهى، يحذف الشخص الذي أدخله هذا الخيط للتو.
   </li>
 </ul>
 
@@ -3152,7 +3152,7 @@
 <p><img src="images/10000000000000D2000000E589676836.png" width="147" height="160" style="width:3.889cm;height:4.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D2000000E589676836.png" /></p>
 <p>النوع [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] هو الفئة الأم لـ [<bdi dir="ltr" class="odt-ltr-term">Exception</bdi>].</p>
 <p>هنا، نحتاج إلى التحقق من أن الكائن [<bdi dir="ltr" class="odt-ltr-term">Throwable</bdi>] الذي ألقى به برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">Firebird JDBC</bdi> — والذي تسبب في إلقاء [<bdi dir="ltr" class="odt-ltr-term">SQLException</bdi>] بواسطة طبقة [<bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi>] — هو بالفعل استثناء من النوع [<bdi dir="ltr" class="odt-ltr-term">org.firebirdsql.gds.GDSException</bdi>] برمز الخطأ 335544336. لاسترداد رمز الخطأ، يمكننا استخدام طريقة [<bdi dir="ltr" class="odt-ltr-term">getErrorCode</bdi>()] الخاصة بفئة [<bdi dir="ltr" class="odt-ltr-term">org.firebirdsql.gds.GDSException</bdi>].</p>
-<p>إذا استخدمنا استثناء [<bdi dir="ltr" class="odt-ltr-term">org.firebirdsql.gds.GDSException</bdi>] في كود [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>]، فإن هذا الخيط لن يعمل إلا مع نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> وينطبق الأمر نفسه على الاختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] الذي يستخدم هذا الخيط. نريد تجنب ذلك. في الواقع، نريد أن تظل اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> صالحة بغض النظر عن نظام إدارة قواعد البيانات المستخدم. لتحقيق ذلك، قررنا أن طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] ستقوم بإلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] برمز 4 كلما تم الكشف عن استثناء &quot;تعارض التحديث&quot;، بغض النظر عن نظام إدارة قواعد البيانات الأساسي. وبالتالي، يمكن إعادة كتابة مؤشر الترابط [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>] على النحو التالي:</p>
+<p>إذا استخدمنا استثناء [<bdi dir="ltr" class="odt-ltr-term">org.firebirdsql.gds.GDSException</bdi>] في كود [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>]، فإن هذا الخيط لن يعمل إلا مع نظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> وينطبق الأمر نفسه على الاختبار [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>] الذي يستخدم هذا الخيط. نريد تجنب ذلك. في الواقع، نريد أن تظل اختبارات <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> صالحة بغض النظر عن نظام إدارة قواعد البيانات المستخدم. لتحقيق ذلك، قررنا أن طبقة [dao] ستقوم بإلقاء استثناء [<bdi dir="ltr" class="odt-ltr-term">DaoException</bdi>] برمز 4 كلما تم الكشف عن استثناء &quot;تعارض التحديث&quot;، بغض النظر عن نظام إدارة قواعد البيانات الأساسي. وبالتالي، يمكن إعادة كتابة مؤشر الترابط [<bdi dir="ltr" class="odt-ltr-term">ThreadDaoMajEnfants</bdi>] على النحو التالي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
@@ -3252,7 +3252,7 @@
   </li>
 </ul>
 
-<p>لذلك يجب أن تكون طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] قادرة على التعرف على استثناء &quot;تعارض التحديث&quot;. يتم إلقاء هذا الاستثناء بواسطة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> وهو خاص به. يجب معالجة هذا الاستثناء في طريقة [<bdi dir="ltr" class="odt-ltr-term">updatePerson</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]:</p>
+<p>لذلك يجب أن تكون طبقة [dao] قادرة على التعرف على استثناء &quot;تعارض التحديث&quot;. يتم إلقاء هذا الاستثناء بواسطة برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> وهو خاص به. يجب معالجة هذا الاستثناء في طريقة [<bdi dir="ltr" class="odt-ltr-term">updatePerson</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
@@ -3389,7 +3389,7 @@
   </li>
 </ul>
 
-<p>نحن جاهزون لاختبار طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] الجديدة.</p>
+<p>نحن جاهزون لاختبار طبقة [dao] الجديدة.</p>
 <h3 id="1743-daoimplfirebird">17.4.3. <span style="color: #4f81bd">اختبار تطبيق [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>]</span></h3>
 <p><span style="color: #000000">تم تعديل ملف تكوين الاختبار [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-dao-firebird.xml</bdi>] لاستخدام تطبيق [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -3433,7 +3433,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 32: التنفيذ الجديد [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>].</span>
+  <li><span style="color: #000000">السطر 32: التنفيذ الجديد [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>] لطبقة [dao].</span>
   </li>
 </ul>
 
@@ -3462,10 +3462,10 @@
 <a id="__codelineno-26-3" name="__codelineno-26-3"></a>thread n° 36 [1145977145765] : version corrompue ou personne inexistante
 </code></pre></div></td></tr></table></div>
 <p>يُظهر السطر 2 أن الخيط رقم 75 فشل أثناء التحديث بسبب تعارض في التحديث: عندما صدر أمر <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> [<bdi dir="ltr" class="odt-ltr-term">update</bdi>] على الجدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]، كان الصف الذي كان يجب تحديثه مقفلاً بواسطة خيط آخر. سيجبر هذا التعارض في الوصول الخيط رقم 75 على إعادة محاولة التحديث.</p>
-<p>في ختام [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>]، نلاحظ اختلافًا كبيرًا عن نتائج الاختبار نفسه في الإصدار 1، حيث فشل بسبب مشكلات في التزامن. نظرًا لأن الطرق في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في الإصدار 1 لم تكن متزامنة، فقد حدثت تعارضات في الوصول. هنا، لم نكن بحاجة إلى مزامنة طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. لقد تعاملنا ببساطة مع تعارضات الوصول التي أبلغ عنها <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi></p>
-<p>دعونا الآن نجري اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> بالكامل لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]:</p>
+<p>في ختام [<bdi dir="ltr" class="odt-ltr-term">test4</bdi>]، نلاحظ اختلافًا كبيرًا عن نتائج الاختبار نفسه في الإصدار 1، حيث فشل بسبب مشكلات في التزامن. نظرًا لأن الطرق في طبقة [dao] في الإصدار 1 لم تكن متزامنة، فقد حدثت تعارضات في الوصول. هنا، لم نكن بحاجة إلى مزامنة طبقة [dao]. لقد تعاملنا ببساطة مع تعارضات الوصول التي أبلغ عنها <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi></p>
+<p>دعونا الآن نجري اختبار <bdi dir="ltr" class="odt-ltr-term">JUnit</bdi> بالكامل لطبقة [dao]:</p>
 <p><img src="images/100000000000018E000000F295AF2CD1.png" width="279" height="169" style="width:7.37cm;height:4.48cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018E000000F295AF2CD1.png" /></p>
-<p>لذلك يبدو أن لدينا طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] صالحة. لإعلان صلاحيتها بدرجة عالية من اليقين، سنحتاج إلى إجراء المزيد من الاختبارات. ومع ذلك، سنعتبرها جاهزة للعمل.</p>
+<p>لذلك يبدو أن لدينا طبقة [dao] صالحة. لإعلان صلاحيتها بدرجة عالية من اليقين، سنحتاج إلى إجراء المزيد من الاختبارات. ومع ذلك، سنعتبرها جاهزة للعمل.</p>
 <h2 id="175-service">17.5. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h2>
 <h3 id="1751-service">17.5.1. <span style="color: #4f81bd">مكونات طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span></h3>
 <p>تتكون طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] من الفئات والواجهات التالية:</p>
@@ -3654,7 +3654,7 @@
 <a id="__codelineno-28-56" name="__codelineno-28-56"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>تستدعي الطرق [<bdi dir="ltr" class="odt-ltr-term">getAll</bdi>، <bdi dir="ltr" class="odt-ltr-term">getOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">insertOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] طرق طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] التي تحمل نفس الأسماء.
+  <li>تستدعي الطرق [<bdi dir="ltr" class="odt-ltr-term">getAll</bdi>، <bdi dir="ltr" class="odt-ltr-term">getOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">insertOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] طرق طبقة [dao] التي تحمل نفس الأسماء.
   </li>
   <li>الأسطر 42–47: تقوم الطريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] بحفظ الأشخاص الموجودين في المصفوفة التي تم تمريرها كمعلمة، واحدًا تلو الآخر.
   </li>
@@ -3665,7 +3665,7 @@
 <p>ذكرنا أن طريقتي [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">deleteMany</bdi>] يجب أن يتم تنفيذهما ضمن معاملة لضمان طبيعة &quot;كل شيء أو لا شيء&quot; لهذه الطرق. يمكننا أن نرى أن الكود أعلاه يتجاهل تمامًا مفهوم المعاملات هذا. سيظهر هذا فقط في ملف التكوين لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. </p>
 <p><a id="spring-config-tests-service-firebird-xml"></a></p>
 <h3 id="1752">17.5.2. <span style="color: #4f81bd"><strong>تكوين طبقة [خدمة</strong> <strong>]</strong></span></h3>
-<p>أعلاه، في السطر 11، نرى أن تنفيذ [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] يحتوي على مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. سيتم تهيئة هذا، كما في الإصدار 1، بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> عند إنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi> - <bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>]. ملف التكوين الذي سيمكّن من إنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] هو كما يلي:</p>
+<p>أعلاه، في السطر 11، نرى أن تنفيذ [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] يحتوي على مرجع إلى طبقة [dao]. سيتم تهيئة هذا، كما في الإصدار 1، بواسطة <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> عند إنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi> - <bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>]. ملف التكوين الذي سيمكّن من إنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] هو كما يلي:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -3735,7 +3735,7 @@
 </code></pre></div>
 
 <ul>
-  <li>الأسطر 1–36: تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. تم شرح هذا التكوين عند مناقشة طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] في القسم<a href="#spring-config-tests-dao-firebird-xml"><u><span style="color: #0563c1"> 17.3.2</span></u></a>.
+  <li>الأسطر 1–36: تكوين طبقة [dao]. تم شرح هذا التكوين عند مناقشة طبقة [dao] في القسم<a href="#spring-config-tests-dao-firebird-xml"><u><span style="color: #0563c1"> 17.3.2</span></u></a>.
   </li>
   <li>الأسطر 38–64: تكوين طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]
   </li>
@@ -3785,23 +3785,23 @@
 <ul>
   <li>الكائن الذي أشرنا إليه أعلاه باسم [وكيل المعاملات]، وهو في الواقع الكائن الذي ترجعها طريقة [<bdi dir="ltr" class="odt-ltr-term">getObject</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">TransactionProxyFactoryBean</bdi>]. يعمل هذا الكائن كواجهة بين طبقة [الخدمة] وطبقة [الويب]. وبحكم تصميمه، فإنه ينفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>].
   </li>
-  <li>مثيل [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>]، الذي ينفذ أيضًا واجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. وهو وحده الذي يعرف كيفية العمل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]، لذا فهو ضروري.
+  <li>مثيل [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>]، الذي ينفذ أيضًا واجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. وهو وحده الذي يعرف كيفية العمل مع طبقة [dao]، لذا فهو ضروري.
   </li>
 </ul>
 
-<p>لنتخيل أن طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] تستدعي طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. نحن نعلم أنه من الناحية الوظيفية، يجب أن تتم عمليات الإدراج/التحديث التي تقوم بها هذه الطريقة ضمن معاملة. فإما أن تنجح جميعها، أو لا يتم تنفيذ أي منها. لقد قدمنا طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] ولاحظنا أنها تفتقر إلى مفهوم المعاملة. ستعزز طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] لـ [<bdi dir="ltr" class="odt-ltr-term">transactional proxy</bdi>] طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] بمفهوم المعاملة هذا. دعونا نتبع الرسم البياني أعلاه:</p>
+<p>لنتخيل أن طبقة [web] تستدعي طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. نحن نعلم أنه من الناحية الوظيفية، يجب أن تتم عمليات الإدراج/التحديث التي تقوم بها هذه الطريقة ضمن معاملة. فإما أن تنجح جميعها، أو لا يتم تنفيذ أي منها. لقد قدمنا طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] ولاحظنا أنها تفتقر إلى مفهوم المعاملة. ستعزز طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] لـ [<bdi dir="ltr" class="odt-ltr-term">transactional proxy</bdi>] طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] بمفهوم المعاملة هذا. دعونا نتبع الرسم البياني أعلاه:</p>
 <ol>
-  <li>تستدعي طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. 
+  <li>تستدعي طبقة [web] طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بواجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. 
   </li>
   <li>يتم تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">transactional proxy</bdi>]. تبدأ المعاملة. يجب أن يكون لديها معلومات كافية للقيام بذلك، ولا سيما كائن [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>] لإنشاء اتصال بنظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>). ثم تستدعي طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>].
   </li>
-  <li>يتم تنفيذ هذه الطريقة. تستدعي طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بشكل متكرر لإجراء عمليات الإدراج أو التحديث. يتم تنفيذ عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> في هذا الوقت ضمن المعاملة التي بدأت في الخطوة 2.
+  <li>يتم تنفيذ هذه الطريقة. تستدعي طبقة [dao] بشكل متكرر لإجراء عمليات الإدراج أو التحديث. يتم تنفيذ عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> في هذا الوقت ضمن المعاملة التي بدأت في الخطوة 2.
   </li>
-  <li>لنفترض أن إحدى هذه العمليات فشلت. ستنقل طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] استثناءً إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]، وتحديدًا إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بمثيل [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>].
+  <li>لنفترض أن إحدى هذه العمليات فشلت. ستنقل طبقة [dao] استثناءً إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]، وتحديدًا إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بمثيل [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>].
   </li>
   <li>لا تقوم هذه الطريقة بأي شيء وتسمح باستثناء بالانتقال إلى طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">transactional proxy</bdi>].
   </li>
-  <li>عند استلام الاستثناء، تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">transactional proxy</bdi>]، التي تمتلك المعاملة، بإجراء [<bdi dir="ltr" class="odt-ltr-term">rollback</bdi>] لإلغاء جميع التحديثات، ثم تسمح بنقل الاستثناء إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]، التي ستكون مسؤولة عن معالجته.
+  <li>عند استلام الاستثناء، تقوم طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] الخاصة بـ [<bdi dir="ltr" class="odt-ltr-term">transactional proxy</bdi>]، التي تمتلك المعاملة، بإجراء [<bdi dir="ltr" class="odt-ltr-term">rollback</bdi>] لإلغاء جميع التحديثات، ثم تسمح بنقل الاستثناء إلى طبقة [web]، التي ستكون مسؤولة عن معالجته.
   </li>
 </ol>
 
@@ -3852,13 +3852,13 @@
 
 <p><img src="images/100000000000027D000000BB274A2ADE.png" width="446" height="131" style="width:11.8cm;height:3.464cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000027D000000BB274A2ADE.png" /></p>
 <p>[<bdi dir="ltr" class="odt-ltr-term">DataSourceTransactionManager</bdi>] هو مدير معاملات مناسب لأنظمة إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) التي يتم الوصول إليها عبر كائن [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>]. يمكنه إدارة المعاملات على نظام إدارة قواعد بيانات واحد فقط. ولا يمكنه إدارة المعاملات الموزعة عبر أنظمة إدارة قواعد بيانات متعددة. هنا، لدينا نظام إدارة قواعد بيانات واحد فقط. لذلك، فإن مدير المعاملات هذا مناسب. عندما يبدأ [الوكيل المعاملاتي] معاملة، فإنه يفعل ذلك على اتصال مرتبط بالخيط. سيتم استخدام هذا الاتصال في جميع الطبقات المؤدية إلى قاعدة البيانات: [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>، <bdi dir="ltr" class="odt-ltr-term">DaoImplCommon</bdi>، <bdi dir="ltr" class="odt-ltr-term">SqlMapClientTemplate</bdi>، <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi>].</p>
-<p>تحتاج فئة [<bdi dir="ltr" class="odt-ltr-term">DataSourceTransactionManager</bdi>] إلى معرفة مصدر البيانات الذي يجب أن تطلب منه اتصالاً لربطه بالخيط. يتم تعريف ذلك في الأسطر 4-6: إنه نفس مصدر البيانات الذي تستخدمه طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] (انظر القسم<a href="#spring-config-tests-service-firebird-xml"><u><span style="color: #0563c1"> 17.5.2</span></u></a>).</p>
+<p>تحتاج فئة [<bdi dir="ltr" class="odt-ltr-term">DataSourceTransactionManager</bdi>] إلى معرفة مصدر البيانات الذي يجب أن تطلب منه اتصالاً لربطه بالخيط. يتم تعريف ذلك في الأسطر 4-6: إنه نفس مصدر البيانات الذي تستخدمه طبقة [dao] (انظر القسم<a href="#spring-config-tests-service-firebird-xml"><u><span style="color: #0563c1"> 17.5.2</span></u></a>).</p>
 <ul>
   <li>الأسطر 14–19: تحدد السمة &quot;<b><bdi dir="ltr" class="odt-ltr-term">target</bdi></b>&quot; الفئة المراد اعتراضها، وهي في هذه الحالة فئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>]. هذه المعلومات ضرورية لسببين:
     <ul>
-      <li>يجب إنشاء مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] لأنها تتولى الاتصال بطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]
+      <li>يجب إنشاء مثيل لفئة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] لأنها تتولى الاتصال بطبقة [dao]
       </li>
-      <li>يجب أن تقوم [<bdi dir="ltr" class="odt-ltr-term">TransactionProxyFactoryBean</bdi>] بإنشاء وكيل يقدم نفس واجهة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>].
+      <li>يجب أن تقوم [<bdi dir="ltr" class="odt-ltr-term">TransactionProxyFactoryBean</bdi>] بإنشاء وكيل يقدم نفس واجهة [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] إلى طبقة [web].
       </li>
     </ul>
   </li>
@@ -3867,7 +3867,7 @@
 <ul>
   <li>الأسطر 21–27: تحدد أي طرق من [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] يجب أن يعترضها الوكيل. تشير السمة [<b><bdi dir="ltr" class="odt-ltr-term">transactionAttributes</bdi></b>] في السطر 21 إلى أي طرق من [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] تتطلب معاملة وما هي سمات المعاملة:
   </li>
-  <li>السطر 23: يتم تنفيذ الطرق التي تبدأ أسماؤها بـ <b><bdi dir="ltr" class="odt-ltr-term">get</bdi> </b>[<bdi dir="ltr" class="odt-ltr-term">getOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">getAll</bdi>] ضمن معاملة ذات السمات [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">PROPAGATION_REQUIRED</bdi>، <bdi dir="ltr" class="odt-ltr-term">readOnly</bdi>]:</span>
+  <li>السطر 23: يتم تنفيذ الطرق التي تبدأ أسماؤها بـ <b>get </b>[<bdi dir="ltr" class="odt-ltr-term">getOne</bdi>، <bdi dir="ltr" class="odt-ltr-term">getAll</bdi>] ضمن معاملة ذات السمات [<span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">PROPAGATION_REQUIRED</bdi>، <bdi dir="ltr" class="odt-ltr-term">readOnly</bdi>]:</span>
     <ul>
       <li><span style="color: #000000"><bdi dir="ltr" class="odt-ltr-term">PROPAGATION_REQUIRED:</bdi> يتم تشغيل الطريقة في معاملة إذا كانت هناك معاملة مرفقة بالفعل بالخيط؛ وإلا، يتم إنشاء معاملة جديدة ويتم تشغيل الطريقة ضمنها.</span>
       </li>
@@ -4215,9 +4215,9 @@
 <a id="__codelineno-29-157" name="__codelineno-29-157"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li><span style="color: #000000">الأسطر 19–22: يختبر البرنامج طبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] اللتين تم تكوينهما بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-service-firebird.xml</bdi>]، الذي تمت مناقشته في القسم السابق.</span>
+  <li><span style="color: #000000">الأسطر 19–22: يختبر البرنامج طبقتي [dao] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] اللتين تم تكوينهما بواسطة ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-service-firebird.xml</bdi>]، الذي تمت مناقشته في القسم السابق.</span>
   </li>
-  <li><span style="color: #000000">الاختبارات من [<bdi dir="ltr" class="odt-ltr-term">test1</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">test6</bdi>] مطابقة من الناحية النظرية لنظيراتها التي تحمل نفس الاسم في فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">TestDaoFirebird</bdi>] في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. والفرق الوحيد هو أن طريقتي [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi>] تنفذان الآن، حسب التكوين، ضمن معاملة.</span>
+  <li><span style="color: #000000">الاختبارات من [<bdi dir="ltr" class="odt-ltr-term">test1</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">test6</bdi>] مطابقة من الناحية النظرية لنظيراتها التي تحمل نفس الاسم في فئة الاختبار [<bdi dir="ltr" class="odt-ltr-term">TestDaoFirebird</bdi>] في طبقة [dao]. والفرق الوحيد هو أن طريقتي [<bdi dir="ltr" class="odt-ltr-term">saveOne</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">deleteOne</bdi>] تنفذان الآن، حسب التكوين، ضمن معاملة.</span>
   </li>
   <li><span style="color: #000000">الغرض من طريقة [<bdi dir="ltr" class="odt-ltr-term">test7</bdi>] هو اختبار طريقتي [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">deleteMany</bdi>]. نريد التحقق من أنهما يتم تنفيذهما بالفعل ضمن معاملة. دعونا نعلق على كود هذه الطريقة:</span>
   </li>
@@ -4228,17 +4228,17 @@
   </li>
   <li><span style="color: #000000">الأسطر 67–72: نقوم بإنشاء ثلاثة أشخاص</span>
   </li>
-  <li><span style="color: #000000">الأسطر 73–83: يتم حفظ هؤلاء الأشخاص الثلاثة بواسطة طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] – السطر 77. سيتم إضافة أول شخصين، <bdi dir="ltr" class="odt-ltr-term">p1</bdi> و <bdi dir="ltr" class="odt-ltr-term">p2</bdi>، اللذين لهما معرف يساوي -1 إلى جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. الشخص <bdi dir="ltr" class="odt-ltr-term">p3</bdi> له معرف يساوي -2. لذلك، لا يعد هذا إدراجًا بل تحديثًا. سيفشل هذا التحديث لأنه لا يوجد شخص بمعرف -2 في جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONS</bdi>]. وبالتالي، ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بإلقاء استثناء سينتقل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. يتم التحقق من وجود هذا الاستثناء في السطر 83.</span>
+  <li><span style="color: #000000">الأسطر 73–83: يتم حفظ هؤلاء الأشخاص الثلاثة بواسطة طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>] – السطر 77. سيتم إضافة أول شخصين، p1 و p2، اللذين لهما معرف يساوي -1 إلى جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. الشخص p3 له معرف يساوي -2. لذلك، لا يعد هذا إدراجًا بل تحديثًا. سيفشل هذا التحديث لأنه لا يوجد شخص بمعرف -2 في جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONS</bdi>]. وبالتالي، ستقوم طبقة [dao] بإلقاء استثناء سينتقل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. يتم التحقق من وجود هذا الاستثناء في السطر 83.</span>
   </li>
-  <li><span style="color: #000000">بسبب الاستثناء السابق، يجب على طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] التراجع عن جميع عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي تم إصدارها أثناء تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>]، لأن هذه الطريقة تعمل ضمن معاملة. الأسطر 86–87: نتحقق من أن عدد الأشخاص في القائمة لم يتغير، مما يعني أن عمليات إدراج <bdi dir="ltr" class="odt-ltr-term">p1</bdi> و <bdi dir="ltr" class="odt-ltr-term">p2</bdi> لم تتم.</span>
+  <li><span style="color: #000000">بسبب الاستثناء السابق، يجب على طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] التراجع عن جميع عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي تم إصدارها أثناء تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">saveMany</bdi>]، لأن هذه الطريقة تعمل ضمن معاملة. الأسطر 86–87: نتحقق من أن عدد الأشخاص في القائمة لم يتغير، مما يعني أن عمليات إدراج p1 و p2 لم تتم.</span>
   </li>
-  <li><span style="color: #000000">الأسطر 88-103: نضيف <bdi dir="ltr" class="odt-ltr-term">p1</bdi> و <bdi dir="ltr" class="odt-ltr-term">p2</bdi> فقط ونتحقق من وجود شخصين إضافيين في القائمة الآن.</span>
+  <li><span style="color: #000000">الأسطر 88-103: نضيف p1 و p2 فقط ونتحقق من وجود شخصين إضافيين في القائمة الآن.</span>
   </li>
-  <li><span style="color: #000000">الأسطر 106–114: نحذف مجموعة من الأشخاص تتكون من <bdi dir="ltr" class="odt-ltr-term">p1</bdi> و <bdi dir="ltr" class="odt-ltr-term">p2</bdi> اللذين أضفناهما للتو وشخص غير موجود (<bdi dir="ltr" class="odt-ltr-term">id</bdi> = -1). تُستخدم طريقة [<bdi dir="ltr" class="odt-ltr-term">deleteMany</bdi>] لهذا الغرض، السطر 108. ستفشل هذه الطريقة لأنه لا يوجد شخص برقم تعريف يساوي –1 في جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. وبالتالي، ستقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بإلقاء استثناء سينتقل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. يتم التحقق من وجود هذا الاستثناء في السطر 114.</span>
+  <li><span style="color: #000000">الأسطر 106–114: نحذف مجموعة من الأشخاص تتكون من p1 و p2 اللذين أضفناهما للتو وشخص غير موجود (id = -1). تُستخدم طريقة [<bdi dir="ltr" class="odt-ltr-term">deleteMany</bdi>] لهذا الغرض، السطر 108. ستفشل هذه الطريقة لأنه لا يوجد شخص برقم تعريف يساوي –1 في جدول [<bdi dir="ltr" class="odt-ltr-term">PERSONNES</bdi>]. وبالتالي، ستقوم طبقة [dao] بإلقاء استثناء سينتقل إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. يتم التحقق من وجود هذا الاستثناء في السطر 114.</span>
   </li>
-  <li><span style="color: #000000">نظرًا للاستثناء السابق، يجب أن تقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بإجراء [<bdi dir="ltr" class="odt-ltr-term">rollback</bdi>] لجميع عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي تم إصدارها أثناء تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">deleteMany</bdi>]، حيث إن هذه الطريقة تعمل ضمن معاملة. السطران 116–117: نتحقق من أن عدد الأشخاص في القائمة لم يتغير، وبالتالي فإن حذف <bdi dir="ltr" class="odt-ltr-term">p1</bdi> و <bdi dir="ltr" class="odt-ltr-term">p2</bdi> لم يحدث.</span>
+  <li><span style="color: #000000">نظرًا للاستثناء السابق، يجب أن تقوم طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] بإجراء [<bdi dir="ltr" class="odt-ltr-term">rollback</bdi>] لجميع عبارات <bdi dir="ltr" class="odt-ltr-term">SQL</bdi> التي تم إصدارها أثناء تنفيذ طريقة [<bdi dir="ltr" class="odt-ltr-term">deleteMany</bdi>]، حيث إن هذه الطريقة تعمل ضمن معاملة. السطران 116–117: نتحقق من أن عدد الأشخاص في القائمة لم يتغير، وبالتالي فإن حذف p1 و p2 لم يحدث.</span>
   </li>
-  <li><span style="color: #000000">السطر 122: نقوم بحذف مجموعة تتكون فقط من الشخصين <bdi dir="ltr" class="odt-ltr-term">p1</bdi> و <bdi dir="ltr" class="odt-ltr-term">p2.</bdi> يجب أن ينجح ذلك. يتحقق باقي الأسلوب من أن هذا هو الحال بالفعل.</span>
+  <li><span style="color: #000000">السطر 122: نقوم بحذف مجموعة تتكون فقط من الشخصين p1 و <bdi dir="ltr" class="odt-ltr-term">p2.</bdi> يجب أن ينجح ذلك. يتحقق باقي الأسلوب من أن هذا هو الحال بالفعل.</span>
   </li>
 </ul>
 
@@ -4246,15 +4246,15 @@
 <p><img src="images/100000000000018D0000010571318D11.png" width="278" height="183" style="width:7.35cm;height:4.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018D0000010571318D11.png" /></p>
 <p><span style="color: #000000">نجحت جميع الاختبارات السبعة. سنعتبر طبقة [الخدمة] الخاصة بنا جاهزة للعمل.</span></p>
 <p><a id="web-firebird"></a></p>
-<h2 id="177-w-eb">17.7. <span style="color: #4f81bd"><strong>طبقة [<bdi dir="ltr" class="odt-ltr-term">w</bdi></strong> <strong><bdi dir="ltr" class="odt-ltr-term">eb</bdi>]</strong></span></h2>
+<h2 id="177-w-eb">17.7. <span style="color: #4f81bd"><strong>طبقة [w</strong> <strong>eb]</strong></span></h2>
 <p><span style="color: #000000">دعونا نستعرض البنية العامة لتطبيق الويب المراد بناؤه:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044D000001E8762D1DAB.png" width="551" height="244" style="display:inline-block; margin:4px;width:14.566cm;height:6.456cm;" class="odt-zoomable" data-zoom-src="images/100000000000044D000001E8762D1DAB.png" /></td></tr></table>
 
-<p><span style="color: #000000">لقد أنشأنا للتو طبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] للعمل مع قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> وقد كتبنا الإصدار 1 من هذا التطبيق حيث كانت طبقتي [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] تعملان مع قائمة بالأشخاص في الذاكرة. </span><strong>تظل</strong><span style="color: #000000"> طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] التي تمت كتابتها في ذلك الوقت </span><strong>صالحة</strong><span style="color: #000000">. في الواقع، كانت تتفاعل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. وبما أن طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] الجديدة تنفذ نفس الواجهة، </span><strong>فلا داعي لتعديل</strong> <span style="color: #000000">طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>].</span></p>
-<p><span style="color: #000000">في المقالة السابقة، تم اختبار الإصدار 1 من التطبيق مع مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>]، </span>حيث تم تجميع طبقات [<bdi dir="ltr" class="odt-ltr-term">web</bdi>، <bdi dir="ltr" class="odt-ltr-term">service</bdi>، <bdi dir="ltr" class="odt-ltr-term">dao</bdi>، <bdi dir="ltr" class="odt-ltr-term">entities</bdi>] في ملفات .<bdi dir="ltr" class="odt-ltr-term">jar:</bdi></p>
+<p><span style="color: #000000">لقد أنشأنا للتو طبقتي [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] للعمل مع قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> وقد كتبنا الإصدار 1 من هذا التطبيق حيث كانت طبقتي [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] تعملان مع قائمة بالأشخاص في الذاكرة. </span><strong>تظل</strong><span style="color: #000000"> طبقة [web] التي تمت كتابتها في ذلك الوقت </span><strong>صالحة</strong><span style="color: #000000">. في الواقع، كانت تتفاعل مع طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] التي تنفذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>]. وبما أن طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] الجديدة تنفذ نفس الواجهة، </span><strong>فلا داعي لتعديل</strong> <span style="color: #000000">طبقة [web].</span></p>
+<p><span style="color: #000000">في المقالة السابقة، تم اختبار الإصدار 1 من التطبيق مع مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>]، </span>حيث تم تجميع طبقات [web، <bdi dir="ltr" class="odt-ltr-term">service</bdi>، dao، <bdi dir="ltr" class="odt-ltr-term">entities</bdi>] في ملفات .<bdi dir="ltr" class="odt-ltr-term">jar:</bdi></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000177000002CCD00C1CEC.png" width="188" height="358" style="display:inline-block; margin:4px;width:4.962cm;height:9.474cm;" class="odt-zoomable" data-zoom-src="images/1000000000000177000002CCD00C1CEC.png" /></td></tr></table>
 
-<p>كان المجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>] فارغًا. وكانت فئات الطبقات موجودة في أرشيفات [<bdi dir="ltr" class="odt-ltr-term">people-</bdi>*.<bdi dir="ltr" class="odt-ltr-term">jar</bdi>]:</p>
+<p>كان المجلد [src] فارغًا. وكانت فئات الطبقات موجودة في أرشيفات [<bdi dir="ltr" class="odt-ltr-term">people-</bdi>*.jar]:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055300000113FA9F6669.png" width="680" height="137" style="display:inline-block; margin:4px;width:17.997cm;height:3.632cm;" class="odt-zoomable" data-zoom-src="images/100000000000055300000113FA9F6669.png" /></td></tr></table>
 
 <p><span style="color: #000000">لاختبار الإصدار 2، نقوم في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> بنسخ المجلد [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-02B</bdi>] إلى [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>] (نسخ/لصق):</span></p>
@@ -4264,11 +4264,11 @@
 <p><span style="color: #000000">نقوم بنسخ هذين الملفين، ثم نلصقهما</span> <strong>في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi></strong> <span style="color: #000000">في مجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/lib</bdi>] لمشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>]، حيث سيحلان محل الملفات التي تحمل نفس الاسم من الإصدار السابق.</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000034C00000274127E62B2.png" width="422" height="314" style="display:inline-block; margin:4px;width:11.165cm;height:8.308cm;" class="odt-zoomable" data-zoom-src="images/100000000000034C00000274127E62B2.png" /></td></tr></table>
 
-<p><span style="color: #000000">نقوم أيضًا بنسخ ولصق الأرشيفات [<bdi dir="ltr" class="odt-ltr-term">commons-dbcp-</bdi>*.<bdi dir="ltr" class="odt-ltr-term">jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">commons-pool-</bdi>*.<bdi dir="ltr" class="odt-ltr-term">jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">firebirdsql-full.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">ibatis-common-2.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">ibatis-sqlmap-2.jar</bdi>] من المجلد [<bdi dir="ltr" class="odt-ltr-term">lib</bdi>] الخاص بمشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03</bdi>] إلى المجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/lib</bdi>] الخاص بمشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>]. هذه الملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> مطلوبة لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] الجديدة.</span></p>
+<p><span style="color: #000000">نقوم أيضًا بنسخ ولصق الأرشيفات [<bdi dir="ltr" class="odt-ltr-term">commons-dbcp-</bdi>*.jar، <bdi dir="ltr" class="odt-ltr-term">commons-pool-</bdi>*.jar، <bdi dir="ltr" class="odt-ltr-term">firebirdsql-full.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">ibatis-common-2.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">ibatis-sqlmap-2.jar</bdi>] من المجلد [lib] الخاص بمشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03</bdi>] إلى المجلد [<bdi dir="ltr" class="odt-ltr-term">WEB-INF/lib</bdi>] الخاص بمشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03B</bdi>]. هذه الملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> مطلوبة لطبقات [dao] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] الجديدة.</span></p>
 <p><span style="color: #000000">بمجرد الانتهاء من ذلك، نقوم بتضمين ملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi> الجديدة في مسار فئة المشروع: [انقر بزر الماوس الأيمن على المشروع -&gt; خصائص -&gt; مسار إنشاء <bdi dir="ltr" class="odt-ltr-term">Java</bdi> -&gt; إضافة ملفات <bdi dir="ltr" class="odt-ltr-term">JAR</bdi>].</span></p>
-<p><span style="color: #000000">يحتوي المجلد [<bdi dir="ltr" class="odt-ltr-term">src</bdi>] على ملفات التكوين لطبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]:</span></p>
+<p><span style="color: #000000">يحتوي المجلد [src] على ملفات التكوين لطبقات [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]:</span></p>
 <p><img src="images/10000000000000D100000063B5ADA8F4.png" width="146" height="69" style="width:3.87cm;height:1.833cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D100000063B5ADA8F4.png" /></p>
-<p><span style="color: #000000">يقوم ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config.xml</bdi>] بتكوين طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لتطبيق الويب. في الإصدار الجديد، يكون مطابقًا لملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-service-firebird.xml</bdi>] المستخدم لتكوين اختبار طبقة الخدمة في مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03</bdi>]. لذلك نقوم بالنسخ واللصق من أحدهما إلى الآخر:</span></p>
+<p><span style="color: #000000">يقوم ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config.xml</bdi>] بتكوين طبقات [dao] و [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] لتطبيق الويب. في الإصدار الجديد، يكون مطابقًا لملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-test-service-firebird.xml</bdi>] المستخدم لتكوين اختبار طبقة الخدمة في مشروع [<bdi dir="ltr" class="odt-ltr-term">mvc-personnes-03</bdi>]. لذلك نقوم بالنسخ واللصق من أحدهما إلى الآخر:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span> <span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span> <span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
@@ -4338,7 +4338,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">السطر 12: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لقاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> نستمر في استخدام قاعدة البيانات المستخدمة لاختبار طبقات [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span>
+  <li><span style="color: #000000">السطر 12: عنوان <bdi dir="ltr" class="odt-ltr-term">URL</bdi> لقاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> نستمر في استخدام قاعدة البيانات المستخدمة لاختبار طبقات [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>]</span>
   </li>
 </ul>
 
@@ -4377,7 +4377,7 @@
 <p><span style="color: #000000">اسم الشخص رقم 899 مكتوب بالفعل بأحرف كبيرة وفقًا للتعديل الذي أجراه <bdi dir="ltr" class="odt-ltr-term">U1.</bdi></span></p>
 <h2 id="178">17.8. <span style="color: #4f81bd">الخلاصة</span></h2>
 <p><span style="color: #000000">دعونا نلخص ما أردنا القيام به. كان لدينا تطبيق ويب بهيكل ثلاثي المستويات كما يلي:</span></p>
-<p><span style="color: #000000">حيث كانت طبقتا [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] تعملان بقائمة بيانات في الذاكرة كانت تُفقد عند إيقاف تشغيل خادم الويب. كان ذلك هو الإصدار 1. في الإصدار 2، أعيدت كتابة طبقتي [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بحيث يتم تخزين قائمة الأشخاص في جدول قاعدة بيانات. وهي الآن دائمة. نقترح الآن دراسة تأثير تغيير نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) على تطبيقنا. للقيام بذلك، سنقوم بإنشاء ثلاثة إصدارات جديدة من تطبيق الويب الخاص بنا:</span></p>
+<p><span style="color: #000000">حيث كانت طبقتا [dao] و[<bdi dir="ltr" class="odt-ltr-term">service</bdi>] تعملان بقائمة بيانات في الذاكرة كانت تُفقد عند إيقاف تشغيل خادم الويب. كان ذلك هو الإصدار 1. في الإصدار 2، أعيدت كتابة طبقتي [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] و[dao] بحيث يتم تخزين قائمة الأشخاص في جدول قاعدة بيانات. وهي الآن دائمة. نقترح الآن دراسة تأثير تغيير نظام إدارة قواعد البيانات (<bdi dir="ltr" class="odt-ltr-term">DBMS</bdi>) على تطبيقنا. للقيام بذلك، سنقوم بإنشاء ثلاثة إصدارات جديدة من تطبيق الويب الخاص بنا:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000454000001E38C609435.png" width="554" height="242" style="display:inline-block; margin:4px;width:14.658cm;height:6.391cm;" class="odt-zoomable" data-zoom-src="images/1000000000000454000001E38C609435.png" /></td></tr></table>
 
 <ul>
@@ -4391,11 +4391,11 @@
 
 <p><span style="color: #000000">تم إجراء التغييرات في المواقع التالية:</span></p>
 <ul>
-  <li><span style="color: #000000">تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>] وظائف طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] المتعلقة بنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> إذا استمر هذا المطلب، فسيتم استبدالها بفئات [<bdi dir="ltr" class="odt-ltr-term">DaoImplPostgres</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DaoImplMySQL</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DaoImplSqlExpress</bdi>] على التوالي.</span>
+  <li><span style="color: #000000">تنفذ فئة [<bdi dir="ltr" class="odt-ltr-term">DaoImplFirebird</bdi>] وظائف طبقة [dao] المتعلقة بنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird.</bdi> إذا استمر هذا المطلب، فسيتم استبدالها بفئات [<bdi dir="ltr" class="odt-ltr-term">DaoImplPostgres</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DaoImplMySQL</bdi>] و[<bdi dir="ltr" class="odt-ltr-term">DaoImplSqlExpress</bdi>] على التوالي.</span>
   </li>
   <li><span style="color: #000000">سيتم استبدال ملف التعيين <bdi dir="ltr" class="odt-ltr-term">iBATIS</bdi> [<bdi dir="ltr" class="odt-ltr-term">personnes-firebird.xml</bdi>] لنظام إدارة قواعد البيانات <bdi dir="ltr" class="odt-ltr-term">Firebird</bdi> بملفات التعيين [<bdi dir="ltr" class="odt-ltr-term">personnes-postgres.xml</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">personnes-mysql.xml</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">personnes-sqlexpress.xml</bdi>]، على التوالي.</span>
   </li>
-  <li>يكون تكوين كائن [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>] في طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] خاصًا بنظام إدارة قواعد البيانات. وبالتالي، سيتغير مع كل إصدار.
+  <li>يكون تكوين كائن [<bdi dir="ltr" class="odt-ltr-term">DataSource</bdi>] في طبقة [dao] خاصًا بنظام إدارة قواعد البيانات. وبالتالي، سيتغير مع كل إصدار.
   </li>
   <li>كما يتغير برنامج تشغيل <bdi dir="ltr" class="odt-ltr-term">JDBC</bdi> لنظام إدارة قواعد البيانات مع كل إصدار
   </li>

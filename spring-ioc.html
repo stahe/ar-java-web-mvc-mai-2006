@@ -1105,13 +1105,13 @@
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-  <li>السطر 6: تم إنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] عن طريق إنشاء مثيل [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] بشكل صريح
+  <li>السطر 6: تم إنشاء مثيل لطبقة [dao] عن طريق إنشاء مثيل [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] بشكل صريح
   </li>
   <li>السطر 9: تم إنشاء مثيل لطبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] عن طريق إنشاء مثيل لـ [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] بشكل صريح
   </li>
 </ul>
 
-<p>تذكر أن فئتي [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] تنفذان واجهات، وتحديدًا واجهتي [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>] على التوالي. في الإصدارات المستقبلية، سيتم تنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] بواسطة فئة تدير قائمة بالأشخاص المخزنة في قاعدة بيانات. لنسمي هذه الفئة [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>] لأغراض هذا المثال. سيتطلب استبدال تنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بتنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>] إعادة ترجمة طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>]. في الواقع، يجب الآن على السطر 6 أعلاه، الذي ينشئ مثيلًا لطبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] بنوع [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>]، أن ينشئ مثيلًا لها بنوع [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>]. وبالتالي، فإن طبقة [<bdi dir="ltr" class="odt-ltr-term">web</bdi>] لدينا تعتمد على طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]. يوضح السطر 9 أعلاه أنها تعتمد أيضًا على طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>].</p>
+<p>تذكر أن فئتي [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] تنفذان واجهات، وتحديدًا واجهتي [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>] على التوالي. في الإصدارات المستقبلية، سيتم تنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] بواسطة فئة تدير قائمة بالأشخاص المخزنة في قاعدة بيانات. لنسمي هذه الفئة [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>] لأغراض هذا المثال. سيتطلب استبدال تنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] لطبقة [dao] بتنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>] إعادة ترجمة طبقة [web]. في الواقع، يجب الآن على السطر 6 أعلاه، الذي ينشئ مثيلًا لطبقة [dao] بنوع [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>]، أن ينشئ مثيلًا لها بنوع [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>]. وبالتالي، فإن طبقة [web] لدينا تعتمد على طبقة [dao]. يوضح السطر 9 أعلاه أنها تعتمد أيضًا على طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>].</p>
 <p>سيسمح لنا <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi> بإنشاء تطبيق ثلاثي الطبقات حيث تكون الطبقات مستقلة عن بعضها البعض، أي أن تغيير إحداها لا يتطلب تغيير الطبقات الأخرى. وهذا يوفر مرونة كبيرة في تطوير التطبيق.</p>
 <p>ستتطور البنية السابقة على النحو التالي:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C000001D750DC6C80.png" width="550" height="236" style="display:inline-block; margin:4px;width:14.552cm;height:6.232cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000001D750DC6C80.png" /></td></tr></table>
@@ -1140,7 +1140,7 @@
   </li>
   <li>[2]: بنية الدليل للملف المضغوط الذي تم تنزيله
   </li>
-  <li>[3]: توزيع [<bdi dir="ltr" class="odt-ltr-term">Spring</bdi>]، أي أرشيفات .<bdi dir="ltr" class="odt-ltr-term">jar</bdi> لمشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> نفسه بدون تبعياته. يتم توفير جانب [<bdi dir="ltr" class="odt-ltr-term">IoC</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> من خلال أرشيفات [<bdi dir="ltr" class="odt-ltr-term">spring-core.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">spring-beans.jar</bdi>].
+  <li>[3]: توزيع [<bdi dir="ltr" class="odt-ltr-term">Spring</bdi>]، أي أرشيفات .jar لمشروع <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> نفسه بدون تبعياته. يتم توفير جانب [<bdi dir="ltr" class="odt-ltr-term">IoC</bdi>] في <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> من خلال أرشيفات [<bdi dir="ltr" class="odt-ltr-term">spring-core.jar</bdi>، <bdi dir="ltr" class="odt-ltr-term">spring-beans.jar</bdi>].
   </li>
   <li>[4،5]: أرشيفات أدوات الجهات الخارجية
   </li>
@@ -1253,9 +1253,9 @@
 </code></pre></div></td></tr></table></div>
 <p>تحتوي الفئة على:</p>
 <ul>
-  <li>السطران 6-7: حقلان خاصان، <b><bdi dir="ltr" class="odt-ltr-term">name</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">age</bdi></b>
+  <li>السطران 6-7: حقلان خاصان، <b><bdi dir="ltr" class="odt-ltr-term">name</bdi> </b>و <b>age</b>
   </li>
-  <li>الأسطر 23–38: طريقتا <bdi dir="ltr" class="odt-ltr-term">get</bdi> و <bdi dir="ltr" class="odt-ltr-term">set</bdi> لهذين الحقلين
+  <li>الأسطر 23–38: طريقتا get و set لهذين الحقلين
   </li>
   <li>الأسطر 10-12: طريقة <b><bdi dir="ltr" class="odt-ltr-term">toString</bdi> </b>لاسترداد قيمة كائن [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] كسلسلة
   </li>
@@ -1284,11 +1284,11 @@
   </li>
   <li>الأسطر 4–7: تعريف <bdi dir="ltr" class="odt-ltr-term">bean</bdi>
   </li>
-  <li>السطر 4: يُسمى <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">person1</bdi>] (سمة <i><bdi dir="ltr" class="odt-ltr-term">id</bdi></i>) وهو مثيل للفئة [<bdi dir="ltr" class="odt-ltr-term">istia.st.springioc01.Person</bdi>] (سمة <i><bdi dir="ltr" class="odt-ltr-term">class</bdi></i>). سيتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] للمثيل بمجرد إنشائه (سمة <i><bdi dir="ltr" class="odt-ltr-term">init-method</bdi></i>)، وسيتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">close</bdi>] للمثيل قبل إتلافه (سمة <i><bdi dir="ltr" class="odt-ltr-term">destroy-method</bdi></i>).
+  <li>السطر 4: يُسمى <bdi dir="ltr" class="odt-ltr-term">bean</bdi> [<bdi dir="ltr" class="odt-ltr-term">person1</bdi>] (سمة <i>id</i>) وهو مثيل للفئة [<bdi dir="ltr" class="odt-ltr-term">istia.st.springioc01.Person</bdi>] (سمة <i><bdi dir="ltr" class="odt-ltr-term">class</bdi></i>). سيتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] للمثيل بمجرد إنشائه (سمة <i><bdi dir="ltr" class="odt-ltr-term">init-method</bdi></i>)، وسيتم استدعاء طريقة [<bdi dir="ltr" class="odt-ltr-term">close</bdi>] للمثيل قبل إتلافه (سمة <i><bdi dir="ltr" class="odt-ltr-term">destroy-method</bdi></i>).
   </li>
   <li>السطر 5: يحدد القيمة التي سيتم تعيينها لخاصية [<bdi dir="ltr" class="odt-ltr-term">name</bdi>] (السمة <i><bdi dir="ltr" class="odt-ltr-term">name</bdi></i>) للمثيل [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>] الذي تم إنشاؤه. لإجراء هذه التهيئة، سيستخدم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> طريقة [<bdi dir="ltr" class="odt-ltr-term">setName</bdi>]. لذلك يجب أن تكون هذه الطريقة موجودة. وهذا هو الحال هنا.
   </li>
-  <li>السطر 6: نفس ما سبق بالنسبة لخاصية [<bdi dir="ltr" class="odt-ltr-term">age</bdi>].
+  <li>السطر 6: نفس ما سبق بالنسبة لخاصية [age].
   </li>
   <li>الأسطر 8-11: تعريف مشابه لـ <bdi dir="ltr" class="odt-ltr-term">bean</bdi> باسم [<bdi dir="ltr" class="odt-ltr-term">person2</bdi>]
   </li>
@@ -1343,7 +1343,7 @@
 </code></pre></div></td></tr></table></div>
 <p>تعليقات:</p>
 <ul>
-  <li>السطر 10: لاسترداد الفاصوليا المحددة في ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>]، نستخدم كائن [<bdi dir="ltr" class="odt-ltr-term">XmlBeanFactory</bdi>]، الذي يسمح لنا بإنشاء مثيلات للفاصوليا المحددة في ملف <bdi dir="ltr" class="odt-ltr-term">XML.</bdi> سيتم وضع ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للتطبيق، أي في أحد الدلائل التي تبحث فيها آلة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> الافتراضية عندما تبحث عن فئة يشير إليها التطبيق. يُستخدم كائن [<bdi dir="ltr" class="odt-ltr-term">ClassPathResource</bdi>] للبحث عن مورد في [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للتطبيق، وهو في هذه الحالة ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>]. يسمح لنا كائن [<bdi dir="ltr" class="odt-ltr-term">bf</bdi>] (<bdi dir="ltr" class="odt-ltr-term">Bean Factory</bdi>) الناتج بالحصول على مرجع إلى حبة تُسمى &quot;<bdi dir="ltr" class="odt-ltr-term">XX</bdi>&quot; باستخدام العبارة <b><bdi dir="ltr" class="odt-ltr-term">bf.getBean</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">XX</bdi>&quot;).</b>
+  <li>السطر 10: لاسترداد الفاصوليا المحددة في ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>]، نستخدم كائن [<bdi dir="ltr" class="odt-ltr-term">XmlBeanFactory</bdi>]، الذي يسمح لنا بإنشاء مثيلات للفاصوليا المحددة في ملف <bdi dir="ltr" class="odt-ltr-term">XML.</bdi> سيتم وضع ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>] في [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للتطبيق، أي في أحد الدلائل التي تبحث فيها آلة <bdi dir="ltr" class="odt-ltr-term">Java</bdi> الافتراضية عندما تبحث عن فئة يشير إليها التطبيق. يُستخدم كائن [<bdi dir="ltr" class="odt-ltr-term">ClassPathResource</bdi>] للبحث عن مورد في [<bdi dir="ltr" class="odt-ltr-term">ClassPath</bdi>] للتطبيق، وهو في هذه الحالة ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>]. يسمح لنا كائن [bf] (<bdi dir="ltr" class="odt-ltr-term">Bean Factory</bdi>) الناتج بالحصول على مرجع إلى حبة تُسمى &quot;<bdi dir="ltr" class="odt-ltr-term">XX</bdi>&quot; باستخدام العبارة <b><bdi dir="ltr" class="odt-ltr-term">bf.getBean</bdi>(&quot;<bdi dir="ltr" class="odt-ltr-term">XX</bdi>&quot;).</b>
   </li>
   <li>السطر 12: يتم طلب مرجع للـ <bdi dir="ltr" class="odt-ltr-term">bean</bdi> المسمى [<bdi dir="ltr" class="odt-ltr-term">person1</bdi>] في ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>].
   </li>
@@ -1353,7 +1353,7 @@
   </li>
   <li>السطران 18-19: نطلب الكائن المسمى [<bdi dir="ltr" class="odt-ltr-term">person2</bdi>] مرة أخرى.
   </li>
-  <li>السطر 21: تتم إزالة جميع الكائنات في [<bdi dir="ltr" class="odt-ltr-term">bf</bdi>]، أي تلك التي تم إنشاؤها من ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>].
+  <li>السطر 21: تتم إزالة جميع الكائنات في [bf]، أي تلك التي تم إنشاؤها من ملف [<bdi dir="ltr" class="odt-ltr-term">spring-config-01.xml</bdi>].
   </li>
 </ul>
 
@@ -1523,7 +1523,7 @@
 </code></pre></div></td></tr></table></div>
 <p>تحتوي الفئة على:</p>
 <ul>
-  <li>الأسطر 5–7: ثلاثة حقول خاصة: <b><bdi dir="ltr" class="odt-ltr-term">type</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">make</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">owner</bdi></b>. يمكن تهيئة هذه الحقول وقراءتها باستخدام طرق <b><bdi dir="ltr" class="odt-ltr-term">get</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">set</bdi> </b>العامة في الأسطر 26–48. كما يمكن تهيئتها باستخدام منشئ<b> <bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>) </b>المحدد في الأسطر 13–17. تحتوي الفئة أيضًا على منشئ بدون وسيطات ليتوافق مع معيار <bdi dir="ltr" class="odt-ltr-term">JavaBean.</bdi>
+  <li>الأسطر 5–7: ثلاثة حقول خاصة: <b><bdi dir="ltr" class="odt-ltr-term">type</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">make</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">owner</bdi></b>. يمكن تهيئة هذه الحقول وقراءتها باستخدام طرق <b>get </b>و <b>set </b>العامة في الأسطر 26–48. كما يمكن تهيئتها باستخدام منشئ<b> <bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>) </b>المحدد في الأسطر 13–17. تحتوي الفئة أيضًا على منشئ بدون وسيطات ليتوافق مع معيار <bdi dir="ltr" class="odt-ltr-term">JavaBean.</bdi>
   </li>
   <li>الأسطر 20-23: طريقة <b><bdi dir="ltr" class="odt-ltr-term">toString</bdi> </b>لاسترداد قيمة كائن [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>] كسلسلة
   </li>
@@ -1577,7 +1577,7 @@
   </li>
   <li>السطر 14: قيمة المعلمة الثانية لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)].
   </li>
-  <li>الأسطر 15-17: قيمة المعلمة الثالثة لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)]. هذه المعلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. نزودها بالإشارة (علامة <i><bdi dir="ltr" class="odt-ltr-term">ref</bdi></i>) للبيان [<bdi dir="ltr" class="odt-ltr-term">person2</bdi>] المُعرَّف في نفس الملف (السمة <i>المحلية</i>).
+  <li>الأسطر 15-17: قيمة المعلمة الثالثة لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)]. هذه المعلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. نزودها بالإشارة (علامة <i>ref</i>) للبيان [<bdi dir="ltr" class="odt-ltr-term">person2</bdi>] المُعرَّف في نفس الملف (السمة <i>المحلية</i>).
   </li>
 </ul>
 
@@ -1770,7 +1770,7 @@
 <ul>
   <li>الأسطر 14–17: تسمح لك علامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">list</bdi></b>&gt; بتهيئة حقل من نوع المصفوفة أو حقل ينفذ واجهة <b><bdi dir="ltr" class="odt-ltr-term">List</bdi> </b>بقيم مختلفة.
   </li>
-  <li>الأسطر 20-23: تسمح لك علامة &lt;<b><bdi dir="ltr" class="odt-ltr-term">map</bdi></b>&gt; بالقيام بنفس الشيء مع حقل ينفذ واجهة <b><bdi dir="ltr" class="odt-ltr-term">Map.</bdi></b>
+  <li>الأسطر 20-23: تسمح لك علامة &lt;<b>map</b>&gt; بالقيام بنفس الشيء مع حقل ينفذ واجهة <b><bdi dir="ltr" class="odt-ltr-term">Map.</bdi></b>
   </li>
 </ul>
 
@@ -1841,7 +1841,7 @@
 
 <h2 id="153-spring">15.3. <span style="color: #4f81bd">تكوين تطبيق متعدد المستويات باستخدام <bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h2>
 <p>لنفترض وجود تطبيق ثلاثي المستويات بالهيكل التالي:</p>
-<p><bdi dir="ltr" class="odt-ltr-term">UserDataBusinessLayer</bdi> [<strong><bdi dir="ltr" class="odt-ltr-term">business</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">DataAccessLayer</bdi> [<strong><bdi dir="ltr" class="odt-ltr-term">dao</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">UserInterfaceLayer</bdi> [<strong><bdi dir="ltr" class="odt-ltr-term">ui</bdi></strong>]</p>
+<p><bdi dir="ltr" class="odt-ltr-term">UserDataBusinessLayer</bdi> [<strong><bdi dir="ltr" class="odt-ltr-term">business</bdi></strong>]<bdi dir="ltr" class="odt-ltr-term">DataAccessLayer</bdi> [<strong>dao</strong>]<bdi dir="ltr" class="odt-ltr-term">UserInterfaceLayer</bdi> [<strong>ui</strong>]</p>
 <p>نهدف هنا إلى توضيح مزايا استخدام <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> لبناء مثل هذه البنية.</p>
 <ul>
   <li>ستصبح الطبقات الثلاث مستقلة عن بعضها البعض من خلال استخدام واجهات <bdi dir="ltr" class="odt-ltr-term">Java</bdi>
@@ -1870,7 +1870,7 @@
       </li>
     </ul>
   </li>
-  <li>[3]: طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]: 
+  <li>[3]: طبقة [ui]: 
     <ul>
       <li>[<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>]: واجهة الطبقة
       </li>
@@ -1888,9 +1888,9 @@
 
 <p>الغرض من هذا المثال هو إظهار أنه يمكننا تغيير تطبيق طبقة واحدة أو أكثر من طبقات التطبيق دون أي تأثير على الطبقات الأخرى. كل شيء يحدث في ملف تكوين <bdi dir="ltr" class="odt-ltr-term">Spring.</bdi></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>]</p>
+<p>طبقة [dao]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">dao</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] التالية:</p>
+<p>تنفذ طبقة [dao] واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] التالية:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
@@ -2048,9 +2048,9 @@
 <a id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
-<p>طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>]</p>
+<p>طبقة [ui]</p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">ui</bdi>] واجهة [<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>] التالية:</p>
+<p>تنفذ طبقة [ui] واجهة [<bdi dir="ltr" class="odt-ltr-term">IUi</bdi>] التالية:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
 <span class="normal"><a href="#__codelineno-19-2">2</a></span>
 <span class="normal"><a href="#__codelineno-19-3">3</a></span>
