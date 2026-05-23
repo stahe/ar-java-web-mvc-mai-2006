@@ -1065,7 +1065,7 @@
 <h2 id="151">15.1. <span style="color: #4f81bd">مقدمة</span></h2>
 <p>نهدف إلى استكشاف قدرات التكوين والتكامل في إطار عمل <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> (<bdi dir="ltr" class="odt-ltr-term">http://www.springframework.org</bdi>) وكذلك تعريف واستخدام مفهوم <bdi dir="ltr" class="odt-ltr-term">IoC</bdi> (انعكاس التحكم)، المعروف أيضًا باسم حقن التبعية</p>
 <p>لننظر إلى التطبيق ثلاثي الطبقات الذي أنشأناه للتو:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004680000019899F4E539.png" width="564" height="204" style="display:inline-block; margin:4px;width:14.923cm;height:5.398cm;" class="odt-zoomable" data-zoom-src="images/10000000000004680000019899F4E539.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004680000019899F4E539.png" width="564" height="204" style="display:inline-block; margin:4px;width:14.923cm;height:5.398cm;" class="odt-zoomable" data-zoom-src="images/10000000000004680000019899F4E539.png" /></td></tr></table>
 
 <p>للاستجابة لطلبات المستخدم، يجب أن يتواصل وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] مع طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>]. في مثالنا، كانت هذه مثيلًا من النوع [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>]. حصلت وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] على مرجع إلى طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] في طريقة [<bdi dir="ltr" class="odt-ltr-term">init</bdi>] الخاصة بها (القسم<a href="#personnes-01-init"><u><span style="color: #0563c1"> 14.8.3</span></u></a>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1114,7 +1114,7 @@
 <p>تذكر أن فئتي [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">ServiceImpl</bdi>] تنفذان واجهات، وتحديدًا واجهتي [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] و [<bdi dir="ltr" class="odt-ltr-term">IService</bdi>] على التوالي. في الإصدارات المستقبلية، سيتم تنفيذ واجهة [<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>] بواسطة فئة تدير قائمة بالأشخاص المخزنة في قاعدة بيانات. لنسمي هذه الفئة [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>] لأغراض هذا المثال. سيتطلب استبدال تنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>] لطبقة [dao] بتنفيذ [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>] إعادة ترجمة طبقة [web]. في الواقع، يجب الآن على السطر 6 أعلاه، الذي ينشئ مثيلًا لطبقة [dao] بنوع [<bdi dir="ltr" class="odt-ltr-term">DaoImpl</bdi>]، أن ينشئ مثيلًا لها بنوع [<bdi dir="ltr" class="odt-ltr-term">DaoBD</bdi>]. وبالتالي، فإن طبقة [web] لدينا تعتمد على طبقة [dao]. يوضح السطر 9 أعلاه أنها تعتمد أيضًا على طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>].</p>
 <p>سيسمح لنا <bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi> بإنشاء تطبيق ثلاثي الطبقات حيث تكون الطبقات مستقلة عن بعضها البعض، أي أن تغيير إحداها لا يتطلب تغيير الطبقات الأخرى. وهذا يوفر مرونة كبيرة في تطوير التطبيق.</p>
 <p>ستتطور البنية السابقة على النحو التالي:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C000001D750DC6C80.png" width="550" height="236" style="display:inline-block; margin:4px;width:14.552cm;height:6.232cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000001D750DC6C80.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000044C000001D750DC6C80.png" width="550" height="236" style="display:inline-block; margin:4px;width:14.552cm;height:6.232cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000001D750DC6C80.png" /></td></tr></table>
 
 <p>باستخدام [<bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>]، سيحصل وحدة التحكم [<bdi dir="ltr" class="odt-ltr-term">Application</bdi>] على المرجع الذي تحتاجه من طبقة [<bdi dir="ltr" class="odt-ltr-term">service</bdi>] على النحو التالي:</p>
 <ol>
@@ -1131,9 +1131,9 @@
 <h2 id="152-spring-ioc">15.2. <span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi> في الممارسة العملية</span></h2>
 <h3 id="1521-spring">15.2.1. <span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">Spring</bdi></span></h3>
 <p>[<bdi dir="ltr" class="odt-ltr-term">Spring IoC</bdi>] هو جزء من مشروع أكبر متاح على [<bdi dir="ltr" class="odt-ltr-term">http://www.springframework.org/</bdi>] (مايو 2006):</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001860000012D0CDCE628.png" width="273" height="211" style="display:inline-block; margin:4px;width:7.22cm;height:5.572cm;" class="odt-zoomable" data-zoom-src="images/10000000000001860000012D0CDCE628.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C0000000BD3E3551DF.png" width="314" height="132" style="display:inline-block; margin:4px;width:8.301cm;height:3.501cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C0000000BD3E3551DF.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001860000012D0CDCE628.png" width="273" height="211" style="display:inline-block; margin:4px;width:7.22cm;height:5.572cm;" class="odt-zoomable" data-zoom-src="images/10000000000001860000012D0CDCE628.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000001C0000000BD3E3551DF.png" width="314" height="132" style="display:inline-block; margin:4px;width:8.301cm;height:3.501cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C0000000BD3E3551DF.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055C00000206D5AD27C3.png" width="680" height="257" style="display:inline-block; margin:4px;width:17.997cm;height:6.795cm;" class="odt-zoomable" data-zoom-src="images/100000000000055C00000206D5AD27C3.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000055C00000206D5AD27C3.png" width="680" height="257" style="display:inline-block; margin:4px;width:17.997cm;height:6.795cm;" class="odt-zoomable" data-zoom-src="images/100000000000055C00000206D5AD27C3.png" /></td></tr></table>
 
 <ul>
   <li>[1]: يستخدم <bdi dir="ltr" class="odt-ltr-term">Spring</bdi> العديد من تقنيات الجهات الخارجية المشار إليها هنا باسم &quot;<i>التبعيات&quot;</i>. يجب عليك تنزيل الإصدار الذي يتضمن <i>التبعيات </i>لتجنب الحاجة إلى تنزيل مكتبات أدوات الجهات الخارجية لاحقًا.
@@ -1150,7 +1150,7 @@
 <p>سنقوم بإنشاء ثلاثة أمثلة توضح استخدام <bdi dir="ltr" class="odt-ltr-term">Spring IoC.</bdi> وستكون جميعها في مشروع <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> التالي:</p>
 <p><img src="images/10000000000000E2000000C8BC0AE59E.png" width="158" height="140" style="width:4.189cm;height:3.708cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E2000000C8BC0AE59E.png" /></p>
 <p>تم تكوين مشروع [<bdi dir="ltr" class="odt-ltr-term">springioc-examples</bdi>] بحيث توجد الملفات المصدرية والفئات المجمعة في جذر مجلد المشروع:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054A000000F6CDD98110.png" width="677" height="123" style="display:inline-block; margin:4px;width:17.912cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/100000000000054A000000F6CDD98110.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000054A000000F6CDD98110.png" width="677" height="123" style="display:inline-block; margin:4px;width:17.912cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/100000000000054A000000F6CDD98110.png" /></td></tr></table>
 
 <ul>
   <li>[1]: بنية مجلد مشروع [<bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi>]
@@ -1523,7 +1523,7 @@
 </code></pre></div></td></tr></table></div>
 <p>تحتوي الفئة على:</p>
 <ul>
-  <li>الأسطر 5–7: ثلاثة حقول خاصة: <b><bdi dir="ltr" class="odt-ltr-term">type</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">make</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">owner</bdi></b>. يمكن تهيئة هذه الحقول وقراءتها باستخدام طرق <b>get </b>و <b>set </b>العامة في الأسطر 26–48. كما يمكن تهيئتها باستخدام منشئ<b> <bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>) </b>المحدد في الأسطر 13–17. تحتوي الفئة أيضًا على منشئ بدون وسيطات ليتوافق مع معيار <bdi dir="ltr" class="odt-ltr-term">JavaBean.</bdi>
+  <li>الأسطر 5–7: ثلاثة حقول خاصة: <b><bdi dir="ltr" class="odt-ltr-term">type</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">make</bdi> </b>و <b><bdi dir="ltr" class="odt-ltr-term">owner</bdi></b>. يمكن تهيئة هذه الحقول وقراءتها باستخدام طرق <b>get </b>و <b>set </b>العامة في الأسطر 26–48. كما يمكن تهيئتها باستخدام منشئ<b> <bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String, String, Person</bdi>) </b>المحدد في الأسطر 13–17. تحتوي الفئة أيضًا على منشئ بدون وسيطات ليتوافق مع معيار <bdi dir="ltr" class="odt-ltr-term">JavaBean.</bdi>
   </li>
   <li>الأسطر 20-23: طريقة <b><bdi dir="ltr" class="odt-ltr-term">toString</bdi> </b>لاسترداد قيمة كائن [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>] كسلسلة
   </li>
@@ -1569,15 +1569,15 @@
 <a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="nt">&lt;/property&gt;</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="nt">&lt;/bean&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>بدلاً من اختيار الطريقة التي تم عرضها بالفعل في المثال 1، اخترنا هنا استخدام منشئ الفئة <strong><bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)</strong>.</p>
+<p>بدلاً من اختيار الطريقة التي تم عرضها بالفعل في المثال 1، اخترنا هنا استخدام منشئ الفئة <strong><bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String, String, Person</bdi>)</strong>.</p>
 <ul>
   <li>السطر 12: تعريف اسم البين، وفئته، والطريقة التي سيتم تنفيذها بعد إنشاء مثيل له، والطريقة التي سيتم تنفيذها بعد إتلافه.
   </li>
-  <li>السطر 13: قيمة المعلمة الأولى لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)].
+  <li>السطر 13: قيمة المعلمة الأولى لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String, String, Person</bdi>)].
   </li>
-  <li>السطر 14: قيمة المعلمة الثانية لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)].
+  <li>السطر 14: قيمة المعلمة الثانية لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String, String, Person</bdi>)].
   </li>
-  <li>الأسطر 15-17: قيمة المعلمة الثالثة لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">String</bdi>, <bdi dir="ltr" class="odt-ltr-term">Person</bdi>)]. هذه المعلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. نزودها بالإشارة (علامة <i>ref</i>) للبيان [<bdi dir="ltr" class="odt-ltr-term">person2</bdi>] المُعرَّف في نفس الملف (السمة <i>المحلية</i>).
+  <li>الأسطر 15-17: قيمة المعلمة الثالثة لمُنشئ [<bdi dir="ltr" class="odt-ltr-term">Car</bdi>(<bdi dir="ltr" class="odt-ltr-term">String, String, Person</bdi>)]. هذه المعلمة من النوع [<bdi dir="ltr" class="odt-ltr-term">Person</bdi>]. نزودها بالإشارة (علامة <i>ref</i>) للبيان [<bdi dir="ltr" class="odt-ltr-term">person2</bdi>] المُعرَّف في نفس الملف (السمة <i>المحلية</i>).
   </li>
 </ul>
 
@@ -1851,14 +1851,14 @@
 </ul>
 
 <p>قد تكون بنية التطبيق في <bdi dir="ltr" class="odt-ltr-term">Eclipse</bdi> كما يلي:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017200000229ABFDDE8B.png" width="185" height="277" style="display:inline-block; margin:4px;width:4.895cm;height:7.317cm;" class="odt-zoomable" data-zoom-src="images/100000000000017200000229ABFDDE8B.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000017200000229ABFDDE8B.png" width="185" height="277" style="display:inline-block; margin:4px;width:4.895cm;height:7.317cm;" class="odt-zoomable" data-zoom-src="images/100000000000017200000229ABFDDE8B.png" /></td></tr></table>
 
 <ul>
   <li>[1]: طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]: 
     <ul>
       <li>[<bdi dir="ltr" class="odt-ltr-term">IDao</bdi>]: واجهة الطبقة
       </li>
-      <li>[<bdi dir="ltr" class="odt-ltr-term">Dao1</bdi>, <bdi dir="ltr" class="odt-ltr-term">Dao2</bdi>]: تطبيقان لهذه الواجهة
+      <li>[<bdi dir="ltr" class="odt-ltr-term">Dao1, Dao2</bdi>]: تطبيقان لهذه الواجهة
       </li>
     </ul>
   </li>
